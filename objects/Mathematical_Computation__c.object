@@ -247,7 +247,7 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Calculator</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts />
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
