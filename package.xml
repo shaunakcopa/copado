@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Mathematical_Computation__c.Division__c</members>
+        <members>Mathematical_Computation__c.Number_1__c</members>
+        <members>Mathematical_Computation__c.Number_2__c</members>
+        <members>Mathematical_Computation__c.Product__c</members>
+        <members>Mathematical_Computation__c.Substract__c</members>
+        <members>Mathematical_Computation__c.Sum__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Mathematical_Computation__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Mathematical_Computation__c-Calculator Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <name>Profile</name>
+    </types>
+    <version>50.0</version>
+</Package>
