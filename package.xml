@@ -3,7 +3,6 @@
     <types>
         <members>Mathematical_Computation__c.Field_Test_1__c</members>
         <members>Mathematical_Computation__c.Field_Test_2__c</members>
-        <members>Mathematical_Computation__c.Field_Test_3__c</members>
         <name>CustomField</name>
     </types>
     <types>
