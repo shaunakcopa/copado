@@ -234,6 +234,17 @@
         <type>Number</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>TestforCaseField__c</fullName>
+        <externalId>false</externalId>
+        <label>TestforCaseField</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <label>Calculator</label>
     <nameField>
         <displayFormat>CLC-{00000}</displayFormat>
