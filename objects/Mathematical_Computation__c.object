@@ -202,6 +202,27 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Field_Test_Rel_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Field Test Rel 1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Field_Test_Rel_2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Field Test Rel 2</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Number_1__c</fullName>
         <externalId>false</externalId>
         <label>Number 1</label>
