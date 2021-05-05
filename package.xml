@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Tester_Perm</members>
-        <name>PermissionSet</name>
+        <members>Test_Folder</members>
+        <members>Test_Folder/New_Document_Test_1.png</members>
+        <name>Document</name>
     </types>
     <version>51.0</version>
 </Package>
