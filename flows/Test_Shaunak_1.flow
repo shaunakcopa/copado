@@ -53,8 +53,8 @@
             <label>Check if value is more</label>
         </rules>
     </decisions>
-    <interviewLabel>Test_Shaunak_1-1_InterviewLabel</interviewLabel>
-    <label>Test Shaunak 1</label>
+    <interviewLabel>Test_Shaunak_1-2_InterviewLabel</interviewLabel>
+    <label>Test Shaunak 2</label>
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
@@ -156,7 +156,7 @@
             </processMetadataValues>
             <field>Field_Test_1__c</field>
             <value>
-                <stringValue>3</stringValue>
+                <stringValue>30</stringValue>
             </value>
         </inputAssignments>
         <object>Mathematical_Computation__c</object>
