@@ -4,5 +4,9 @@
         <members>Calculator__c</members>
         <name>CustomObject</name>
     </types>
+    <types>
+        <members>Calculator__c</members>
+        <name>SharingRules</name>
+    </types>
     <version>51.0</version>
 </Package>
