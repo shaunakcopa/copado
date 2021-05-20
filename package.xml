@@ -4,13 +4,5 @@
         <members>Custom%3A Sales Profile</members>
         <name>Profile</name>
     </types>
-    <types>
-        <members>Custom_Sales_Profile_profilePasswordPolicy1612411441701</members>
-        <name>ProfilePasswordPolicy</name>
-    </types>
-    <types>
-        <members>Custom_Sales_Profile_profileSessionSetting1612411441774</members>
-        <name>ProfileSessionSetting</name>
-    </types>
     <version>51.0</version>
 </Package>
