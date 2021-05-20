@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Calculator__c</members>
-        <name>CustomObject</name>
+        <members>Custom%3A Sales Profile</members>
+        <name>Profile</name>
     </types>
     <types>
-        <members>Calculator__c</members>
-        <name>SharingRules</name>
+        <members>Custom_Sales_Profile_profilePasswordPolicy1612411441701</members>
+        <name>ProfilePasswordPolicy</name>
+    </types>
+    <types>
+        <members>Custom_Sales_Profile_profileSessionSetting1612411441774</members>
+        <name>ProfileSessionSetting</name>
     </types>
     <version>51.0</version>
 </Package>
