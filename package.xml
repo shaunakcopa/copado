@@ -42,11 +42,6 @@
         <name>Profile</name>
     </types>
     <types>
-        <members>Mobile_Phone__c.Record_Type_A</members>
-        <members>Mobile_Phone__c.Record_Type_B</members>
-        <name>RecordType</name>
-    </types>
-    <types>
         <members>Mobile_Phone__c</members>
         <name>SharingRules</name>
     </types>
