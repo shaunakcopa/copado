@@ -4177,6 +4177,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Mobile_Phone__c.Company__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Mobile_Phone__c.Price__c</field>
         <readable>false</readable>
     </fieldPermissions>

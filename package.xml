@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>Mobile_Phone__c.Company__c</members>
         <members>Mobile_Phone__c.Price__c</members>
         <name>CustomField</name>
+    </types>
+    <types>
+        <members>Mobile_Phone__c</members>
+        <name>CustomObject</name>
     </types>
     <types>
         <members>Mobile_Phone__c-Mobile Phone Layout</members>
@@ -40,6 +45,11 @@
         <members>StandardAul</members>
         <members>Work%2Ecom Only User</members>
         <name>Profile</name>
+    </types>
+    <types>
+        <members>Mobile_Phone__c.Record_Type_A</members>
+        <members>Mobile_Phone__c.Record_Type_B</members>
+        <name>RecordType</name>
     </types>
     <types>
         <members>Mobile_Phone__c</members>
