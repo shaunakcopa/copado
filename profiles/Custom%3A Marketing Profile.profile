@@ -4066,6 +4066,16 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Mobile_Phone__c.Company__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Mobile_Phone__c.Price__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.AccountId</field>
         <readable>true</readable>
@@ -8755,6 +8765,17 @@
         <layout>MetricDataLink-Metric Data Link Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Mobile_Phone__c-Mobile Phone Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Mobile_Phone__c-Mobile Phone Layout</layout>
+        <recordType>Mobile_Phone__c.Record_Type_A</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Mobile_Phone__c-Mobile Phone Layout</layout>
+        <recordType>Mobile_Phone__c.Record_Type_B</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>OperatingHours-Operating Hours Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -10532,6 +10553,16 @@
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Mobile_Phone__c.Record_Type_A</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Mobile_Phone__c.Record_Type_B</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
         <default>true</default>
         <recordType>copado__Artifact__c.copado__Git_Artifact</recordType>
         <visible>true</visible>
@@ -11197,10 +11228,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ConvertLeads</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>CreateCustomizeFilters</name>
     </userPermissions>
     <userPermissions>
@@ -11246,10 +11273,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ExportReport</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ImportPersonal</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
