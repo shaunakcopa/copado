@@ -111,6 +111,14 @@ var salesforceFlow = salesforceFlow || {};
     app.createHtmlFlowOptionsElements = function(flowOptions) {
         const selectElement = document.getElementById('jsSalesforceFlowName');
         if (selectElement.childElementCount === 0) {
+            if(flowOptions.length === 0){
+                const node = document.createElement('option');
+                node.value = null;
+                node.disabled = "disabled";
+                const textnode = document.createTextNode(copadoLabels.NO_SALESFORCE_FLOWS_AVAILABLE);
+                node.appendChild(textnode);
+                selectElement.appendChild(node);
+            }
             for (const flow of flowOptions) {
                 const node = document.createElement('option');
                 node.value = flow['flowApiName'];
@@ -154,13 +162,13 @@ var salesforceFlow = salesforceFlow || {};
         var v = keyPair ? keyPair[1] : '';
         if (typeof datasetup === 'undefined') {
             var btn =
-                '<button id="del-param-' +
+                '<button style="margin: 0.5rem" id="del-param-' +
                 rowNumber +
                 '" onclick="salesforceFlow.param.deleteRow(' +
                 rowNumber +
                 '); return false;" class="btn copado-lightning">Delete</button';
             var nameField =
-                '<input type="text" class="js-param" id="param-' +
+                '<input type="text" style="margin: 0.5rem 0.5rem 0.5rem 0rem" placeholder="Parameter Name" class="js-param" id="param-' +
                 rowNumber +
                 '-name" data-type="name" data-al="' +
                 rowNumber +
@@ -168,7 +176,7 @@ var salesforceFlow = salesforceFlow || {};
                 n +
                 '" />';
             var valueField =
-                '<input type="text" class="js-param" id="param-' +
+                '<input type="text" style="margin: 0.5rem" placeholder="Value" class="js-param" id="param-' +
                 rowNumber +
                 '-value" data-type="value" data-al="' +
                 rowNumber +
@@ -185,7 +193,7 @@ var salesforceFlow = salesforceFlow || {};
                 rowNumber +
                 '); return false;" class="btn slds-button slds-button--neutral">Delete</button>';
             var nameField =
-                '<input type="text" class="js-param slds-input" id="param-' +
+                '<input type="text" placeholder="Parameter Name" class="js-param slds-input" id="param-' +
                 rowNumber +
                 '-name" data-type="name" data-al="' +
                 rowNumber +
@@ -193,7 +201,7 @@ var salesforceFlow = salesforceFlow || {};
                 n +
                 '" />';
             var valueField =
-                '<input type="text" class="js-param slds-input" id="param-' +
+                '<input type="text" placeholder="Value" class="js-param slds-input" id="param-' +
                 rowNumber +
                 '-value" data-type="value" data-al="' +
                 rowNumber +
@@ -201,7 +209,7 @@ var salesforceFlow = salesforceFlow || {};
                 v +
                 '" />';
             var wrapper =
-                '<div class="slds-grid" id="paramWrapper-' +
+                '<div class="slds-grid slds-m-vertical_medium" id="paramWrapper-' +
                 rowNumber +
                 '" style="clear:both;"><div class="slds-col">' +
                 nameField +
@@ -219,7 +227,7 @@ var salesforceFlow = salesforceFlow || {};
         var v = keyPair ? keyPair[1] : '';
 
         var nameField =
-            '<input disabled type="text" class="js-param slds-input" id="param-' +
+            '<input disabled type="text" placeholder="Parameter Name" class="js-param slds-input" id="param-' +
             rowNumber +
             '-name" data-type="name" data-al="' +
             rowNumber +
@@ -227,7 +235,7 @@ var salesforceFlow = salesforceFlow || {};
             n +
             '" />';
         var valueField =
-            '<input disabled type="text" class="js-param slds-input" id="param-' +
+            '<input disabled type="text" placeholder="Value" class="js-param slds-input" id="param-' +
             rowNumber +
             '-value" data-type="value" data-al="' +
             rowNumber +
@@ -235,7 +243,7 @@ var salesforceFlow = salesforceFlow || {};
             v +
             '" />';
         var wrapper =
-            '<div class="slds-grid" id="paramWrapper-' +
+            '<div class="slds-grid slds-m-vertical_medium" id="paramWrapper-' +
             rowNumber +
             '" style="clear:both;"><div class="slds-col">' +
             nameField +
