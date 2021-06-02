@@ -3,4 +3,5 @@
     <enableProxyLoginICHeader>true</enableProxyLoginICHeader>
     <enableSitesRecordReassignOrgPref>true</enableSitesRecordReassignOrgPref>
     <enableTopicsInSites>false</enableTopicsInSites>
+    <enableVisualforceApiAccessAllowed>false</enableVisualforceApiAccessAllowed>
 </SiteSettings>

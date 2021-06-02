@@ -156,6 +156,7 @@
     <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>copado__Application__c</fullName>
+        <businessStatus>Hidden</businessStatus>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -170,6 +171,7 @@
     </fields>
     <fields>
         <fullName>copado__Architect__c</fullName>
+        <businessStatus>Hidden</businessStatus>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -183,6 +185,7 @@
     </fields>
     <fields>
         <fullName>copado__Complexity__c</fullName>
+        <businessStatus>Hidden</businessStatus>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Complexity</label>
@@ -196,6 +199,7 @@
     </fields>
     <fields>
         <fullName>copado__Description__c</fullName>
+        <businessStatus>Hidden</businessStatus>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Description</label>
@@ -207,6 +211,7 @@
     </fields>
     <fields>
         <fullName>copado__Epic__c</fullName>
+        <businessStatus>Hidden</businessStatus>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -221,6 +226,7 @@
     </fields>
     <fields>
         <fullName>copado__Estimated_Value__c</fullName>
+        <businessStatus>Hidden</businessStatus>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Estimated Value</label>
@@ -245,6 +251,7 @@
     </fields>
     <fields>
         <fullName>copado__Priority__c</fullName>
+        <businessStatus>Hidden</businessStatus>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Priority</label>
@@ -257,6 +264,7 @@
     </fields>
     <fields>
         <fullName>copado__Product_Owner__c</fullName>
+        <businessStatus>Hidden</businessStatus>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -270,6 +278,7 @@
     </fields>
     <fields>
         <fullName>copado__Status__c</fullName>
+        <businessStatus>Hidden</businessStatus>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Status</label>
@@ -321,6 +330,7 @@
     </fields>
     <fields>
         <fullName>copado__Technical_Assumptions__c</fullName>
+        <businessStatus>Hidden</businessStatus>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Technical Assumptions</label>
@@ -332,6 +342,7 @@
     </fields>
     <fields>
         <fullName>copado__Users__c</fullName>
+        <businessStatus>Hidden</businessStatus>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label># Users</label>
@@ -345,6 +356,7 @@
     </fields>
     <fields>
         <fullName>copado__Value_Type__c</fullName>
+        <businessStatus>Hidden</businessStatus>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Value Type</label>
@@ -369,14 +381,14 @@
             </valueSetDefinition>
         </valueSet>
     </fields>
-    <label>Feature</label>
+    <label>Feature (deprecated)</label>
     <nameField>
         <displayFormat>F-{0000000000}</displayFormat>
         <label>Feature Name</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Features</pluralLabel>
+    <pluralLabel>Features (deprecated)</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

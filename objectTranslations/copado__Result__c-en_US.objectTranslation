@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
+        <help><!-- This field is updated automatically by Copado. --></help>
+        <label><!-- Apex Callback --></label>
+        <name>copado__ApexCallback__c</name>
+    </fields>
+    <fields>
         <help><!-- Deployment job that originated the result. --></help>
         <label><!-- Deployment Job --></label>
         <name>copado__Deployment_Job__c</name>
         <relationshipLabel><!-- Result --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to track multi-step deployment overall results. --></help>
+        <label><!-- Deployment --></label>
+        <name>copado__Deployment__c</name>
+        <relationshipLabel><!-- Results --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Description --></label>
@@ -29,6 +40,12 @@
         <name>copado__Error_Message__c</name>
     </fields>
     <fields>
+        <help><!-- Copado Function that triggered this result. --></help>
+        <label><!-- Function --></label>
+        <name>copado__Function__c</name>
+        <relationshipLabel><!-- Results --></relationshipLabel>
+    </fields>
+    <fields>
         <help><!-- Unique identifier for the jobs. --></help>
         <label><!-- Job Id --></label>
         <name>copado__Job_Id__c</name>
@@ -45,6 +62,25 @@
         <help><!-- Link to open more information about the results. --></help>
         <label><!-- Link --></label>
         <name>copado__Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParentId --></label>
+        <name>copado__ParentId__c</name>
+    </fields>
+    <fields>
+        <help><!-- This status is used to track the current job activity. --></help>
+        <label><!-- Progress Status --></label>
+        <name>copado__Progress_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to track job results triggered from promotion events. --></help>
+        <label><!-- Promotion --></label>
+        <name>copado__Promotion__c</name>
+        <relationshipLabel><!-- Results --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Result Data --></label>
+        <name>copado__Result_Data__c</name>
     </fields>
     <fields>
         <help><!-- Date time when the job started. --></help>
@@ -75,6 +111,10 @@
             <masterLabel>Success</masterLabel>
             <translation><!-- Success --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Timeout --></label>
+        <name>copado__Timeout__c</name>
     </fields>
     <fields>
         <help><!-- User story that originated the result. --></help>
