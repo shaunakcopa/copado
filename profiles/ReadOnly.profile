@@ -5261,6 +5261,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Mobile_Phone__c.Company__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Mobile_Phone__c.Price__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.AccountId</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -10456,6 +10466,17 @@
         <layout>MetricDataLink-Metric Data Link Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Mobile_Phone__c-Mobile Phone Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Mobile_Phone__c-Mobile Phone Layout</layout>
+        <recordType>Mobile_Phone__c.Record_Type_A</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Mobile_Phone__c-Mobile Phone Layout</layout>
+        <recordType>Mobile_Phone__c.Record_Type_B</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>OperatingHours-Operating Hours Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -11662,6 +11683,16 @@
     <recordTypeVisibilities>
         <default>true</default>
         <recordType>Metric.Progress</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Mobile_Phone__c.Record_Type_A</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Mobile_Phone__c.Record_Type_B</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
