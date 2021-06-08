@@ -16,6 +16,10 @@
         <label><!-- Price --></label>
         <name>Price__c</name>
     </fields>
+    <fields>
+        <label><!-- Test Field #1 --></label>
+        <name>Test_Field_1__c</name>
+    </fields>
     <recordTypes>
         <label><!-- Record Type A --></label>
         <name>Record_Type_A</name>
