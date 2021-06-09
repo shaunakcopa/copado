@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Mobile Phone</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Mobile Phones</value>
+    </caseValues>
+    <fields>
+        <label></label>
+        <name>Price__c</name>
+    </fields>
+    <fields>
+        <label></label>
+        <name>Test_Field_1__c</name>
+    </fields>
+    <recordTypes>
+        <label></label>
+        <name>Record_Type_A</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Record_Type_B</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
