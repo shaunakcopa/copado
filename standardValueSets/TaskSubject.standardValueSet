@@ -26,4 +26,14 @@
         <default>false</default>
         <label>Other</label>
     </standardValue>
+    <standardValue>
+        <fullName>PicklistValue 1</fullName>
+        <default>false</default>
+        <label>PicklistValue 1</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Picklist Test Value 2</fullName>
+        <default>false</default>
+        <label>Picklist Test Value 2</label>
+    </standardValue>
 </StandardValueSet>
