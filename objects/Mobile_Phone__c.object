@@ -204,7 +204,19 @@
         <active>true</active>
         <label>Record Type B</label>
     </recordTypes>
-    <searchLayouts/>
+    <searchLayouts />
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
+    <webLinks>
+        <fullName>WebLinkButton</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>WebLinkButton</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>www.google.com</url>
+    </webLinks>
 </CustomObject>
