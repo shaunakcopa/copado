@@ -460,6 +460,10 @@
             <translation><!-- InstalledPackageLayout --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Layout</masterLabel>
+            <translation><!-- Layout --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Letterhead</masterLabel>
             <translation><!-- Letterhead --></translation>
         </picklistValues>
