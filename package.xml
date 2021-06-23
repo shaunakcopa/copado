@@ -1,47 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Calculator__c.Division__c</members>
-        <members>Calculator__c.Field_Test_1__c</members>
-        <members>Calculator__c.Field_Test_2__c</members>
-        <members>Calculator__c.Field_Test_3__c</members>
-        <members>Calculator__c.Field_Test_Rel_1__c</members>
-        <members>Calculator__c.Field_Test_Rel_2__c</members>
-        <members>Calculator__c.LastActivityDate</members>
-        <members>Calculator__c.Number_1__c</members>
-        <members>Calculator__c.Number_2__c</members>
-        <members>Calculator__c.Product__c</members>
-        <members>Calculator__c.Substract__c</members>
-        <members>Calculator__c.Sum__c</members>
-        <name>CustomField</name>
-    </types>
-    <types>
-        <members>Calculator__c</members>
-        <name>CustomObject</name>
-    </types>
-    <types>
-        <members>Calculator__c-en_US</members>
-        <name>CustomObjectTranslation</name>
-    </types>
-    <types>
-        <members>Calculator__c</members>
-        <name>CustomTab</name>
-    </types>
-    <types>
-        <members>Calculator__c-Calculator Layout</members>
-        <name>Layout</name>
-    </types>
-    <types>
-        <members>Calculator__c.All</members>
-        <name>ListView</name>
-    </types>
-    <types>
-        <members>Calculator__c</members>
-        <name>SharingRules</name>
-    </types>
-    <types>
-        <members>Calculator__c</members>
-        <name>TopicsForObjects</name>
+        <members>Search</members>
+        <name>Settings</name>
     </types>
     <version>51.0</version>
 </Package>
