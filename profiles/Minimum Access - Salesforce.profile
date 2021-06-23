@@ -146,6 +146,26 @@
         <visible>false</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>OwnBackupIntegration</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>OwnBackupIntegrationAsync</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>OwnBackupIntegrationPoller</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TestCopadoHttpCalloutMock</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TestStepTrigger</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ADD_DependencyHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -5726,6 +5746,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ServiceAppointment.ApptBookingInfoUrl</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ServiceAppointment.ArrivalWindowEndTime</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -5762,6 +5787,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ServiceAppointment.IsAnonymousBooking</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ServiceAppointment.IsOffsiteAppointment</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -7523,6 +7553,11 @@
         <editable>true</editable>
         <field>copado__Destination_Org__c.copado__To_Org_Name__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Environment__c.Data_Backup_Enforcement__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
