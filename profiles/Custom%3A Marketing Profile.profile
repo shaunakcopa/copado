@@ -4576,10 +4576,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
-        <name>ManageEntitlements</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
         <name>ManageExchangeConfig</name>
     </userPermissions>
     <userPermissions>
