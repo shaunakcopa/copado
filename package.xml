@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <types>
-        <members>Custom_Marketing_Profile_profilePasswordPolicy1622519663114</members>
-        <name>ProfilePasswordPolicy</name>
-    </types>
-    <types>
-        <members>Custom_Marketing_Profile_profileSessionSetting1622519663199</members>
-        <name>ProfileSessionSetting</name>
-    </types>
     <version>51.0</version>
 </Package>
