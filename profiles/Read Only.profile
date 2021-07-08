@@ -5286,6 +5286,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Mobile_Phone__c.Demo_Field__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Mobile_Phone__c.Price__c</field>
         <readable>true</readable>
     </fieldPermissions>
