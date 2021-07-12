@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Case.ParentId</members>
+        <members>Mobile_Phone__c.Demo_Field__c</members>
         <name>CustomField</name>
     </types>
     <types>
-        <members>Custom%3A Sales Profile</members>
-        <name>Profile</name>
+        <members>Mobile_Phone__c</members>
+        <name>CustomObject</name>
     </types>
     <version>51.0</version>
 </Package>
