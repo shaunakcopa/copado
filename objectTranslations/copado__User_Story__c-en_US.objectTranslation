@@ -33,6 +33,10 @@
         <name>copado__PromotionRelatedList</name>
     </fieldSets>
     <fieldSets>
+        <label><!-- Promotion Related List Datatable --></label>
+        <name>copado__Promotion_Related_List_Datatable</name>
+    </fieldSets>
+    <fieldSets>
         <label><!-- SprintWall_MassUpdate --></label>
         <name>copado__SprintWall_MassUpdate</name>
     </fieldSets>
@@ -825,6 +829,10 @@
         <label><!-- User Story --></label>
         <name>copado__User_Story</name>
     </recordTypes>
+    <recordTypes>
+        <label><!-- Utility --></label>
+        <name>copado__Utility</name>
+    </recordTypes>
     <validationRules>
         <errorMessage><!-- A cancellation reason must be given. --></errorMessage>
         <name>copado__Cancellation_reason_required</name>
@@ -856,6 +864,10 @@
     <webLinks>
         <label><!-- Assign_to_Release --></label>
         <name>copado__Assign_to_Release</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Commit_Data --></label>
+        <name>copado__Commit_Data</name>
     </webLinks>
     <webLinks>
         <label><!-- Commit_Files --></label>

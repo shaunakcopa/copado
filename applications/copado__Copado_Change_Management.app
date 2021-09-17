@@ -12,7 +12,6 @@
     <tabs>copado__Work_Manager</tabs>
     <tabs>copado__Sprint__c</tabs>
     <tabs>copado__Epic__c</tabs>
-    <tabs>copado__Theme__c</tabs>
     <tabs>copado__Test_Script__c</tabs>
     <tabs>copado__Test_Run__c</tabs>
     <tabs>copado__Release__c</tabs>

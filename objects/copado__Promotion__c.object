@@ -141,7 +141,17 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>copado__Promotion_Header</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>copado__Promotion_Header</fullName>
+        <fields>Name</fields>
+        <fields>copado__Platform__c</fields>
+        <fields>copado__Project__c</fields>
+        <fields>copado__Source_Environment__c</fields>
+        <fields>copado__Destination_Environment__c</fields>
+        <fields>copado__Status__c</fields>
+        <label>Promotion Header</label>
+    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
     <description>This object tracks the changes that are promoted to the next Salesforce instance.</description>
@@ -616,7 +626,17 @@
         <deprecated>false</deprecated>
         <description>Checked if the promotion is from a higher environment to a lower environment in the deployment flow.</description>
         <externalId>false</externalId>
-        <label>Back Promotion</label>
+        <label>Is Back-Promotion</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>copado__Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is checked by Copado once the promotion is merged and deployed successfully for multi-cloud platform.</inlineHelpText>
+        <label>Completed</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
@@ -726,6 +746,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>copado__Platform__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( NOT(ISBLANK( copado__Project__c )) ,  TEXT(copado__Project__r.copado__Deployment_Flow__r.copado__Platform__c) ,  IF( NOT(ISBLANK( copado__Release__c )),  TEXT(copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Platform__c) , &apos;Salesforce&apos;) )</formula>
+        <inlineHelpText>This field auto-populates and displays the pipeline platform.</inlineHelpText>
+        <label>Platform</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__Project__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
@@ -758,7 +790,7 @@
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <label>Send Deployment Complete email</label>
+        <label>Notify When Complete</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>

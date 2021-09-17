@@ -3,7 +3,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>copado:standardRecordStatus</componentName>
+                <componentName>copado:extensions</componentName>
             </componentInstance>
         </itemInstances>
         <name>main</name>
