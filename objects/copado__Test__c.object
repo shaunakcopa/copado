@@ -156,6 +156,19 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
+        <fullName>copado__Application__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <referenceTo>copado__Application__c</referenceTo>
+        <relationshipLabel>Tests</relationshipLabel>
+        <relationshipName>Tests</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>copado__Category__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -177,6 +190,54 @@
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>copado__Feature__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Feature</label>
+        <referenceTo>copado__Application_Feature__c</referenceTo>
+        <relationshipLabel>Tests</relationshipLabel>
+        <relationshipName>Tests</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Priority__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Critical</fullName>
+                    <default>false</default>
+                    <label>Critical</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>copado__Reference__c</fullName>
         <deprecated>false</deprecated>
         <displayFormat>TE-{0000000}</displayFormat>
@@ -184,6 +245,46 @@
         <label>Reference</label>
         <trackTrending>false</trackTrending>
         <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>copado__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Draft</fullName>
+                    <default>false</default>
+                    <label>Draft</label>
+                </value>
+                <value>
+                    <fullName>Ready for Test</fullName>
+                    <default>false</default>
+                    <label>Ready for Test</label>
+                </value>
+                <value>
+                    <fullName>Testing in Progress</fullName>
+                    <default>false</default>
+                    <label>Testing in Progress</label>
+                </value>
+                <value>
+                    <fullName>Testing Completed</fullName>
+                    <default>false</default>
+                    <label>Testing Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>copado__Tool__c</fullName>

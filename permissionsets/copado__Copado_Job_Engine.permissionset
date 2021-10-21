@@ -65,6 +65,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__JobExecution__c.copado__ParentRecord_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__JobExecution__c.copado__Promotion__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -146,6 +151,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__JobStep__c.copado__Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__JobStep__c.copado__UserStory__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

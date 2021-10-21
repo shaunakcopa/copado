@@ -71,8 +71,13 @@
             <translation><!-- Manual --></translation>
         </picklistValues>
     </fields>
+    <fields>
+        <label><!-- User Story --></label>
+        <name>copado__UserStory__c</name>
+        <relationshipLabel><!-- Deployment Tasks --></relationshipLabel>
+    </fields>
     <validationRules>
-        <errorMessage><!-- JobTemplate or Execution is required --></errorMessage>
+        <errorMessage><!-- JobTemplate, Execution, or User Story is required --></errorMessage>
         <name>copado__Template_OR_Execution_Is_Required</name>
     </validationRules>
 </CustomObjectTranslation>

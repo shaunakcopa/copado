@@ -24,9 +24,9 @@
     <fields>
         <help><!-- The org credential where the metadata of the Artifact is going to be retrieved from, for unlocked packages and 2GP.
 The org credential where the unmanaged package is created from. --></help>
-        <label><!-- Source Org Credential --></label>
+        <label><!-- Source Credential --></label>
         <name>copado__Org_Credential__c</name>
-        <relationshipLabel><!-- Packages (Source Org Credential) --></relationshipLabel>
+        <relationshipLabel><!-- Artifacts --></relationshipLabel>
     </fields>
     <fields>
         <help><!-- Related package identifier. Being used as a Package Id for package version creation and also in use into the sfdx-project.json file as a package alias. --></help>

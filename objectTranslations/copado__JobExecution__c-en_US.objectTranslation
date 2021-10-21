@@ -29,8 +29,12 @@
         <name>copado__ErrorMessage__c</name>
     </fields>
     <fields>
-        <label><!-- Parent Id --></label>
+        <label><!-- Parent Id(Formula) --></label>
         <name>copado__ParentId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Id --></label>
+        <name>copado__ParentRecord_Id__c</name>
     </fields>
     <fields>
         <label><!-- Promotion --></label>

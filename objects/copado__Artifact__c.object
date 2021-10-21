@@ -221,8 +221,9 @@
         <externalId>false</externalId>
         <inlineHelpText>The org credential where the metadata of the Artifact is going to be retrieved from, for unlocked packages and 2GP.
 The org credential where the unmanaged package is created from.</inlineHelpText>
-        <label>Source Org Credential</label>
+        <label>Source Credential</label>
         <referenceTo>copado__Org__c</referenceTo>
+        <relationshipLabel>Artifacts</relationshipLabel>
         <relationshipName>Artifacts</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
