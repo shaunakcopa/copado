@@ -128,11 +128,14 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>copado__Org_Credential_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
@@ -144,6 +147,7 @@
     <compactLayoutAssignment>copado__Credential_Compact_Layout</compactLayoutAssignment>
     <compactLayouts>
         <fullName>copado__Credential_Compact_Layout</fullName>
+        <fields>Name</fields>
         <fields>copado__Environment__c</fields>
         <fields>copado__Org_Type__c</fields>
         <fields>copado__Username__c</fields>
@@ -665,7 +669,7 @@
         <description>Organization Id for the Environment.</description>
         <externalId>true</externalId>
         <inlineHelpText>Organization Id for the Environment.</inlineHelpText>
-        <label>SFDC Credential ID</label>
+        <label>SFDC Org ID</label>
         <length>40</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
