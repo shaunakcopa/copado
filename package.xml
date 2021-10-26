@@ -33,6 +33,7 @@
         <members>Discovery</members>
         <members>DocumentChecklist</members>
         <members>EAC</members>
+        <members>EinsteinDocumentCapture</members>
         <members>EmailAdministration</members>
         <members>EmailIntegration</members>
         <members>EmailTemplate</members>
@@ -113,5 +114,5 @@
         <members>WorkDotCom</members>
         <name>Settings</name>
     </types>
-    <version>52.0</version>
+    <version>53.0</version>
 </Package>

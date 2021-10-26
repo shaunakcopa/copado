@@ -16,6 +16,7 @@
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:visualforcePage</componentName>
+                <identifier>flexipage_visualforcePage</identifier>
                 <visibilityRule>
                     <booleanFilter>1 OR 2</booleanFilter>
                     <criteria>
@@ -97,6 +98,7 @@
                     <value>4</value>
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
+                <identifier>force_highlightsPanel</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.copado__Platform__c}</leftValue>
@@ -113,6 +115,7 @@
                     <value>promotionRecordPageAlerts</value>
                 </componentInstanceProperties>
                 <componentName>copado:copadoAlertPlaceHolder</componentName>
+                <identifier>copadoAlertPlaceHolder</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.copado__Platform__c}</leftValue>
@@ -133,6 +136,7 @@
                     <value>readonly</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Name</fieldItem>
+                <identifier>RecordNameField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -142,6 +146,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Project__c</fieldItem>
+                <identifier>RecordProject__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -151,6 +156,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Source_Environment__c</fieldItem>
+                <identifier>RecordSource_Environment__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -160,11 +166,13 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Source_Org_Credential__c</fieldItem>
+                <identifier>RecordSource_Org_Credential__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.copado__Platform__c</fieldItem>
+                <identifier>RecordPlatform__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -174,6 +182,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Back_Promotion__c</fieldItem>
+                <identifier>RecordBack_Promotion__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-f826e26f-69e5-4bcc-bc34-c3edb086ca5e</name>
@@ -187,6 +196,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Status__c</fieldItem>
+                <identifier>RecordStatus__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -196,6 +206,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Release__c</fieldItem>
+                <identifier>RecordRelease__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -205,6 +216,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Destination_Environment__c</fieldItem>
+                <identifier>RecordDestination_Environment__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -214,6 +226,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Destination_Org_Credential__c</fieldItem>
+                <identifier>RecordDestination_Org_Credential__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -223,6 +236,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Send_Deployment_Complete_email__c</fieldItem>
+                <identifier>RecordSend_Deployment_Complete_email__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-3db54dde-b584-4c1b-bdb6-8a316d79e10c</name>
@@ -236,6 +250,7 @@
                     <value>Facet-f826e26f-69e5-4bcc-bc34-c3edb086ca5e</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -245,6 +260,7 @@
                     <value>Facet-3db54dde-b584-4c1b-bdb6-8a316d79e10c</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column2</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-a312b45b-1390-4f97-a75c-1c94ad89b8ca</name>
@@ -258,6 +274,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Create_Full_Profiles_Step__c</fieldItem>
+                <identifier>RecordCreate_Full_Profiles_Step__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -267,6 +284,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Create_Full_Permission_Sets_Step__c</fieldItem>
+                <identifier>RecordCreate_Full_Permission_Sets_Step__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-18a98155-3b56-4f1a-9355-5b09cd98c127</name>
@@ -280,6 +298,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Exclude_From_Auto_Resolve__c</fieldItem>
+                <identifier>RecordExclude_From_Auto_Resolve__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -289,6 +308,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Order_by__c</fieldItem>
+                <identifier>RecordOrder_by__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-c16f281b-07c3-42a1-9f38-9fc62f261aab</name>
@@ -302,6 +322,7 @@
                     <value>Facet-18a98155-3b56-4f1a-9355-5b09cd98c127</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column3</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -311,6 +332,7 @@
                     <value>Facet-c16f281b-07c3-42a1-9f38-9fc62f261aab</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column4</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-f4b715da-f667-434e-8009-057b068f0ce3</name>
@@ -328,6 +350,7 @@
                     <value>Information</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -341,6 +364,7 @@
                     <value>Advanced Information</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection2</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-1253e9d0-da3d-434e-8680-59d0c46d1ff0</name>
@@ -350,6 +374,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>copado:promotedUserStoriesContainer</componentName>
+                <identifier>promotedUserStoriesContainer</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-4ac3e53f-46f1-4640-b967-4bd8e7699ae8</name>
@@ -379,6 +404,7 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-bn2994zwi7a</name>
@@ -408,6 +434,7 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer2</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-96uujpi3cpp</name>
@@ -425,6 +452,7 @@
                     <value>Standard.Tab.detail</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>detailTab</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -438,6 +466,7 @@
                     <value>Promoted User Stories</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>customTab</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -451,6 +480,7 @@
                     <value>History &amp; Approvals</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>customTab2</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -464,6 +494,7 @@
                     <value>Notes &amp; Attachments</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>customTab3</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-458e50a3-4d51-42c8-b545-6edcb6a65234</name>
@@ -477,6 +508,7 @@
                     <value>Facet-458e50a3-4d51-42c8-b545-6edcb6a65234</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
+                <identifier>flexipage_tabset</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.copado__Platform__c}</leftValue>
@@ -497,6 +529,7 @@
                     <value>Promotion Execution</value>
                 </componentInstanceProperties>
                 <componentName>copado:resultStatusContainer</componentName>
+                <identifier>resultStatusContainer</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.copado__Platform__c}</leftValue>
@@ -513,6 +546,7 @@
                     <value>Deployment Execution</value>
                 </componentInstanceProperties>
                 <componentName>copado:resultStatusContainer</componentName>
+                <identifier>resultStatusContainer2</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.copado__Platform__c}</leftValue>
