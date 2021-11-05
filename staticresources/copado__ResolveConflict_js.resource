@@ -390,8 +390,13 @@ var conversionFunc = conversionFunc || {},
                 }
             }
             usName = val.slice(val.indexOf('>>>>>>>'), val.indexOf(usName) + usName.length); //'>>>>>>> feature/'+usName;
+            
+            var usNameWithMultiLineBreaks = val.match(usName + '(\r\n)');
+            var usNameWithLineBreaks = usNameWithMultiLineBreaks ? usName+ '\r\n' : usName+ val.charAt(val.indexOf(usName) + usName.length);
+            
             while (val.indexOf(usName) > -1 && usName && usName.length > 0) {
-                val = (val.slice(0, val.indexOf('=======')) + val.slice(val.indexOf(usName) + (usName+'\n').length, val.length)).replace('<<<<<<< HEAD\n', '');
+                // find a new line character either \r or \n and append to the end to truncate the values
+                val = (val.slice(0, val.indexOf('=======')) + val.slice(val.indexOf(usName) + usNameWithLineBreaks.length, val.length)).replace(/<<<<<<< HEAD(\r\n|\n|\r)/, '');
             }
 
             var returnVal = format == 'json' ? conversionFunc.json2yaml(parseOperations.convertXml2formattedJSON(val)) : val;
@@ -404,11 +409,15 @@ var conversionFunc = conversionFunc || {},
                     val = val.replace(/(^[ \t]*\n)/gm, '');
                 }
             }
+            var usRegex = new RegExp(usName + '(\r\n|\n|\r)');
+            
+            var multiLineBreaks = val.match('=======' + '(\r\n)');
+            var conflictSperatorLineBreaks = multiLineBreaks ? '======='+ '\r\n' : '======='+ val.charAt(val.indexOf(usName) + usName.length);
+            
             while (val.indexOf(usName) > -1 && val.indexOf('<<<<<<< HEAD') > -1) {
-                val = (val.slice(0, val.indexOf('<<<<<<< HEAD\n')) + val.slice(val.indexOf('=======') + '=======\n'.length, val.length)).replace(
-                    usName+'\n',
-                    ''
-                );
+                // find a new line character either \r or \n and append to the end to truncate the values
+                val = val.slice(0, val.indexOf('<<<<<<< HEAD')) + val.slice(val.indexOf('=======') + conflictSperatorLineBreaks.length, val.length);
+                val = val.replace(usRegex, '');
             }
             var returnVal = format == 'json' ? conversionFunc.json2yaml(parseOperations.convertXml2formattedJSON(val)) : val;
             return unicodeReplacer(returnVal);

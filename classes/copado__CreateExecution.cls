@@ -20,6 +20,8 @@ global class Request {
     @InvocableVariable( required=false)
     global String parentId;
     @InvocableVariable( required=false)
+    global String pipelineId;
+    @InvocableVariable( required=false)
     global List<copado__JobStep__c> postSteps;
     @InvocableVariable( required=false)
     global List<copado__JobStep__c> preSteps;

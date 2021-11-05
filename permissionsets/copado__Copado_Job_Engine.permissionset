@@ -5,9 +5,25 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CustomJobStepController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__EnvironmentVariables</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__RunJob</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>copado__RunJobController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <customMetadataTypeAccesses>
+        <enabled>true</enabled>
+        <name>copado__MC_Custom_Job_Step__mdt</name>
+    </customMetadataTypeAccesses>
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Deployment_Flow__c.copado__Deployment_Job_Template__c</field>
@@ -16,6 +32,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Deployment_Flow__c.copado__Promotion_Job_Template__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Deployment__c.copado__Last_Deployment_Execution_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -70,6 +91,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__JobExecution__c.copado__Pipeline__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__JobExecution__c.copado__Promotion__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -90,6 +116,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__JobExecution__c.copado__UserStoryCommit__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__JobExecution__c.copado__VolumeOptions__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -104,8 +135,18 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__JobStep__c.copado__CustomType__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>copado__JobStep__c.copado__Destination_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__JobStep__c.copado__ExecutionSequence__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -171,6 +212,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__JobTemplate__c.copado__VolumeOptions__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Promotion__c.copado__Last_Deployment_Execution_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Promotion__c.copado__Last_Promotion_Execution_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

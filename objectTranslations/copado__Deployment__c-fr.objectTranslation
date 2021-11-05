@@ -122,6 +122,10 @@
         <name>copado__Last_Compliance_Scan_Date__c</name>
     </fields>
     <fields>
+        <label><!-- Last Deployment Execution Id --></label>
+        <name>copado__Last_Deployment_Execution_Id__c</name>
+    </fields>
+    <fields>
         <label><!-- Parent Deployment --></label>
         <name>copado__Parent_Deployment__c</name>
         <relationshipLabel><!-- Deployments (Parent Deployment) --></relationshipLabel>

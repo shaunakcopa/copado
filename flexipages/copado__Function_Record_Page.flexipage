@@ -293,6 +293,14 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>canAddParameters</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>enableRequiredInput</name>
+                    <value>true</value>
+                </componentInstanceProperties>
                 <componentName>copado:functionsParametersContainer</componentName>
                 <identifier>functionsParametersContainer</identifier>
             </componentInstance>

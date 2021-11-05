@@ -25,6 +25,14 @@
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>copado__Copado_Plan</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>copado__Copado_Plan_Lightning</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>copado__Copado_Selenium_Testing</application>
         <visible>true</visible>
     </applicationVisibilities>
@@ -242,6 +250,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__ColumnConfig</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CommitAction</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -537,6 +549,30 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__DatatableColumnsConfiguration</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DatatableConstants</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DatatableQueryConfiguration</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DatatableServiceColumnConfig</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DatatableServiceCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DatatableServiceCtrlTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__DefineProductionOrgServiceController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -554,10 +590,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__DeployAPI</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__DeployCallback</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -582,10 +614,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__DeploymentEmailController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__DeploymentExecutionService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -734,6 +762,18 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__FeatureHelper</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__FilterComponentController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__FilterComponentControllerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__FilterConstant</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -1177,11 +1217,11 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__PromoteAndDeployCallback</apexClass>
+        <apexClass>copado__PromoteAction</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__PromoteCallback</apexClass>
+        <apexClass>copado__PromoteActionService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -1201,11 +1241,11 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__PromotionEditExtension</apexClass>
+        <apexClass>copado__PromotionDeployAction</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__PromotionExecutionService</apexClass>
+        <apexClass>copado__PromotionEditExtension</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -1249,6 +1289,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__RefreshRecentChanges</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__RegisterCopado</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -1273,27 +1317,15 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ResultDetailService</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>copado__ResultMonitor</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__ResultStatusContainerLWCHelper</apexClass>
+        <apexClass>copado__ResultMonitorLWCHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>copado__ResultStatusDetail</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__ResultStatusHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__ResultStatusLWCInterface</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -1506,6 +1538,18 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__SourceMemberResult</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__SprintTriggerHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__SprintTriggerHandlerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__SprintVelocityRollUp</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -1897,6 +1941,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__UISectionHelper</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__UnlockPackageService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -1929,7 +1977,19 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__UserStoryCommitChange</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__UserStoryCommitCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__UserStoryCommitIntermediaryExt</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__UserStoryCommitRequest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -2400,6 +2460,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Artifact__c.copado__Package_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact__c.copado__Pipeline__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3189,6 +3254,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Deployment_Flow__c.copado__CommitJobTemplate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Deployment_Flow__c.copado__Copado_DX_Mode__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3645,6 +3715,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Destination_Org__c.copado__To_Org_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Environment__c.copado__CommitJobTemplateOverride__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4130,6 +4205,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Installed_Artifact_Version__c.copado__Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__JobStep__c.copado__ExecutionSequence__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5239,6 +5319,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Sprint__c.copado__ActualVelocity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Sprint__c.copado__Days_in_sprint__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5254,7 +5339,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Sprint__c.copado__InitialPlannedVelocity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Sprint__c.copado__Objective__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Sprint__c.copado__PlannedVelocity__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5285,6 +5380,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Sprint__c.copado__Team__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Sprint__c.copado__Working_Days_Left__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6058,8 +6158,23 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__User_Story_Commit__c.copado__CommitMessage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>copado__User_Story_Commit__c.copado__External_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__User_Story_Commit__c.copado__LastJobExecutionId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__User_Story_Commit__c.copado__Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6094,12 +6209,32 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__User_Story_Metadata__c.copado__Action__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__User_Story_Metadata__c.copado__Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__User_Story_Metadata__c.copado__JsonInformation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__User_Story_Metadata__c.copado__Last_Commit_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__User_Story_Metadata__c.copado__Metadata_API_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__User_Story_Metadata__c.copado__ModuleDirectory__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6110,6 +6245,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__User_Story_Metadata__c.copado__Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__User_Story_Metadata__c.copado__Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6350,6 +6490,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__User_Story__c.copado__Parent_Epic_Title__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__User_Story__c.copado__Platform__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -8370,6 +8515,10 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>copado__Team_Dependency__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>copado__Team__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
@@ -8390,7 +8539,15 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>copado__User_Story_Commit</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>copado__User_Story_Metadata__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>copado__User_Story_Task__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>

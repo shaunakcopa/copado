@@ -51,11 +51,57 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>GRID</value>
+                    <name>parentFieldApiName</name>
+                    <value>copado__JobTemplate__c.Id</value>
                 </componentInstanceProperties>
-                <componentName>force:relatedListContainer</componentName>
-                <identifier>force_relatedListContainer</identifier>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>copado__JobSteps__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-1eee4437-156c-4108-aea1-7ccfbdb22560</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>copado__JobTemplate__c.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>copado__JobExecutions__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer2</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-b24ab446-6ef6-46b3-9223-56281049b1cf</name>
@@ -64,6 +110,10 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>active</name>
+                    <value>false</value>
+                </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>Facet-f903dfe5-1cc5-44ee-8195-0c5fe6d7c1bd</value>
@@ -84,14 +134,32 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
+                    <value>Facet-1eee4437-156c-4108-aea1-7ccfbdb22560</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Steps</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>customTab</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>active</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>body</name>
                     <value>Facet-b24ab446-6ef6-46b3-9223-56281049b1cf</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Standard.Tab.relatedLists</value>
+                    <value>Job Executions</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>relatedListsTab</identifier>
+                <identifier>customTab2</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-d3737519-e72b-4a3b-87ea-fab292601f24</name>

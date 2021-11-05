@@ -247,6 +247,17 @@
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <label>User Story Task</label>
+    <listViews>
+        <fullName>copado__All</fullName>
+        <columns>NAME</columns>
+        <columns>copado__Subject__c</columns>
+        <columns>copado__Status__c</columns>
+        <columns>copado__User_Story__c</columns>
+        <columns>copado__Comments__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
     <nameField>
         <displayFormat>UST-{0000000}</displayFormat>
         <label>User Story Task Name</label>

@@ -232,7 +232,7 @@
         <externalId>false</externalId>
         <formula>IF(NOT(ISBLANK( copado__Deployment__c )), copado__Deployment__c, 
     IF(NOT(ISBLANK( copado__Promotion__c )), copado__Promotion__c, 
-        IF(NOT(ISBLANK( copado__Commit__c )), copado__Commit__c, 
+        IF(NOT(ISBLANK( copado__UserStoryCommit__c )), copado__UserStoryCommit__c, 
             IF(NOT(ISBLANK( copado__Snapshot__c )), copado__Snapshot__c,  copado__ParentRecord_Id__c)
         )
     )
@@ -253,6 +253,19 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Pipeline__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Pipeline</label>
+        <referenceTo>copado__Deployment_Flow__c</referenceTo>
+        <relationshipLabel>Job Executions</relationshipLabel>
+        <relationshipName>JobExecutions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>copado__Promotion__c</fullName>
@@ -342,6 +355,21 @@
         <relationshipLabel>Job Executions</relationshipLabel>
         <relationshipName>JobExecutions</relationshipName>
         <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__UserStoryCommit__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field relates to the parent User Story Commit record of the job execution</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field relates to the parent User Story Commit record of the job execution</inlineHelpText>
+        <label>User Story Commit</label>
+        <referenceTo>copado__User_Story_Commit__c</referenceTo>
+        <relationshipLabel>Job Executions</relationshipLabel>
+        <relationshipName>JobExecutions</relationshipName>
+        <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>

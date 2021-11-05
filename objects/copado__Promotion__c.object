@@ -150,6 +150,7 @@
         <fields>copado__Source_Environment__c</fields>
         <fields>copado__Destination_Environment__c</fields>
         <fields>copado__Status__c</fields>
+        <fields>copado__Release__c</fields>
         <label>Promotion Header</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
@@ -722,6 +723,28 @@
             <valueSetName>copado__Auto_Resolve_Exceptions</valueSetName>
         </valueSet>
         <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>copado__Last_Deployment_Execution_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Last Deployment Execution Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Last_Promotion_Execution_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Last Promotion Execution Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>copado__Merge_Conflict__c</fullName>

@@ -37,6 +37,11 @@
         <name>copado__ParentRecord_Id__c</name>
     </fields>
     <fields>
+        <label><!-- Pipeline --></label>
+        <name>copado__Pipeline__c</name>
+        <relationshipLabel><!-- Job Executions --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Promotion --></label>
         <name>copado__Promotion__c</name>
         <relationshipLabel><!-- Job Executions --></relationshipLabel>
@@ -78,6 +83,12 @@
     <fields>
         <label><!-- Template --></label>
         <name>copado__Template__c</name>
+        <relationshipLabel><!-- Job Executions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This field relates to the parent User Story Commit record of the job execution --></help>
+        <label><!-- User Story Commit --></label>
+        <name>copado__UserStoryCommit__c</name>
         <relationshipLabel><!-- Job Executions --></relationshipLabel>
     </fields>
     <fields>

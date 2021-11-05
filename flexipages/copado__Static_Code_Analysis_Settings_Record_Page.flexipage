@@ -206,19 +206,19 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.copado__CodeScan_Version__c</fieldItem>
-                <identifier>RecordCodeScan_Version__cField</identifier>
+                <identifier>Recordcopado__CodeScan_Version__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.copado__CodeScan_Token__c</fieldItem>
-                <identifier>RecordCodeScan_Token__cField</identifier>
+                <identifier>Recordcopado__CodeScan_Token__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.copado__CodeScan_URL__c</fieldItem>
-                <identifier>RecordCodeScan_URL__cField</identifier>
+                <identifier>Recordcopado__CodeScan_URL__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -240,7 +240,7 @@
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.copado__Cloud_Organization__c</fieldItem>
-                <identifier>RecordCloud_Organization__cField</identifier>
+                <identifier>Recordcopado__Cloud_Organization__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>

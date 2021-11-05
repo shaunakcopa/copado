@@ -431,7 +431,11 @@
         </style>
     </head>
 
-    <body style="{!IF($User.UIThemeDisplayed == 'Theme4d','margin: 12px;background-image: url(/_slds/images/themes/oneSalesforce/banner-brand-default.png?cache=210.2),linear-gradient(to top,rgba(32, 92, 159, 0), rgb(32, 92, 159));','')}">
+    <body style="{!IF(AND(!showLicenseError, $User.UIThemeDisplayed == 'Theme4d'),'margin: 12px;background-image: url(/_slds/images/themes/oneSalesforce/banner-brand-default.png?cache=210.2),linear-gradient(to top,rgba(32, 92, 159, 0), rgb(32, 92, 159));','')}">
+        <apex:outputPanel layout="block" rendered="{!showLicenseError}" style="{!IF($User.UIThemeDisplayed == 'Theme4d','padding: .75rem .75rem 0;','')}">
+            <apex:pageMessages id="licenseMessage"/>
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!!showLicenseError}">
         <!-- REQUIRED SLDS WRAPPER -->
         <div class="slds-scope">
             <!-- MASTHEAD -->
@@ -1494,6 +1498,7 @@
             </apex:form>
         </div>
         <!-- / REQUIRED SLDS WRAPPER -->
+        </apex:outputPanel>
     </body>
 
     </html>

@@ -278,6 +278,18 @@ CASE( copado__Stability__c,
         </valueSet>
     </fields>
     <label>Application</label>
+    <listViews>
+        <fullName>copado__All</fullName>
+        <columns>NAME</columns>
+        <columns>copado__Release_Status__c</columns>
+        <columns>copado__Stability__c</columns>
+        <columns>copado__Stability_Icon__c</columns>
+        <columns>copado__Parent_Application__c</columns>
+        <columns>copado__Product_Manager__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
     <nameField>
         <label>Name</label>
         <type>Text</type>

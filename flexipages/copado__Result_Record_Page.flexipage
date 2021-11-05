@@ -116,12 +116,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>context</name>
-                    <value>Result Detail</value>
-                </componentInstanceProperties>
-                <componentName>copado:resultStatusContainer</componentName>
-                <identifier>resultStatusContainer</identifier>
+                <componentName>copado:resultStatusMonitor</componentName>
+                <identifier>resultStatusMonitor</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

@@ -18,6 +18,12 @@
         </picklistValues>
     </fields>
     <fields>
+        <help><!-- Select a Job Template to override the default Commit Job Template defined in the Pipeline --></help>
+        <label><!-- Commit Job Template Override --></label>
+        <name>copado__CommitJobTemplateOverride__c</name>
+        <relationshipLabel><!-- Environments (Commit Job Template Override) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Compliance Rule Group --></label>
         <name>copado__Compliance_Rule_Group__c</name>
         <relationshipLabel><!-- Environments --></relationshipLabel>

@@ -56,6 +56,11 @@ The org credential where the unmanaged package is created from. --></help>
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Pipeline --></label>
+        <name>copado__Pipeline__c</name>
+        <relationshipLabel><!-- Packages --></relationshipLabel>
+    </fields>
+    <fields>
         <help><!-- The login URL that the force:auth commands use. If not specified, the default is login.salesforce.com. Override the default value if you want users to authorize to a specific Salesforce instance. --></help>
         <label><!-- Sfdc Login Url --></label>
         <name>copado__Sfdc_Login_Url__c</name>

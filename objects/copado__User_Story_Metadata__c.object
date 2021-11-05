@@ -215,6 +215,45 @@
         <label>Copado User Story Metadata Columns</label>
     </fieldSets>
     <fields>
+        <fullName>copado__Action__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Action to be performed with the current metadata when committing</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Action to be performed with the current metadata when committing</inlineHelpText>
+        <label>Action</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Category__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Represents a grouping of metadata, i.e. vlocity, cpq</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Represents a grouping of metadata, i.e. vlocity, cpq</inlineHelpText>
+        <label>Category</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__JsonInformation__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Additional values associated with this commit</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Additional values associated with this commit</inlineHelpText>
+        <label>Json Information</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__Last_Commit_Date__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -228,7 +267,20 @@
         <fullName>copado__Metadata_API_Name__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <label>Metadata API Name</label>
+        <label>File Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__ModuleDirectory__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Folder where the metadata is allocated</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Folder where the metadata is allocated</inlineHelpText>
+        <label>Directory</label>
         <length>255</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -301,6 +353,19 @@ TEXT(copado__Status__c)
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>copado__Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Type of the metadata</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Type of the metadata</inlineHelpText>
+        <label>Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>copado__Unique_ID__c</fullName>

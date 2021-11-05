@@ -9,8 +9,24 @@
         <name>copado__ConfigJson__c</name>
     </fields>
     <fields>
+        <label><!-- Custom Type --></label>
+        <name>copado__CustomType__c</name>
+    </fields>
+    <fields>
         <label><!-- Destination Id --></label>
         <name>copado__Destination_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Execution Sequence --></label>
+        <name>copado__ExecutionSequence__c</name>
+        <picklistValues>
+            <masterLabel>after</masterLabel>
+            <translation><!-- after --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>before</masterLabel>
+            <translation><!-- before --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Git Repository --></label>
@@ -74,8 +90,12 @@
     <fields>
         <label><!-- User Story --></label>
         <name>copado__UserStory__c</name>
-        <relationshipLabel><!-- Deployment Tasks --></relationshipLabel>
+        <relationshipLabel><!-- Deployment Steps --></relationshipLabel>
     </fields>
+    <validationRules>
+        <errorMessage><!-- Execution Sequence is required for Deployment steps --></errorMessage>
+        <name>copado__Execution_Sequence_Required</name>
+    </validationRules>
     <validationRules>
         <errorMessage><!-- JobTemplate, Execution, or User Story is required --></errorMessage>
         <name>copado__Template_OR_Execution_Is_Required</name>

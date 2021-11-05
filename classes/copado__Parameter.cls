@@ -6,4 +6,16 @@ methods, variables, and properties.
 To enable code to compile, all methods return null.
 */
 global class Parameter {
+    global Parameter() {
+
+    }
+    global Parameter(String name, String value) {
+
+    }
+    global copado.Parameter required(Boolean required) {
+        return null;
+    }
+    global copado.Parameter sensitive(Boolean sensitive) {
+        return null;
+    }
 }

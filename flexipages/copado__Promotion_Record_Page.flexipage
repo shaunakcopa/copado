@@ -37,37 +37,13 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>Edit</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>copado__Promotion__c.copado__Merge_Changes</value>
-                            <visibilityRule>
-                                <criteria>
-                                    <leftValue>{!Record.copado__Completed__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>false</rightValue>
-                                </criteria>
-                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>copado__Promotion__c.copado__Deploy_Changes</value>
-                            <visibilityRule>
-                                <criteria>
-                                    <leftValue>{!Record.copado__Completed__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>false</rightValue>
-                                </criteria>
-                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>copado__Promotion__c.copado__Merge_Deploy</value>
-                            <visibilityRule>
-                                <criteria>
-                                    <leftValue>{!Record.copado__Completed__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>false</rightValue>
-                                </criteria>
-                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>Clone</value>
@@ -115,7 +91,7 @@
                     <value>promotionRecordPageAlerts</value>
                 </componentInstanceProperties>
                 <componentName>copado:copadoAlertPlaceHolder</componentName>
-                <identifier>copadoAlertPlaceHolder</identifier>
+                <identifier>copado_copadoAlertPlaceHolder</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.copado__Platform__c}</leftValue>
@@ -146,7 +122,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Project__c</fieldItem>
-                <identifier>RecordProject__cField</identifier>
+                <identifier>Recordcopado__Project__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -156,23 +132,13 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Source_Environment__c</fieldItem>
-                <identifier>RecordSource_Environment__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.copado__Source_Org_Credential__c</fieldItem>
-                <identifier>RecordSource_Org_Credential__cField</identifier>
+                <identifier>Recordcopado__Source_Environment__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldItem>Record.copado__Platform__c</fieldItem>
-                <identifier>RecordPlatform__cField</identifier>
+                <identifier>Recordcopado__Platform__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -182,7 +148,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Back_Promotion__c</fieldItem>
-                <identifier>RecordBack_Promotion__cField</identifier>
+                <identifier>Recordcopado__Back_Promotion__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-f826e26f-69e5-4bcc-bc34-c3edb086ca5e</name>
@@ -196,7 +162,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Status__c</fieldItem>
-                <identifier>RecordStatus__cField</identifier>
+                <identifier>Recordcopado__Status__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -206,7 +172,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Release__c</fieldItem>
-                <identifier>RecordRelease__cField</identifier>
+                <identifier>Recordcopado__Release__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -216,17 +182,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Destination_Environment__c</fieldItem>
-                <identifier>RecordDestination_Environment__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.copado__Destination_Org_Credential__c</fieldItem>
-                <identifier>RecordDestination_Org_Credential__cField</identifier>
+                <identifier>Recordcopado__Destination_Environment__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -236,7 +192,18 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Send_Deployment_Complete_email__c</fieldItem>
-                <identifier>RecordSend_Deployment_Complete_email__cField</identifier>
+                <identifier>Recordcopado__Send_Deployment_Complete_email__cField</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.copado__Project__r.Name}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.copado__Release__r.Name}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-3db54dde-b584-4c1b-bdb6-8a316d79e10c</name>
@@ -274,7 +241,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Create_Full_Profiles_Step__c</fieldItem>
-                <identifier>RecordCreate_Full_Profiles_Step__cField</identifier>
+                <identifier>Recordcopado__Create_Full_Profiles_Step__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -284,7 +251,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Create_Full_Permission_Sets_Step__c</fieldItem>
-                <identifier>RecordCreate_Full_Permission_Sets_Step__cField</identifier>
+                <identifier>Recordcopado__Create_Full_Permission_Sets_Step__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-18a98155-3b56-4f1a-9355-5b09cd98c127</name>
@@ -298,7 +265,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Exclude_From_Auto_Resolve__c</fieldItem>
-                <identifier>RecordExclude_From_Auto_Resolve__cField</identifier>
+                <identifier>Recordcopado__Exclude_From_Auto_Resolve__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -308,7 +275,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Order_by__c</fieldItem>
-                <identifier>RecordOrder_by__cField</identifier>
+                <identifier>Recordcopado__Order_by__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-c16f281b-07c3-42a1-9f38-9fc62f261aab</name>
@@ -365,6 +332,18 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection2</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.copado__Platform__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Salesforce</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.copado__Platform__c}</leftValue>
+                        <operator>EQUAL</operator>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <name>Facet-1253e9d0-da3d-434e-8680-59d0c46d1ff0</name>
@@ -374,7 +353,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>copado:promotedUserStoriesContainer</componentName>
-                <identifier>promotedUserStoriesContainer</identifier>
+                <identifier>copado_promotedUserStoriesContainer</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-4ac3e53f-46f1-4640-b967-4bd8e7699ae8</name>
@@ -525,35 +504,21 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>context</name>
-                    <value>Promotion Execution</value>
+                    <name>fieldApiName</name>
+                    <value>Last_Promotion_Execution_Id__c</value>
                 </componentInstanceProperties>
-                <componentName>copado:resultStatusContainer</componentName>
-                <identifier>resultStatusContainer</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.copado__Platform__c}</leftValue>
-                        <operator>NE</operator>
-                        <rightValue>Salesforce</rightValue>
-                    </criteria>
-                </visibilityRule>
+                <componentName>copado:resultMonitor</componentName>
+                <identifier>copado_resultMonitor</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>context</name>
-                    <value>Deployment Execution</value>
+                    <name>fieldApiName</name>
+                    <value>Last_Deployment_Execution_Id__c</value>
                 </componentInstanceProperties>
-                <componentName>copado:resultStatusContainer</componentName>
-                <identifier>resultStatusContainer2</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.copado__Platform__c}</leftValue>
-                        <operator>NE</operator>
-                        <rightValue>Salesforce</rightValue>
-                    </criteria>
-                </visibilityRule>
+                <componentName>copado:resultMonitor</componentName>
+                <identifier>copado_resultMonitor2</identifier>
             </componentInstance>
         </itemInstances>
         <name>sidebar</name>

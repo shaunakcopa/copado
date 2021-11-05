@@ -142,6 +142,15 @@
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>copado__Job_Step</fullName>
+        <fields>Name</fields>
+        <fields>copado__Type__c</fields>
+        <fields>copado__JobTemplate__c</fields>
+        <fields>copado__JobExecution__c</fields>
+        <fields>copado__Status__c</fields>
+        <label>Job Step</label>
+    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
     <enableActivities>false</enableActivities>
@@ -177,6 +186,17 @@
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>copado__CustomType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Custom Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__Destination_Id__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -188,24 +208,45 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>copado__ExecutionSequence__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used to define the order of execution in the context of User Story Deployment</description>
+        <externalId>false</externalId>
+        <label>Execution Sequence</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>before</fullName>
+                    <default>false</default>
+                    <label>before</label>
+                </value>
+                <value>
+                    <fullName>after</fullName>
+                    <default>false</default>
+                    <label>after</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>copado__Git_Repository__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <formula>IF(NOT(ISBLANK(copado__JobExecution__r.copado__Snapshot__c)),
-
-  copado__JobExecution__r.copado__Snapshot__r.copado__Git_Repository__c,
-
-IF(NOT(ISBLANK(copado__JobExecution__r.copado__Commit__c)),
-
-  copado__JobExecution__r.copado__Commit__r.copado__Git_Repository__c,
-
-IF(NOT(ISBLANK(copado__JobExecution__r.copado__Promotion__c)),
-
-    copado__JobExecution__r.copado__Promotion__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__c,
-
-    copado__JobExecution__r.copado__Deployment__r.copado__Promotion__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__c
-
-)))</formula>
+        <formula>BLANKVALUE(
+    copado__JobExecution__r.copado__Snapshot__r.copado__Git_Repository__c, 
+    BLANKVALUE(
+        copado__JobExecution__r.copado__Pipeline__r.copado__Git_Repository__c,
+        BLANKVALUE(
+            copado__JobExecution__r.copado__Promotion__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__c, 
+            copado__JobExecution__r.copado__Deployment__r.copado__Promotion__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__c
+        )
+    )
+)</formula>
         <label>Git Repository</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -256,9 +297,7 @@ IF(NOT(ISBLANK(copado__JobExecution__r.copado__Promotion__c)),
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <formula>IF(NOT(ISBLANK( copado__JobExecution__r.copado__Deployment__c )), copado__JobExecution__r.copado__Deployment__r.copado__Promotion__r.OwnerId,
-IF(NOT(ISBLANK( copado__JobExecution__r.copado__Promotion__c )), copado__JobExecution__r.copado__Promotion__r.OwnerId, null
-)
-)</formula>
+    IF(NOT(ISBLANK( copado__JobExecution__r.copado__Promotion__c )), copado__JobExecution__r.copado__Promotion__r.OwnerId, OwnerId))</formula>
         <label>Parent Owner Id</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -269,15 +308,18 @@ IF(NOT(ISBLANK( copado__JobExecution__r.copado__Promotion__c )), copado__JobExec
         <fullName>copado__Pipeline_Id__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <formula>IF(NOT(ISBLANK(copado__JobExecution__r.copado__Promotion__c)),
-    IF(NOT(ISBLANK(copado__JobExecution__r.copado__Promotion__r.copado__Project__r.copado__Deployment_Flow__c)),
-        copado__JobExecution__r.copado__Promotion__r.copado__Project__r.copado__Deployment_Flow__c,
-        copado__JobExecution__r.copado__Promotion__r.copado__Release__r.copado__Project__r.copado__Deployment_Flow__c
-    ),
-    IF(NOT(ISBLANK(copado__JobExecution__r.copado__Deployment__r.copado__Promotion__r.copado__Project__r.copado__Deployment_Flow__c)),
-        copado__JobExecution__r.copado__Deployment__r.copado__Promotion__r.copado__Project__r.copado__Deployment_Flow__c,
-        copado__JobExecution__r.copado__Deployment__r.copado__Promotion__r.copado__Release__r.copado__Project__r.copado__Deployment_Flow__c
+        <formula>BLANKVALUE(
+copado__JobExecution__r.copado__Pipeline__c,
+BLANKVALUE(
+    copado__JobExecution__r.copado__Promotion__r.copado__Project__r.copado__Deployment_Flow__c, 
+    BLANKVALUE(
+        copado__JobExecution__r.copado__Promotion__r.copado__Release__r.copado__Project__r.copado__Deployment_Flow__c,
+        BLANKVALUE(
+            copado__JobExecution__r.copado__Deployment__r.copado__Promotion__r.copado__Project__r.copado__Deployment_Flow__c, 
+            copado__JobExecution__r.copado__Deployment__r.copado__Promotion__r.copado__Release__r.copado__Project__r.copado__Deployment_Flow__c
+        )
     )
+)
 )</formula>
         <label>Pipeline Id</label>
         <required>false</required>
@@ -368,7 +410,7 @@ IF(NOT(ISBLANK( copado__JobExecution__r.copado__Promotion__c )), copado__JobExec
         <externalId>false</externalId>
         <label>User Story</label>
         <referenceTo>copado__User_Story__c</referenceTo>
-        <relationshipLabel>Deployment Tasks</relationshipLabel>
+        <relationshipLabel>Deployment Steps</relationshipLabel>
         <relationshipName>JobSteps</relationshipName>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -382,6 +424,14 @@ IF(NOT(ISBLANK( copado__JobExecution__r.copado__Promotion__c )), copado__JobExec
     <pluralLabel>Job Steps</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>copado__Execution_Sequence_Required</fullName>
+        <active>true</active>
+        <description>Execution Sequence is required for Deployment steps</description>
+        <errorConditionFormula>AND( copado__UserStory__c &lt;&gt; null, ISPICKVAL(copado__ExecutionSequence__c, &quot;&quot;))</errorConditionFormula>
+        <errorDisplayField>copado__ExecutionSequence__c</errorDisplayField>
+        <errorMessage>Execution Sequence is required for Deployment steps</errorMessage>
+    </validationRules>
     <validationRules>
         <fullName>copado__Template_OR_Execution_Is_Required</fullName>
         <active>true</active>
