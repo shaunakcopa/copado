@@ -23,7 +23,7 @@
     <enableLwcInDashboards>false</enableLwcInDashboards>
     <enableMassEnableReportBuilder>true</enableMassEnableReportBuilder>
     <enableNewChartsEngine>true</enableNewChartsEngine>
-    <enableOrgHasMobileOfflineEnabled>false</enableOrgHasMobileOfflineEnabled>
+    <enableOrgHasMobileOfflineEnabled>true</enableOrgHasMobileOfflineEnabled>
     <enableOrgHasWatchlistEnabled>true</enableOrgHasWatchlistEnabled>
     <enableQueryLiveConnectors>true</enableQueryLiveConnectors>
     <enableRemoveFooterForRepDisplay>false</enableRemoveFooterForRepDisplay>
