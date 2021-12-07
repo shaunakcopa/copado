@@ -19,6 +19,12 @@
         <relationshipLabel><!-- Tests --></relationshipLabel>
     </fields>
     <fields>
+        <help><!-- The displayed values are based on the name of the Integrations available in your org. The configuration and status of the Integration will be used for your Tests. --></help>
+        <label><!-- Tool --></label>
+        <name>copado__Integration__c</name>
+        <relationshipLabel><!-- Tests --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Priority --></label>
         <name>copado__Priority__c</name>
         <picklistValues>

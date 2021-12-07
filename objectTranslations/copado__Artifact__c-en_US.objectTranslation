@@ -17,6 +17,10 @@
         <name>copado__Description__c</name>
     </fields>
     <fields>
+        <label><!-- Last Job Execution Id --></label>
+        <name>copado__LastJobExecutionId__c</name>
+    </fields>
+    <fields>
         <help><!-- Enables the package creation with no namespace; available only for unlocked packages. --></help>
         <label><!-- No Namespace --></label>
         <name>copado__No_Namespace__c</name>

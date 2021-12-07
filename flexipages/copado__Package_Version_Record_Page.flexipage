@@ -34,6 +34,9 @@
                         <valueListItems>
                             <value>PrintableView</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>copado__Artifact_Version__c.copado__PublishPackageVersion</value>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -96,6 +99,9 @@
                         <valueListItems>
                             <value>CustomButton.copado__Artifact_Version__c.copado__Promote_Beta_to_Released</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>copado__Artifact_Version__c.copado__PublishPackageVersion</value>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -127,6 +133,12 @@
                         <rightValue>User_Story_Bundle</rightValue>
                     </criteria>
                 </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:packageVersionPublishMessage</componentName>
+                <identifier>packageVersionPublishMessage</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -968,6 +980,16 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>fieldApiName</name>
+                    <value>LastJobExecutionId__c</value>
+                </componentInstanceProperties>
+                <componentName>copado:resultMonitor</componentName>
+                <identifier>resultMonitor</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>

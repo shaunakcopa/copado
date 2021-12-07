@@ -152,4 +152,8 @@
         <errorMessage><!-- Back Promotions to Scratch Orgs are not allowed --></errorMessage>
         <name>copado__Scratch_Orgs_Disabled_for_Back_Promoting</name>
     </validationRules>
+    <webLinks>
+        <label><!-- Rollback --></label>
+        <name>copado__Rollback</name>
+    </webLinks>
 </CustomObjectTranslation>
