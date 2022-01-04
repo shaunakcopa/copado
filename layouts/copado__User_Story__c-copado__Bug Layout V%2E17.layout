@@ -13,6 +13,7 @@
     <customButtons>copado__Copado_DX</customButtons>
     <customButtons>copado__Select_Base_Branch</customButtons>
     <customButtons>copado__Add_Apex_Tests</customButtons>
+    <customButtons>copado__Open_Org</customButtons>
     <layoutSections>
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
@@ -675,7 +676,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h1n0000050AjB</masterLabel>
+        <masterLabel>00h5g000000NgIy</masterLabel>
         <sizeX>3</sizeX>
         <sizeY>1</sizeY>
         <summaryLayoutItems>

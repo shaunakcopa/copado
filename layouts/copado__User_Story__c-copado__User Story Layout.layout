@@ -3,6 +3,7 @@
     <customButtons>copado__Commit_Files</customButtons>
     <customButtons>copado__Ready_for_Promotion</customButtons>
     <customButtons>copado__Perform_Validation</customButtons>
+    <customButtons>copado__Commit_Data</customButtons>
     <customButtons>copado__Add_Metadata</customButtons>
     <customButtons>copado__Apex_Test</customButtons>
     <customButtons>copado__Run_Static_Code_Analysis</customButtons>
@@ -13,6 +14,7 @@
     <customButtons>copado__Copado_DX</customButtons>
     <customButtons>copado__Select_Base_Branch</customButtons>
     <customButtons>copado__Add_Apex_Tests</customButtons>
+    <customButtons>copado__Open_Org</customButtons>
     <layoutSections>
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
@@ -507,6 +509,10 @@
         <relatedList>copado__Apex_Test_Result__c.copado__User_Story__c</relatedList>
         <sortField>CREATED_DATE</sortField>
         <sortOrder>Desc</sortOrder>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>copado__User_Story_Data_Commit__c.copado__User_Story__c</relatedList>
     </relatedLists>
     <relatedLists>
         <excludeButtons>New</excludeButtons>

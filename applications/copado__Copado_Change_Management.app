@@ -2,6 +2,7 @@
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
     <defaultLandingTab>standard-home</defaultLandingTab>
     <description>Work with User Stories, Sprints, Epics and Projects.</description>
+    <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Copado Developer</label>
@@ -12,7 +13,6 @@
     <tabs>copado__Work_Manager</tabs>
     <tabs>copado__Sprint__c</tabs>
     <tabs>copado__Epic__c</tabs>
-    <tabs>copado__Theme__c</tabs>
     <tabs>copado__Test_Script__c</tabs>
     <tabs>copado__Test_Run__c</tabs>
     <tabs>copado__Release__c</tabs>
