@@ -6,6 +6,11 @@
         <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>copado__CopadoTests</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>copado__Copado_Branch_Management</application>
         <default>false</default>
         <visible>false</visible>
@@ -540,6 +545,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CloneFunctionHandler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CloneFunctionHandlerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ClonePipeline</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -744,6 +757,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CopadoCredentialValidatorCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CopadoCredentialValidatorCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__CopadoDeploymentWizardTestDefaults</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -921,6 +942,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__CredentialsHandlersTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CustomHighlightPanelController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CustomHighlightPanelCtrlTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -2124,6 +2153,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__MC_MassBackPromoteBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__MC_MassBackPromoteBatchTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ManageEnvVarsExt</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -2216,6 +2253,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__MockRunTestsActionCallback</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__MultiCloudAutomationsSelector</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -2265,6 +2306,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__OnJobStepCompleteTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__OpenPullRequestController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__OpenPullRequestTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -2824,6 +2873,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__RollbackWizardValidationExt</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__RunAllOrgApexTests</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -2913,6 +2966,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__RunTestGroupsBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__RunTestsAction</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__RunTestsActionTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -7366,6 +7427,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Artifact_Version__c.copado__DefinitionFile__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Artifact_Version__c.copado__Is_released__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -7452,6 +7518,21 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Artifact__c.copado__Artifact_Version__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Artifact__c.copado__DataJSON__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Artifact__c.copado__DefaultBranch__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Artifact__c.copado__DefaultPath__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -9411,6 +9492,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Git_Repository__c.copado__Allow_Functions_Git_Cache__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Git_Repository__c.copado__Branch_Base_URL__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -9992,6 +10078,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Promotion__c.copado__Exclude_From_Auto_Resolve__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Promotion__c.copado__Is_Rolled_Back__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -11356,6 +11447,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__TestType__mdt.copado__JobTemplate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__TestType__mdt.copado__Namespace__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -11577,6 +11673,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Test__c.copado__Configuration__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Test__c.copado__ExtensionConfiguration__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -13615,6 +13716,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>copado__StandardRecordStatus</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>copado__Static_Code_Analysis_Result__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
