@@ -260,6 +260,7 @@
                 <value>
                     <fullName>Branches</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>Branches</label>
                 </value>
                 <value>
