@@ -263,15 +263,16 @@
                     <label>Branches</label>
                 </value>
                 <value>
-                    <fullName>Org Metadata</fullName>
-                    <default>false</default>
-                    <label>Org Metadata</label>
-                </value>
-                <value>
                     <fullName>Git Artifacts</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
                     <label>Git Artifacts</label>
+                </value>
+                <value>
+                    <fullName>Org Metadata</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Org Metadata</label>
                 </value>
                 <value>
                     <fullName>Package Artifacts</fullName>
