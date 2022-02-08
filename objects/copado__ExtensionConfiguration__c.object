@@ -277,7 +277,7 @@
             </valueSetDefinition>
         </valueSet>
     </fields>
-    <label>Integration</label>
+    <label>Extension Configuration</label>
     <listViews>
         <fullName>copado__All</fullName>
         <filterScope>Everything</filterScope>
@@ -287,7 +287,7 @@
         <label>Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Integrations</pluralLabel>
+    <pluralLabel>Extension Configurations</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

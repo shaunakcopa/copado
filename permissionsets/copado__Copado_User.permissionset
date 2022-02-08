@@ -5,6 +5,10 @@
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>copado__CopadoTests</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>copado__Copado_Branch_Management</application>
         <visible>true</visible>
     </applicationVisibilities>
@@ -341,6 +345,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CopadoCredentialValidatorCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__CopadoLicensesComponentController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -354,10 +362,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__CreateAttachmentAction</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__CreateExtensionTestCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -386,6 +390,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__CredentialsButtonsHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CustomHighlightPanelController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -2512,6 +2520,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Artifact_Version__c.copado__DefinitionFile__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Artifact_Version__c.copado__Is_released__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2588,6 +2601,21 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Artifact__c.copado__Artifact_Version__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact__c.copado__DataJSON__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact__c.copado__DefaultBranch__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Artifact__c.copado__DefaultPath__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3801,7 +3829,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>copado__Deployment__c.copado__Rolled_back_Deployment__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3926,7 +3954,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>copado__Environment__c.copado__Enable_Rollback__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4713,6 +4741,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Promotion__c.copado__Exclude_From_Auto_Resolve__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Promotion__c.copado__Is_Rolled_Back__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6252,12 +6285,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>copado__Test__c.copado__Feature__c</field>
+        <field>copado__Test__c.copado__ExtensionConfiguration__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>copado__Test__c.copado__Integration__c</field>
+        <field>copado__Test__c.copado__Feature__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -8722,6 +8755,10 @@
     </tabSettings>
     <tabSettings>
         <tab>copado__StandardRecordStatus</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>copado__Static_Code_Analysis_Result__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>

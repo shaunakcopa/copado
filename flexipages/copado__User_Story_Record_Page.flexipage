@@ -3254,13 +3254,17 @@
                 <componentName>flexipage:visualforcePage</componentName>
                 <identifier>flexipage_visualforcePage2</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 AND 2</booleanFilter>
+                    <booleanFilter>(1 AND 2) OR (1 AND 3)</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.copado__Environment__r.Name}</leftValue>
                         <operator>NE</operator>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.copado__Project__r.Name}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.copado__Release__r.Name}</leftValue>
                         <operator>NE</operator>
                     </criteria>
                 </visibilityRule>
