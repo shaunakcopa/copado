@@ -38,16 +38,8 @@
         <label><!-- Copado DX Mode --></label>
         <name>copado__Copado_DX_Mode__c</name>
         <picklistValues>
-            <masterLabel>Branches</masterLabel>
-            <translation><!-- Branches --></translation>
-        </picklistValues>
-        <picklistValues>
             <masterLabel>Git Package</masterLabel>
             <translation><!-- Git Package --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Org Metadata</masterLabel>
-            <translation><!-- Org Metadata --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Salesforce Package</masterLabel>

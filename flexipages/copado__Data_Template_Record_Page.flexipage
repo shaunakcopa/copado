@@ -43,6 +43,12 @@
                         </valueListItems>
                         <valueListItems>
                             <value>copado__Data_Template__c.copado__Clone</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Main_Object__c}</leftValue>
+                                    <operator>NE</operator>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>

@@ -69,12 +69,23 @@ var apexTestResult = {
     getUserStoryAttachment: function(name, parentId){
         var me = apexTestResult;
         try{
-            var result = sforce.connection.query("Select Id, Name, Body from Attachment where Name='"+name+"' and ParentId='"+parentId+"' limit 1");
+            let result = sforce.connection.query("Select Id, Name, Body from Attachment where Name='"+name+"' and ParentId='"+parentId+"' Order By LastModifiedDate DESC limit 1");
             records = result.getArray("records");
             return records;
         }
         catch(error){
             console.error('Error getting attachment by name and parentId: '+error);
+            return;
+        }
+    },
+    getUserStoryAllAttachments: function(name, parentId){
+        try{
+            let result = sforce.connection.query("Select Id from Attachment where Name='"+name+"' and ParentId='"+parentId+"'");
+            var records = result.getArray("records");
+            return records;
+        }
+        catch(error){
+            console.error('Error getting all attachment by name and parentId: '+error);
             return;
         }
     },
@@ -315,8 +326,14 @@ var apexTestResult = {
         apexTestsButton.attr('disabled', true);
 
         try{
-            sforce.connection.deleteIds([me._apexTestResultAttachmentID]);
-        }catch(e){}
+            let result = me.getUserStoryAllAttachments('ApexTestResult',copadoApp.userStoryId);
+            if(result.length > 0){
+                const attachmentIds = result.map(result => result.Id);
+                sforce.connection.deleteIds(attachmentIds);
+            }
+        }catch(e){
+            console.error('error occured while deleting the attachment', e);
+        }
         //launch the tests
         me.getOrgTestClasses(function(){
 

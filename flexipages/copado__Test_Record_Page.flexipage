@@ -64,8 +64,8 @@
                     <name>uiBehavior</name>
                     <value>required</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.copado__Integration__c</fieldItem>
-                <identifier>RecordIntegration_cField1</identifier>
+                <fieldItem>Record.copado__ExtensionConfiguration__c</fieldItem>
+                <identifier>RecordExtensionConfiguration_cField1</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
