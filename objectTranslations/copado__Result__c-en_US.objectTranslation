@@ -6,7 +6,7 @@
         <name>copado__ApexCallback__c</name>
     </fields>
     <fields>
-        <label><!-- Custom Function Used Credits --></label>
+        <label><!-- Copado Credits Used --></label>
         <name>copado__Custom_Function_Used_Credits__c</name>
     </fields>
     <fields>
@@ -80,11 +80,11 @@
     </fields>
     <fields>
         <help><!-- Unique identifier for the jobs. --></help>
-        <label><!-- Job Id --></label>
+        <label><!-- External Job ID --></label>
         <name>copado__Job_Id__c</name>
     </fields>
     <fields>
-        <label><!-- Job Type --></label>
+        <label><!-- Job API Name --></label>
         <name>copado__Job_Type__c</name>
         <picklistValues>
             <masterLabel>Integration</masterLabel>
@@ -93,12 +93,16 @@
     </fields>
     <fields>
         <help><!-- Link to open more information about the results. --></help>
-        <label><!-- Link --></label>
+        <label><!-- External Result Link --></label>
         <name>copado__Link__c</name>
     </fields>
     <fields>
-        <label><!-- ParentId --></label>
+        <label><!-- Context ID --></label>
         <name>copado__ParentId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent --></label>
+        <name>copado__Parent__c</name>
     </fields>
     <fields>
         <help><!-- This status is used to track the current job activity. --></help>
@@ -151,7 +155,7 @@
         <relationshipLabel><!-- Results --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- Timeout --></label>
+        <label><!-- Timeout (minutes) --></label>
         <name>copado__Timeout__c</name>
     </fields>
     <fields>

@@ -5,10 +5,13 @@ This read-only file shows the class's global constructors,
 methods, variables, and properties.
 To enable code to compile, all methods return null.
 */
-global class PackageVersionCreateAction implements copado.Actionable {
+global class PackageVersionCreateAction implements copado.JobExecutionCallback {
     @InvocableMethod(label='Package Version Create Action')
     global static List<copado.PackageVersionCreateAction.Response> create(List<copado.PackageVersionCreateAction.Request> requests) {
         return null;
+    }
+    global void execute(copado__JobExecution__c job, String status) {
+
     }
 global class Request {
     @InvocableVariable(label='Description' required=false)

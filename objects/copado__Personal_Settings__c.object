@@ -86,6 +86,16 @@
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
+    <fields>
+        <fullName>copado__MaskApiKey__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Default is false to maintain compatibility. Only if the user changes it to true the API Key will be masked or replaced by a placeholder.</description>
+        <externalId>false</externalId>
+        <label>Mask API Key</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
     <label>Personal Settings</label>
     <visibility>Public</visibility>
 </CustomObject>

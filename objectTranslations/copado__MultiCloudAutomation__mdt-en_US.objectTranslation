@@ -5,6 +5,10 @@
         <name>copado__DeployAPIName__c</name>
     </fields>
     <fields>
+        <label><!-- PackageCreateApiName --></label>
+        <name>copado__PackageCreateApiName__c</name>
+    </fields>
+    <fields>
         <label><!-- PackageImportAPIName --></label>
         <name>copado__PackageImportAPIName__c</name>
     </fields>
