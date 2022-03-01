@@ -7,6 +7,7 @@
         <members>Activities</members>
         <members>Address</members>
         <members>Analytics</members>
+        <members>AnalyticsDataServices</members>
         <members>Apex</members>
         <members>AppAnalytics</members>
         <members>AppExperience</members>
@@ -54,9 +55,9 @@
         <members>Formula</members>
         <members>GoogleApps</members>
         <members>Ideas</members>
+        <members>IncidentMgmt</members>
         <members>Industries</members>
         <members>InvocableAction</members>
-        <members>IsvHammer</members>
         <members>Knowledge</members>
         <members>Language</members>
         <members>LeadConfig</members>
@@ -114,5 +115,5 @@
         <members>WorkDotCom</members>
         <name>Settings</name>
     </types>
-    <version>53.0</version>
+    <version>54.0</version>
 </Package>
