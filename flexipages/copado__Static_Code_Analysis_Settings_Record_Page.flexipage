@@ -85,6 +85,12 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldItem>Record.copado__ReportIssuesFromLatestCommit__c</fieldItem>
+                <identifier>RecordReportIssuesFromLatestCommit_cField1</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
                     <value>none</value>

@@ -809,7 +809,7 @@
                                 t = main.allItems.length;
                             }
                         }
-                        (core).WorkManager.saveNewClause('\''+rid+'\'',queryObject,clause,function(result,event){
+                        (core).WorkManager.saveNewClause(rid,queryObject,clause,function(result,event){
                             if(event.status){
                                 console.info('The record has been successfully updated.');
                             }else{

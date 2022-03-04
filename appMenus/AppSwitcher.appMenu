@@ -160,4 +160,8 @@
         <name>copado__CopadoTests</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>copadoccmint__Copado_Integrations</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>

@@ -10,7 +10,6 @@
 		<c:IncludeStaticsResourceComponent addJquery="true" addFAcss="true" />
 		<script type="text/javascript">
 			var Copado_Licenses = {!CurrentUserLicenses};
-
 		</script>
 		<c:IncludeConnectionJsComponent />
 		<c:WizardUtils />
@@ -278,7 +277,7 @@
 			<apex:actionFunction immediate="true" name="setUserStory" reRender="scripts" action="{!populateUserStoryRelation}" oncomplete="usOp();">
 				<apex:param name="ustryName" value="" />
 			</apex:actionFunction>
-			
+
 			<div class="slds-page-header" style="{!IF($User.UIThemeDisplayed == 'Theme4d','background: #fdfdfd;margin-bottom: 12px;border-collapse: collapse;border-radius: 4px;','')}">
 				<div class="slds-grid">
 					<div class="slds-col slds-has-flexi-truncate">
@@ -318,7 +317,7 @@
 			</div>
 
 			<apex:outputPanel style="margin-bottom: 12px;" layout="block" id="pageMessages">
-				<apex:pagemessages id="pmessage"/>
+				<apex:pagemessages id="pmessage" />
 			</apex:outputPanel>
 
 			<div style="padding: 12px;background: #fdfdfd;border-collapse: collapse; background: #fdfdfd;border-radius: 4px;">
@@ -372,35 +371,36 @@
 								<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == ''}">
 								</apex:outputPanel>
 								<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Manual Task'}">
-									<c:ManualTaskComponent deploymentTask="{!copado__Deployment_Task__c}" isEdit="true" userStoryIdOfDeploymentTask="{!copado__Deployment_Task__c.copado__User_Story__c}"/>
+									<c:ManualTaskComponent deploymentTask="{!copado__Deployment_Task__c}" isEdit="true" userStoryIdOfDeploymentTask="{!copado__Deployment_Task__c.copado__User_Story__c}"
+									/>
 									<script type="text/javascript">
 										datasetup.save = function () {
 											var manualTask = {};
 											var Perform_in_Source_Org = $copado('[Id$="jsPerformInSource"]').prop('checked');
 											var Perform_in_Destination_Orgs = $copado('[Id$="jsPerformInDestinations"]').prop('checked');
-                                            var Disable_Task_for_Back_Promotions = $copado('[Id$="jsDisableTaskForBackPromotions"]').prop('checked');
+											var Disable_Task_for_Back_Promotions = $copado('[Id$="jsDisableTaskForBackPromotions"]').prop('checked');
 											var Task_Description = $copado('[Id$="jsTaskDesc"]').val();
 											var Task_Owner = $copado('[Id$="jsTaskOwner_lkid"]').val();
 											var Notify_Task_Owner = $copado('[Id$="jsNotifyTaskOwner"]').val();
-                                            var Apply_to = $copado('[Id$="jsApplyTo"]').val();
-                                            var selectedEnvironmentsSelectList = $copado('[Id$="rightList"]')[0];
-                                            var result = [];
-                                            var options = selectedEnvironmentsSelectList && selectedEnvironmentsSelectList.options;
-                                            var opt;
-                                            if(options) {
-                                                for (var i=0, iLen=options.length; i<iLen; i++) {
-                                                    opt = options[i];
-                                                    result.push(opt.value || opt.text);
-                                                }
-                                            }
+											var Apply_to = $copado('[Id$="jsApplyTo"]').val();
+											var selectedEnvironmentsSelectList = $copado('[Id$="rightList"]')[0];
+											var result = [];
+											var options = selectedEnvironmentsSelectList && selectedEnvironmentsSelectList.options;
+											var opt;
+											if (options) {
+												for (var i = 0, iLen = options.length; i < iLen; i++) {
+													opt = options[i];
+													result.push(opt.value || opt.text);
+												}
+											}
 											manualTask.Perform_in_Source_Org = Perform_in_Source_Org;
 											manualTask.Perform_in_Destination_Orgs = Perform_in_Destination_Orgs;
 											manualTask.Task_Description = Task_Description;
 											manualTask.Task_Owner = Task_Owner;
 											manualTask.Notify_Task_Owner = Notify_Task_Owner;
-                                            manualTask.Apply_to = Apply_to;
-                                            manualTask.Disable_Task_for_Back_Promotions = Disable_Task_for_Back_Promotions;
-                                            manualTask.Selected_Environments = result;
+											manualTask.Apply_to = Apply_to;
+											manualTask.Disable_Task_for_Back_Promotions = Disable_Task_for_Back_Promotions;
+											manualTask.Selected_Environments = result;
 											return JSON.stringify(manualTask);
 										}
 										datasetup.setPreviousData = function (data) {
@@ -409,9 +409,9 @@
 												$copado('[Id$="jsTaskDesc"]').val(data.Task_Description);
 												$copado('[Id$="jsPerformInSource"]').prop('checked', data.Perform_in_Source_Org);
 												$copado('[Id$="jsPerformInDestinations"]').prop('checked', data.Perform_in_Destination_Orgs);
-                                                $copado('[Id$="jsDisableTaskForBackPromotions"]').prop('checked', data.Disable_Task_for_Back_Promotions);
+												$copado('[Id$="jsDisableTaskForBackPromotions"]').prop('checked', data.Disable_Task_for_Back_Promotions);
 												$copado('[Id$="jsNotifyTaskOwner"]').val(data ? data.Notify_Task_Owner : 'None');
-                                                $copado('[Id$="jsApplyTo"]').val(data ? data.Apply_to : 'None');
+												$copado('[Id$="jsApplyTo"]').val(data ? data.Apply_to : 'None');
 												$copado('[Id$="jsTaskOwner_lkid"]').val(data ? data.Task_Owner : null);
 
 												if (data.Task_Owner != undefined && data.Task_Owner != '') {
@@ -432,18 +432,18 @@
 													});
 												}
 
-                                                var selectedEnvironments = data ? data.Selected_Environments : [];
-                                                var leftEnvironmentsSelectList = $copado('[Id$="leftList"]')[0];
-                                                var result = [];
-                                                var options = leftEnvironmentsSelectList && leftEnvironmentsSelectList.options;
-                                                var opt;
-                                                if(options) {
-                                                    for (var i = 0, iLen = options.length; i<iLen; i++) {
-                                                        opt = options[i];
-                                                        opt.selected = selectedEnvironments.includes(opt.value);;
-                                                    }
-                                                    moveSelectedOptions($copado('[Id$="leftList"]')[0].id,$copado('[Id$="rightList"]')[0].id, $copado('[Id$="leftHidden"]')[0].id, $copado('[Id$="rightHidden"]')[0].id);
-                                                }
+												var selectedEnvironments = data ? data.Selected_Environments : [];
+												var leftEnvironmentsSelectList = $copado('[Id$="leftList"]')[0];
+												var result = [];
+												var options = leftEnvironmentsSelectList && leftEnvironmentsSelectList.options;
+												var opt;
+												if (options) {
+													for (var i = 0, iLen = options.length; i < iLen; i++) {
+														opt = options[i];
+														opt.selected = selectedEnvironments.includes(opt.value);;
+													}
+													moveSelectedOptions($copado('[Id$="leftList"]')[0].id, $copado('[Id$="rightList"]')[0].id, $copado('[Id$="leftHidden"]')[0].id, $copado('[Id$="rightHidden"]')[0].id);
+												}
 											} else {
 												$copado('[id$=jsTaskOwner]').val(null);
 											}
@@ -539,7 +539,7 @@
 											let sourceDataSetPanel = document.getElementById('dataSetSourcePanel');
 											let dataTemplateRadioOption = document.getElementById('ENVIRONMENT');
 											if (sourceDataTemplatePanel && sourceDataSetPanel && dataTemplateRadioOption) {
-												switch (type) {	
+												switch (type) {
 													case 'ENVIRONMENT':
 													case undefined:
 														sourceDataTemplatePanel.style.display = 'block';
@@ -579,7 +579,7 @@
 											if (data) {
 												data = JSON.parse(data);
 												let type = data.source ? data.source.type : 'ENVIRONMENT';
-												$copado('#'+type+'[name="DataSourceType"]').prop('checked', true);
+												$copado('#' + type + '[name="DataSourceType"]').prop('checked', true);
 												toggleDataTemplateHtmlElements();
 												switch (type) {
 													case 'ENVIRONMENT':
@@ -688,7 +688,7 @@
 													customSetting.ops.createGrid(customSetting.data.values, customSetting.data.values);
 													//customSetting.ops.onSelectObject(data.csName,data.sco);
 													var res = customSetting.data.values,
-													len = undefined;
+														len = undefined;
 												} catch (err) {
 													console.warn(err);
 												}
@@ -718,6 +718,66 @@
 										//moved methods into salesforceFlow resource to be able to use them without repeating on Quality gate page
 										datasetup.save = salesforceFlow.save;
 										datasetup.setPreviousData = salesforceFlow.setPreviousData;
+									</script>
+								</apex:outputPanel>
+
+								<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Function'}">
+									<c:FunctionComponent isEdit="true" />
+									<script>
+										datasetup.save = function () {
+											var saveFunction = {};
+											var Function_ApiName = $copado('[Id$="jsFunction_api"]').val();
+											if (!Function_ApiName) {
+												alert('Please Select a Function.');
+												return false;
+											}
+											var divElem = document.querySelectorAll("#js-Function-Param input");
+											var paramArray = [];
+											for (var i = 0; i < divElem.length; i++) {
+												var param_name = document.querySelectorAll("#js-Function-Param span")[i].innerText;
+												var param_val = document.querySelectorAll("#js-Function-Param input")[i].value;
+
+												paramArray.push({ "name": param_name, "value": param_val });
+											}
+											saveFunction.functionAPIName = Function_ApiName;
+											saveFunction.functionParameters = paramArray;
+											return JSON.stringify(saveFunction);
+										}
+
+										datasetup.setPreviousData = function (data) {
+											if (data) {
+												data = JSON.parse(data);
+												$copado('[Id$="jsFunction_lkold"]').val(data ? data.functionAPIName : null);
+
+												if (data.functionAPIName != undefined && data.functionAPIName != '') {
+													var namespace = '{!JSENCODE(settings.namespace)}';
+													var noNamespaceQuery = 'SELECT Id, Name, API_Name__c, Parameters__c FROM Function__c WHERE API_Name__c = \'' + data.functionAPIName + '\' LIMIT 1';
+													var withNamespaceQuery = 'SELECT Id, Name, copado__API_Name__c, copado__Parameters__c FROM copado__Function__c WHERE copado__API_Name__c = \'' + data.functionAPIName + '\' LIMIT 1';
+													var query = namespace ? withNamespaceQuery : noNamespaceQuery;
+
+													sforce.connection.query(query, {
+														onSuccess: function (result) {
+															var records = result.getArray("records");
+
+															if (records.length == 1) {
+																var recordId = records[0].Id;
+																var recordName = records[0].Name;
+																$copado('[Id$="jsFunction"]').val(recordName);
+																$copado('[Id$="jsFunction_lkid"]').val(recordId);
+																document.getElementById('jsFunction').onchange();
+															}
+														},
+														onFailure: function (error) {
+															console.error("An error has occurred " + error);
+														}
+													});
+												}
+
+
+											} else {
+												$copado('[id$=jsFunction]').val(null);
+											}
+										}
 									</script>
 								</apex:outputPanel>
 							</div>

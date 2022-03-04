@@ -724,7 +724,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                 requestHeaders: {
                     'userId': dataObject.userId,
                     'orgId': dataObject.organizationId,
-                    'token': dataObject.token
+                    'token2': dataObject.token2
                 },
                 method: 'GET',
                 onSuccess: (response) => {
@@ -801,7 +801,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                 sourceOrgId: existingDataObject.sourceOrgId,
                 userId: existingDataObject.userId,
                 organizationId: existingDataObject.organizationId,
-                token: existingDataObject.token,
+                token2: existingDataObject.token2,
                 endpoint: existingDataObject.endpoint,
                 globalDescribe: existingDataObject.globalDescribe,
                 namespace: existingDataObject.namespace ? existingDataObject.namespace : ''
@@ -866,7 +866,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                 sourceOrgId: parsedData.sourceOrgId,
                 userId: parsedData.userId,
                 organizationId: parsedData.organizationId,
-                token: parsedData.token,
+                token2: parsedData.token2,
                 endpoint: parsedData.objectCalloutEndpoint,
                 namespace: parsedData.namespace ? parsedData.namespace : ''
             };
@@ -878,7 +878,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                         requestHeaders: {
                             'userId': parsedData.userId,
                             'orgId': parsedData.organizationId,
-                            'token': parsedData.token
+                            'token2': parsedData.token2
                         },
                         method: 'GET',
                         onSuccess: (response) => {

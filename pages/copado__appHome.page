@@ -386,7 +386,7 @@
                                         </apex:pageBlockSectionItem>
                                     </apex:pageBlockSection>
                                 </apex:pageBlock>
-                                <apex:actionFunction name="doPrivateSettingUdate" action="{!updatePrivateSettings}" reRender="pbAPIKey" />
+                                <apex:actionFunction name="doPrivateSettingUdate" action="{!updatePrivateSettings}" reRender="messagesContainer, pbAPIKey" />
                             </apex:tab>
                             <apex:tab label="{!$Label.copado__transactions}" name="transactions" id="tabThree">
                                 <apex:pageBlock id="pbTrans" title="{!$Label.copado__transactions}" helpUrl="https://docs.copado.com/copado-licenses/credit-usage"

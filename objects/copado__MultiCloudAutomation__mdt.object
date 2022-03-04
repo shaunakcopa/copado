@@ -12,6 +12,17 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>copado__PackageCreateApiName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>PackageCreateApiName</label>
+        <length>80</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__PackageImportAPIName__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>

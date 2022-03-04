@@ -1387,7 +1387,7 @@ var MetadataGrid3 = (() => {
                 'cache-control': ' no-cache',
                 userId: _temp_conf.userId,
                 orgId: _temp_conf.orgId,
-                token: _temp_conf.token
+                token2: _temp_conf.token2
             },
             method: 'GET',
             onSuccess: (response) => {
