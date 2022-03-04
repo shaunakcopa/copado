@@ -270,6 +270,7 @@
     </fields>
     <fields>
         <fullName>CleanStatus</fullName>
+        <complianceGroup>HIPAA</complianceGroup>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
