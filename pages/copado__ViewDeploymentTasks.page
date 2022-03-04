@@ -251,8 +251,8 @@
 													$copado('[Id$=jsTaskDescView]').text(data.Task_Description);
 													$copado('[Id$=jsPerformInSourceView]').prop('checked', data.Perform_in_Source_Org);
 													$copado('[Id$=jsPerformInDestinationsView]').prop('checked', data.Perform_in_Destination_Orgs);
-                                                    $copado('[Id$=jsDisableTaskForBackPromotionsView]').prop('checked', data.Disable_Task_for_Back_Promotions);
-                                                    $copado('[Id$="jsApplyToView"]').val(data ? data.Apply_to : 'None');
+													$copado('[Id$=jsDisableTaskForBackPromotionsView]').prop('checked', data.Disable_Task_for_Back_Promotions);
+													$copado('[Id$="jsApplyToView"]').val(data ? data.Apply_to : 'None');
 													$copado('[Id$=jsNotifyTaskOwner_View]').val(data ? data.Notify_Task_Owner : 'None');
 													sforce.connection.query('SELECT id, FirstName, LastName FROM User WHERE Id = \'' + data.Task_Owner + '\' LIMIT 1', {
 														onSuccess: function (result) {
@@ -365,36 +365,36 @@
 													} else {
 														$copado('[id$=js-stepBlock-DataTemplateView]').show();
 														$copado('[id$=js-stepBlock-DataSetView]').hide();
-													var deferredArray = [];
-													var deferred = new $copado.Deferred();
-													deferredArray.push(deferred);
-													dataTemplateTotalObjects(data, deferred.resolve);
-													$copado.when.apply(this, deferredArray).then((deferredData) => {
-														console.log('ns : ', _config.ns);
-														sforce.connection.query('SELECT Id, Name, ' + _config.ns + 'Template_Source_Org__r.Name, ' + _config.ns + 'Batch_Size__c, ' + _config.ns + 'Max_Record_Limit__c, ' + _config.ns + 'Main_Object__c FROM ' + _config.ns + 'Data_Template__c WHERE Id = \'' + data.dataTemplateId + '\' LIMIT 1', {
-															onSuccess: function (result) {
-																var records = result.getArray("records");
-																if (records.length == 1) {
-																	var recordData = records[0];
-																	var name = recordData.Name;
-																	var header = name + ' | ' + recordData[_config.ns + 'Main_Object__c'];
-																	var btchrec = recordData[_config.ns + 'Batch_Size__c'] ? recordData[_config.ns + 'Batch_Size__c'] : 0;
-																	$copado('[id$=headerDataTemplate]').text(header);
-																	$copado('[id$=sourceOrg]').text(recordData[_config.ns + 'Template_Source_Org__r'].Name);
-																	$copado('[id$=totalObjects]').text(deferredData.count);
-																	$copado('[id$=objectFilter]').text(deferredData.filterLogic);
-																	$copado('[id$=editFilterIconText]').text(deferredData.editIconText);
-																	$copado('[id$=batchSize]').text(btchrec);
-																	$copado('[id$=maxRecordLimit]').text(recordData[_config.ns + 'Max_Record_Limit__c']);
-																	$copado('[id$=opentemplate]').show();
-																	$copado('[id$=openRelationshipDiagram]').show();
+														var deferredArray = [];
+														var deferred = new $copado.Deferred();
+														deferredArray.push(deferred);
+														dataTemplateTotalObjects(data, deferred.resolve);
+														$copado.when.apply(this, deferredArray).then((deferredData) => {
+															console.log('ns : ', _config.ns);
+															sforce.connection.query('SELECT Id, Name, ' + _config.ns + 'Template_Source_Org__r.Name, ' + _config.ns + 'Batch_Size__c, ' + _config.ns + 'Max_Record_Limit__c, ' + _config.ns + 'Main_Object__c FROM ' + _config.ns + 'Data_Template__c WHERE Id = \'' + data.dataTemplateId + '\' LIMIT 1', {
+																onSuccess: function (result) {
+																	var records = result.getArray("records");
+																	if (records.length == 1) {
+																		var recordData = records[0];
+																		var name = recordData.Name;
+																		var header = name + ' | ' + recordData[_config.ns + 'Main_Object__c'];
+																		var btchrec = recordData[_config.ns + 'Batch_Size__c'] ? recordData[_config.ns + 'Batch_Size__c'] : 0;
+																		$copado('[id$=headerDataTemplate]').text(header);
+																		$copado('[id$=sourceOrg]').text(recordData[_config.ns + 'Template_Source_Org__r'].Name);
+																		$copado('[id$=totalObjects]').text(deferredData.count);
+																		$copado('[id$=objectFilter]').text(deferredData.filterLogic);
+																		$copado('[id$=editFilterIconText]').text(deferredData.editIconText);
+																		$copado('[id$=batchSize]').text(btchrec);
+																		$copado('[id$=maxRecordLimit]').text(recordData[_config.ns + 'Max_Record_Limit__c']);
+																		$copado('[id$=opentemplate]').show();
+																		$copado('[id$=openRelationshipDiagram]').show();
+																	}
+																},
+																onFailure: function (error) {
+																	console.error("An error has occurred " + error);
 																}
-															},
-															onFailure: function (error) {
-																console.error("An error has occurred " + error);
-															}
+															});
 														});
-													});
 													}
 
 													$copado('[id$=relationship-diagram-link]').on('click', function (event) {
@@ -509,6 +509,64 @@
 										<c:SalesforceFlowComponent isEdit="false" />
 										<script type="text/javascript">
 											datasetup.setPreviousData = salesforceFlow.setPreviousDataView;
+										</script>
+									</apex:outputPanel>
+									<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Function'}">
+										<c:FunctionComponent isEdit="false" />
+										<script type="text/javascript">
+											datasetup.setPreviousData = function (data) {
+												if (data) {
+													data = JSON.parse(data);
+
+													var namespace = '{!JSENCODE(settings.namespace)}';
+													var noNamespaceQuery = 'SELECT Id, Name, API_Name__c, Parameters__c FROM Function__c WHERE API_Name__c = \'' + data.functionAPIName + '\' LIMIT 1';
+													var withNamespaceQuery = 'SELECT Id, Name, copado__API_Name__c, copado__Parameters__c FROM copado__Function__c WHERE copado__API_Name__c = \'' + data.functionAPIName + '\' LIMIT 1';
+													var query = namespace ? withNamespaceQuery : noNamespaceQuery;
+
+													sforce.connection.query(query, {
+														onSuccess: function (result) {
+															var records = result.getArray("records");
+
+															if (records.length == 1) {
+																var Name = records[0].Name;
+																var functionParameter = namespace ? JSON.parse(records[0].copado__Parameters__c) : JSON.parse(records[0].Parameters__c);
+																$copado('[id=jsFunction_View]').val(Name);
+																$copado('[id=jsFunction_editView]').val(functionParameter);
+
+																for (var i = 0; i < functionParameter.length; i++) {
+
+																	var parentDiv = document.getElementById('jsFunction_viewPram_div');
+
+																	var childDiv = document.createElement('div');
+																	childDiv.setAttribute("id", "param_wrapper" + i);
+																	childDiv.setAttribute("class", "slds-grid slds-m-vertical_medium");
+																	childDiv.setAttribute("style", "clear:both;");
+
+																	var childSpan = document.createElement('span');
+																	childSpan.setAttribute("class", "slds-form-element__label");
+																	childSpan.setAttribute("id", "param_name" + i);
+																	childSpan.innerHTML = functionParameter[i]['name'];
+
+																	var innerDiv = document.createElement('div');
+																	innerDiv.setAttribute = ("id", "inner_output_param" + i);
+																	innerDiv.setAttribute = ("class", "slds-form-element__control");
+																	innerDiv.innerHTML = '<input disabled type="text" placeholder="Parameter Value" class="js-param slds-input" id="param_value' + i + '" data-type="name" data-al="0" value="' + functionParameter[i]['defaultValue'] + '"/>';
+
+																	childSpan.append(innerDiv);
+																	childDiv.append(childSpan);
+																	parentDiv.append(childDiv);
+
+																}
+															}
+														},
+														onFailure: function (error) {
+															console.error("An error has occurred " + error);
+														}
+													});
+												} else {
+													$copado('[id$=jsFunction_View]').val(null);
+												}
+											}
 										</script>
 									</apex:outputPanel>
 								</div>

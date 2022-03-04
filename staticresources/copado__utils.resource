@@ -108,7 +108,7 @@ dw.u.getRemote = function(url, cb, postData, avoidRetry, onError, cbOnOk) {
             "userId": _temp_conf.userId,
             "orgId": _temp_conf.orgId,
             "sessionId": _temp_conf.sessionId,
-            "token": _temp_conf.token
+            "token2": _temp_conf.token2
         },
         method: postData ? 'POST' : "GET",
         requestData: postData ? postData : {},

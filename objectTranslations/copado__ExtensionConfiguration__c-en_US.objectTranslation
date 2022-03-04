@@ -6,7 +6,7 @@
     </fields>
     <fields>
         <help><!-- Select the type of Application that relates to the extension. --></help>
-        <label><!-- Extension Application --></label>
+        <label><!-- Copado Application --></label>
         <name>copado__ExtensionApplication__c</name>
         <picklistValues>
             <masterLabel>Test</masterLabel>

@@ -10,7 +10,9 @@
 
             var showApplyTagReleaseButton = function(){
                 var tagReleaseButton = $copado('<input id="customTagReleaseButton" type="button" class="btn" value="{!JSENCODE($Label.copado__set_version)}" onclick="openTagReleaseModal();"/>');
-                tagReleaseButton.appendTo($copado('[Id^="topButtonRow"]'));
+                if({!renderSetVersionButton} == true){
+                    tagReleaseButton.appendTo($copado('[Id^="topButtonRow"]'));
+                }
             }
         </script>
     </head>
