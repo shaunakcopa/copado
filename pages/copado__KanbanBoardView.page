@@ -142,14 +142,14 @@
                                     </strong>
 
                                     <apex:outputLink onClick="lockScreen();" styleClass="slds-button slds-button_icon slds-button_icon-border-filled slds-float_right floatRight">
-                                        <i class="fa fa-refresh fa-2x" aria-hidden="true" style="margin-top:2.3px"></i>
+                                        <i class="fa fa-refresh" aria-hidden="true" style="margin-top:2.3px"></i>
                                     </apex:outputLink>
                                     <apex:outputLink onClick="toggleAllCards();return false;" styleClass="slds-button slds-button_icon slds-button_icon-border-filled slds-float_right floatRight">
-                                        <i class="fa fa-angle-double-up fa-2x changeclass" aria-hidden="true" style="margin-top:2.3px"></i>
+                                        <i class="fa fa-angle-double-up fa-lg changeclass" aria-hidden="true" style="margin-top:2.3px"></i>
                                     </apex:outputLink>
                                     <apex:outputLink rendered="{!picklistValuesMap != null}" onClick="showModal('#kanbanColumnModal','#kanbanColumnBackdrop');return false;"
                                         styleClass="slds-button slds-button_icon slds-button_icon-border-filled slds-float_right floatRight">
-                                        <i class="fa fa-filter fa-2x" aria-hidden="true" style="margin-top:2.3px"></i>
+                                        <i class="fa fa-filter" aria-hidden="true" style="margin-top:2.3px"></i>
                                     </apex:outputLink>
                                 </p>
                                 <p class="slds-text-body--small page-header__info kanbanDescription">

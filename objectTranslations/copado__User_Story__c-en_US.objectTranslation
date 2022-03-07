@@ -859,6 +859,10 @@
         <name>copado__Cancellation_reason_required</name>
     </validationRules>
     <validationRules>
+        <errorMessage><!-- The credential must belong to the environment. --></errorMessage>
+        <name>copado__CredentialsMustBelongToTheEnvironment</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- This User Story does not meet the required Apex coverage threshold to be promoted. --></errorMessage>
         <name>copado__Promote_User_Story_Apex_validation</name>
     </validationRules>

@@ -28,6 +28,8 @@ global class Change {
     }
 }
 global class Request {
+    @InvocableVariable(label='Action Callback' description='Apex Callback Class that implements JobExecutionCallback' required=false)
+    global String actionCallback;
     @InvocableVariable(label='Base branch' description='Base branch for the commit. If not provided, a default value is calculated based on User Story, Release, or Pipeline' required=false)
     global String baseBranch;
     @InvocableVariable(label='Changes' description='List of changes to commit' required=false)

@@ -354,6 +354,11 @@
                     <label>Salesforce Flow</label>
                 </value>
                 <value>
+                    <fullName>Function</fullName>
+                    <default>false</default>
+                    <label>Function</label>
+                </value>
+                <value>
                     <fullName>Custom Setting</fullName>
                     <default>false</default>
                     <isActive>false</isActive>

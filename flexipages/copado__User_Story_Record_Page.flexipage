@@ -3256,23 +3256,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>height</name>
-                    <value>40</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>pageName</name>
-                    <value>copado__UserStory</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showLabel</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:visualforcePage</componentName>
-                <identifier>flexipage_visualforcePage2</identifier>
+                <componentName>copado:userStoryPipelinePath</componentName>
+                <identifier>c_userStoryPipelinePath1</identifier>
                 <visibilityRule>
                     <booleanFilter>(1 AND 2) OR (1 AND 3)</booleanFilter>
                     <criteria>
