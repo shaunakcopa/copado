@@ -17,6 +17,8 @@ global class PromoteAction extends copado.PromoteActionService implements copado
         return null;
     }
 global class Request {
+    @InvocableVariable(label='Action Callback' description='Apex Callback Class that implements JobExecutionCallback' required=false)
+    global String actionCallback;
     @InvocableVariable(label='Deployment Dry Run' description='Include this parameter if you want to perform a validation-only deployment.' required=false)
     global Boolean deploymentDryRun;
     @InvocableVariable(label='Execute Deployment' description='Include this parameter if you want to run the deploy job template after the promote job template execution.' required=false)

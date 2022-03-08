@@ -722,7 +722,7 @@
 								</apex:outputPanel>
 
 								<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Function'}">
-									<c:FunctionComponent isEdit="true" />
+									<c:FunctionComponent isEdit="true" deploymentTaskId="{!copado__Deployment_Task__c.Id}"/>
 									<script>
 										datasetup.save = function () {
 											var saveFunction = {};

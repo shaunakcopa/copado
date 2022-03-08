@@ -428,7 +428,7 @@
 
 													$copado('[id$=open-override-filter-link]').on('click', function (event) {
 														const _namespace = (_config.ns != '') ? _config.ns + '__' : '';
-														return window.open('/one/one.app#/alohaRedirect/apex/' + _namespace + 'OverrideTemplateFilters?taskId=' + '{!Deployment_Task__c.Id}', '_parent');
+														return window.open('/one/one.app#/alohaRedirect/apex/' + _namespace + 'OverrideTemplateFilters?taskId=' + '{!copado__Deployment_Task__c.Id}', '_parent');
 													});
 
 													$copado('[id$=open-dataset-link]').on('click', function (event) {
@@ -512,7 +512,8 @@
 										</script>
 									</apex:outputPanel>
 									<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Function'}">
-										<c:FunctionComponent isEdit="false" />
+										<c:FunctionComponent isEdit="false"  deploymentTaskId="{!copado__Deployment_Task__c.Id}"/>
+
 										<script type="text/javascript">
 											datasetup.setPreviousData = function (data) {
 												if (data) {
@@ -528,9 +529,10 @@
 															var records = result.getArray("records");
 
 															if (records.length == 1) {
-																var Name = records[0].Name;
-																var functionParameter = namespace ? JSON.parse(records[0].copado__Parameters__c) : JSON.parse(records[0].Parameters__c);
-																$copado('[id=jsFunction_View]').val(Name);
+																const dataJSON = '{!Deployment_Task__c.dataJSON__c}';
+																const functionParameter = JSON.parse(dataJSON).functionParameters;
+																const name = records[0].Name;
+																$copado('[id=jsFunction_View]').val(name);
 																$copado('[id=jsFunction_editView]').val(functionParameter);
 
 																for (var i = 0; i < functionParameter.length; i++) {
@@ -550,7 +552,7 @@
 																	var innerDiv = document.createElement('div');
 																	innerDiv.setAttribute = ("id", "inner_output_param" + i);
 																	innerDiv.setAttribute = ("class", "slds-form-element__control");
-																	innerDiv.innerHTML = '<input disabled type="text" placeholder="Parameter Value" class="js-param slds-input" id="param_value' + i + '" data-type="name" data-al="0" value="' + functionParameter[i]['defaultValue'] + '"/>';
+																	innerDiv.innerHTML = '<input disabled type="text" class="js-param slds-input" id="param_value' + i + '" data-type="name" data-al="0" value="' + functionParameter[i]['value'] + '"/>';
 
 																	childSpan.append(innerDiv);
 																	childDiv.append(childSpan);
