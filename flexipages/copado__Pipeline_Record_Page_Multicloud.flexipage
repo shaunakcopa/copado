@@ -343,6 +343,12 @@
                 </visibilityRule>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.copado__Enable_Smart_Conflict_Resolution__c</fieldItem>
+                <identifier>RecordEnable_Smart_Conflict_Resolution_cField1</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-8a011e59-c033-49ef-bbd0-9c2cfc64316a</name>
         <type>Facet</type>
     </flexiPageRegions>

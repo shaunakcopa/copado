@@ -672,7 +672,7 @@
                                                                             <apex:outputPanel layout="none" rendered="{!condition.fieldApiName != ''}">
                                                                                 <apex:inputField styleClass="{!IF(condition.fieldType != 'BOOLEAN', 'slds-input', 'slds-checkbox')}" rendered="{!!condition.isReadOnly}"
                                                                                                  type="{!IF(condition.fieldType == 'INTEGER' || condition.fieldType == 'DOUBLE' || condition.fieldType == 'LONG', 'number', '')}"
-                                                                                                 value="{!selectedFilter.userStoryFilter[condition.fieldApiName]}" required="false"
+                                                                                                 value="{!condition.userStory[condition.fieldApiName]}" required="false"
                                                                                                  showDatePicker="{!IF(condition.fieldType == 'DATE' || condition.fieldType == 'DATETIME', 'true', 'false')}"
                                                                                                  onKeyUp="if({!condition.fieldType == 'INTEGER' || condition.fieldType == 'DOUBLE' || condition.fieldType == 'LONG'}) preventNonNumericInput(this)"
                                                                                                  html-onpaste="if({!condition.fieldType == 'INTEGER' || condition.fieldType == 'DOUBLE' || condition.fieldType == 'LONG'}) preventNonNumericInput(this)" />
@@ -2063,25 +2063,6 @@
                                 <span class="slds-text-heading_medium">
                                         {!newOverlay.fromEnvName}
                                     </span>
-                            </apex:outputPanel>
-                        </apex:outputPanel>
-                        <apex:outputPanel styleClass="slds-modal__content slds-p-around_medium" id="mcPromotionMessages">
-                            <apex:outputPanel layout="none" styleClass="error-panel">
-                                <div id="divToast" class="slds-notify_container slds-is-relative">
-                                    <apex:repeat value="{!pageMessagesMap}" var="severity">
-                                        <div class="slds-notify slds-notify_toast slds-theme_{!severity}" role="status">
-                                            <span class="slds-assistive-text"></span>
-                                            <span class="slds-icon_container slds-icon-utility-success slds-m-right_small slds-no-flex slds-align-top">
-                                                <span class="slds-icon_container slds-icon__svg--default {!severity}ToastIcon"></span>
-                                            </span>
-                                            <div class="slds-notify__content">
-                                                <apex:repeat value="{!pageMessagesMap[severity]}" var="messages">
-                                                    <h2 class="slds-text-heading_small ">{!messages}</h2>
-                                                </apex:repeat>
-                                            </div>
-                                        </div>
-                                    </apex:repeat>
-                                </div>
                             </apex:outputPanel>
                         </apex:outputPanel>
                         <apex:outputPanel id="pins" layout="block" styleClass="slds-grid" style="width: 100%; margin-top: 15px;">

@@ -9287,6 +9287,14 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
         <errorMessage>A cancellation reason must be given.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>copado__CredentialsMustBelongToTheEnvironment</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT ( ISBLANK(copado__Environment__c) ) &amp;&amp;
+NOT ( ISBLANK(copado__Org_Credential__c) ) &amp;&amp;
+copado__Environment__c != copado__Org_Credential__r.copado__Environment__c</errorConditionFormula>
+        <errorMessage>The credential must belong to the environment.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>copado__Promote_User_Story_Apex_validation</fullName>
         <active>true</active>
         <description>If User Story has apex code, validate that the minimum code coverage has been met.</description>

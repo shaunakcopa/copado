@@ -92,6 +92,10 @@
             <translation><!-- Delete MetaData --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Function</masterLabel>
+            <translation><!-- Function --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Manual Task</masterLabel>
             <translation><!-- Manual Task --></translation>
         </picklistValues>

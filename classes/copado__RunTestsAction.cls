@@ -25,6 +25,8 @@ global class Request {
     global String environmentId;
     @InvocableVariable(label='Properties Override' description='JSON String overriding properties with different values. For instance, allows Quality Gates to use stricter values e.g. Code Coverage on Unit Test runs.' required=false)
     global String propertiesOverride;
+    @InvocableVariable(label='Id of Consolidated Result' required=false)
+    global String resultId;
     @InvocableVariable(label='Test Type' description='Master label of the Test Type custom metadata type record that applies to all Tests contained in contextIds' required=false)
     global String type;
     global Request() {
@@ -40,6 +42,9 @@ global class Request {
         return null;
     }
     global copado.RunTestsAction.Request propertiesOverride(String json) {
+        return null;
+    }
+    global copado.RunTestsAction.Request result(Id resultId) {
         return null;
     }
     global copado.RunTestsAction.Request type(String testType) {

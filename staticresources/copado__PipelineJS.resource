@@ -323,7 +323,6 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
 
             svg = document.getElementById(id);
             defs = document.createElementNS(svgNS, 'defs');
-
             svg.appendChild(defs);
 
             defTags = document.getElementsByTagName('defs');
@@ -333,7 +332,6 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
             path.setAttributeNS(null, 'fill', '#f00');
 
             marker = document.createElementNS(svgNS, 'marker');
-
             marker.appendChild(path);
 
             marker.setAttributeNS(null, 'id', 'arrow');
@@ -377,7 +375,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
             return;
         }
         connectionsList.forEach((connection, index) => {
-            svgContainer.append(` <svg id="svg${index}" width="0" height="0" >
+            svgContainer.append(`<svg id="svg${index}" width="0" height="0">
                 <path id="path${index}"/>
             </svg>`);
         });
@@ -478,7 +476,6 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         }
 
         pipelineConnector.data.targetToSourceList = convertedList;
-
         finalConnectionList = [
             {
                 target: convertedList[0].target,
@@ -503,7 +500,6 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
                 finalConnectionList.push(connectionData);
             }
         });
-
         return finalConnectionList;
     };
 
@@ -511,7 +507,6 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
     var moveBoxes = displaceHeightValue => {
         var boxes = $copado(boxClassIdentifier);
         var currentOffset = 0;
-
         boxes.each(function(index) {
             var $box = $copado(this);
             currentOffset = $box.offset().top;
@@ -537,7 +532,6 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
             });
 
         collisions = collisions.filter((index, item) => item.collision === true);
-
         return collisions;
     };
 
@@ -567,14 +561,12 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
             collisions.toArray().forEach(collision => {
                 isCollided = true;
                 collisionedEnv = $copado(`#${collision.id}`);
-
                 while (isCollided) {
                     if (box.data('order') > collisionedEnv.data('order')) {
                         collisionedEnv.offset({ top: collisionedEnv.offset().top - 10 });
-                    } else if (box.data('order') < collisionedEnv.data('order')) {
+                    } else {
                         collisionedEnv.offset({ top: collisionedEnv.offset().top + 10 });
                     }
-
                     collidedBox = checkCollision(nextColumnBoxes, collisionedEnv);
                     found = collidedBox.toArray().find(item => item.id === box.attr('id'));
 
@@ -621,7 +613,6 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
                 isConnected = true;
             }
         }
-
         return isConnected;
     };
 
@@ -642,7 +633,6 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
                 finalList.push({ id: m, parentId: n.target, level: n.column, children: null });
             }
         }
-
         return finalList;
     };
 
@@ -674,7 +664,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
     var addOrderToTreeNodes = finalList => {
         var orderedList = [];
         var tree = listToTree(finalList);
-
+        
         function listTree(node, order, i) {
             node.order = order + '0' + i;
             orderedList.push(node);
@@ -684,34 +674,31 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
             }
         }
 
-        listTree(tree[0], 1, 1);
+        listTree(tree[0], 0, 1);
 
         orderedList.sort((a, b) => {
-            return parseInt(a.order, 10) > parseInt(b.order, 10) ? -1 : 1;
+            return parseFloat(a.order) > parseFloat(b.order) ? -1 : 1;
         });
 
         orderedList.forEach((elem, index) => {
-            $copado(`#${elem.id}`).data('order', parseInt(elem.order, 10));
+            $copado(`#${elem.id}`).data('order', elem.order);
         });
     };
 
     // Order DOM boxes according order attribute
     var reorganizeDOMBoxes = () => {
         var $columns;
-
         $columns = $copado('.pipeline').children();
-
         $columns.each(function(index) {
             var $column = $copado(this);
             var columnBoxesNumber = $column.children().length;
-
             if (index > 0 && columnBoxesNumber > 1) {
                 $column.append(
                     $column
                         .find(boxClassIdentifier)
                         .get()
                         .sort((a, b) => {
-                            return $copado(a).data('order') - $copado(b).data('order');
+                            return parseFloat($copado(a).data('order')) - parseFloat($copado(b).data('order'));
                         })
                 );
             }
@@ -741,8 +728,8 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
             } else {
                 newColumn = false;
             }
-
-            if (newColumn) {
+            
+            if (newColumn) {  
                 if (currentColumn.length > 1) {
                     orderedListColumn = currentColumn.sort((a, b) => {
                         return $copado(`#${a.connections[0]}`).data('order') < $copado(`#${b.connections[0]}`).data('order') ? -1 : 1;
@@ -756,7 +743,6 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
                 }
             }
         });
-
         return orderedConnectionList;
     };
 
@@ -780,11 +766,11 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
             currentColumnNumber = parseInt(item.column, 10);
             nextColumnNumber = (currentColumnNumber + 1).toString();
             item.connections = item.connections.filter((v, i, a) => a.indexOf(v) === i); // remove repeated connections
-
+            
             nextColumn = formattedConnectionsListCopy.filter(connection => {
                 return connection.column === nextColumnNumber;
             });
-
+            
             nextColumnBoxes = nextColumn.map(item => {
                 return item.connections;
             });
@@ -806,7 +792,7 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
 
                 handleCollisions(nextColumnBoxes, $box, formattedConnectionsListCopy, currentColumnNumber);
             }
-
+            
             if (currentColumnNumber !== lastColumn) {
                 lastColumn = currentColumnNumber;
                 newColumn = true;
@@ -821,7 +807,6 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
                 bellowBoxes = nextColumnBoxes.slice(targetIndex + 1, nextColumnBoxes.length);
 
                 lastPositionedBox = item.target;
-
                 aboveBoxes.forEach((id, index) => {
                     var $box = $copado(`#${id}`);
 
@@ -880,7 +865,6 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         var boxes = $copado(boxClassIdentifier);
         var $box;
         var filterOffset = $copado('.filter-main-object').offset().top + $copado('.filter-main-object').height();
-
         boxes.each(function(index) {
             var $box = $copado(this);
             var displaceHeightValue = 0;
@@ -912,7 +896,6 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
         var finalList = [];
         var formattedConnectionsList = [];
         var orderedConnectionList = [];
-
         if (Object.entries(connectionsList).length === 0 && connectionsList.constructor === Object) {
             console.error('Empty connection list. Check your pipeline configuration');
         } else {
@@ -982,7 +965,6 @@ var staticResourcesPath = staticResourcesPath ? staticResourcesPath : '';
             if (!pipelineConnector.data.connectionsList) {
                 return;
             }
-
             calculateSmartPositioning();
             initLineConnections();
             setMinimap();
