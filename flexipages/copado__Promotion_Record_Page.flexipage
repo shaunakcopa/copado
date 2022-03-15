@@ -482,6 +482,20 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>locationId</name>
+                    <value>CCM.Promotion.ExtensionDetails</value>
+                </componentInstanceProperties>
+                <componentName>copado:dynamicUISectionContainer</componentName>
+                <identifier>c_dynamicUISectionContainer1</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-e35db03e-0e1e-4a4d-9c29-ebea314754c1</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>body</name>
                     <value>Facet-1253e9d0-da3d-434e-8680-59d0c46d1ff0</value>
                 </componentInstanceProperties>
@@ -547,6 +561,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>customTab3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-e35db03e-0e1e-4a4d-9c29-ebea314754c1</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Extension Details</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab2</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-458e50a3-4d51-42c8-b545-6edcb6a65234</name>

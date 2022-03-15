@@ -10,9 +10,6 @@
                             <value>Edit</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>copado__ExtensionConfiguration__c.copado__Activate</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Delete</value>
                         </valueListItems>
                         <valueListItems>
@@ -61,6 +58,12 @@
                 <componentName>copado:copadoAlert</componentName>
                 <identifier>c_copadoAlert1</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.copado__Active__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
+                    </criteria>
                     <criteria>
                         <leftValue>{!Record.copado__Status__c}</leftValue>
                         <operator>EQUAL</operator>
@@ -85,8 +88,8 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
-                <fieldItem>Record.copado__ExtensionApplication__c</fieldItem>
-                <identifier>RecordExtension_Application_cField1</identifier>
+                <fieldItem>Record.copado__ExtensionTool__c</fieldItem>
+                <identifier>RecordExtensionTool_cField1</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -95,8 +98,8 @@
                     <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.copado__Status__c</fieldItem>
-                <identifier>RecordStatus__cField</identifier>
+                <fieldItem>Record.copado__Active__c</fieldItem>
+                <identifier>RecordActive_cField1</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.CreatedBy.Username}</leftValue>
@@ -123,15 +126,24 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
-                <fieldItem>Record.copado__Extension_Name__c</fieldItem>
-                <identifier>RecordExtension_Name__cField</identifier>
+                <fieldItem>Record.copado__ExtensionApplication__c</fieldItem>
+                <identifier>RecordExtension_Application_cField1</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
-                <fieldItem>Record.copado__Type__c</fieldItem>
-                <identifier>RecordType__cField</identifier>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__TestType__c</fieldItem>
+                <identifier>RecordTestType_cField1</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.CreatedBy.Username}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
                     <criteria>
                         <leftValue>{!Record.copado__ExtensionApplication__c}</leftValue>
                         <operator>EQUAL</operator>
@@ -224,8 +236,22 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>copado:connectionDetails</componentName>
-                <identifier>c_connectionDetails1</identifier>
+                <componentInstanceProperties>
+                    <name>locationId</name>
+                    <value>CCM.ExtensionConfiguration.RightSetup</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>requiredInformation</name>
+                    <value>Test Tool</value>
+                </componentInstanceProperties>
+                <componentName>copado:dynamicUISectionContainer</componentName>
+                <identifier>c_dynamicUISectionContainer1</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:extensionConfigurationPublishMessage</componentName>
+                <identifier>c_extensionConfigurationPublishMessage1</identifier>
             </componentInstance>
         </itemInstances>
         <name>sidebar</name>

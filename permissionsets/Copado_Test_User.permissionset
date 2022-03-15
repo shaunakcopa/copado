@@ -1169,10 +1169,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__NonSalesforcePipelineOperationService</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>copado__OrgApexTestResultsSummaryEmailController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -4989,11 +4985,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Quality_Gate__c.copado__Test__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>copado__Record_Matching_Formula__c.copado__Configuration_Source_Org__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

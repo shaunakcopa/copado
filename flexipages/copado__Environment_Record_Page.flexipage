@@ -264,38 +264,8 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.copado__Deployment_Automation_Override__c</fieldItem>
-                <identifier>RecordDeployment_Automation_Override__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.copado__Platform__c}</leftValue>
-                        <operator>NE</operator>
-                        <rightValue>Salesforce</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
                 <fieldItem>Record.copado__Deployment_Job_Template_Override__c</fieldItem>
                 <identifier>RecordDeployment_Job_Template_Override__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.copado__Platform__c}</leftValue>
-                        <operator>NE</operator>
-                        <rightValue>Salesforce</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.copado__Promotion_Override__c</fieldItem>
-                <identifier>RecordPromotion_Override__cField</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.copado__Platform__c}</leftValue>

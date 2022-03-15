@@ -1561,6 +1561,50 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.copado__Exclude_From_CBM__c</fieldItem>
+                <identifier>RecordExclude_From_CBM_cField1</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-b7f399fe-453b-4665-9c32-57c288ab0f03</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.copado__Stop_Indexing_Metadata__c</fieldItem>
+                <identifier>RecordStop_Indexing_Metadata_cField1</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-07b84e3d-6453-423f-83f0-db4f14564e68</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-b7f399fe-453b-4665-9c32-57c288ab0f03</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column40</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-07b84e3d-6453-423f-83f0-db4f14564e68</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column41</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-8750c375-db3c-44bf-bfee-23696d3205ff</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -1586,6 +1630,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection21</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-8750c375-db3c-44bf-bfee-23696d3205ff</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>End of Life</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection22</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -2956,6 +3014,50 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.copado__Exclude_From_CBM__c</fieldItem>
+                <identifier>RecordExclude_From_CBM_cField2</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-78e991fd-c688-46e7-953c-c161f6d4e308</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.copado__Stop_Indexing_Metadata__c</fieldItem>
+                <identifier>RecordStop_Indexing_Metadata_cField2</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-f08f4bd3-5a5f-446d-a136-acbc2877eec1</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-78e991fd-c688-46e7-953c-c161f6d4e308</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column42</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-f08f4bd3-5a5f-446d-a136-acbc2877eec1</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column43</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-953cbe11-b17b-47ac-8144-796ff463c566</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -2981,6 +3083,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection15</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-953cbe11-b17b-47ac-8144-796ff463c566</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>End of Life</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection23</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

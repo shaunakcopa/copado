@@ -6,7 +6,7 @@
         <relationshipLabel><!-- Tests --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- Test Type --></label>
+        <label><!-- Category - Deprecated --></label>
         <name>copado__Category__c</name>
     </fields>
     <fields>
@@ -15,7 +15,7 @@
     </fields>
     <fields>
         <help><!-- The displayed values are based on the active Extension Configuration records available in your org. --></help>
-        <label><!-- Tool --></label>
+        <label><!-- Tool Configuration --></label>
         <name>copado__ExtensionConfiguration__c</name>
         <relationshipLabel><!-- Tests --></relationshipLabel>
     </fields>
@@ -25,10 +25,19 @@
         <relationshipLabel><!-- Tests --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Has Extra Configuration --></label>
+        <name>copado__HasExtraConfiguration__c</name>
+    </fields>
+    <fields>
         <help><!-- The displayed values are based on the name of the Integrations available in your org. The configuration and status of the Integration will be used for your Tests. --></help>
         <label><!-- Tool - Deprecated --></label>
         <name>copado__Integration__c</name>
         <relationshipLabel><!-- Tests - Deprecated --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Latest Job Execution --></label>
+        <name>copado__LatestJobExecution__c</name>
+        <relationshipLabel><!-- Tests --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Priority --></label>
@@ -79,8 +88,12 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Tool --></label>
+        <label><!-- Tool - Deprecated --></label>
         <name>copado__Tool__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>copado__Type__c</name>
     </fields>
     <fields>
         <label><!-- User Story --></label>

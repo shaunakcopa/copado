@@ -141,7 +141,14 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>copado__User_Story_Metadata</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>copado__User_Story_Metadata</fullName>
+        <fields>Name</fields>
+        <fields>copado__User_Story__c</fields>
+        <fields>copado__Last_Commit_Date__c</fields>
+        <label>User Story Metadata</label>
+    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
     <enableActivities>false</enableActivities>

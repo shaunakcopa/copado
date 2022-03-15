@@ -28,6 +28,10 @@
         <apexClass>copado__QueryEditorController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>copado__SprintWallUserStoriesCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <description>Kanban Board - full access and configuration</description>
     <fieldPermissions>
         <editable>true</editable>
@@ -62,6 +66,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Kanban_Board__c.copado__SOQL_Query__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Kanban_Board__c.copado__Sprint__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
