@@ -9621,6 +9621,7 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
         <customTabListAdditionalFields>copado__Project__c</customTabListAdditionalFields>
         <listViewButtons>copado__Assign_to_Release</listViewButtons>
         <listViewButtons>copado__Import_to_User_Story</listViewButtons>
+        <listViewButtons>copado__Create_Bundle</listViewButtons>
         <lookupDialogsAdditionalFields>copado__User_Story_Title__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>copado__userStory_Role__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>copado__userStory_need__c</lookupDialogsAdditionalFields>
