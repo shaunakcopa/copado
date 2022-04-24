@@ -20,9 +20,13 @@
     <tabs>standard-Feed</tabs>
     <tabs>standard-CollaborationGroup</tabs>
     <tabs>standard-File</tabs>
+    <tabs>copado__Pull_Request__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LightningSalesConsole_UtilityBar</utilityBar>
     <workspaceConfig>
+        <mappings>
+            <tab>copado__Pull_Request__c</tab>
+        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>

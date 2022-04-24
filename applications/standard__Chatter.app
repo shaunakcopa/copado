@@ -10,4 +10,5 @@
     <tabs>standard-OtherUserProfile</tabs>
     <tabs>standard-CollaborationGroup</tabs>
     <tabs>standard-File</tabs>
+    <tabs>copado__Pull_Request__c</tabs>
 </CustomApplication>

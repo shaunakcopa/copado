@@ -13,5 +13,6 @@
     <tabs>standard-WorkType</tabs>
     <tabs>standard-OperatingHours</tabs>
     <tabs>standard-ServiceAppointment</tabs>
+    <tabs>copado__Pull_Request__c</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>

@@ -15896,6 +15896,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>copado__Pull_Request__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>copado__Record_Matching_Formula__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
