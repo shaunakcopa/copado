@@ -55,5 +55,8 @@ global class Response {
     global copado__JobExecution__c jobExecution;
     @InvocableVariable(label='User Story Commit' description='User Story Commit record created as part of the commit process' required=false)
     global copado__User_Story_Commit__c userStorycommit;
+    global Response() {
+
+    }
 }
 }

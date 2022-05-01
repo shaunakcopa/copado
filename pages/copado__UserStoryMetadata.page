@@ -284,6 +284,15 @@
                                 status="screenlocker" />
                             <apex:commandButton value="{!$Label.copado__next}" action="{!nextUserStoryMetadatas}" reRender="relatedUserStoryMetadataPanel" disabled="{!disableNext}"
                                 styleClass="slds-button slds-button_neutral slds-m-around_x-small" status="screenlocker" />
+                            <div class="slds-form-element__control">
+                                <div class="slds-form-element__static" style="min-height:32px;">
+                                    <apex:selectList styleClass="slds-select" value="{!selectedOption}" multiselect="false" size="1">
+                                        <apex:selectOptions value="{!dataOptions}" />
+                                        <apex:actionSupport event="onchange" status="screenlocker" action="{!changeUserStoryMetadata}" reRender="relatedUserStoryMetadataPanel"
+                                        />
+                                    </apex:selectList>
+                                </div>
+                            </div>
                         </div>
                         <table id="asd" class="slds-table slds-table_bordered slds-table_resizable-cols slds-table_fixed-layout slds-table_cell-buffer slds-table_striped">
                             <thead>

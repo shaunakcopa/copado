@@ -734,9 +734,13 @@
 											var divElem = document.querySelectorAll("#js-Function-Param input");
 											var paramArray = [];
 											for (var i = 0; i < divElem.length; i++) {
-												var param_name = document.querySelectorAll("#js-Function-Param span")[i].innerText;
-												var param_val = document.querySelectorAll("#js-Function-Param input")[i].value;
+												let param_name = document.querySelectorAll("#js-Function-Param span")[i].innerText;
+												let param_val = document.querySelectorAll("#js-Function-Param input")[i].value;
 
+												if(param_name.startsWith("*")) {
+													param_name = param_name.substring(1);
+												}
+												param_name = param_name.trim();
 												paramArray.push({ "name": param_name, "value": param_val });
 											}
 											saveFunction.functionAPIName = Function_ApiName;

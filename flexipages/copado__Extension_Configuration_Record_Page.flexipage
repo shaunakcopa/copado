@@ -10,6 +10,26 @@
                             <value>Edit</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>copado__ExtensionConfiguration__c.copado__Activation</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Active__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>false</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__ExtensionConfiguration__c.copado__Deactivate</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Active__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>true</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Delete</value>
                         </valueListItems>
                         <valueListItems>
@@ -200,6 +220,16 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>copado:extensionConfigurationSettings</componentName>
+                <identifier>c_extensionConfigurationSettings1</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-925838ff-7378-419c-8fce-9115cdba75ae</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>active</name>
                     <value>true</value>
@@ -214,6 +244,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>detailTab</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-925838ff-7378-419c-8fce-9115cdba75ae</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Settings</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab1</identifier>
             </componentInstance>
         </itemInstances>
         <name>maintabs</name>
@@ -234,6 +278,12 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:extensionConfigurationStatus</componentName>
+                <identifier>c_extensionConfigurationStatus1</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>

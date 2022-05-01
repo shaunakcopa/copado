@@ -309,7 +309,7 @@ var MetadataGrid3 = (() => {
             gitCommitCompare: [
                 [copadoLabels.selected, '5%', 'bool', 's', 'checkbox', null, null, null, null, null, null],
                 [copadoLabels.RETRIEVE_ONLY, '5%', null, 'r', 'checkbox', null, null, null, null, false, null],
-                [copadoLabels.STATUS, '5%', 'input', 'a', 'textbox', 'contains', false, null, cellsrendererCmm, null, null],
+                [copadoLabels.ACTION, '5%', 'input', 'a', 'textbox', 'contains', false, null, cellsrendererCmm, null, null],
                 [copadoLabels.name, '25%', 'input', 'n', 'textbox', 'contains', false, null, null, null, null],
                 [copadoLabels.type, '13%', this.TypeFilterType, 't', 'textbox', null, false, null, null, !this.isTypeFilterable, null],
                 [copadoLabels.LastModifiedById, '20%', 'input', 'b', null, 'contains', false, null, null, null, null],
@@ -386,6 +386,8 @@ var MetadataGrid3 = (() => {
                     item[1] = '6%';
                 } else if (item[0] == copadoLabels.type) {
                     item[1] = '25%';
+                } else if (item[0] == copadoLabels.ACTION) {
+                    item[1] = '10%';
                 }
             }
             for (var property in objectStruct) {

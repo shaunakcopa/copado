@@ -27,6 +27,7 @@
             <type>Alert</type>
         </actions>
         <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5)</booleanFilter>
         <criteriaItems>
             <field>copado__Deployment__c.copado__Send_Deployment_Complete_email__c</field>
             <operation>equals</operation>
@@ -41,6 +42,15 @@
             <field>User.UserType</field>
             <operation>notEqual</operation>
             <value>Automated Process</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>copado__Deployment__c.copado__Platform__c</field>
+            <operation>equals</operation>
+            <value>Salesforce</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>copado__Deployment__c.copado__Platform__c</field>
+            <operation>equals</operation>
         </criteriaItems>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>

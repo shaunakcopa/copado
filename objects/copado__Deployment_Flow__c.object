@@ -555,6 +555,7 @@ This value will prefill the order by field on related Promotion record creation 
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>

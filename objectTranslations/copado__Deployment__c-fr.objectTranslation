@@ -136,6 +136,10 @@
         <name>copado__Paused__c</name>
     </fields>
     <fields>
+        <label><!-- Platform --></label>
+        <name>copado__Platform__c</name>
+    </fields>
+    <fields>
         <label><!-- Promotion --></label>
         <name>copado__Promotion__c</name>
         <relationshipLabel><!-- Deployments --></relationshipLabel>

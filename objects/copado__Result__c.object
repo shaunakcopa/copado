@@ -156,7 +156,7 @@
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
-    <enableHistory>false</enableHistory>
+    <enableHistory>true</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
@@ -172,6 +172,7 @@
         <label>Apex Callback</label>
         <length>255</length>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -185,6 +186,7 @@
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
@@ -197,6 +199,7 @@
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
@@ -213,6 +216,7 @@
         <relationshipLabel>Result</relationshipLabel>
         <relationshipName>Result</relationshipName>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
@@ -228,6 +232,7 @@
         <relationshipLabel>Results</relationshipLabel>
         <relationshipName>Results</relationshipName>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
@@ -237,6 +242,7 @@
         <externalId>false</externalId>
         <label>Description</label>
         <length>32768</length>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Html</type>
         <visibleLines>25</visibleLines>
@@ -260,6 +266,7 @@
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
@@ -272,6 +279,7 @@
         <inlineHelpText>Date time when the job ended.</inlineHelpText>
         <label>End Time</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
     </fields>
@@ -282,6 +290,7 @@
         <label>Error Code</label>
         <length>255</length>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -292,6 +301,7 @@
         <externalId>false</externalId>
         <label>Error Message</label>
         <length>32768</length>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
@@ -302,6 +312,7 @@
         <externalId>false</externalId>
         <label>Function Worker Size</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -342,6 +353,7 @@
         <relationshipLabel>Results</relationshipLabel>
         <relationshipName>Results</relationshipName>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
@@ -355,6 +367,7 @@
         <relationshipLabel>Results</relationshipLabel>
         <relationshipName>Results</relationshipName>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
@@ -367,6 +380,7 @@
         <label>External Job ID</label>
         <length>255</length>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -377,6 +391,7 @@
         <externalId>false</externalId>
         <label>Job API Name</label>
         <required>true</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -398,6 +413,7 @@
         <inlineHelpText>Link to open more information about the results.</inlineHelpText>
         <label>External Result Link</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Url</type>
     </fields>
@@ -408,6 +424,7 @@
         <label>Context ID</label>
         <length>18</length>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -429,6 +446,7 @@ IF( !ISBLANK(copado__JobStep__c), copado__JobStep__r.Name,
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Parent</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -442,6 +460,7 @@ IF( !ISBLANK(copado__JobStep__c), copado__JobStep__r.Name,
         <label>Progress Status</label>
         <length>255</length>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -458,6 +477,7 @@ IF( !ISBLANK(copado__JobStep__c), copado__JobStep__r.Name,
         <relationshipLabel>Results</relationshipLabel>
         <relationshipName>Results</relationshipName>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
@@ -467,6 +487,7 @@ IF( !ISBLANK(copado__JobStep__c), copado__JobStep__r.Name,
         <externalId>false</externalId>
         <label>Result Data</label>
         <length>131072</length>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>5</visibleLines>
@@ -479,6 +500,7 @@ IF( !ISBLANK(copado__JobStep__c), copado__JobStep__r.Name,
         <inlineHelpText>Date time when the job started.</inlineHelpText>
         <label>Start Time</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
     </fields>
@@ -491,6 +513,7 @@ IF( !ISBLANK(copado__JobStep__c), copado__JobStep__r.Name,
         <inlineHelpText>Current status of the result. Confirms if the result is pending or completed.</inlineHelpText>
         <label>Status</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -534,6 +557,7 @@ IF( !ISBLANK(copado__JobStep__c), copado__JobStep__r.Name,
         <relationshipLabel>Results</relationshipLabel>
         <relationshipName>Results</relationshipName>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
@@ -545,6 +569,7 @@ IF( !ISBLANK(copado__JobStep__c), copado__JobStep__r.Name,
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
@@ -561,6 +586,7 @@ IF( !ISBLANK(copado__JobStep__c), copado__JobStep__r.Name,
         <relationshipLabel>Result</relationshipLabel>
         <relationshipName>Result</relationshipName>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
@@ -583,6 +609,7 @@ IF( !ISBLANK(copado__JobStep__c), copado__JobStep__r.Name,
     <nameField>
         <displayFormat>R{00000}</displayFormat>
         <label>Result Name</label>
+        <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Results</pluralLabel>

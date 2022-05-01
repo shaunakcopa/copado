@@ -380,16 +380,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>locationId</name>
-                    <value>CCM.Test.TestDefinition</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>requiredInformation</name>
-                    <value>Test Tool</value>
-                </componentInstanceProperties>
-                <componentName>copado:dynamicUISectionContainer</componentName>
-                <identifier>c_dynamicUISectionContainer2</identifier>
+                <componentName>copado:testDefinition</componentName>
+                <identifier>c_testDefinition1</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
