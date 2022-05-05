@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Case.ParentId</members>
-        <name>CustomField</name>
-    </types>
-    <types>
-        <members>Trial1</members>
-        <name>CustomPermission</name>
-    </types>
-    <types>
-        <members>Custom%3A Marketing Profile</members>
         <members>Test New profile</members>
         <name>Profile</name>
     </types>
