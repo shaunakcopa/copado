@@ -171,6 +171,10 @@
         <visible>false</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>DisplayCaseController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>OwnBackupIntegration</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -6184,6 +6188,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copadoconnect__fflib_StringBuilderTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>trailheadAPIChallenge</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <custom>false</custom>
