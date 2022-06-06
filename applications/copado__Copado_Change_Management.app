@@ -29,4 +29,5 @@
     <tabs>copado__Kanban_Board__c</tabs>
     <tabs>copado__Copado_DX_Panel</tabs>
     <tabs>copado__Burndown_Item__c</tabs>
+    <tabs>copado__Pull_Request__c</tabs>
 </CustomApplication>

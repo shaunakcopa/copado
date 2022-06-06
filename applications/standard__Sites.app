@@ -5,4 +5,5 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <tabs>standard-Chatter</tabs>
+    <tabs>copado__Pull_Request__c</tabs>
 </CustomApplication>

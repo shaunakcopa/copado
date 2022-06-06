@@ -22,6 +22,10 @@
         <name>copado__Field_3__c</name>
     </fields>
     <fields>
+        <label><!-- Field Labels --></label>
+        <name>copado__Field_Labels__c</name>
+    </fields>
+    <fields>
         <help><!-- Hashing the Formula will replace the original value with a unique, fixed-size set of random characters. It will ensure the value will not exceed the External Id field character limit but it will not be readable. --></help>
         <label><!-- Hash External Id Value --></label>
         <name>copado__Hash_Formula__c</name>
@@ -31,4 +35,8 @@
         <label><!-- Object --></label>
         <name>copado__Object__c</name>
     </fields>
+    <validationRules>
+        <errorMessage><!-- You can not change the Configuration Schema Credential once the value is selected. --></errorMessage>
+        <name>copado__RestrictSchemaCredentialModification</name>
+    </validationRules>
 </CustomObjectTranslation>

@@ -156,6 +156,17 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
+        <fullName>copado__AcceptanceCriteria__c</fullName>
+        <defaultValue>&quot;{}&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Acceptance Criteria</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>copado__Application__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
@@ -171,8 +182,9 @@
     <fields>
         <fullName>copado__Category__c</fullName>
         <deprecated>false</deprecated>
+        <description>Deprecated</description>
         <externalId>false</externalId>
-        <label>Test Type</label>
+        <label>Category - Deprecated</label>
         <length>255</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -195,9 +207,15 @@
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <inlineHelpText>The displayed values are based on the active Extension Configuration records available in your org.</inlineHelpText>
-        <label>Tool</label>
+        <label>Tool Configuration</label>
         <lookupFilter>
             <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <filterItems>
+                <field>copado__ExtensionConfiguration__c.copado__Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
             <filterItems>
                 <field>copado__ExtensionConfiguration__c.copado__Status__c</field>
                 <operation>equals</operation>
@@ -226,6 +244,16 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>copado__HasExtraConfiguration__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Internally used to dynamically display the Test Definition tab, visible only if there are one or more UISection__mdt related records.</description>
+        <externalId>false</externalId>
+        <label>Has Extra Configuration</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>copado__Integration__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
@@ -243,6 +271,19 @@
         </lookupFilter>
         <referenceTo>copado__ExtensionConfiguration__c</referenceTo>
         <relationshipLabel>Tests - Deprecated</relationshipLabel>
+        <relationshipName>Tests</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__LatestJobExecution__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Latest Job Execution</label>
+        <referenceTo>copado__JobExecution__c</referenceTo>
+        <relationshipLabel>Tests</relationshipLabel>
         <relationshipName>Tests</relationshipName>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -336,8 +377,20 @@
         <fullName>copado__Tool__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <label>Tool</label>
+        <label>Tool - Deprecated</label>
         <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>copado__ExtensionConfiguration__r.copado__TestType__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Type</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>

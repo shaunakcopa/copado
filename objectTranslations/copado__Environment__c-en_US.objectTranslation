@@ -224,6 +224,10 @@
         </picklistValues>
     </fields>
     <validationRules>
+        <errorMessage><!-- An environment cannot have the same job template for Commit, Promote and Deploy. --></errorMessage>
+        <name>copado__Unique_Job_Template</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- An environment cannot have the same automation template for both Promote and Deploy --></errorMessage>
         <name>copado__Unique_Template_for_promote_and_deploy</name>
     </validationRules>
