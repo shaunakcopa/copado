@@ -1,7 +1,7 @@
 <apex:page id="ViewRelease" standardController="copado__Release__c" extensions="copado.ReleaseExt" title="{!$Label.copado__edit} {!$ObjectType.copado__Release__c.Label}" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds />
     <head>
-        <title>{!$Label.copado__edit} {!$ObjectType.copado__Release__c.Label} {!Release__c.Name} | Copado</title>
+        <title>{!$Label.copado__edit} {!$ObjectType.copado__Release__c.Label} {!IF(!showLicenseError, Release__c.Name,'')}  | Copado</title>
         <c:IncludeStaticsResourceComponent addJquery="true"/>
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
 

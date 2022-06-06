@@ -12,4 +12,5 @@
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
+    <tabs>copado__Pull_Request__c</tabs>
 </CustomApplication>

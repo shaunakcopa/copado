@@ -191,6 +191,10 @@ This value will prefill the order by field on related Promotion record creation 
         <relationshipLabel><!-- Pipelines --></relationshipLabel>
     </fields>
     <validationRules>
+        <errorMessage><!-- A pipeline cannot have the same job template for Commit, Promote and Deploy. --></errorMessage>
+        <name>copado__Unique_Job_Template</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- A pipeline cannot have the same template for both Promote and Deploy --></errorMessage>
         <name>copado__Unique_Template_for_promote_and_deploy</name>
     </validationRules>

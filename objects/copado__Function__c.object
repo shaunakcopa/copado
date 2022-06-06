@@ -234,8 +234,9 @@ The class must implement the MCCallBack interface.</inlineHelpText>
     </fields>
     <fields>
         <fullName>copado__Image_Name__c</fullName>
+        <defaultValue>&quot;copado-function-core:v1&quot;</defaultValue>
         <deprecated>false</deprecated>
-        <description>The docker image name provided by Copado. You will find available image paths in the Copado documentation. An image name is made up of slash-separated name components, prefixed by a registry hostname.</description>
+        <description>Name of the docker image provided by Copado. Check our documentation site to find all available images.</description>
         <externalId>false</externalId>
         <inlineHelpText>The docker image name provided by Copado. You will find available image paths in the Copado documentation. An image name is made up of slash-separated name components, prefixed by a registry hostname.</inlineHelpText>
         <label>Image Name</label>

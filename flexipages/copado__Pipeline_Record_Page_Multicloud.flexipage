@@ -625,6 +625,16 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>copado:environmentVariablesPipelineRelatedList</componentName>
+                <identifier>c_environmentVariablesPipelineRelatedList1</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-b5c6a282-51cf-442d-9b2b-dd8d5b145749</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
                     <value>copado__Deployment_Flow__c.Id</value>
@@ -650,6 +660,43 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-5becb6bb-26e2-4e04-a611-f4d01476f4d1</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>copado__Deployment_Flow__c.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>copado__Quality_Gate_Rule_Conditions__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer1</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Platform__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Salesforce</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-08fb4de3-48aa-4abf-81e5-597f064b4b21</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -717,6 +764,20 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
+                    <value>Facet-b5c6a282-51cf-442d-9b2b-dd8d5b145749</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Environment Variables</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab1</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
                     <value>Facet-5becb6bb-26e2-4e04-a611-f4d01476f4d1</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -725,6 +786,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>customTab4</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-08fb4de3-48aa-4abf-81e5-597f064b4b21</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Quality Gates</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab2</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>

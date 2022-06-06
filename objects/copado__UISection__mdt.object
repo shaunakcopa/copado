@@ -20,7 +20,7 @@
         <referenceTo>copado__ExtensionPackageConfiguration__mdt</referenceTo>
         <relationshipLabel>UISections</relationshipLabel>
         <relationshipName>UISections</relationshipName>
-        <required>true</required>
+        <required>false</required>
         <type>MetadataRelationship</type>
         <unique>false</unique>
     </fields>
@@ -33,6 +33,19 @@
         <length>255</length>
         <required>true</required>
         <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__TestTool__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Test Tool</label>
+        <referenceTo>copado__TestTool__mdt</referenceTo>
+        <relationshipLabel>UISections</relationshipLabel>
+        <relationshipName>UISections</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
         <unique>false</unique>
     </fields>
     <fields>

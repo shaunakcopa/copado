@@ -99,6 +99,22 @@ Usage exp: issueType=Story and resolution=Duplicate --></help>
         <label><!-- Workspace Id --></label>
         <name>copadoccmint__Workspace_Id__c</name>
     </fields>
+    <fields>
+        <label><!-- Connect log --></label>
+        <name>copadoconnect__Connect_log__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>copadoconnect__External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Synced Date --></label>
+        <name>copadoconnect__Last_Synced_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization --></label>
+        <name>copadoconnect__Organization__c</name>
+    </fields>
     <webLinks>
         <label><!-- Sync_External_User_Stories --></label>
         <name>copadoccmint__Sync_External_User_Stories</name>

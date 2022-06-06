@@ -97,6 +97,10 @@
                 <behavior>Readonly</behavior>
                 <field>copado__View_in_Git__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Jira_Key__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

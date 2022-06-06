@@ -14,8 +14,8 @@
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <label>Copado Tests</label>
     <navType>Standard</navType>
-    <tabs>standard-home</tabs>
     <tabs>copado__ExtensionConfiguration__c</tabs>
+    <tabs>copado__Quality_Gate_Rule__c</tabs>
     <tabs>copado__Test__c</tabs>
     <tabs>copado__User_Story__c</tabs>
     <tabs>copado__Application_Feature__c</tabs>

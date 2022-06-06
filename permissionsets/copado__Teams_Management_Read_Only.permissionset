@@ -35,7 +35,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Team__c.copado__Sprint_Wall_FieldSet_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
