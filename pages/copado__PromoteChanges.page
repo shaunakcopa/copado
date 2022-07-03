@@ -418,7 +418,7 @@
 
     <body>
         <apex:form >
-            <c:ScreenLocker id="cmpScreenLocker" msg="{!$Label.copado__creating_deployment}" />
+            <c:ScreenLocker id="cmpScreenLocker" msg="{!$Label.copado__CREATING_DEPLOYMENT}" />
         </apex:form>
 
         <div class="copado-lightning-VF">
@@ -742,16 +742,16 @@
                                             <apex:outputPanel styleClass="copado-lightning-container">
                                                 <div id="wrapper" class="slds-scope">
                                                     <div id="right" style="width:100%;position:relative;">
-                                                        <apex:pageBlock id="pbRight" title="{!$Label.copado__user_stories_to_be_promoted}">
+                                                        <apex:pageBlock id="pbRight" title="{!$Label.copado__USER_STORIES_TO_BE_PROMOTED}">
                                                             <apex:pageBlockButtons id="pbButtons1" location="top">
                                                                 <button id="btnRemoveSelected" class="slds-button slds-button--neutral" value="{!$Label.REMOVE_SELECTED_USER_STORIES}" onclick="checkCount('pbTablePromotedStoriesOutput',copadoLabels.remove_selections); return false;">{!$Label.REMOVE_SELECTED_USER_STORIES}
                                                                 </button>
-                                                                <apex:commandButton reRender="USform" id="btnCreateDeployment" value="{!$Label.copado__create_deployment}" onclick="setLockScreenMessage(copadoLabels.loading);lockScreen();openDeploymentCreationModal();return false;"
+                                                                <apex:commandButton reRender="USform" id="btnCreateDeployment" value="{!$Label.copado__CREATE_DEPLOYMENT}" onclick="setLockScreenMessage(copadoLabels.loading);lockScreen();openDeploymentCreationModal();return false;"
                                                                     styleClass="slds-button slds-button--brand" disabled="{!!enableCreateDeploymentButton}"
                                                                 />
 
                                                                 <apex:commandlink id="warningLink" style="float: right;padding-top: 4px;" rendered="{!AND(dependenciesList != null,dependenciesList.size>0)}"
-                                                                    title="{!$Label.copado__usdependency_icontitle}" onclick="openUSDep(); return false;"
+                                                                    title="{!$Label.copado__USDependency_IconTitle}" onclick="openUSDep(); return false;"
                                                                     styleClass="icon-blinker">
                                                                     <svg class="slds-icon slds-icon-text-warning slds-icon_small" aria-hidden="true">
                                                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#warning')}"></use>
@@ -848,7 +848,7 @@
                                                 <div id="left" style="width:100%; margin-left:0px;">
                                                     <apex:actionFunction action="{!addStoriesToPromotion}" status="tblStatus" name="addStories" rerender="pbRight,pbLeft,pageMessages"
                                                         onComplete="enableAddSelectedButton();initTus();" />
-                                                    <apex:pageBlock id="pbLeft" title="{!$Label.copado__user_stories_not_included_in_promotion}">
+                                                    <apex:pageBlock id="pbLeft" title="{!$Label.copado__USER_STORIES_NOT_INCLUDED_IN_PROMOTION}">
                                                         <apex:pageBlockButtons id="pbButtons2" location="top">
                                                             <input type="button" id="btnGetUserStories" value="{!$Label.ADD_SELECTED_USER_STORIES}" onclick="checkCount('pbTableUserStories',copadoLabels.selecting);"
                                                                 Class="slds-button slds-button--neutral" />
@@ -938,12 +938,12 @@
                                     </apex:outputPanel>
 
                                     <apex:outputPanel id="usMetadataPanel" layout="block" styleClass="copado-lightning-container">
-                                        <c:CopadoHelp sectionText="{!$Label.copado__outdated_component_help_text}" />
+                                        <c:CopadoHelp sectionText="{!$Label.copado__Outdated_Component_Help_Text}" />
                                         <apex:outputPanel layout="none" rendered="{!enableUserStoryMetadatas}">
-                                            <apex:pageBlock id="userStoryMetadata" title="{!$Label.copado__promotion_user_story_metadata}">
+                                            <apex:pageBlock id="userStoryMetadata" title="{!$Label.copado__PROMOTION_USER_STORY_METADATA}">
 
                                                 <apex:pageBlockButtons location="top">
-                                                    <apex:commandButton onclick="lockScreen();" value="{!$Label.copado__create_user_story}" action="{!createNewUs}" onComplete="unlockScreen();"
+                                                    <apex:commandButton onclick="lockScreen();" value="{!$Label.copado__Create_User_Story}" action="{!createNewUs}" onComplete="unlockScreen();"
                                                         reRender="pmessage,pageMessages" />
                                                 </apex:pageBlockButtons>
 
@@ -1048,7 +1048,7 @@
                                     <apex:outputPanel layout="none" rendered="{!enableSTS}">
                                         <apex:outputPanel id="summaryPanel" styleClass="slds-scope copado-lightning-container" layout="block">
                                             <apex:pageBlock id="strs" rendered="{!isCSTEnabled}">
-                                                <apex:pageBlockSection id="sTestResults" columns="1" collapsible="false" title="{!$Label.copado__selenium_test_results_summary}">
+                                                <apex:pageBlockSection id="sTestResults" columns="1" collapsible="false" title="{!$Label.copado__SELENIUM_TEST_RESULTS_SUMMARY}">
                                                     <script type="text/javascript">
                                                         (function () {
                                                             // Code to preserve the open/close state of this section: cookie co.PR.CSTR to uniquely identify this page
@@ -1142,16 +1142,16 @@
                                                 <apex:actionPoller action="{!refreshSeleniumTestGroups}" enabled="{!IsSeleniumRunning}" reRender="whole-selenium-panel" interval="5"
                                                     oncomplete="prepareSTSGraph();" />
 
-                                                <apex:pageBlock id="stg" title="{!$Label.copado__promotion_selenium_tests}">
+                                                <apex:pageBlock id="stg" title="{!$Label.copado__PROMOTION_SELENIUM_TESTS}">
                                                     <apex:pageBlockButtons location="top">
-                                                        <apex:commandButton value="{!$Label.copado__promotion_run_source_tests_regression}" action="{!runTestsSourceRegression}" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"
+                                                        <apex:commandButton value="{!$Label.copado__PROMOTION_RUN_SOURCE_TESTS_REGRESSION}" action="{!runTestsSourceRegression}" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"
                                                         />
-                                                        <apex:commandButton value="{!$Label.copado__promotion_run_source_tests_user_story}" action="{!runTestsSourceUserStory}" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"
+                                                        <apex:commandButton value="{!$Label.copado__PROMOTION_RUN_SOURCE_TESTS_USER_STORY}" action="{!runTestsSourceUserStory}" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"
                                                         />
-                                                        <apex:commandButton value="{!$Label.copado__promotion_run_destination_tests_regression}" action="{!runTestsDestinationRegression}"
+                                                        <apex:commandButton value="{!$Label.copado__PROMOTION_RUN_DESTINATION_TESTS_REGRESSION}" action="{!runTestsDestinationRegression}"
                                                             styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"
                                                         />
-                                                        <apex:commandButton value="{!$Label.copado__promotion_run_destination_tests_user_story}" action="{!runTestsDestinationUserStory}"
+                                                        <apex:commandButton value="{!$Label.copado__PROMOTION_RUN_DESTINATION_TESTS_USER_STORY}" action="{!runTestsDestinationUserStory}"
                                                             styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"
                                                         />
                                                     </apex:pageBlockButtons>
@@ -1161,7 +1161,7 @@
                                                             <tr>
                                                                 <th>{!$ObjectType.copado__Selenium_Test_Group__c.fields.Name.Label}</th>
                                                                 <th>{!$ObjectType.copado__Selenium_Test_Group__c.fields.copado__Type__c.Label}</th>
-                                                                <th>{!$Label.copado__location}</th>
+                                                                <th>{!$Label.copado__Location}</th>
                                                                 <th>{!$ObjectType.copado__Selenium_Test_Group__c.fields.copado__Environment__c.Label}</th>
                                                                 <th>{!$ObjectType.copado__Selenium_Test_Group__c.fields.copado__Status_Date__c.Label}</th>
                                                                 <th>{!$ObjectType.copado__Selenium_Test_Group__c.fields.copado__Status__c.Label}</th>

@@ -101,7 +101,7 @@
                             </svg>
                         </span>
                         <a href="https://success.copado.com/s/group/0F95p000000sY6QCAU/new-rollback-feedback">
-                            <span class="slds-text-heading_small">{!$Label.copado__feedback}</span>
+                            <span class="slds-text-heading_small">{!$Label.copado__Feedback}</span>
                         </a>
                     </div>
                     </div>
@@ -146,7 +146,7 @@
                                         <header class="slds-media slds-media_center slds-has-flexi-truncate">
                                             <div class="slds-media__body" style="">
                                                 <h2 class="slds-card__header-title">
-                                                    <span>{!$Label.copado__source}</span>
+                                                    <span>{!$Label.copado__Source}</span>
                                                 </h2>
                                             </div>
                                         </header>
@@ -182,7 +182,7 @@
                                         <header class="slds-media slds-media_center slds-has-flexi-truncate">
                                             <div class="slds-media__body" style="">
                                                 <h2 class="slds-card__header-title">
-                                                    <span>{!$Label.copado__target}</span>
+                                                    <span>{!$Label.copado__TARGET}</span>
                                                 </h2>
                                             </div>
                                         </header>
@@ -192,17 +192,17 @@
                         </div>
                     </div>
 
-                    <apex:outputPanel layout="none" rendered="{!deploymentInterface.StepGeneralHeader != $Label.copado__new_data_deployment}">
+                    <apex:outputPanel layout="none" rendered="{!deploymentInterface.StepGeneralHeader != $Label.copado__New_Data_Deployment}">
                         <apex:outputPanel rendered="{!!isRollback}">  
                             <p class="credits" >
                                 {!CalculatedCredit}
                                 <apex:outputPanel layout="none" rendered="{!CalculatedCredit < 2}">
-                                    {!$Label.copado__credit}
+                                    {!$Label.copado__Credit}
                                 </apex:outputPanel>
                                 <apex:outputPanel layout="none" rendered="{!CalculatedCredit >= 2}">
-                                    {!$Label.copado__credits}
+                                    {!$Label.copado__CREDITS}
                                 </apex:outputPanel>
-                                <span>{!$Label.copado__to_be_used}</span>
+                                <span>{!$Label.copado__To_Be_Used}</span>
                             </p>
                         </apex:outputPanel>  
 
@@ -228,7 +228,7 @@
                         </div>
                     </apex:outputPanel>
 
-                    <apex:outputPanel layout="none" rendered="{!deploymentInterface.StepGeneralHeader == $Label.copado__new_data_deployment}">
+                    <apex:outputPanel layout="none" rendered="{!deploymentInterface.StepGeneralHeader == $Label.copado__New_Data_Deployment}">
                         <div class="data-templates">
                             <div class="name">
                                 <span>{!dataTemplate.Name}</span> | {!dataTemplate.copado__Main_Object__c}
@@ -246,15 +246,15 @@
                     </apex:outputPanel>
 
                     <div class="buttons slds-m-top--xx-large">
-                        <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__start_new_deployment}"
+                        <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__Start_New_Deployment}"
                             action="{!startNewDeployment}" rendered="{!!isRollback}"/>
-                        <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__clone}" action="{!deepCloneDeployment}"
+                        <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__CLONE}" action="{!deepCloneDeployment}"
                             onComplete="dw.buttonOnComplete();unlockScreen();" rendered="{!!isRollback}" reRender="errorPanel,headerComponent" />
-                        <apex:outputPanel layout="none" rendered="{!deploymentInterface.StepGeneralHeader == $Label.copado__new_data_deployment}">
-                            <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__restart_deployment}"
+                        <apex:outputPanel layout="none" rendered="{!deploymentInterface.StepGeneralHeader == $Label.copado__New_Data_Deployment}">
+                            <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__Restart_Deployment}"
                                 action="{!deploymentDMLs}" onComplete="restartDeployment();" reRender="nothingtorender" />
                         </apex:outputPanel>
-                        <apex:commandButton styleClass="slds-button slds-button_brand btn-confirm" onClick="lockScreen();" value="{!$Label.copado__close_deployment}"
+                        <apex:commandButton styleClass="slds-button slds-button_brand btn-confirm" onClick="lockScreen();" value="{!$Label.copado__Close_Deployment}"
                             action="{!goToDeploymentTab}" />
                     </div>
 

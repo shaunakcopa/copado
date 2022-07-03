@@ -83,4 +83,8 @@
             <translation><!-- Unit Test --></translation>
         </picklistValues>
     </fields>
+    <validationRules>
+        <errorMessage><!-- This Extension Tool cannot be modified. Please create a new Extension Configuration record instead. --></errorMessage>
+        <name>copado__PreventUpdatingExtensionTool</name>
+    </validationRules>
 </CustomObjectTranslation>

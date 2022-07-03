@@ -94,8 +94,12 @@
                                         </span>
                                         <div class="slds-notify__content">
                                             <apex:repeat value="{!pageMessagesMap[severity]}" var="messages">
-                                                <h2 class="slds-text-heading_small ">{!messages}</h2>
+                                                <apex:outputPanel rendered="{!IF(CONTAINS(messages, '<html '),false, true)}">
+                                                    <h2 class="slds-text-heading_small ">{!messages}</h2>
+                                                </apex:outputPanel>
+                                                <apex:outputText escape="false" value="{!messages}" rendered="{!IF(CONTAINS(messages, '<html'),true, false)}" styleClass="slds-text-color_default"></apex:outputText>
                                             </apex:repeat>
+
                                         </div>
                                         <div class="slds-notify__close">
                                             <button type="button" class="slds-button slds-button_icon slds-button_icon-inverse" title="{!$Label.CLOSE}" onclick="$copado('[id=divToast]').addClass('slds-hide');">
@@ -116,7 +120,7 @@
                                         <header class="slds-media slds-media_center slds-has-flexi-truncate">
                                             <div class="slds-media__body">
                                                 <h2 class="slds-card__header-title">
-                                                    <span>{!$Label.copado__source}</span>
+                                                    <span>{!$Label.copado__Source}</span>
                                                 </h2>
                                             </div>
                                         </header>
@@ -154,7 +158,7 @@
                                         <header class="slds-media slds-media_center slds-has-flexi-truncate">
                                             <div class="slds-media__body">
                                                 <h2 class="slds-card__header-title">
-                                                    <span>{!$Label.copado__target}</span>
+                                                    <span>{!$Label.copado__TARGET}</span>
                                                 </h2>
                                             </div>
                                         </header>
@@ -164,31 +168,32 @@
                         </div>
                     </div>
 
-                    <apex:outputPanel layout="none" rendered="{!deploymentInterface.StepGeneralHeader != $Label.copado__new_data_deployment}">
+                    <apex:outputPanel layout="none" rendered="{!deploymentInterface.StepGeneralHeader != $Label.copado__New_Data_Deployment}">
                         <!-- Test Level Select. First option -->
                         <div class="slds-form-element test-level-dropdown">
-                            <label class="slds-form-element__label" for="test-level">{!$Label.Select_Test_Level}
+                            <label class="slds-form-element__label" for="test-level">{!$Label.copado__Select_Test_Level}
                                 <span class="mandatory">*</span>
                             </label>
-                                <div class="slds-grid">
-                                    <div class="slds-select_container"  style="width:400px;">
-                                        <apex:selectList styleClass="slds-select" value="{!stepTestLevel}" multiselect="false" size="1">
-                                            <apex:selectOptions value="{!TestLevels}" />
-                                            <apex:actionSupport oncomplete="unlockScreen();" onsubmit="lockScreen();" event="onchange" reRender="selectTestClass" />
-                                        </apex:selectList> 
-                                    </div>
-                                    <apex:outputPanel id="selectTestClass" style="width:250px;margin-left: 10px;" rendered="{!isRollback}">
-                                        <apex:commandButton action="{!redirectToAddTestClassRollbackPage}" disabled="{!IF((stepTestLevel == 'RunSpecifiedTests'), 'false', 'true')}" value="Add Test Classes" />
-                                    </apex:outputPanel>
+                            <div class="slds-grid">
+                                <div class="slds-select_container" style="width:400px;">
+                                    <apex:selectList styleClass="slds-select" value="{!stepTestLevel}" multiselect="false" size="1">
+                                        <apex:selectOptions value="{!TestLevels}" />
+                                        <apex:actionSupport oncomplete="unlockScreen();" onsubmit="lockScreen();" event="onchange" reRender="selectTestClass" />
+                                    </apex:selectList>
                                 </div>
-  
+                                <apex:outputPanel id="selectTestClass" style="width:250px;margin-left: 10px;" rendered="{!isRollback}">
+                                    <apex:commandButton action="{!redirectToAddTestClassRollbackPage}" disabled="{!IF((stepTestLevel == 'RunSpecifiedTests'), 'false', 'true')}"
+                                        value="Add Test Classes" />
+                                </apex:outputPanel>
+                            </div>
+
                         </div>
                         <apex:outputPanel id="jqxMetadataGridComponent">
-                            <c:JQX_MetadataGrid title="" bigMetadata="false" tabs="false"/>
+                            <c:JQX_MetadataGrid title="" bigMetadata="false" tabs="false" />
                         </apex:outputPanel>
                     </apex:outputPanel>
 
-                    <apex:outputPanel layout="none" rendered="{!deploymentInterface.StepGeneralHeader == $Label.copado__new_data_deployment}">
+                    <apex:outputPanel layout="none" rendered="{!deploymentInterface.StepGeneralHeader == $Label.copado__New_Data_Deployment}">
                         <div class="data-template-wrapper">
                             <div class="data-templates">
                                 <div class="name">
@@ -218,7 +223,7 @@
                                         </div>
                                         <div class="slds-form__item" role="listitem">
                                             <div class="line-item">
-                                                <span>{!$Label.copado__total_related_objects}:</span>
+                                                <span>{!$Label.copado__Total_Related_Objects}:</span>
                                                 <span class="value"> {!TotalRelationCount}</span>
                                             </div>
                                         </div>
@@ -241,7 +246,7 @@
                                     <div class="slds-form__row">
                                         <div class="slds-form__item" role="listitem">
                                             <div class="line-item">
-                                                <span>{!$Label.copado__filter_override}:</span>
+                                                <span>{!$Label.copado__Filter_Override}:</span>
                                                 <span class="value"> {!OverrideFilterText}</span>
                                             </div>
                                         </div>
@@ -253,7 +258,7 @@
                         </div>
                     </apex:outputPanel>
 
-                    <apex:outputPanel id="dataTemplateValidationResult" layout="none" rendered="{!deploymentInterface.StepGeneralHeader == $Label.copado__new_data_deployment}">
+                    <apex:outputPanel id="dataTemplateValidationResult" layout="none" rendered="{!deploymentInterface.StepGeneralHeader == $Label.copado__New_Data_Deployment}">
                         <div style="width: 70%; margin: 2rem auto 1rem auto;">
                             <c:DataStepValidationResult stepId="{!DeploymentStepRecord.Id}" />
                         </div>
@@ -261,26 +266,26 @@
 
 
                     <div class="buttons slds-m-top--xx-large">
-                        <apex:commandLink styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__back}" action="{!goToPreviousStep}"
+                        <apex:commandLink styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__BACK}" action="{!goToPreviousStep}"
                             onComplete="dw.buttonOnComplete();unlockScreen();" reRender="errorPanel,headerComponent" />
-                        <apex:commandLink styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__save_and_close}"
+                        <apex:commandLink styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__SAVE_AND_CLOSE}"
                             action="{!saveAndCloseStep}" onComplete="dw.buttonOnComplete();unlockScreen();" reRender="errorPanel,headerComponent"
                         />
-                        <apex:outputPanel layout="none" rendered="{!AND(EnableButtons,qualityGateList.size = 0,deploymentInterface.StepGeneralHeader != $Label.copado__new_data_deployment)}">
-                            <a class="slds-button slds-button_outline-brand" onclick="lockScreen();checkCredits('validation');">{!$Label.copado__validate_deployment}</a>
+                        <apex:outputPanel layout="none" rendered="{!AND(EnableButtons,deploymentInterface.StepGeneralHeader != $Label.copado__New_Data_Deployment)}">
+                            <a class="slds-button slds-button_outline-brand" onclick="lockScreen();checkCredits('validation');">{!$Label.copado__Validate_Deployment}</a>
                         </apex:outputPanel>
-                        <apex:outputPanel layout="none" rendered="{!AND(EnableButtons,qualityGateList.size = 0,deploymentInterface.StepGeneralHeader == $Label.copado__new_data_deployment)}">
-                            <a class="slds-button slds-button_outline-brand" onclick="lockScreen();validateDataTemplate();">{!$Label.copado__validate_deployment}</a>
+                        <apex:outputPanel layout="none" rendered="{!AND(EnableButtons,qualityGateList.size = 0,deploymentInterface.StepGeneralHeader == $Label.copado__New_Data_Deployment)}">
+                            <a class="slds-button slds-button_outline-brand" onclick="lockScreen();validateDataTemplate();">{!$Label.copado__Validate_Deployment}</a>
                         </apex:outputPanel>
                         <apex:outputPanel layout="none" rendered="{!isRollback}">
-                            <a class="slds-button slds-button_outline-brand" onclick="redirectToDeploymentPage();">{!$Label.copado__rollbackprepoststeps}</a>
+                            <a class="slds-button slds-button_outline-brand" onclick="redirectToDeploymentPage();">{!$Label.copado__RollbackPrePostSteps}</a>
                         </apex:outputPanel>
                         <apex:outputPanel layout="none" rendered="{!AND(EnableButtons,qualityGateList.size = 0)}">
-                            <a class="slds-button slds-button_brand" onclick="lockScreen();checkCredits('deployment');">{!$Label.copado__start_deployment}</a>
+                            <a class="slds-button slds-button_brand" onclick="lockScreen();checkCredits('deployment');">{!$Label.copado__Start_Deployment}</a>
                         </apex:outputPanel>
 
                         <apex:outputPanel layout="none" rendered="{!AND(EnableButtons,qualityGateList.size > 0)}">
-                            <apex:commandLink styleClass="slds-button slds-button_brand" onClick="lockScreen();" value="{!$Label.copado__go_to_advanced_deployment}"
+                            <apex:commandLink styleClass="slds-button slds-button_brand" onClick="lockScreen();" value="{!$Label.copado__Go_to_Advanced_Deployment}"
                                 action="{!goToAdvanceDeployment}" onComplete="dw.buttonOnComplete();unlockScreen();" reRender="errorPanel,headerComponent"
                             />
                         </apex:outputPanel>
@@ -297,8 +302,8 @@
                         reRender="errorPanel,headerComponent" />
                     <apex:actionFunction name="validateDataTemplate" action="{!validateDataTemplateDeployment}" onComplete="refreshAttachmentInDataStepValidationResultCtrl();unlockScreen()"
                     />
-                    <apex:actionFunction name="redirectToDeploymentPage" action="{!redirectToDeploymentPage}"/>
-                    
+                    <apex:actionFunction name="redirectToDeploymentPage" action="{!redirectToDeploymentPage}" />
+
 
 
                 </div>

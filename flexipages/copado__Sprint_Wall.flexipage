@@ -252,7 +252,29 @@
                     <value>{!$Label.copado__SprintWallAlertCommunicationId}</value>
                 </componentInstanceProperties>
                 <componentName>copado:copadoAlertPlaceHolder</componentName>
-                <identifier>copadoAlertPlaceHolder</identifier>
+                <identifier>c_copadoAlertPlaceHolder1</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>actualVelocityField</name>
+                    <value>copado__ActualVelocity__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>legendPosition</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>plannedVelocityField</name>
+                    <value>copado__PlannedVelocity__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Sprint Metrics</value>
+                </componentInstanceProperties>
+                <componentName>copado:sprintMetrics</componentName>
+                <identifier>c_sprintMetrics1</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

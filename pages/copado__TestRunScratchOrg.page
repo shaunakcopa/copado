@@ -36,7 +36,7 @@
                     })();
                 </script>
             </apex:outputPanel>
-            <c:ScreenLocker msg="{!$Label.copado__loading}" useJobsManager="true" possibleRunningJobs=",DxCreateFullScratchOrgJob,,true;"/>
+            <c:ScreenLocker msg="{!$Label.copado__LOADING}" useJobsManager="true" possibleRunningJobs=",DxCreateFullScratchOrgJob,,true;"/>
             <script>
                 window.addEventListener('copadoJobsManagerFinished', function (evt) {
                     for(var i=0 ; i < evt.detail.length ; i++ ) {

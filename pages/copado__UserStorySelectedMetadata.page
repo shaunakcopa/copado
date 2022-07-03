@@ -15,7 +15,7 @@
     </head>
     
     <apex:pageMessages id="theMessages" />
-    <apex:form ><c:ScreenLocker id="cmpScreenLocker" msg="{!$Label.copado__loading}" /></apex:form>
+    <apex:form ><c:ScreenLocker id="cmpScreenLocker" msg="{!$Label.copado__LOADING}" /></apex:form>
         
     <apex:form id="theForm" rendered="{!hasOrg}">      
         <apex:pageBlock id="pb">
@@ -23,7 +23,7 @@
                 <input id="btnLoadGitData" type="button" onclick="USselectedMetadata.getGitMetadata()" value="{!$Label.REFRESH_GIT_SELECTIONS}" class="btn" />
                 <input id="btnAddTestClasses" type="button" onclick="addtestclasses();" value="{!$Label.ADD_TEST_CLASSES}" class="btn" />
             </apex:pageBlockButtons>
-            <div id="loadingDiv"><center><img src="/img/loading.gif" /> <i>{!$Label.copado__loading}<span id="retry-label"></span></i></center></div>  
+            <div id="loadingDiv"><center><img src="/img/loading.gif" /> <i>{!$Label.copado__LOADING}<span id="retry-label"></span></i></center></div>  
             <div id="jqxgrid_metadata"></div>
         </apex:pageBlock>
 

@@ -1,5 +1,5 @@
 <apex:page docType="html-5.0" showHeader="true" sidebar="false" standardController="copado__Deployment_Task__c" extensions="copado.DeploymentTaskExtension,copado.Settings,copado.JsRemotingController"
- standardStylesheets="false" title="{!$Label.copado__edit} {!$ObjectType.copado__Deployment_Task__c.Label}">
+ standardStylesheets="false" title="{!$Label.copado__EDIT} {!$ObjectType.copado__Deployment_Task__c.Label}">
 	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en" style="height:100%;">
 
 	<head>
@@ -212,7 +212,7 @@
 			var labels = labels || {};
 
 			labels.config = {
-				loading_label: '{!$Label.copado__loading}',
+				loading_label: '{!$Label.copado__LOADING}',
 				req_ext_id_label: '{!SUBSTITUTE($Label.EXTERNAL_ID_REQUIRED,"'","\'")}',
 				req_id_label: '{!SUBSTITUTE($Label.SOQL_HASNOT_ID_ERROR,"'","\'")}',
 				bulk_soql_error: '{!SUBSTITUTE($Label.BULK_SOQL_ERROR,"'","\'")}',
@@ -265,7 +265,7 @@
 			</script>
 		</apex:outputPanel>
 		<apex:form >
-			<c:ScreenLocker msg="{!$Label.copado__loading}" />
+			<c:ScreenLocker msg="{!$Label.copado__LOADING}" />
 
 			<div id="screenLockerLightning" class="slds-screenlocker">
 				<p>
@@ -301,9 +301,9 @@
 					<!-- ACTION BUTTONS -->
 					<div class="slds-col slds-no-flex slds-grid slds-align-top ">
 						<div class="slds-button-group" role="group">
-							<apex:commandButton value="{!$Label.copado__save}" reRender="pageMessages" onclick="return saveTask();" styleClass="slds-button slds-button--neutral"
+							<apex:commandButton value="{!$Label.copado__Save}" reRender="pageMessages" onclick="return saveTask();" styleClass="slds-button slds-button--neutral"
 							/>
-							<apex:commandButton value="{!$Label.copado__cancel}" action="{!cancel}" immediate="true" reRender="dummy" styleClass="slds-button slds-button--neutral"
+							<apex:commandButton value="{!$Label.copado__Cancel}" action="{!cancel}" immediate="true" reRender="dummy" styleClass="slds-button slds-button--neutral"
 							/>
 
 							<apex:actionFunction action="{!saveAction}" name="saveWithDetails" id="svd" reRender="pmessage" oncomplete="unlockScreen();overridePageMessages();">
@@ -324,7 +324,7 @@
 				<div class="slds-section-container">
 					<div class="slds-section slds-is-open">
 						<h3 class="slds-section__title slds-theme_shade">
-							<span class="slds-truncate slds-p-horizontal_small" title="{!$Label.copado__detail}">{!$Label.copado__detail}</span>
+							<span class="slds-truncate slds-p-horizontal_small" title="{!$Label.copado__DETAIL}">{!$Label.copado__DETAIL}</span>
 						</h3>
 						<div aria-hidden="false" class="slds-section__content">
 							<div class="slds-grid">
@@ -362,7 +362,7 @@
 					</div>
 					<div class="slds-section slds-is-open">
 						<h3 class="slds-section__title slds-theme_shade">
-							<span class="slds-truncate slds-p-horizontal_small" title="{!$Label.copado__detail}">{!$Label.copado__deploymenttask_task_details}</span>
+							<span class="slds-truncate slds-p-horizontal_small" title="{!$Label.copado__DETAIL}">{!$Label.copado__DeploymentTask_Task_Details}</span>
 						</h3>
 
 						<apex:outputPanel id="detailPanel" layout="block">

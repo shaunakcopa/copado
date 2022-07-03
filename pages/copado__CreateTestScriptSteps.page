@@ -15,7 +15,7 @@
         </apex:outputPanel>
         <apex:outputPanel rendered="{!!showLicenseError}">
             <apex:form id="theFrom" styleClass="copado-lightning-container">
-                <apex:sectionHeader id="sectionHeader" title="{!$Label.copado__copado_change_management}" subtitle="Create Test Script Steps" description="This page is designed to facilitate the creation of Test Script Steps.  Use this page to add the Test Script Steps and reorder these as necessary." />
+                <apex:sectionHeader id="sectionHeader" title="{!$Label.copado__COPADO_CHANGE_MANAGEMENT}" subtitle="Create Test Script Steps" description="This page is designed to facilitate the creation of Test Script Steps.  Use this page to add the Test Script Steps and reorder these as necessary." />
                 <apex:pageMessages id="pageMessages" />
                 
                 <apex:pageBlock id="pb" mode="edit">
@@ -57,7 +57,7 @@
                                                     <img src="/img/loading.gif" />
                                                 </apex:facet>
                                                 <apex:facet name="stop">
-                                                    <apex:commandButton id="update" value="{!$Label.copado__update_save}" action="{!row.saveStep}" rerender="pb" status="saveStatus" onComplete="init();"/>
+                                                    <apex:commandButton id="update" value="{!$Label.copado__UPDATE_SAVE}" action="{!row.saveStep}" rerender="pb" status="saveStatus" onComplete="init();"/>
                                                 </apex:facet>
                                             </apex:actionStatus>
                                         </td>
@@ -83,7 +83,7 @@
                                             <img src="/img/loading.gif" />
                                         </apex:facet>
                                         <apex:facet name="stop">
-                                            <apex:commandButton id="btnSave" value="{!$Label.copado__add_row}" action="{!addRow}" rerender="pb" status="addStatus" oncomplete="resetFocus()"/>
+                                            <apex:commandButton id="btnSave" value="{!$Label.copado__ADD_ROW}" action="{!addRow}" rerender="pb" status="addStatus" oncomplete="resetFocus()"/>
                                         </apex:facet>
                                     </apex:actionStatus>
                                 </td>

@@ -1,4 +1,4 @@
-<apex:page id="thePage" controller="copado.QuickCreateUserStoriesController" tabStyle="copado__User_Story__c" title="{!$Label.copado__quick_create_user_stories}" lightningStylesheets="true">
+<apex:page id="thePage" controller="copado.QuickCreateUserStoriesController" tabStyle="copado__User_Story__c" title="{!$Label.copado__QUICK_CREATE_USER_STORIES}" lightningStylesheets="true">
 	<head>
 		<c:GAnalytics />
 		<apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" />
@@ -9,25 +9,25 @@
         </apex:outputPanel>
         <apex:outputPanel rendered="{!!showLicenseError}">
 			<apex:form id="theForm" styleClass="copado-lightning-container" html-novalidate="true">
-				<apex:sectionHeader id="sectionHeader" title="{!$Label.copado__copado_change_management}" subtitle="{!$Label.copado__quick_create_user_stories}" description="{!$Label.copado__quick_create_userstory_description}" />
+				<apex:sectionHeader id="sectionHeader" title="{!$Label.copado__COPADO_CHANGE_MANAGEMENT}" subtitle="{!$Label.copado__QUICK_CREATE_USER_STORIES}" description="{!$Label.copado__QUICK_CREATE_USERSTORY_DESCRIPTION}" />
 				<apex:pageMessages id="pageMessages" />
 				
 				<apex:actionStatus id="screenlocker" onstart="lockScreen();" onstop="unlockScreen();" />
-				<c:ScreenLocker id="cmpScreenLocker" msg="{!$Label.copado__loading}" />
+				<c:ScreenLocker id="cmpScreenLocker" msg="{!$Label.copado__LOADING}" />
 				
 				<apex:pageBlock id="pb" mode="edit" rendered="{!isValid}">
 					<apex:pageBlockButtons id="bpButtonsTop" location="top">
-						<apex:commandButton id="btnUpdate" value="{!$Label.copado__update}" action="{!updateFromLookups}" />
+						<apex:commandButton id="btnUpdate" value="{!$Label.copado__UPDATE}" action="{!updateFromLookups}" />
 					</apex:pageBlockButtons>
 					<apex:pageBlockButtons id="bpButtonsBottom" location="bottom">
-						<apex:commandButton id="btnDone" value="{!$Label.copado__im_done}" action="{!cancel}" />
+						<apex:commandButton id="btnDone" value="{!$Label.copado__IM_DONE}" action="{!cancel}" />
 					</apex:pageBlockButtons>
 					<apex:pageBlockSection id="pbs" >
 						<apex:inputField id="if_Project" value="{!dummyStory.copado__Project__c}" required="true" />
 						<apex:inputField id="if_Epic" value="{!dummyStory.copado__Epic__c}" />
 						<apex:inputField id="if_Sprint" value="{!dummyStory.copado__Sprint__c}" />
 						<apex:pageBlockSectionItem id="pbsiPreLoadStories" >
-							<apex:outputLabel id="lblPreLoadStories" value="{!$Label.copado__preload_filter_user_stories}" />
+							<apex:outputLabel id="lblPreLoadStories" value="{!$Label.copado__PRELOAD_FILTER_USER_STORIES}" />
 							<apex:outputPanel >
 								<apex:actionRegion >
 									<apex:inputCheckbox id="chkPreLoadStories" value="{!preLoadExisting}">
@@ -111,7 +111,7 @@
 											<img src="/img/loading.gif" />
 										</apex:facet>
 										<apex:facet name="stop">
-											<apex:commandButton id="btnSave" value="{!$Label.copado__add_row}" action="{!addRow}" rerender="pb" status="addStatus"/>
+											<apex:commandButton id="btnSave" value="{!$Label.copado__ADD_ROW}" action="{!addRow}" rerender="pb" status="addStatus"/>
 										</apex:facet>
 									</apex:actionStatus>
 								</td>

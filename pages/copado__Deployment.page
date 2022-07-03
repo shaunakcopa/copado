@@ -128,9 +128,9 @@
         </div>
         <div class="fixedMsg" tyle="display:none;" id="msg"></div>
         <div style="display:none;">
-            <apex:pageMessage title="{!$Label.copado__warning}" summary="__MSG__" severity="warning" strength="3" id="js-msg-WARNING" />
-            <apex:pageMessage title="{!$Label.copado__success}" summary="__MSG__" severity="confirm" strength="3" id="js-msg-CONFIRM" />
-            <apex:pageMessage title="{!$Label.copado__error}" summary="__MSG__" severity="error" strength="3" id="js-msg-ERROR" />
+            <apex:pageMessage title="{!$Label.copado__WARNING}" summary="__MSG__" severity="warning" strength="3" id="js-msg-WARNING" />
+            <apex:pageMessage title="{!$Label.copado__SUCCESS}" summary="__MSG__" severity="confirm" strength="3" id="js-msg-CONFIRM" />
+            <apex:pageMessage title="{!$Label.copado__ERROR}" summary="__MSG__" severity="error" strength="3" id="js-msg-ERROR" />
         </div>
         <apex:outputPanel style="display:none;" id="pJSConfig">
             <script language="javascript">
@@ -202,7 +202,7 @@
                                 </div>
                                 <div class="slds-media__body">
                                     <p class="slds-text-heading--label slds-line-height--reset">{!$ObjectType.Deployment__c.Label}</p>
-                                    <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{!IF(ISBLANK(deployment.Name),$Label.copado__new+' '+ $ObjectType.copado__Deployment__c.Label ,deployment.Name)}">{!IF(ISBLANK(deployment.Name),$Label.copado__new+' '+ $ObjectType.copado__Deployment__c.Label ,deployment.Name)}</h1>
+                                    <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{!IF(ISBLANK(deployment.Name),$Label.copado__NEW+' '+ $ObjectType.copado__Deployment__c.Label ,deployment.Name)}">{!IF(ISBLANK(deployment.Name),$Label.copado__NEW+' '+ $ObjectType.copado__Deployment__c.Label ,deployment.Name)}</h1>
                                 </div>
                             </div>
                         </div>
@@ -233,7 +233,7 @@
             <apex:outputPanel id="body" layout="block" styleClass="copado-lightning-container copado-lightning-radius" rendered="{!AND(showOptions,!showError)}">
                 <c:IframeLocker url="/apex/deploymentStatus?id={!deployment.Id}" />
                 <apex:outputPanel layout="block" id="sectionHeaderContainer">
-                    <apex:sectionHeader id="sectionHeader" title="{!$ObjectType.copado__Deployment__c.Label} {!$Label.copado__edit}" subtitle="{!IF(ISBLANK(deployment.Name),$Label.copado__new+' '+ $ObjectType.copado__Deployment__c.Label ,deployment.Name)}"
+                    <apex:sectionHeader id="sectionHeader" title="{!$ObjectType.copado__Deployment__c.Label} {!$Label.copado__EDIT}" subtitle="{!IF(ISBLANK(deployment.Name),$Label.copado__NEW+' '+ $ObjectType.copado__Deployment__c.Label ,deployment.Name)}"
                         rendered="{!AND($User.UIThemeDisplayed != 'Theme4d',!showStepsOnly)}" />
                 </apex:outputPanel>
                 <apex:outputPanel id="chatter" layout="block" styleClass="copado-lightning-chatter">
@@ -246,18 +246,18 @@
                         />
                         <div class="row">
                             <apex:panelGrid id="theGrid" columns="2" style="width:100%;" columnClasses="co-info-panel">
-                                <apex:pageblock title="Information" id="pbInformation">
+                                <apex:pageblock title="{!$Label.copado__INFORMATION}" id="pbInformation">
                                     <apex:pageBlockButtons id="pbbInfo" location="top">
                                         <apex:commandButton id="btnDeploymentSave" value="{!$Label.site.save}" onclick="copadoApp.dirty=false;" action="{!saveDeployment}"
                                             rerender="pbsDestinations,otherInfoSection,msg,pJSConfig,headerFields,lexHeaderContainer,sectionHeaderContainer"
                                         />
                                         <apex:commandButton id="btnDeploymentCancel" value="{!$Label.site.cancel}" action="{!cancel}" onclick="copadoApp.cancel();return false;"
                                         />
-                                        <apex:commandButton id="btnDeploymentDelete" action="{!delete}" value="{!$Label.copado__delete}" onclick="return confirm(copadoLabels.ARE_YOU_SURE);"
+                                        <apex:commandButton id="btnDeploymentDelete" action="{!delete}" value="{!$Label.copado__DELETE}" onclick="return confirm(copadoLabels.ARE_YOU_SURE);"
                                         />
-                                        <apex:commandButton id="btnDeploymentClone" action="{!URLFOR($Action.Deployment__c.Clone,deployment.Id)}" value="{!$Label.copado__clone}"
+                                        <apex:commandButton id="btnDeploymentClone" action="{!URLFOR($Action.Deployment__c.Clone,deployment.Id)}" value="{!$Label.copado__CLONE}"
                                             rerender="pbInformation" disabled="{!ISBLANK(deployment.Id)}" />
-                                        <apex:commandButton id="btnDeploymentShare" action="{!URLFOR($Action.Deployment__c.Share,deployment.Id)}" value="{!$Label.copado__share}"
+                                        <apex:commandButton id="btnDeploymentShare" action="{!URLFOR($Action.Deployment__c.Share,deployment.Id)}" value="{!$Label.copado__SHARE}"
                                             disabled="{!ISBLANK(deployment.Id)}" rendered="{!isShareable}" />
                                     </apex:pageBlockButtons>
                                     <apex:pageBlockSection id="pbs_pbi1" columns="1">
@@ -279,7 +279,7 @@
                                                     </svg>
                                                     <div class="tooltiptext">
                                                         <div class="tooltiptextbody">
-                                                            {!$Label.copado__attach_deployment_file_info}
+                                                            {!$Label.copado__Attach_Deployment_File_Info}
                                                         </div>
                                                     </div>
                                                 </span>
@@ -317,7 +317,7 @@
                                                                 <c:OrgStatusIcons id="cmpOrgStatusIconsToOrg" pdestination="{!destination}" />
                                                             </apex:outputPanel>
                                                             <a href="#" onclick="copadoApp.lock(); deleteDestOrg('{!destination.copado__To_Org__c}')">
-                                                                <span>{!$Label.copado__delete}</span>
+                                                                <span>{!$Label.copado__DELETE}</span>
                                                             </a>
                                                         </div>
                                                     </apex:outputPanel>
@@ -336,7 +336,7 @@
                                                 </a>
                                             </apex:outputPanel>
                                             <apex:outputPanel rendered="{!ccdEnabled}" title="Disabled based on CCD manual activation for selected destination environment">
-                                                <u style="opacity: 0.5;cursor:not-allowed;">{!$Label.copado__add_destination_org}</u>
+                                                <u style="opacity: 0.5;cursor:not-allowed;">{!$Label.copado__ADD_DESTINATION_ORG}</u>
                                             </apex:outputPanel>
                                         </apex:outputPanel>
                                         <apex:outputPanel layout="block">
@@ -363,28 +363,28 @@
                                     </apex:pageBlockSection>
                                     <apex:outputPanel id="pnlMsgSaveDeployment" layout="block" rendered="{!ISBLANK(deployment.Id)}">
                                         <center>
-                                            <i class="empty-msg">{!$Label.copado__save_deployment_to_add_destination_orgs}</i>
+                                            <i class="empty-msg">{!$Label.copado__SAVE_DEPLOYMENT_TO_ADD_DESTINATION_ORGS}</i>
                                         </center>
                                     </apex:outputPanel>
-                                    <apex:pageBlockSection columns="1" id="otherInfoSection" title="{!$Label.copado__other_information}" rendered="{!showOtherInformation}">
+                                    <apex:pageBlockSection columns="1" id="otherInfoSection" title="{!$Label.copado__OTHER_INFORMATION}" rendered="{!showOtherInformation}">
                                         <apex:repeat value="{!$ObjectType.copado__Deployment__c.FieldSets.copado__CustomFields}" var="f">
                                             <apex:inputField value="{!copado__Deployment__c[f]}" required="{!OR(f.required, f.dbrequired)}" />
                                         </apex:repeat>
                                     </apex:pageBlockSection>
                                 </apex:pageblock>
-                                <apex:pageblock title="Status" id="pbStatus">
+                                <apex:pageblock title="{!$Label.copado__STATUS}" id="pbStatus">
                                     <style>
                                         #thePage\:theForm\:pbStatus>div.pbHeader>table>tbody>tr>td.pbTitle {
                                             width: 10% !important;
                                         }
                                     </style>
                                     <apex:pageBlockButtons id="pbbStatus" location="top">
-                                        <apex:commandButton value="{!$Label.copado__deploy}" onclick="copadoApp.deploy();return false;" id="btnDeploy" />
-                                        <apex:commandButton value="{!$Label.copado__cancel_deployment}" onclick="copadoApp.cancelDeploy();return false;" id="btnCancelDeploy"
+                                        <apex:commandButton value="{!$Label.copado__DEPLOY}" onclick="copadoApp.deploy();return false;" id="btnDeploy" />
+                                        <apex:commandButton value="{!$Label.copado__CANCEL_DEPLOYMENT}" onclick="copadoApp.cancelDeploy();return false;" id="btnCancelDeploy"
                                         />
                                         <input id="btnViewStatus" type="button" class="btn" style="display:none" value="{!$Label.VIEW_DEPLOYMENT_STATUS}" onclick="openIframeBox()"
                                         />
-                                        <apex:commandButton id="btnShowHookUrl" value="Show Hook URL" onclick="showWebhook(); return false;" />
+                                        <apex:commandButton id="btnShowHookUrl" value="{!$Label.copado__Show_Hook_URL}" onclick="showWebhook(); return false;" />
                                     </apex:pageBlockButtons>
                                     <apex:pageBlockSection id="pbsPbStatus" columns="1">
                                         <apex:outputField id="ofStatus" value="{!deployment.copado__Status__c}">
@@ -490,10 +490,10 @@
                                 <div id="tab-container" class="tab-container">
                                     <ul class='etabs'>
                                         <li class='tab'>
-                                            <a href="#stepDetail" id="tab-stepDetail">Details</a>
+                                            <a href="#stepDetail" id="tab-stepDetail">{!$Label.Details}</a>
                                         </li>
                                         <li class='tab'>
-                                            <a href="#stepResult" id="tab-stepResult">Result</a>
+                                            <a href="#stepResult" id="tab-stepResult">{!$Label.Result}</a>
                                         </li>
                                     </ul>
                                     <div class="panel-container">
@@ -504,7 +504,7 @@
                                         </div>
                                         <div id="stepResult">
                                             <center>
-                                                <i class="empty-msg">{!$Label.copado__click_deployment_job_to_view_results}</i>
+                                                <i class="empty-msg">{!$Label.copado__CLICK_DEPLOYMENT_JOB_TO_VIEW_RESULTS}</i>
                                             </center>
                                         </div>
                                     </div>

@@ -61,9 +61,9 @@
             <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">
 			    <c:IframeLocker url="" />
 			    <div style="display:none;">
-			        <apex:pageMessage title="{!$Label.copado__warning}" summary="__MSG__" severity="warning" strength="3" id="js-msg-WARNING" />
-			        <apex:pageMessage title="{!$Label.copado__success}" summary="__MSG__" severity="confirm" strength="3" id="js-msg-CONFIRM" />
-			        <apex:pageMessage title="{!$Label.copado__error}" summary="__MSG__" severity="error" strength="3" id="js-msg-ERROR" />
+			        <apex:pageMessage title="{!$Label.copado__WARNING}" summary="__MSG__" severity="warning" strength="3" id="js-msg-WARNING" />
+			        <apex:pageMessage title="{!$Label.copado__SUCCESS}" summary="__MSG__" severity="confirm" strength="3" id="js-msg-CONFIRM" />
+			        <apex:pageMessage title="{!$Label.copado__ERROR}" summary="__MSG__" severity="error" strength="3" id="js-msg-ERROR" />
 			    </div>
 				
 				<script type="text/javascript">
@@ -316,8 +316,8 @@
 			    	<apex:actionFunction name="getCI" action="{!getCI}" reRender="theForm"/>
 					<apex:pageBlock id="pb" title="">
 						<apex:pageBlockButtons id="pbbs" location="top" rendered="{!isCIenabled}">
-							<apex:commandButton id="btnEdit" value="{!$Label.copado__edit}" action="{!edit}" />
-							<apex:commandButton id="btnDelete" value="{!$Label.copado__delete}" action="{!URLFOR($Action.Continuous_Integration__c.Delete, Continuous_Integration__c.Id)}" onclick="if(!confirm('{!$Label.copado__are_you_sure}')){return false;};"/>
+							<apex:commandButton id="btnEdit" value="{!$Label.copado__EDIT}" action="{!edit}" />
+							<apex:commandButton id="btnDelete" value="{!$Label.copado__DELETE}" action="{!URLFOR($Action.Continuous_Integration__c.Delete, Continuous_Integration__c.Id)}" onclick="if(!confirm('{!$Label.copado__ARE_YOU_SURE}')){return false;};"/>
 							<apex:commandButton id="btnRun" value="Run Continuous Integration" action="{!executeCI}" disabled="{!!ci.copado__Active__c}" />
 							<apex:commandButton id="btnShowHookUrl" value="Show Hook URL" onclick="showWebhook(); return false;"/>
 						</apex:pageBlockButtons>
@@ -374,7 +374,7 @@
 							</apex:pageBlockSectionItem>
 
 						</apex:pageBlockSection>
-			            <apex:pageBlockSection columns="2" title="{!$Label.copado__pre_post_build_automation}">
+			            <apex:pageBlockSection columns="2" title="{!$Label.copado__PRE_POST_BUILD_AUTOMATION}">
 			                <apex:outputField value="{!ci.copado__Pre_Deployment_Options__c}" />
 			                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
 			                <apex:outputField value="{!ci.copado__Pre_Deployment_Jobs__c}" />
@@ -405,7 +405,7 @@
 							</apex:pageBlockSectionItem>
 						</apex:pageBlockSection>
 						
-			            <apex:pageBlockSection columns="2" title="{!$Label.copado__other_information}" rendered="{!showOtherInformation}">
+			            <apex:pageBlockSection columns="2" title="{!$Label.copado__OTHER_INFORMATION}" rendered="{!showOtherInformation}">
 							<apex:repeat value="{!$ObjectType.copado__Continuous_Integration__c.FieldSets.copado__CustomFields}" var="f"> 
 								<apex:outputField value="{!copado__Continuous_Integration__c[f]}" />
 							</apex:repeat>

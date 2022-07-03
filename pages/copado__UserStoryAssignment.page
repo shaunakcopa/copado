@@ -8,7 +8,7 @@
             <apex:pageMessages id="licenseMessage"/>
         </apex:outputPanel>
         <apex:outputPanel rendered="{!!showLicenseError}">
-			<apex:sectionHeader id="sectionHeader" title="{!$Label.copado__copado_change_management}" subtitle="{!$Label.copado__user_story_assign_release}" />
+			<apex:sectionHeader id="sectionHeader" title="{!$Label.copado__COPADO_CHANGE_MANAGEMENT}" subtitle="{!$Label.copado__USER_STORY_ASSIGN_RELEASE}" />
 			<apex:pageMessages id="theMessages" />
 			
 			<apex:form id="theForm" styleClass="copado-lightning-container" html-novalidate="true">

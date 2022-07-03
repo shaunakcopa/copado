@@ -492,7 +492,7 @@
                         <div class="slds-button-group" role="group">
                             <apex:outputPanel layout="none" rendered="{!isUSCreateable}">
                                 <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" layout="none">
-                                    <a class="slds-button slds-button--neutral" href="{!URLFOR($Action.copado__User_Story__c.New)}">{!$Label.copado__sprintwall_button_new_us}</a>
+                                    <a class="slds-button slds-button--neutral" href="{!URLFOR($Action.copado__User_Story__c.New)}">{!$Label.copado__SprintWall_Button_New_US}</a>
                                 </apex:outputPanel>
                                 <apex:outputPanel rendered="{!$User.UIThemeDisplayed != 'Theme4d'}" layout="none">
                                     <button type="button" class="slds-button slds-button--neutral" onClick="lockScreen();prepareUs('','new');"> {!$label.SprintWall_Button_New_US} </button>
@@ -630,7 +630,7 @@
                                         <div class="slds-media__body slds-truncate">
                                             <h2 class="slds-text-heading--small">
                                                 {!$Label.Burndown_Chart} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                <apex:commandLink action="{!runBatchNow}" value="{!$Label.copado__refresh}" onClick="lockScreen();" onComplete="toggleChart();unlockScreen();"
+                                                <apex:commandLink action="{!runBatchNow}" value="{!$Label.copado__REFRESH}" onClick="lockScreen();" onComplete="toggleChart();unlockScreen();"
                                                     rendered="{!copado__Sprint__c.copado__Status__c != 'Completed'}" reRender="chartbody" />
                                                 <span title="{!$Label.Burndown_Chart_Info}" class="slds-float_right">
                                                     <svg aria-hidden="true" class="slds-icon slds-icon--small slds-icon-text-default">
@@ -783,7 +783,7 @@
                 </apex:outputPanel>
                 <!-- / FILTER WRAPPER -->
 
-                <c:ScreenLocker msg="{!$Label.copado__loading}" lockOnLoad="true" />
+                <c:ScreenLocker msg="{!$Label.copado__LOADING}" lockOnLoad="true" />
                 <apex:actionFunction name="filterRenderer" action="{!pageRendererAssignment}" onComplete="applyRenderSVG(['filterIcon','filterButton','chatButton','chartButton','completeButton']);unlockScreen();"
                     reRender="filterCard,pageHeaderDetailButton,errors">
                     <apex:param name="pRenderer" value="" />
@@ -861,7 +861,7 @@
                             <apex:outputPanel layout="none" rendered="{!usModalMode == 'edit'}">
                                 <div class="slds-form slds-form_horizontal">
                                     <div class="slds-form-element">
-                                        <label class="slds-form-element__label">{!$Label.copado__sprintwall_header_type}</label>
+                                        <label class="slds-form-element__label">{!$Label.copado__SprintWall_Header_Type}</label>
                                         <div class="slds-form-element__control">
                                             <div class="slds-form-element">
                                                 <label class="slds-form-element__label"></label>
@@ -874,7 +874,7 @@
                                                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#change_record_type')}">
                                                                 </use>
                                                             </svg>
-                                                            <span class="slds-assistive-text">{!$Label.copado__sprintwall_change_record_type}</span>
+                                                            <span class="slds-assistive-text">{!$Label.copado__SprintWall_Change_Record_Type}</span>
                                                         </button>
                                                     </div>
                                                 </div>
@@ -952,7 +952,7 @@
                             <apex:outputPanel layout="none" rendered="{!usModalMode == 'new'}">
                                 <div class="slds-form slds-form_horizontal">
                                     <div class="slds-form-element">
-                                        <label class="slds-form-element__label">{!$Label.copado__sprintwall_header_type}</label>
+                                        <label class="slds-form-element__label">{!$Label.copado__SprintWall_Header_Type}</label>
                                         <div class="slds-form-element__control">
                                             <c:LightningReadyInputFields showClassic="false" showLabel="false" identity="Name" SObject="{!us}" requiredView="false" Field="RecordTypeId"
                                             />
@@ -977,7 +977,7 @@
                                 </apex:outputPanel>
                                 <apex:outputPanel layout="none" rendered="{!usModalMode == 'new'}">
                                     <apex:commandLink action="{!userStoryCreateOperation}" styleClass="slds-button slds-button_brand" onclick="closeModal('#usModal','#usBackdrop');"
-                                        target="_blank">{!$Label.copado__next}</apex:commandLink>
+                                        target="_blank">{!$Label.copado__NEXT}</apex:commandLink>
                                 </apex:outputPanel>
                                 <apex:outputPanel layout="none" rendered="{!usModalMode == 'massupdate'}">
                                     <button type="button" class="slds-button slds-button_brand" onclick="lockScreen();usUpdateOperation();">{!$Label.Apply}</button>
@@ -1045,10 +1045,10 @@
 
                         <apex:outputPanel layout="block" styleClass="slds-modal__content slds-p-around_medium" id="sprintCompleteContent">
                             <div class="slds-form-element">
-                                <b>{!$Label.copado__completed_user_story}</b> {!CompletedUsNumber}
+                                <b>{!$Label.copado__Completed_User_Story}</b> {!CompletedUsNumber}
                             </div>
                             <div class="slds-form-element">
-                                <b>{!$Label.copado__incomplete_user_story}</b> {!InCompletedUsNumber}
+                                <b>{!$Label.copado__Incomplete_User_Story}</b> {!InCompletedUsNumber}
                             </div>
                             <apex:outputPanel layout="none" rendered="{!InCompletedUsNumber > 0}">
                                 <div class="slds-form-element">
@@ -1061,7 +1061,7 @@
                                     </apex:selectList>
                                 </div>
                                 <div class="slds-form-element">
-                                    <sub>{!$Label.copado__sub_tasks_info}</sub>
+                                    <sub>{!$Label.copado__Sub_Tasks_Info}</sub>
                                 </div>
                             </apex:outputPanel>
                         </apex:outputPanel>
@@ -1090,11 +1090,11 @@
                                         <header class="slds-media slds-media--center slds-has-flexi-truncate">
                                             <div class="slds-media__figure" id="userStoryImage"></div>
                                             <apex:outputPanel styleClass="slds-media__body slds-truncate" layout="block" id="sw_actionButtonGroup">
-                                                <span class="slds-text-heading--small">{!$Label.copado__user_stories}</span>
+                                                <span class="slds-text-heading--small">{!$Label.copado__User_Stories}</span>
                                                 <!-- BUTTONS -->
                                                 <apex:outputPanel layout="none" rendered="{!isKanbanCreateable}">
                                                     <apex:commandLink action="{!kanbanBoardOperations}" styleClass="slds-button slds-button--icon-border slds-icon--small slds-float_right"
-                                                        style="ext-decoration:none;padding:4px;margin-left: .25rem;" title="{!$Label.copado__kanban_view}">
+                                                        style="ext-decoration:none;padding:4px;margin-left: .25rem;" title="{!$Label.copado__Kanban_View}">
                                                         <span id="kanbanButton"></span>
                                                     </apex:commandLink>
                                                 </apex:outputPanel>
@@ -1106,7 +1106,7 @@
                                                     onClick="lockScreen();pageSwithcer('snippet');"></button>
                                                 <button type="button" title="{!$Label.List_View}" id="rowButton" class="slds-button slds-button--icon-border slds-icon--small slds-float_right {!IF(sectionSwitcher == 'list','slds-is-selected','')}"
                                                     onClick="lockScreen();pageSwithcer('list');"></button>
-                                                <button type="button" title="{!$Label.copado__refresh}" id="refreshButton" class="slds-button slds-button--icon-border slds-icon--small slds-float_right"
+                                                <button type="button" title="{!$Label.copado__REFRESH}" id="refreshButton" class="slds-button slds-button--icon-border slds-icon--small slds-float_right"
                                                     onClick="lockScreen();refreshPanel();"></button>
                                                 <!-- / BUTTONS -->
                                             </apex:outputPanel>

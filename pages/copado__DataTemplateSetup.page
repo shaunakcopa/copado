@@ -34,10 +34,10 @@
                                 <div class="slds-page-header__name">
                                     <div class="slds-page-header__name-title">
                                         <h1>
-                                            <span>{!$Label.copado__data_template}</span>
+                                            <span>{!$Label.copado__Data_Template}</span>
                                             <span class="slds-page-header__title">
                                                 <apex:outputPanel layout="none" rendered="{!template.Id == null}">
-                                                    {!$Label.copado__new} {!$Label.copado__data_template}
+                                                    {!$Label.copado__NEW} {!$Label.copado__Data_Template}
                                                 </apex:outputPanel>
                                                 <apex:outputPanel layout="none" rendered="{!template.Id != null}">
                                                     {!template.Name}
@@ -53,24 +53,24 @@
                         <div class="slds-page-header__controls">
                             <div class="slds-page-header__control buttons slds-button-group" role="group">
                                 <apex:commandButton styleClass="slds-button slds-button_neutral"
-                                                    value="{!$Label.copado__show_relationship_diagram}"
+                                                    value="{!$Label.copado__Show_Relationship_Diagram}"
                                                     onClick="dts.onClickFunction();dts.redirectToRelationalDiagramLWC('{!template.Id}','{!JSENCODE(currentNamespace)}');"
                                                     onComplete="dts.onCompleteFunctionToreRender();"
                                                     rendered="{!AND(template.Id != null,$User.UiThemeDisplayed == 'Theme4d',enableADD,$ObjectType.copado__Data_Template__c.Createable,$ObjectType.copado__Data_Template__c.Updateable)}"
                                                     reRender="objectFieldsTab,parentObjectFieldsTab,childrenObjectFieldsTab,errorPanel,gnrMessages,mainObjectFiltersTab,filterLogicPanel,sampleContainer,generalWarningContainer,newTemplateContainer,activeCheckboxBlock,matchOwnerBlock,attachmentOptionsBlock,matchRecordTypeBlock,mainObjectTooltip,sourceOrgPanel"/>
                                 <apex:commandButton styleClass="slds-button slds-button_neutral"
-                                                    value="{!$Label.copado__clone_template}" action="{!saveCloneTemplate}"
+                                                    value="{!$Label.copado__Clone_Template}" action="{!saveCloneTemplate}"
                                                     onClick="dts.onClickFunction();"
                                                     onComplete="dts.onCompleteFunctionToreRender();"
                                                     rendered="{!AND(template.Id != null,enableADD,hasOrgAccess,$ObjectType.copado__Data_Template__c.Createable,$ObjectType.copado__Data_Template__c.Updateable)}"
                                                     reRender="objectFieldsTab,parentObjectFieldsTab,childrenObjectFieldsTab,errorPanel,gnrMessages,mainObjectFiltersTab,filterLogicPanel,sampleContainer,generalWarningContainer,newTemplateContainer,activeCheckboxBlock,matchOwnerBlock,attachmentOptionsBlock,matchRecordTypeBlock,mainObjectTooltip,sourceOrgPanel" />
                                 <apex:commandButton styleClass="slds-button slds-button_neutral"
-                                                    value="{!$Label.copado__export_template}"
+                                                    value="{!$Label.copado__Export_Template}"
                                                     onClick="dts.exportTemplate(['{!template.Id}'],'{!JSENCODE(template.Name)}');"
                                                     rendered="{!template.Id != null}"
                                                     reRender="noRender" />
                                 <apex:commandButton styleClass="slds-button slds-button_brand"
-                                                    value="{!$Label.copado__save_template}" action="{!saveMainTemplate}"
+                                                    value="{!$Label.copado__Save_Template}" action="{!saveMainTemplate}"
                                                     onClick="dts.onClickFunction();"
                                                     onComplete="dts.onCompleteFunctionToreRender();"
                                                     rendered="{!AND(enableADD,hasOrgAccess,$ObjectType.copado__Data_Template__c.Createable,$ObjectType.copado__Data_Template__c.Updateable)}" reRender="objectFieldsTab,parentObjectFieldsTab,childrenObjectFieldsTab,errorPanel,gnrMessages,mainObjectFiltersTab,filterLogicPanel,sampleContainer,generalWarningContainer,newTemplateContainer,activeCheckboxBlock,matchOwnerBlock,attachmentOptionsBlock,matchRecordTypeBlock,mainObjectTooltip,sourceOrgPanel"/>
@@ -99,10 +99,10 @@
                                 </div>
                                 <div class="value slds-truncate">
                                     <apex:outputPanel layout="none" rendered="{!!template.copado__Active__c}">
-                                        {!$Label.copado__no}
+                                        {!$Label.copado__NO}
                                     </apex:outputPanel>
                                     <apex:outputPanel layout="none" rendered="{!template.copado__Active__c}">
-                                        {!$Label.copado__yes}
+                                        {!$Label.copado__YES}
                                     </apex:outputPanel>
                                 </div>
                             </li>
@@ -153,8 +153,8 @@
                             </div>
                             <div class="slds-media__body {!GeneralMessageSeverity}-message-body">
                                 <p>
-                                    {!$Label.copado__add_general_template_warnings}
-                                    <apex:commandLink value=" {!$Label.copado__please_click} {!$Label.copado__here} {!$Label.copado__add_list_of_warnings}"
+                                    {!$Label.copado__ADD_General_Template_Warnings}
+                                    <apex:commandLink value=" {!$Label.copado__Please_click} {!$Label.copado__Here} {!$Label.copado__ADD_List_Of_Warnings}"
                                                       onclick="lockScreen();dts.openModals('GeneralWarning');"
                                                       onComplete="unlockScreen();" reRender="noneedrender"
                                                       styleClass="{!GeneralMessageSeverity}-link"/>
@@ -315,7 +315,7 @@
                                         </div>
 
                                         <div class="slds-form-element">
-                                            <legend class="slds-form-element__label">{!$Label.copado__select_attachment_type}</legend>
+                                            <legend class="slds-form-element__label">{!$Label.copado__Select_Attachment_Type}</legend>
                                             <div class="slds-form-element__control">
                                                 <apex:selectRadio value="{!selectedAttachmentType}">
                                                     <apex:selectOptions value="{!AttachmentTypes}"/>
@@ -399,7 +399,7 @@
                         <apex:outputPanel layout="block" styleClass="table-wrapper" id="objectFieldsTab">
                             <div class="table">
                                 <apex:outputPanel layout="block" id="objectRefresh" styleClass="refresh-link">
-                                    <apex:commandLink styleClass="refreshIcon" action="{!refreshGlobalDescribe}" value=" {!$Label.copado__refresh}" onClick="dts.onClickFunction();" onComplete="describeSobjectCallout();" rendered="{!template.copado__Template_Source_Org__c != null}" />
+                                    <apex:commandLink styleClass="refreshIcon" action="{!refreshGlobalDescribe}" value=" {!$Label.copado__REFRESH}" onClick="dts.onClickFunction();" onComplete="describeSobjectCallout();" rendered="{!template.copado__Template_Source_Org__c != null}" />
                                 </apex:outputPanel>
 
                                 <apex:outputPanel layout="block" id="objectFieldTable">
@@ -432,7 +432,7 @@
                                                 </td>
                                                 <td>
                                                     <apex:outputPanel layout="none" rendered="{!obl.externalId}">
-                                                        <span class="external-ids">{!$Label.copado__xid}</span>
+                                                        <span class="external-ids">{!$Label.copado__XID}</span>
                                                     </apex:outputPanel>
                                                     <apex:outputPanel layout="none" rendered="{!AND(!obl.nillable,obl.type != 'boolean')}">
                                                         <span class="hide-ordering">_</span>
@@ -513,7 +513,7 @@
                                                     <apex:outputPanel layout="none" rendered="{!AND(obl.type != 'boolean', !obl.nillable,!selectableFieldsMap[obl.name].isSelected)}">
                                                         <apex:image width="20px"
                                                                     value="{!URLFOR($Resource.copado__DTS_images,'warning.png')}"
-                                                                    title="{!$Label.copado__warning_dts}" />
+                                                                    title="{!$Label.copado__Warning_DTS}" />
                                                     </apex:outputPanel>
                                                 </td>
                                             </tr>
@@ -532,7 +532,7 @@
                         <apex:outputPanel layout="block" styleClass="table-wrapper" id="parentObjectFieldsTab">
                             <div class="table">
                                 <apex:outputPanel layout="block" id="parentObjectRefresh" styleClass="refresh-link">
-                                    <apex:commandLink styleClass="refreshIcon" action="{!refreshGlobalDescribe}" value=" {!$Label.copado__refresh}" onClick="lockScreen();" onComplete="describeSobjectCallout();" rendered="{!template.copado__Template_Source_Org__c != null}" />
+                                    <apex:commandLink styleClass="refreshIcon" action="{!refreshGlobalDescribe}" value=" {!$Label.copado__REFRESH}" onClick="lockScreen();" onComplete="describeSobjectCallout();" rendered="{!template.copado__Template_Source_Org__c != null}" />
                                 </apex:outputPanel>
                                 <apex:outputPanel layout="block" id="relatedParentObjectsPanel">
                                 <table id="relatedParentObjectsTable" class="stripe">
@@ -606,7 +606,7 @@
                                                                             <li class="link">
                                                                                  <span class="slds-truncate">
                                                                                     <apex:commandLink action="{!resetRelationTemplate}"
-                                                                                            value="{!$Label.copado__create_new_data_template}"
+                                                                                            value="{!$Label.copado__Create_new_Data_Template}"
                                                                                             onClick="unlockScreen();"
                                                                                             onComplete="dts.openModals('NewTemplate');unlockScreen();"
                                                                                             reRender="newTemplateContent">
@@ -638,12 +638,12 @@
                                                                 <apex:outputPanel layout="none" rendered="{!AND(!pofl.nillable,!selectableFieldsMap[pofl.name].isSelected)}">
                                                                     <apex:image width="20px"
                                                                                 value="{!URLFOR($Resource.copado__DTS_images,'warning.png')}"
-                                                                                title="{!$Label.copado__warning_dts}" />
+                                                                                title="{!$Label.copado__Warning_DTS}" />
                                                                 </apex:outputPanel>
                                                                 <apex:outputPanel layout="none" rendered="{!AND(selectableFieldsMap[pofl.name].isSelected,refTo=='User')}">
                                                                     <apex:image width="20px"
                                                                                 value="{!URLFOR($Resource.copado__DTS_images,'warning.png')}"
-                                                                                title="{!$Label.copado__user_lookup_warnings}" />
+                                                                                title="{!$Label.copado__User_Lookup_Warnings}" />
                                                                 </apex:outputPanel>
                                                             </apex:outputPanel>
                                                         </td>
@@ -664,7 +664,7 @@
                         <apex:outputPanel layout="block" styleClass="table-wrapper" id="childrenObjectFieldsTab">
                             <div class="table">
                                 <apex:outputPanel layout="block" id="childObjectRefresh" styleClass="refresh-link">
-                                    <apex:commandLink styleClass="refreshIcon" action="{!refreshGlobalDescribe}" value=" {!$Label.copado__refresh}" onClick="lockScreen();" onComplete="describeSobjectCallout();" rendered="{!template.copado__Template_Source_Org__c != null}" />
+                                    <apex:commandLink styleClass="refreshIcon" action="{!refreshGlobalDescribe}" value=" {!$Label.copado__REFRESH}" onClick="lockScreen();" onComplete="describeSobjectCallout();" rendered="{!template.copado__Template_Source_Org__c != null}" />
                                 </apex:outputPanel>
                                 <apex:outputPanel layout="block" id="relatedChildObjectsPanel">
                                 <table id="relatedChildObjectsTable" class="stripe">
@@ -739,7 +739,7 @@
                                                                         <li class="link">
                                                                              <span class="slds-truncate">
                                                                                 <apex:commandLink action="{!resetRelationTemplate}"
-                                                                                        value="{!$Label.copado__create_new_data_template}"
+                                                                                        value="{!$Label.copado__Create_new_Data_Template}"
                                                                                         onClick="unlockScreen();"
                                                                                         onComplete="dts.openModals('NewTemplate');unlockScreen();"
                                                                                         reRender="newTemplateContent">
@@ -932,7 +932,7 @@
                                         <p class="actions">
                                             <apex:commandLink id="addRow" action="{!addNewCriteria}"
                                                               reRender="objectFieldsTab,parentObjectFieldsTab,childrenObjectFieldsTab,mainObjectFiltersTab,filterLogicPanel,sampleContainer,generalWarningContainer,newTemplateContainer,activeCheckboxBlock,matchOwnerBlock,attachmentOptionsBlock,matchRecordTypeBlock,mainObjectTooltip,sourceOrgPanel"
-                                                              value="{!$Label.copado__add_new_parameter}"
+                                                              value="{!$Label.copado__Add_new_parameter}"
                                                               onClick="dts.onClickFunction();"
                                                               onComplete="dts.onCompleteFunctionToreRender();"
                                                               rendered="{!AND(enableADD,$ObjectType.copado__Data_Template__c.Accessible,$ObjectType.copado__Data_Template__c.Createable,$ObjectType.copado__Data_Template__c.Updateable)}"/>
@@ -989,12 +989,12 @@
                             <div class="slds-col slds-size_4-of-12">
                                 <div class="form-wrapper">
                                     <div class="copado-query-tips">
-                                        <p>{!$Label.copado__copado_pro_query_tips}</p>
+                                        <p>{!$Label.copado__Copado_Pro_Query_Tips}</p>
                                         <ol>
-                                            <li>{!$Label.copado__data_template_query_tip_1}</li>
-                                            <li>{!$Label.copado__data_template_query_tip_2}</li>
-                                            <li>{!$Label.copado__data_template_query_tip_3}</li>
-                                            <li>{!$Label.copado__data_template_query_tip_4}</li>
+                                            <li>{!$Label.copado__Data_Template_Query_Tip_1}</li>
+                                            <li>{!$Label.copado__Data_Template_Query_Tip_2}</li>
+                                            <li>{!$Label.copado__Data_Template_Query_Tip_3}</li>
+                                            <li>{!$Label.copado__Data_Template_Query_Tip_4}</li>
                                         </ol>
                                     </div>
                                 </div>
@@ -1131,7 +1131,7 @@
                     <apex:outputPanel layout="block" styleClass="slds-modal__content slds-p-around_medium modal-content"
                                       id="newTemplateContent">
                         <div class="quick-create-info">
-                            {!$Label.copado__add_info_relation_modal}
+                            {!$Label.copado__Add_Info_Relation_Modal}
                         </div>
 
                         <div class="slds-form-element">
@@ -1159,7 +1159,7 @@
                             <button type="button" class="slds-button slds-button_outline-brand"
                                     onclick="dts.closeModals('NewTemplate');">{!$Label.Cancel}</button>
                             <apex:commandButton action="{!createNewDataTemplateAndGo}"
-                                                value="{!$Label.copado__create_new_data_template}"
+                                                value="{!$Label.copado__Create_new_Data_Template}"
                                                 styleClass="slds-button slds-button_brand" onClick="dts.onClickFunction();"
                                                 onComplete="dts.closeModals('NewTemplate');dts.onCompleteFunctionToreRender();"
                                                 reRender="errorPanel,mainObjectFiltersTab,objectFieldsTab,parentObjectFieldsTab,childrenObjectFieldsTab,filterLogicPanel,sampleContainer,generalWarningContainer,newTemplateContainer,activeCheckboxBlock,matchOwnerBlock,attachmentOptionsBlock,matchRecordTypeBlock,mainObjectTooltip,sourceOrgPanel" />
@@ -1192,7 +1192,7 @@
 
                             <apex:outputPanel layout="none" rendered="{!RecordMatchingFormulasForTemplateObject}">
                                 <div class="record-matching-modal-container">
-                                    <div class="slds-media__figure">{!$Label.copado__record_matching_formula}</div>
+                                    <div class="slds-media__figure">{!$Label.copado__Record_Matching_Formula}</div>
                                     <div class="slds-media__body">
                                         <p>
                                             <apex:repeat value="{!RecordMatchingFormula}" var="recordMatchingRecord">
@@ -1216,12 +1216,12 @@
                                 <button type="button" class="slds-button slds-button_outline-brand"
                                         onclick="dts.closeModals('RecordMatching');">{!$Label.Cancel}</button>
                                 <apex:commandLink action="{!createRecordMatchingFormulaAndRedirect}"
-                                                    value="{!$Label.copado__configure_formula}"
+                                                    value="{!$Label.copado__Configure_Formula}"
                                                     styleClass="slds-button slds-button_brand" rendered="{!!RecordMatchingFormulasForTemplateObject}"
                                                     target="_blank" onClick="dts.closeModals('RecordMatching');"/>
                                 <apex:outputPanel layout="none" rendered="{!RecordMatchingFormulasForTemplateObject}">
                                     <apex:commandLink action="{!editCurrentRecordMatchingFormula}"
-                                                    value="{!$Label.copado__edit_formula}"
+                                                    value="{!$Label.copado__Edit_Formula}"
                                                     styleClass="slds-button slds-button_outline-brand" target="_blank"/>
                                     <button type="button" class="slds-button slds-button_brand"
                                         onclick="dts.closeModals('RecordMatching');">{!$Label.Confirm_Formula}</button>

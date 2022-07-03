@@ -141,7 +141,17 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>copado__TestHighlightPanel</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>copado__TestHighlightPanel</fullName>
+        <fields>Name</fields>
+        <fields>copado__ExtensionConfiguration__c</fields>
+        <fields>copado__Type__c</fields>
+        <fields>copado__User_Story__c</fields>
+        <fields>copado__Reference__c</fields>
+        <fields>LastModifiedById</fields>
+        <label>Test Highlight Panel</label>
+    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
     <description>Copado Object to spin a test scenario</description>
@@ -325,6 +335,16 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>copado__ReadyToRun__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>By checking this field, you are indicating that the test is ready to be executed and the &apos;Run&apos; button will display.</inlineHelpText>
+        <label>Ready to Run</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>copado__Reference__c</fullName>
         <deprecated>false</deprecated>
         <displayFormat>TE-{0000000}</displayFormat>
@@ -429,5 +449,13 @@
     <pluralLabel>Tests</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>copado__PreventUpdatingToolConfiguration</fullName>
+        <active>true</active>
+        <description>This rule prevents users from modifying the Tool Configuration after the test is created.</description>
+        <errorConditionFormula>AND( NOT( ISNEW() ) ,
+ ISCHANGED( copado__ExtensionConfiguration__c ) )</errorConditionFormula>
+        <errorMessage>This Tool Configuration cannot be modified. Please create a new Test and select the Tool Configuration needed.</errorMessage>
+    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>

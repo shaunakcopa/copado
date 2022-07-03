@@ -42,7 +42,7 @@
                                 <td><apex:inputText id="branchSearch"/></td>
                             </tr>
                             <tr>
-                                <td colspan="2" style="float:left;"><input type="button" onclick="copadoApp.search(); return false;" value="Search" class="btn" /></td>
+                                <td colspan="2" style="float:left;"><input type="button" onclick="copadoApp.search(); return false;" value="{!$Label.Search}" class="btn" /></td>
                             </tr>
                         </table>
                     </apex:outputPanel>

@@ -5,7 +5,7 @@ This read-only file shows the class's global constructors,
 methods, variables, and properties.
 To enable code to compile, all methods return null.
 */
-global class PackageImportAction implements copado.Actionable {
+global class PackageImportAction implements copado.JobExecutionCallback {
     @InvocableMethod(label='Package Import Action')
     global static List<copado.PackageImportAction.Response> import(List<copado.PackageImportAction.Request> requests) {
         return null;
