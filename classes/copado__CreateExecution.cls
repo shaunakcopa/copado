@@ -12,6 +12,8 @@ global class CreateExecution {
     }
 global class Request {
     @InvocableVariable( required=false)
+    global List<copado.AdditionalStep> additionalSteps;
+    @InvocableVariable( required=false)
     global String callback;
     @InvocableVariable( required=false)
     global String dataJson;

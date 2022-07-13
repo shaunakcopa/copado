@@ -17,11 +17,17 @@ global class CommitAction implements copado.JobExecutionCallback {
 
     }
 global class Change {
+    @InvocableVariable(label='a' description='action: add, delete, ret-only, full pps, ...' required=false)
     global String a;
+    @InvocableVariable(label='c' description='category: copadodx, vlocity, cpq, ...' required=false)
     global String c;
+    @InvocableVariable(label='j' description='json additional information' required=false)
     global String j;
+    @InvocableVariable(label='m' description='module directory e.g. force-app/main/default' required=false)
     global String m;
+    @InvocableVariable(label='n' description='name' required=false)
     global String n;
+    @InvocableVariable(label='t' description='type' required=false)
     global String t;
     global Change() {
 

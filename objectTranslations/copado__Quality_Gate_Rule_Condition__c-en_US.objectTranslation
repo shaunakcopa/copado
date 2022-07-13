@@ -20,6 +20,16 @@
         <name>copado__ExecutionSequence__c</name>
     </fields>
     <fields>
+        <label><!-- Extension Configuration --></label>
+        <name>copado__Extension_Configuration__c</name>
+        <relationshipLabel><!-- Quality Gate Rule Conditions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Define a filter criteria to evaluate the condition only when the specified files are present in the configured Copado Action --></help>
+        <label><!-- Filter Criteria --></label>
+        <name>copado__Filter_Criteria__c</name>
+    </fields>
+    <fields>
         <help><!-- Pipeline where this Quality Gate Condition will be evaluated. --></help>
         <label><!-- Pipeline --></label>
         <name>copado__Pipeline__c</name>

@@ -328,7 +328,6 @@ The org credential where the unmanaged package is created from.</inlineHelpText>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
-            <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
@@ -345,12 +344,6 @@ The org credential where the unmanaged package is created from.</inlineHelpText>
                     <fullName>First-Generation Package</fullName>
                     <default>false</default>
                     <label>First-Generation Package</label>
-                </value>
-                <value>
-                    <fullName>Unmanaged</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Unmanaged</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

@@ -43,7 +43,7 @@
                                 <div class="slds-notify__close">
                                     <button type="button"
                                             class="slds-button slds-button_icon slds-button_icon-inverse"
-                                            title="{!$Label.copado__close}"
+                                            title="{!$Label.copado__CLOSE}"
                                             onclick="$copado('[id=divToast]').addClass('slds-hide');">
                                         <span class="slds-icon_container slds-icon__svg--default closeToastIcon"></span>
                                     </button>
@@ -62,9 +62,9 @@
                         <div class="slds-media__figure"></div>
                         <div class="slds-media__body"></div>
                         <div class="slds-no-flex">
-                            <apex:commandButton value="{!$Label.copado__close}" onClick="lockScreen();" styleClass="btn" action="{!cancel}" />
-                            <apex:commandButton value="{!$Label.copado__deploy_all}" onclick="lockScreen();confirmAllValidations(); return false;" styleClass="btnImportant" rendered="{!canDeployThis}"/>
-                            <apex:commandButton value="{!$Label.copado__deploy_outstanding}" onclick="lockScreen();confirmDeploymentOutstandingValidation(); return false;" styleClass="btnImportant" rendered="{!canDeployThis}"/>
+                            <apex:commandButton value="{!$Label.copado__CLOSE}" onClick="lockScreen();" styleClass="btn" action="{!cancel}" />
+                            <apex:commandButton value="{!$Label.copado__DEPLOY_ALL}" onclick="lockScreen();confirmAllValidations(); return false;" styleClass="btnImportant" rendered="{!canDeployThis}"/>
+                            <apex:commandButton value="{!$Label.copado__DEPLOY_OUTSTANDING}" onclick="lockScreen();confirmDeploymentOutstandingValidation(); return false;" styleClass="btnImportant" rendered="{!canDeployThis}"/>
                         </div>
                     </header>
                 </div>
@@ -93,10 +93,10 @@
                                             <div class="slds-truncate" title="{!$ObjectType.copado__Step__c.fields.copado__CheckOnly__c.Label}">{!$ObjectType.copado__Step__c.fields.copado__CheckOnly__c.Label}</div>
                                         </th>
                                         <th class="" scope="col">
-                                            <div class="slds-truncate" title="Total {!$Label.copado__credits}">Total {!$Label.copado__credits}</div>
+                                            <div class="slds-truncate" title="Total {!$Label.copado__CREDITS}">Total {!$Label.copado__CREDITS}</div>
                                         </th>
                                         <th class="" scope="col">
-                                            <div class="slds-truncate" title="Outstanding {!$Label.copado__credits}">Outstanding {!$Label.copado__credits}</div>
+                                            <div class="slds-truncate" title="Outstanding {!$Label.copado__CREDITS}">Outstanding {!$Label.copado__CREDITS}</div>
                                         </th>
                                     </tr>
                                 </thead>
@@ -127,7 +127,7 @@
                                     </apex:repeat>
                                     <tr>
                                         <td></td>
-                                        <td><apex:outputText value="{!$Label.copado__total_credits_estimated}"/></td>
+                                        <td><apex:outputText value="{!$Label.copado__TOTAL_CREDITS_ESTIMATED}"/></td>
                                         <td><apex:outputText value="{!totalEstimations}" /></td>
                                         <td><apex:outputText value="{!totalOutstandingEstimations}" /></td>
                                     </tr>

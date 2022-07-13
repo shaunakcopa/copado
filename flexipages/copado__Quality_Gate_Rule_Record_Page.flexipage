@@ -67,6 +67,16 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>communicationId</name>
+                    <value>qualityGateRuleAlerts</value>
+                </componentInstanceProperties>
+                <componentName>copado:copadoAlertPlaceHolder</componentName>
+                <identifier>c_copadoAlertPlaceHolder1</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>dismissible</name>
                     <value>false</value>
                 </componentInstanceProperties>

@@ -39,6 +39,12 @@
                         <valueListItems>
                             <value>Delete</value>
                             <visibilityRule>
+                                <booleanFilter>1 OR 2</booleanFilter>
+                                <criteria>
+                                    <leftValue>{!$Permission.CustomPermission.copado__Delete_Test_Job_Steps}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>true</rightValue>
+                                </criteria>
                                 <criteria>
                                     <leftValue>{!Record.copado__Type__c}</leftValue>
                                     <operator>NE</operator>
@@ -108,6 +114,18 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__CustomType__c</fieldItem>
                 <identifier>RecordCustomType__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.copado__Resource_Observations__c</fieldItem>
+                <identifier>RecordResource_Observations_cField1</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__UserStory__r.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-24c10505-938e-43ca-8e79-3ff42a1455cb</name>

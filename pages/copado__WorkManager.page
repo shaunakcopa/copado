@@ -1267,7 +1267,7 @@
     </body>
     <apex:outputPanel rendered="{!!showLicenseError}">
         <apex:form html-autocomplete="off">
-            <c:ScreenLocker msg="{!$Label.copado__loading}"/>
+            <c:ScreenLocker msg="{!$Label.copado__LOADING}"/>
             <apex:actionFunction action="{!clearInputUs}" name="reRenderInput" oncomplete="adjustWidth();"  reRender="panelInput"/>
             <apex:actionFunction action="{!showInputUs}" name="reRenderInput2" oncomplete="adjustWidth4Modal(); main.fs.rii(); main.fs.hs();"  reRender="panelInput2">
                 <apex:param name="cIndex" value=""/>

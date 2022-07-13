@@ -1,5 +1,5 @@
 <apex:page docType="html-5.0" showHeader="true" sidebar="true" standardController="copado__Deployment_Task__c" extensions="copado.DeploymentTaskExtension,copado.Settings,copado.JsRemotingController"
- standardStylesheets="true" title="{!$Label.copado__view} {!$ObjectType.copado__Deployment_Task__c.Label}" lightningStylesheets="true">
+ standardStylesheets="true" title="{!$Label.copado__VIEW} {!$ObjectType.copado__Deployment_Task__c.Label}" lightningStylesheets="true">
 	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en" style="height:100%;">
 
 	<head>
@@ -82,7 +82,7 @@
 			var labels = labels || {};
 
 			labels.config = {
-				loading_label: '{!$Label.copado__loading}',
+				loading_label: '{!$Label.copado__LOADING}',
 				req_ext_id_label: '{!SUBSTITUTE($Label.EXTERNAL_ID_REQUIRED,"'","\'")}',
 				bulk_soql_error: '{!SUBSTITUTE($Label.BULK_SOQL_ERROR,"'","\'")}',
 				malformed_soql_error: '{!SUBSTITUTE($Label.SOQL_MALFORMED_ERROR,"'","\'")}',
@@ -167,7 +167,7 @@
 	<body class="slds-scope" style="{!IF($User.UIThemeDisplayed == 'Theme4d','margin: 0 12px 0 12px; background-image: url(/_slds/images/themes/oneSalesforce/banner-brand-default.png?cache=210.2),linear-gradient(to top,rgba(32, 92, 159, 0), rgb(32, 92, 159));','')}">
 		<div class="copado-lightning-container">
 			<apex:form >
-				<c:ScreenLocker msg="{!$Label.copado__loading}" />
+				<c:ScreenLocker msg="{!$Label.copado__LOADING}" />
 				<div class="slds-page-header" style="{!IF($User.UIThemeDisplayed == 'Theme4d','background: #fdfdfd;margin-bottom: 12px;border-collapse: collapse;border-radius: 4px;','')}">
 					<apex:outputPanel layout="block" id="pageMessages">
 						<apex:pagemessages id="pmessage" />
@@ -194,12 +194,12 @@
 						<!-- ACTION BUTTONS -->
 						<div class="slds-col slds-no-flex slds-grid slds-align-top ">
 							<div class="slds-button-group" role="group">
-								<apex:commandButton value="{!$Label.copado__edit}" action="{!edit}" styleClass="slds-button slds-button--neutral" />
+								<apex:commandButton value="{!$Label.copado__EDIT}" action="{!edit}" styleClass="slds-button slds-button--neutral" />
 								<apex:outputLink rendered="{!copado__Deployment_Task__c.Id != null}" value="{!URLFOR($Action.copado__Deployment_Task__c.Clone,copado__Deployment_Task__c.Id)}"
 								 styleClass="slds-button slds-button--neutral">
-									<span class="slds-truncate" title="Menu Item One">{!$Label.copado__clone}</span>
+									<span class="slds-truncate" title="Menu Item One">{!$Label.copado__CLONE}</span>
 								</apex:outputLink>
-								<apex:commandButton value="{!$Label.copado__delete}" onclick="deleteActionJS(); return false;" styleClass="slds-button slds-button--neutral"
+								<apex:commandButton value="{!$Label.copado__DELETE}" onclick="deleteActionJS(); return false;" styleClass="slds-button slds-button--neutral"
 								/>
 							</div>
 							<apex:actionFunction name="deleteActionAF" action="{!deleteAction}" />
@@ -237,7 +237,7 @@
 						</div>
 						<div class="slds-section slds-is-open">
 							<h3 class="slds-section__title slds-theme_shade">
-								<span class="slds-truncate slds-p-horizontal_small" title="{!$Label.copado__detail}">{!$Label.copado__deploymenttask_task_details}</span>
+								<span class="slds-truncate slds-p-horizontal_small" title="{!$Label.copado__DETAIL}">{!$Label.copado__DeploymentTask_Task_Details}</span>
 							</h3>
 							<apex:outputPanel id="detailPanel" layout="block">
 								<div aria-hidden="false" class="slds-section__content">

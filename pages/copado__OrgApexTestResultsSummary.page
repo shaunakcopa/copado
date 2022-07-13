@@ -40,27 +40,27 @@
         <img src="https://copado--c.eu2.content.force.com/servlet/servlet.ImageServer?id=015b0000005no4X&oid=00Db0000000YN5R&lastMod=1496992954000" style="margin: 16px 16px 0 0" />
         <br />
         <div class="noprint">
-            <apex:pageMessage strength="1" severity="info" summary="{!$Label.copado__apex_test_result_summary_info}"  />
+            <apex:pageMessage strength="1" severity="info" summary="{!$Label.copado__APEX_TEST_RESULT_SUMMARY_INFO}"  />
         </div>
         <apex:form styleClass="copado-lightning-container">
-            <apex:pageBlock title="{!$Label.copado__summary}" id="pbSummary">
+            <apex:pageBlock title="{!$Label.copado__SUMMARY}" id="pbSummary">
                 <apex:pageBlockSection id="pbsMain">
                     <apex:pageBlockSectionItem >
-                        <apex:outputLabel value="{!$Label.copado__org_coverage}"/>
+                        <apex:outputLabel value="{!$Label.copado__ORG_COVERAGE}"/>
                         <div class="jstxt_Coverage"> </div>
                     </apex:pageBlockSectionItem>
                     <apex:pageBlockSectionItem >
-                        <apex:outputLabel value="{!$Label.copado__duration}" />
+                        <apex:outputLabel value="{!$Label.copado__DURATION}" />
                         <div class="jstxt_Duration"> </div>
                     </apex:pageBlockSectionItem>
                     <apex:pageBlockSectionItem >
-                        <apex:outputLabel value="{!$Label.copado__tests_passed}" />
+                        <apex:outputLabel value="{!$Label.copado__TESTS_PASSED}" />
                         <div class="jstxt_TestsPassed"> </div>
                     </apex:pageBlockSectionItem>
                 </apex:pageBlockSection>
             </apex:pageBlock>
 
-            <apex:pageBlock title="{!$Label.copado__class_coverage}" id="pbClassCoverage">
+            <apex:pageBlock title="{!$Label.copado__CLASS_COVERAGE}" id="pbClassCoverage">
                 <table id="tblClassCoverage" width="100%" class="list" border="0" cellspacing="0" cellpadding="0">
                     <thead>
                         <tr class="headerRow">
@@ -76,7 +76,7 @@
                 </table>
             </apex:pageBlock>
 
-            <apex:pageBlock title="{!$Label.copado__trigger_coverage}" id="pbTriggerCoverage">
+            <apex:pageBlock title="{!$Label.copado__TRIGGER_COVERAGE}" id="pbTriggerCoverage">
                 <table id="tblTriggerCoverage" width="100%" class="list" border="0" cellspacing="0" cellpadding="0">
                     <thead>
                         <tr class="headerRow">
@@ -92,14 +92,14 @@
                 </table>
             </apex:pageBlock>
 
-            <apex:pageBlock title="{!$Label.copado__methods}" id="pbMethods">
+            <apex:pageBlock title="{!$Label.copado__METHODS}" id="pbMethods">
                 <table id="tblMethods" width="100%" class="list" border="0" cellspacing="0" cellpadding="0">
                     <thead>
                         <tr class="headerRow">
                             <th class="col1">{!$Label.APEX_CLASS}</th>
                             <th class="col2">{!$Label.METHOD_NAME}</th>
                             <th class="col3">{!$Label.PASS_FAIL_COLUMN_HEADER}</th>
-                            <th class="colmsg">{!$Label.copado__methods}</th>
+                            <th class="colmsg">{!$Label.copado__METHODS}</th>
                         </tr>
                     </thead>
                     <tbody> </tbody>

@@ -11,6 +11,10 @@
         <relationshipLabel><!-- Job Executions --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Context --></label>
+        <name>copado__Context__c</name>
+    </fields>
+    <fields>
         <label><!-- DataJson --></label>
         <name>copado__DataJson__c</name>
     </fields>

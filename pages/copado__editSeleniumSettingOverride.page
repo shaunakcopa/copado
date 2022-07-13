@@ -18,7 +18,7 @@
 
     <body>
         <div class="copado-lightning-VF">
-            <apex:sectionHeader id="theHeader" title="Copado Selenium Testing" subtitle="{!IF(ISBLANK(copado__Selenium_Settings__c.Name), $Label.copado__new+' '+$ObjectType.copado__Selenium_Settings__c.Label, copado__Selenium_Settings__c.Name)}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"/>
+            <apex:sectionHeader id="theHeader" title="Copado Selenium Testing" subtitle="{!IF(ISBLANK(copado__Selenium_Settings__c.Name), $Label.copado__NEW+' '+$ObjectType.copado__Selenium_Settings__c.Label, copado__Selenium_Settings__c.Name)}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"/>
             <apex:pageMessages id="pmessage" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"/>
             <apex:outputPanel layout="block" styleClass="slds-scope copado-lightning-container" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
 
@@ -38,7 +38,7 @@
                           </div>
                           <div class="slds-media__body">
                             <p class="slds-text-heading--label slds-line-height--reset">Copado Selenium Testing</p>
-                              <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{!IF(ISBLANK(copado__Selenium_Settings__c.Name), $Label.copado__new+' '+$ObjectType.copado__Selenium_Settings__c.Label, copado__Selenium_Settings__c.Name)}">{!IF(ISBLANK(copado__Selenium_Settings__c.Name), $Label.copado__new+' '+$ObjectType.copado__Selenium_Settings__c.Label, copado__Selenium_Settings__c.Name)}</h1>
+                              <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{!IF(ISBLANK(copado__Selenium_Settings__c.Name), $Label.copado__NEW+' '+$ObjectType.copado__Selenium_Settings__c.Label, copado__Selenium_Settings__c.Name)}">{!IF(ISBLANK(copado__Selenium_Settings__c.Name), $Label.copado__NEW+' '+$ObjectType.copado__Selenium_Settings__c.Label, copado__Selenium_Settings__c.Name)}</h1>
                           </div>
                       </div>
                     </div>
@@ -73,8 +73,8 @@
                     <apex:pageBlock id="pb" mode="edit" title="">
                         <apex:pageBlockButtons >
                             <input type="submit" id="btnSave" value="{!$Label.SAVE}" class="btn {!IF($User.UIThemeDisplayed=='Theme3','','copado-lightning')}" onclick="seleniumSettings.grid.setSaveValues(locSearch);return false;"/>
-                            <apex:commandButton id="btnCancel" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','copado-lightning')}" action="{!CANCEL}" rendered="{!ISBLANK(aliasString)}" value="{!$Label.copado__cancel}" />
-                            <apex:commandButton id="btnCancel4QuickRun" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','copado-lightning')}" immediate="true" action="{!goBackToQuickRunPage}" rendered="{!NOT(ISBLANK(aliasString))}" value="{!$Label.copado__cancel}" />
+                            <apex:commandButton id="btnCancel" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','copado-lightning')}" action="{!CANCEL}" rendered="{!ISBLANK(aliasString)}" value="{!$Label.copado__Cancel}" />
+                            <apex:commandButton id="btnCancel4QuickRun" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','copado-lightning')}" immediate="true" action="{!goBackToQuickRunPage}" rendered="{!NOT(ISBLANK(aliasString))}" value="{!$Label.copado__Cancel}" />
                         </apex:pageBlockButtons>
                         <apex:pageBlockSection id="pbs1" columns="1">
                             <apex:inputField id="if_name" value="{!copado__Selenium_Settings__c.Name}" required="true" style="width:50%;" />

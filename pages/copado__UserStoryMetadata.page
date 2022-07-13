@@ -93,7 +93,7 @@
                         <!-- ACTION BUTTONS -->
                         <div class="slds-col slds-no-flex slds-grid slds-align-top ">
                             <div class="slds-button-group" role="group">
-                                <apex:commandButton value="{!$Label.copado__delete}" action="{!deleteJob}" styleClass="slds-button slds-button--neutral" reRender="pageMessages"
+                                <apex:commandButton value="{!$Label.copado__DELETE}" action="{!deleteJob}" styleClass="slds-button slds-button--neutral" reRender="pageMessages"
                                     oncomplete="overridePageMessages()" />
                                 <div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-button_last" id="statusDropdown">
                                     <button class="slds-button slds-button_neutral actionButton" aria-haspopup="true" title="Show More" onclick="ToggleDropDown(this,event); return false">{!$Label.MarkAllAs}
@@ -269,7 +269,7 @@
                     </ul>
                 </apex:outputPanel>
                 <apex:outputPanel layout="block" id="relatedUserStoryMetadataPanel">
-                    <c:ScreenLocker msg="{!$Label.copado__loading}" />
+                    <c:ScreenLocker msg="{!$Label.copado__LOADING}" />
                     <apex:actionStatus id="screenlocker" onstart="lockScreen();" onstop="unlockScreen();" />
                     <apex:inputHidden value="{!offset}" />
                     <div style="padding:12px;background: #fdfdfd;border-collapse: collapse; background: #fdfdfd;border-radius: 4px;">
@@ -279,10 +279,10 @@
                             <apex:param name="compareUS" value="" />
                         </apex:actionFunction>
                         <div class="slds-align_absolute-center">
-                            <apex:commandButton value="{!$Label.copado__previous}" action="{!previousUserStoryMetadatas}" reRender="relatedUserStoryMetadataPanel"
+                            <apex:commandButton value="{!$Label.copado__Previous}" action="{!previousUserStoryMetadatas}" reRender="relatedUserStoryMetadataPanel"
                                 disabled="{!disablePrevious}" styleClass="slds-button slds-button_neutral slds-m-around_x-small"
                                 status="screenlocker" />
-                            <apex:commandButton value="{!$Label.copado__next}" action="{!nextUserStoryMetadatas}" reRender="relatedUserStoryMetadataPanel" disabled="{!disableNext}"
+                            <apex:commandButton value="{!$Label.copado__NEXT}" action="{!nextUserStoryMetadatas}" reRender="relatedUserStoryMetadataPanel" disabled="{!disableNext}"
                                 styleClass="slds-button slds-button_neutral slds-m-around_x-small" status="screenlocker" />
                             <div class="slds-form-element__control">
                                 <div class="slds-form-element__static" style="min-height:32px;">
@@ -330,7 +330,7 @@
                             <tbody id="usMetadataTableBody">
                                 <apex:repeat id="usMetadataRepeat" value="{!usMetadataList}" var="usm">
                                     <tr>
-                                        <td data-label="{!$ObjectType.copado__User_Story__c.Label} {!$Label.copado__metadataindex}">
+                                        <td data-label="{!$ObjectType.copado__User_Story__c.Label} {!$Label.copado__MetadataIndex}">
                                             <div class="slds-media__figure" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                                 <a href="{!URLFOR($Action.User_Story_Metadata__c.View, usm.Id)}">
                                                     <span class="slds-icon_container slds-icon-standard-file" title="{!$Label.UserStoryMetadataIndexLink}">

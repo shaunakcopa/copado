@@ -15,14 +15,14 @@
     <body>
         <div class="copado-lightning-VF">
             <apex:pageMessages id="theMessages" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"/>
-            <apex:pageMessage id="theWarning" severity="WARNING" strength="2" summary="{!$Label.copado__selenium_not_enabled}" rendered="{!AND(!$Setup.copado__Copado_License__c.copado__Enable_CST__c,$User.UIThemeDisplayed != 'Theme4d')}"></apex:pageMessage>
-            <apex:sectionHeader id="theHeader" title="{!$Label.copado__selenium_getting_started_header_title}" subtitle="{!$Label.copado__selenium_getting_started_header_subtitle}" description="{!$Label.copado__selenium_getting_started_header_description}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"/>
+            <apex:pageMessage id="theWarning" severity="WARNING" strength="2" summary="{!$Label.copado__SELENIUM_NOT_ENABLED}" rendered="{!AND(!$Setup.copado__Copado_License__c.copado__Enable_CST__c,$User.UIThemeDisplayed != 'Theme4d')}"></apex:pageMessage>
+            <apex:sectionHeader id="theHeader" title="{!$Label.copado__SELENIUM_GETTING_STARTED_HEADER_TITLE}" subtitle="{!$Label.copado__SELENIUM_GETTING_STARTED_HEADER_SUBTITLE}" description="{!$Label.copado__SELENIUM_GETTING_STARTED_HEADER_DESCRIPTION}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"/>
 
             <apex:outputPanel layout="block" styleClass="slds-scope copado-lightning-container" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
                 <div class="slds-page-header">
                   <apex:outputPanel layout="block" id="pageMessages">
                     <apex:pagemessages id="msg"/>
-                    <apex:pageMessage id="theWarning2" severity="WARNING" strength="2" summary="{!$Label.copado__selenium_not_enabled}" rendered="{!!$Setup.copado__Copado_License__c.copado__Enable_CST__c}"></apex:pageMessage>
+                    <apex:pageMessage id="theWarning2" severity="WARNING" strength="2" summary="{!$Label.copado__SELENIUM_NOT_ENABLED}" rendered="{!!$Setup.copado__Copado_License__c.copado__Enable_CST__c}"></apex:pageMessage>
                   </apex:outputPanel>
                   <div class="slds-grid">
                     <div class="slds-col slds-has-flexi-truncate">
@@ -35,8 +35,8 @@
                               </span>
                           </div>
                           <div class="slds-media__body">
-                            <p class="slds-text-heading--label slds-line-height--reset">{!$Label.copado__selenium_getting_started_header_title}</p>
-                              <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{!$ObjectType.User_Story__c.Label}">{!$Label.copado__selenium_getting_started_header_subtitle}</h1>
+                            <p class="slds-text-heading--label slds-line-height--reset">{!$Label.copado__SELENIUM_GETTING_STARTED_HEADER_TITLE}</p>
+                              <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{!$ObjectType.User_Story__c.Label}">{!$Label.copado__SELENIUM_GETTING_STARTED_HEADER_SUBTITLE}</h1>
                           </div>
                       </div>
                     </div>
@@ -50,7 +50,7 @@
                   </div>
                   <div class="slds-grid">
                     <div class="slds-col slds-align-middle">
-                        <p class="slds-text-body_small">{!$Label.copado__selenium_getting_started_header_description}</p>
+                        <p class="slds-text-body_small">{!$Label.copado__SELENIUM_GETTING_STARTED_HEADER_DESCRIPTION}</p>
                     </div>
                   </div>
                   <div style="background: white; height: 25px;">
@@ -67,14 +67,14 @@
                         <apex:form >
                             <apex:outputPanel rendered="{!APIKey!=''}" layout="none">
                                 <!-- non-classic button -->
-                                <apex:commandButton action="{!cstBindExtensionToOrg}" html-href="{!LinkCstBindExtensionToOrg}" value="{!$Label.copado__selenium_getting_started_bind} ({!$Organization.Name})" immediate="true" styleClass="slds-button slds-button--neutral" rendered="{!$User.UIThemeDisplayed != 'Theme3'}" />
+                                <apex:commandButton action="{!cstBindExtensionToOrg}" html-href="{!LinkCstBindExtensionToOrg}" value="{!$Label.copado__SELENIUM_GETTING_STARTED_BIND} ({!$Organization.Name})" immediate="true" styleClass="slds-button slds-button--neutral" rendered="{!$User.UIThemeDisplayed != 'Theme3'}" />
                                 <!-- classic button -->
                                 <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme3'}" layout="none">
-                                <a id="copadoRecorderExtensionNotInstalled1" href="{!LinkCstBindExtensionToOrg}" class="slds-button slds-button--neutral"><apex:outputText value="{!$Label.copado__selenium_getting_started_bind} ({!$Organization.Name})"></apex:outputText></a>
+                                <a id="copadoRecorderExtensionNotInstalled1" href="{!LinkCstBindExtensionToOrg}" class="slds-button slds-button--neutral"><apex:outputText value="{!$Label.copado__SELENIUM_GETTING_STARTED_BIND} ({!$Organization.Name})"></apex:outputText></a>
                                 </apex:outputPanel>
                             </apex:outputPanel>
                             <!-- common to both, disabled button -->
-                            <apex:commandButton action="{!cstBindExtensionToOrg}" value="{!$Label.copado__selenium_getting_started_apikey}" rendered="{!APIKey=''}" immediate="true" onclick="return false;" styleClass="slds-button slds-button--neutral" />
+                            <apex:commandButton action="{!cstBindExtensionToOrg}" value="{!$Label.copado__SELENIUM_GETTING_STARTED_APIKEY}" rendered="{!APIKey=''}" immediate="true" onclick="return false;" styleClass="slds-button slds-button--neutral" />
                         </apex:form>                        
                     </div>
 

@@ -128,11 +128,14 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>User_Story_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
@@ -7294,7 +7297,8 @@ IMAGE(&apos;/img/msg_icons/warning16.png&apos;,&apos;OutDated&apos;)+&quot; &quo
         <fullName>copado__Progress_Status__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <formula>IMAGE(&quot;/img/samples/color_green.gif&quot;, &quot;Completed&quot;, 15, (copado__Progress__c*100) * 2) &amp;
+        <formula>IMAGE(&quot;/img/samples/color_green.gif&quot;, &quot;&quot;, 1, 0) &amp;
+IMAGE(&quot;/img/samples/color_green.gif&quot;, &quot;Completed&quot;, 15, (copado__Progress__c*100) * 2) &amp;
 IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
 200 - ((copado__Progress__c*100)* 2))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
@@ -7732,7 +7736,21 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
 				copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c + &apos;feature/&apos; + Name
 			)
 		),
+		IF(
+		AND(
+			NOT(ISNULL(copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c )), copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c != &apos;&apos;
+		),
+		IF(
+			AND(NOT(ISPICKVAL(copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Git_Provider__c,&apos;&apos;)),NOT(ISPICKVAL(copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Git_Provider__c, &apos;Others&apos;))),
+			copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c + &apos;feature/&apos; + Name ,
+			IF(
+				CONTAINS(copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c,&apos;[BRANCH_NAME]&apos;),
+				SUBSTITUTE(copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c,&apos;[BRANCH_NAME]&apos;,&apos;feature/&apos; + Name),
+				copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c + &apos;feature/&apos; + Name
+			)
+		),
 		&apos;&apos;
+	)
 	),
 	&apos;feature/&apos; + Name
 )</formula>
@@ -9739,6 +9757,13 @@ copado__Environment__c != copado__Org_Credential__r.copado__Environment__c</erro
         <errorConditionFormula>TEXT(copado__Org_Credential__r.copado__Org_Type__c) == &apos;Scratch Org - Test only&apos;</errorConditionFormula>
         <errorDisplayField>copado__Org_Credential__c</errorDisplayField>
         <errorMessage>Test scratch orgs cannot be used for developments</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>copado__User_Story_Progress_Range_Validation</fullName>
+        <active>true</active>
+        <description>If User Story has Progress%, it should be in a valid range of 0 to 100.</description>
+        <errorConditionFormula>NOT(ISNULL( copado__Progress__c )) &amp;&amp; (copado__Progress__c &lt; 0 || copado__Progress__c &gt; 1)</errorConditionFormula>
+        <errorMessage>Enter a value between 0 to 100 to specify the Progress in percentage.</errorMessage>
     </validationRules>
     <visibility>Public</visibility>
     <webLinks>
