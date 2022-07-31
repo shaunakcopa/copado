@@ -300,6 +300,22 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>copado:qgrcAcceptanceCriteria</componentName>
+                <identifier>c_qgrcAcceptanceCriteria</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:qgrcTestToolPublishMessage</componentName>
+                <identifier>c_qgrcTestToolPublishMessage</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-f46c7fac-d5d5-4976-a758-a203b824c9a9</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>active</name>
                     <value>true</value>
@@ -314,6 +330,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>detailTab</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-f46c7fac-d5d5-4976-a758-a203b824c9a9</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Acceptance Criteria</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>

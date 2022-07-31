@@ -78,6 +78,12 @@
                 <identifier>force_highlightsPanel</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:jobStepFunctionChangeAlert</componentName>
+                <identifier>c_jobStepFunctionChangeAlert1</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>header</name>
         <type>Region</type>
     </flexiPageRegions>

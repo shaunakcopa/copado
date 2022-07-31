@@ -6,6 +6,10 @@ methods, variables, and properties.
 To enable code to compile, all methods return null.
 */
 global class Parameter {
+    @AuraEnabled
+    global String name;
+    @AuraEnabled
+    global String value;
     global Parameter() {
 
     }

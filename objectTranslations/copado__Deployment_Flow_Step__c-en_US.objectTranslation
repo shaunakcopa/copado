@@ -101,6 +101,11 @@
         <relationshipLabel><!-- Stage Connections --></relationshipLabel>
     </fields>
     <fields>
+        <help><!-- Stage to which the source environment belongs. --></help>
+        <label><!-- Stage --></label>
+        <name>copado__Stage__c</name>
+    </fields>
+    <fields>
         <label><!-- Sync Merge State --></label>
         <name>copado__Sync_Merge_State__c</name>
         <picklistValues>

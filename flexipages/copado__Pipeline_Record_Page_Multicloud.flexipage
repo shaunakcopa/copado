@@ -46,13 +46,6 @@
                         </valueListItems>
                         <valueListItems>
                             <value>CustomButton.copado__Deployment_Flow__c.copado__Find_Replace_Rule_Editor</value>
-                            <visibilityRule>
-                                <criteria>
-                                    <leftValue>{!Record.copado__Platform__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>Salesforce</rightValue>
-                                </criteria>
-                            </visibilityRule>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -468,6 +461,36 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>copado__Deployment_Flow__c.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>copado__Automation_Rules__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer12</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-f3c2c956-8370-49c5-adf8-220c05ee5aad</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>body</name>
                     <value>Facet-21e4d7a3-4876-4e6c-895a-a453f558fa40</value>
                 </componentInstanceProperties>
@@ -593,6 +616,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-f3c2c956-8370-49c5-adf8-220c05ee5aad</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Automations</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab9</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-50652dd9-91d0-4852-97b2-13874b8b865f</name>

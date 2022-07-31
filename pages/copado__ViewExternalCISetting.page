@@ -104,7 +104,7 @@
                             <apex:outputLink value="{!URLFOR($Action.copado__External_CI_Setting__c.Clone,externalCISetting.Id)}" styleClass="slds-button slds-button--neutral">
                                 <span class="slds-truncate" title="Menu Item One">{!$Label.copado__CLONE}</span>
                             </apex:outputLink>
-                            <apex:commandButton value="{!$Label.copado__DELETE}" action="{!delete}" styleClass="slds-button slds-button--neutral" reRender="pageMessages" oncomplete="overridePageMessages()"/>
+                            <apex:commandButton value="{!$Label.copado__DELETE}" action="{!externalCIsettingListView}" styleClass="slds-button slds-button--neutral" reRender="pageMessages" oncomplete="overridePageMessages()"/>
                             <apex:commandButton value="{!$Label.copado__VALIDATE_EXTERNAL_CI}" status="status" action="{!validate}" styleClass="slds-button slds-button--neutral" reRender="pageMessages" oncomplete="overridePageMessages()"/>
                         </div>
                     </div>
