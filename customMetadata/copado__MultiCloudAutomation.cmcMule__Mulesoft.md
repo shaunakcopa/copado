@@ -3,8 +3,16 @@
     <label>Mulesoft</label>
     <protected>false</protected>
     <values>
+        <field>copado__Action__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>copado__DeployAPIName__c</field>
         <value xsi:type="xsd:string">Mule_Deploy</value>
+    </values>
+    <values>
+        <field>copado__Job_Template__c</field>
+        <value xsi:nil="true"/>
     </values>
     <values>
         <field>copado__PackageCreateApiName__c</field>
@@ -25,6 +33,10 @@
     <values>
         <field>copado__PlatformName__c</field>
         <value xsi:type="xsd:string">Mulesoft</value>
+    </values>
+    <values>
+        <field>copado__Platform_Configuration__c</field>
+        <value xsi:nil="true"/>
     </values>
     <values>
         <field>copado__PromoteAPIName__c</field>

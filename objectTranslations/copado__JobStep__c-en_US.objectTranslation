@@ -29,6 +29,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Git RepositoryId --></label>
+        <name>copado__Git_RepositoryId__c</name>
+    </fields>
+    <fields>
         <label><!-- Git Repository --></label>
         <name>copado__Git_Repository__c</name>
     </fields>
@@ -49,6 +53,11 @@
     <fields>
         <label><!-- Parent Owner Id --></label>
         <name>copado__Parent_Owner_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stores pipeline Id linked to job execution --></help>
+        <label><!-- PipelineId --></label>
+        <name>copado__PipelineId__c</name>
     </fields>
     <fields>
         <label><!-- Pipeline Id --></label>

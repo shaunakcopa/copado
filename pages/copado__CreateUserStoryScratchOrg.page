@@ -18,7 +18,7 @@
     <body>
     <apex:form >
         <c:CopadoSmartHelpComponent />
-        <c:ScreenLocker msg="{!$Label.copado__loading}" useJobsManager="true"
+        <c:ScreenLocker msg="{!$Label.copado__LOADING}" useJobsManager="true"
                         possibleRunningJobs=",DxCreateFullScratchOrgJob,,true;,DxListRepositoryBranches,,true;,DxListOrgPackagesJob,,true" />
         <script>
 			window.addEventListener('copadoJobsManagerFinished', function (evt) {
@@ -40,7 +40,7 @@
                         } else if(jobFinished && jobSuccess && jobType == 'DxCreateFullScratchOrgJob') {
                             CompleteFullCreate();
                         } else if(jobFinished){
-                            setLockScreenMessage('{!JSENCODE($Label.copado__loading)}');
+                            setLockScreenMessage('{!JSENCODE($Label.copado__LOADING)}');
                         }
                     }
                 }, false);
@@ -52,7 +52,7 @@
             <apex:param value="" name="jobMessage" />
             <apex:param value="" name="jobType" />
         </apex:actionFunction>
-        <apex:actionFunction name="CompleteFullCreate" action="{!fullCreateCompleted}" reRender="componentSection" onComplete="setLockScreenMessage('{!JSENCODE($Label.copado__loading)}');"/>
+        <apex:actionFunction name="CompleteFullCreate" action="{!fullCreateCompleted}" reRender="componentSection" onComplete="setLockScreenMessage('{!JSENCODE($Label.copado__LOADING)}');"/>
         <apex:outputPanel layout="block" id="dxNotEnabled" rendered="{!!isDXEnabled}">
             <apex:pageMessages id="dxNotEnabledMessage" />
         </apex:outputPanel>

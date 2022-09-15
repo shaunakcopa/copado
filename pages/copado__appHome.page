@@ -1,4 +1,4 @@
-<apex:page controller="copado.appHome" title="{!$Label.copado__account_summary}" standardStylesheets="true" sidebar="false" showHeader="true"
+<apex:page controller="copado.appHome" title="{!$Label.copado__ACCOUNT_SUMMARY}" standardStylesheets="true" sidebar="false" showHeader="true"
     id="thePage" cache="false" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
 
@@ -45,7 +45,7 @@
     <body>
         <apex:form id="theForm">
             <div class="copado-lightning-VF">
-                <apex:sectionHeader id="theHeader" title="Copado" subtitle="{!$Label.copado__account_summary}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}">
+                <apex:sectionHeader id="theHeader" title="Copado" subtitle="{!$Label.copado__ACCOUNT_SUMMARY}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}">
                     <div class="slds-grid" style="text-align: center;">
                         <div class="slds-col slds-no-flex slds-grid slds-align-top ">
                             <div class="slds-button-group" role="group">
@@ -94,7 +94,7 @@
                                     </div>
                                     <div class="slds-media__body">
                                         <p class="slds-text-heading--label slds-line-height--reset">Copado</p>
-                                        <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{!$Label.copado__account_summary}">{!$Label.copado__account_summary}</h1>
+                                        <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{!$Label.copado__ACCOUNT_SUMMARY}">{!$Label.copado__ACCOUNT_SUMMARY}</h1>
                                     </div>
                                 </div>
                             </div>
@@ -137,29 +137,29 @@
                         <apex:outputPanel layout="block" style="background: white;" id="headerFields">
                             <ul class="slds-grid slds-page-header__detail-row">
                                 <li class="slds-page-header__detail-block">
-                                    <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="{!$Label.copado__org_name}">{!$Label.copado__org_name}</p>
+                                    <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="{!$Label.copado__ORG_NAME}">{!$Label.copado__ORG_NAME}</p>
                                     <p class="slds-text-body_regular slds-truncate" title="{!$Organization.Name}">{!$Organization.Name}</p>
                                 </li>
                                 <li class="slds-page-header__detail-block">
-                                    <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="{!$Label.copado__org_id}">{!$Label.copado__org_id}</p>
+                                    <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="{!$Label.copado__ORG_ID}">{!$Label.copado__ORG_ID}</p>
                                     <p class="slds-text-body_regular slds-truncate" title="{!$Organization.Id}">{!$Organization.Id}</p>
                                 </li>
                                 <li class="slds-page-header__detail-block">
-                                    <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="{!$Label.copado__user_name}">{!$Label.copado__name}</p>
+                                    <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="{!$Label.copado__USER_NAME}">{!$Label.copado__NAME}</p>
                                     <p class="slds-text-body_regular slds-truncate" title="">{!$User.FirstName} {!$User.LastName}</p>
                                 </li>
                                 <li class="slds-page-header__detail-block">
-                                    <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="{!$Label.copado__user_name}">{!$Label.copado__username}</p>
+                                    <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="{!$Label.copado__USER_NAME}">{!$Label.copado__USERNAME}</p>
                                     <p class="slds-text-body_regular slds-truncate" title="">{!$User.Username}</p>
                                 </li>
                                 <li class="slds-page-header__detail-block">
-                                    <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="{!$Label.copado__user_id}">{!$Label.copado__user_id}</p>
+                                    <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="{!$Label.copado__USER_ID}">{!$Label.copado__USER_ID}</p>
                                     <p class="slds-text-body_regular slds-truncate" title="{!$User.Id}">{!$User.Id}</p>
                                 </li>
                                 <apex:outputPanel id="serverURLContainer" styleClass="slds-page-header__detail-block">
                                     <apex:outputPanel rendered="{!isApplicationRegistered}">
                                         <li>
-                                            <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="{!$Label.copado__server_url}">{!$Label.copado__server_url}</p>
+                                            <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="{!$Label.copado__Server_URL}">{!$Label.copado__Server_URL}</p>
                                             <p class="slds-text-body_regular slds-truncate" title="{!defaultServerUrl}">{!defaultServerUrl}</p>
                                         </li>
                                     </apex:outputPanel>
@@ -336,11 +336,11 @@
                         </style>
                         <apex:tabPanel switchType="client" selectedTab="features" id="theTabPanel" tabClass="{!IF($User.UIThemeDisplayed=='Theme3','activeTab','')}"
                             inactiveTabClass="{!IF($User.UIThemeDisplayed=='Theme3','inactiveTab','')}">
-                            <apex:tab label="{!$Label.copado__features}" name="t_features" id="tabOne" rendered="true">
-                                <apex:pageBlock id="pbFeatures" title="{!$Label.copado__features}">
+                            <apex:tab label="{!$Label.copado__FEATURES}" name="t_features" id="tabOne" rendered="true">
+                                <apex:pageBlock id="pbFeatures" title="{!$Label.copado__FEATURES}">
                                     <apex:pageBlockButtons location="top">
                                         <div class="slds-scope" style="display: flex;justify-content: flex-end;">
-                                            <apex:outputPanel title="{!$Label.copado__vlocity_activation_info}" layout="block" styleClass="slds-form-element" style="width: 150px;margin-top: 7px;"
+                                            <apex:outputPanel title="{!$Label.copado__Vlocity_Activation_Info}" layout="block" styleClass="slds-form-element" style="width: 150px;margin-top: 7px;"
                                                 rendered="{!canToggleVlocity}">
                                                 <label class="slds-checkbox_toggle slds-grid">
                                                     <span class="slds-form-element__label slds-m-bottom_none">{!$Label.Toggle_Vlocity}</span>
@@ -353,7 +353,7 @@
                                                 <apex:actionFunction name="vlocityToggle" action="{!vlocityFeatureOperations}" oncomplete="toggleVlocityCheckbox('{!AND(VlocityFeature != null,VlocityFeature.copado__Enabled__c)}');"
                                                     reRender="pbFeatures" />
                                             </apex:outputPanel>
-                                            <apex:commandButton action="{!refreshFeatures}" value="Refresh features" />
+                                            <apex:commandButton action="{!refreshFeatures}" value="{!$Label.copado__Refresh_Feature}" />
                                         </div>
                                     </apex:pageBlockButtons>
 
@@ -363,45 +363,45 @@
                                         <apex:column value="{!f.copado__Quantity__c}" />
                                         <apex:column >
                                             <apex:outputLink rendered="{!!f.copado__Enabled__c || !isblank(f.copado__Expiration_Date__c)}" value="mailto:success@copado.com">
-                                                {!$Label.copado__contact_sales}
+                                                {!$Label.copado__CONTACT_SALES}
                                             </apex:outputLink>
                                         </apex:column>
                                     </apex:pageBlockTable>
                                 </apex:pageBlock>
                             </apex:tab>
-                            <apex:tab label="{!$Label.copado__api_key}" name="t_api_key" id="tabTwo" rendered="true">
-                                <apex:pageBlock id="pbAPIKey" title="{!$Label.copado__pesonal_api_key} {!$User.FirstName} {!$User.LastName}">
+                            <apex:tab label="{!$Label.copado__API_KEY}" name="t_api_key" id="tabTwo" rendered="true">
+                                <apex:pageBlock id="pbAPIKey" title="{!$Label.copado__PESONAL_API_KEY} {!$User.FirstName} {!$User.LastName}">
                                     <apex:pageBlockButtons location="top">
 
                                         <apex:outputPanel id="registerApiKeyButtonContainer" layout="block">
-                                            <apex:commandButton disabled="{!NOT(isApplicationRegistered)}" action="{!createAPIKey}" value="{!IF(isApplicationRegistered, $Label.copado__create + ' / ' + $Label.copado__reset, 'Application must be registered to create an API KEY')}"
+                                            <apex:commandButton disabled="{!NOT(isApplicationRegistered)}" action="{!createAPIKey}" value="{!IF(isApplicationRegistered, $Label.copado__CREATE + ' / ' + $Label.copado__RESET, 'Application must be registered to create an API KEY')}"
                                                 onComplete="doPrivateSettingUdate()" />
                                         </apex:outputPanel>
 
                                     </apex:pageBlockButtons>
                                     <apex:pageBlockSection >
                                         <apex:pageBlockSectionItem >
-                                            <apex:outputLabel value="{!$Label.copado__api_key}" for="api_key" />
+                                            <apex:outputLabel value="{!$Label.copado__API_KEY}" for="api_key" />
                                             <apex:outputText value="{!APIKey}" id="api_key" />
                                         </apex:pageBlockSectionItem>
                                     </apex:pageBlockSection>
                                 </apex:pageBlock>
                                 <apex:actionFunction name="doPrivateSettingUdate" action="{!updatePrivateSettings}" reRender="messagesContainer, pbAPIKey" />
                             </apex:tab>
-                            <apex:tab label="{!$Label.copado__transactions}" name="transactions" id="tabThree">
-                                <apex:pageBlock id="pbTrans" title="{!$Label.copado__transactions}" helpUrl="https://docs.copado.com/copado-licenses/credit-usage"
-                                    helpTitle="{!$Label.copado__help_for_this_page}">
+                            <apex:tab label="{!$Label.copado__TRANSACTIONS}" name="transactions" id="tabThree">
+                                <apex:pageBlock id="pbTrans" title="{!$Label.copado__TRANSACTIONS}" helpUrl="https://docs.copado.com/copado-licenses/credit-usage"
+                                    helpTitle="{!$Label.copado__HELP_FOR_THIS_PAGE}">
                                     <apex:pageBlockTable value="{!transactions}" var="t">
                                         <apex:column >
                                             <apex:facet name="header">{!$ObjectType.User.Label}</apex:facet>
                                             <apex:outputText value="{!t.userName}" />
                                         </apex:column>
                                         <apex:column >
-                                            <apex:facet name="header">{!$Label.copado__date}</apex:facet>
+                                            <apex:facet name="header">{!$Label.copado__DATE}</apex:facet>
                                             <apex:outputText value="{!t.ddate}" />
                                         </apex:column>
                                         <apex:column >
-                                            <apex:facet name="header">{!$Label.copado__credits}</apex:facet>
+                                            <apex:facet name="header">{!$Label.copado__CREDITS}</apex:facet>
                                             <apex:outputText value="{!t.credits}" />
                                         </apex:column>
                                         <apex:column >
@@ -411,7 +411,7 @@
                                             </apex:outputText>
                                         </apex:column>
                                         <apex:column >
-                                            <apex:facet name="header">{!$Label.copado__deployment}</apex:facet>
+                                            <apex:facet name="header">{!$Label.copado__DEPLOYMENT}</apex:facet>
                                             <apex:outputText value="{!t.deployment}" />
                                         </apex:column>
                                         <apex:column >
@@ -419,11 +419,11 @@
                                             <apex:outputText value="{!t.stepName}" />
                                         </apex:column>
                                         <apex:column >
-                                            <apex:facet name="header">{!$Label.copado__deployment_job}</apex:facet>
+                                            <apex:facet name="header">{!$Label.copado__DEPLOYMENT_JOB}</apex:facet>
                                             <apex:outputText value="{!t.job}" />
                                         </apex:column>
                                         <apex:column >
-                                            <apex:facet name="header">{!$Label.copado__destination_org}</apex:facet>
+                                            <apex:facet name="header">{!$Label.copado__DESTINATION_ORG}</apex:facet>
                                             <apex:outputText value="{!t.destinationOrg}" />
                                         </apex:column>
                                     </apex:pageBlockTable>

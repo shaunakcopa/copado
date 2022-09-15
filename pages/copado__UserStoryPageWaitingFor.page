@@ -226,7 +226,7 @@
                     </apex:outputPanel>
                 </div>
                 <apex:outputPanel styleClass="copado-section-footer" id="continueButton">
-                    <apex:commandLink styleClass="slds-button slds-button_brand" action="{!getReturnUrl}" value="{!$Label.copado__go_back} to the {!$ObjectType.copado__User_Story__c.Label}"
+                    <apex:commandLink styleClass="slds-button slds-button_brand" action="{!getReturnUrl}" value="{!$Label.copado__Go_Back} to the {!$ObjectType.copado__User_Story__c.Label}"
                         style="margin-top:25px" />
                 </apex:outputPanel>
 

@@ -1,7 +1,7 @@
-<apex:page id="ViewRelease" standardController="copado__Release__c" extensions="copado.ReleaseExt" title="{!$Label.copado__edit} {!$ObjectType.copado__Release__c.Label}" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
+<apex:page id="ViewRelease" standardController="copado__Release__c" extensions="copado.ReleaseExt" title="{!$Label.copado__EDIT} {!$ObjectType.copado__Release__c.Label}" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds />
     <head>
-        <title>{!$Label.copado__edit} {!$ObjectType.copado__Release__c.Label} {!IF(!showLicenseError, Release__c.Name,'')}  | Copado</title>
+        <title>{!$Label.copado__EDIT} {!$ObjectType.copado__Release__c.Label} {!IF(!showLicenseError, Release__c.Name,'')}  | Copado</title>
         <c:IncludeStaticsResourceComponent addJquery="true"/>
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
 
@@ -9,7 +9,7 @@
             var j$ = jQuery.noConflict();
 
             var showApplyTagReleaseButton = function(){
-                var tagReleaseButton = $copado('<input id="customTagReleaseButton" type="button" class="btn" value="{!JSENCODE($Label.copado__set_version)}" onclick="openTagReleaseModal();"/>');
+                var tagReleaseButton = $copado('<input id="customTagReleaseButton" type="button" class="btn" value="{!JSENCODE($Label.copado__SET_VERSION)}" onclick="openTagReleaseModal();"/>');
                 if({!renderSetVersionButton} == true){
                     tagReleaseButton.appendTo($copado('[Id^="topButtonRow"]'));
                 }
@@ -72,7 +72,7 @@
 
                     <apex:form id="theForm" style="padding-top:12px;" styleClass="copado-lightning-container">
                         <!-- RELEASE HELP SECTION -->
-                        <c:CopadoHelp sectionText="{!$Label.copado__release_help}" sectionLink="https://docs.copado.com/release/release-overview" />
+                        <c:CopadoHelp sectionText="{!$Label.copado__RELEASE_HELP}" sectionLink="https://docs.copado.com/release/release-overview" />
                         <!-- / RELEASE HELP SECTION -->
 
                         <!-- APEX DETAIL -->
@@ -96,7 +96,7 @@
                                 <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
 
                                     <!-- RELEASE VERSION HELP SECTION -->
-                                    <c:CopadoHelp sectionText="{!$Label.copado__release_version_help}" sectionLink="https://git-scm.com/book/en/v2/Git-Basics-Tagging" />
+                                    <c:CopadoHelp sectionText="{!$Label.copado__RELEASE_VERSION_HELP}" sectionLink="https://git-scm.com/book/en/v2/Git-Basics-Tagging" />
                                     <!-- / RELEASE VERSION HELP SECTION -->
 
                                     <div class="slds-form slds-form_horizontal">
@@ -108,10 +108,10 @@
                                             <apex:actionFunction name="changePreviousRelease" action="{!getPreviousRelease}" reRender="previousRelease,previousReleaseVersion,releaseVersionOptions,releaseVersionSript" />
                                         </div>
                                         <div class="slds-form-element">
-                                            <label class="slds-form-element__label" for="previousReleaseVersion">Previous {!$Label.copado__release_version}</label>
+                                            <label class="slds-form-element__label" for="previousReleaseVersion">Previous {!$Label.copado__RELEASE_VERSION}</label>
                                             <div class="slds-form-element__control">
                                                 <apex:outputText value="{!previousRelease.copado__Version__c}" id="previousReleaseVersion" />
-                                                <apex:outputText id="previousRelease" value="{!IF(previousRelease==null,$Label.copado__release_not_found,'')}" />
+                                                <apex:outputText id="previousRelease" value="{!IF(previousRelease==null,$Label.copado__RELEASE_NOT_FOUND,'')}" />
                                             </div>
                                         </div>
 
@@ -147,7 +147,7 @@
                                         </apex:outputPanel>
 
                                         <div class="slds-form-element">
-                                            <label class="slds-form-element__label" for="newReleaseVersion" id="newReleaseVersionLabel"><apex:outputText value="{!$Label.copado__new} {!$Label.copado__release_version}"/> </label>
+                                            <label class="slds-form-element__label" for="newReleaseVersion" id="newReleaseVersionLabel"><apex:outputText value="{!$Label.copado__NEW} {!$Label.copado__RELEASE_VERSION}"/> </label>
                                             <div class="slds-form-element__control">
                                                 <apex:inputText id="newReleaseVersion" styleClass="slds-input" value="{!versionWrapper.newVersion}"/>
                                             </div>
@@ -171,13 +171,13 @@
                                 var updateNewReleaseVersion = function(version) {
                                     if(version==='major') {
                                         j$("[id$='{!$Component.newReleaseVersion}']").val('{!JSENCODE(versionWrapper.prefix + versionWrapper.major + versionWrapper.suffix)}');
-                                        j$('#newReleaseVersionLabel').text('{!$Label.copado__new} {!$Label.copado__major} {!$Label.copado__release_version}');
+                                        j$('#newReleaseVersionLabel').text('{!$Label.copado__NEW} {!$Label.copado__MAJOR} {!$Label.copado__RELEASE_VERSION}');
                                     } else if(version==='minor') {
                                         j$("[id$='{!$Component.newReleaseVersion}']").val('{!JSENCODE(versionWrapper.prefix + versionWrapper.minor + versionWrapper.suffix)}');
-                                        j$('#newReleaseVersionLabel').text('{!$Label.copado__new} {!$Label.copado__minor} {!$Label.copado__release_version}');
+                                        j$('#newReleaseVersionLabel').text('{!$Label.copado__NEW} {!$Label.copado__MINOR} {!$Label.copado__RELEASE_VERSION}');
                                     } else if(version==='patch') {
                                         j$("[id$='{!$Component.newReleaseVersion}']").val('{!JSENCODE(versionWrapper.prefix + versionWrapper.patch + versionWrapper.suffix)}');
-                                        j$('#newReleaseVersionLabel').text('{!$Label.copado__new} {!$Label.copado__patch} {!$Label.copado__release_version}');
+                                        j$('#newReleaseVersionLabel').text('{!$Label.copado__NEW} {!$Label.copado__PATCH} {!$Label.copado__RELEASE_VERSION}');
                                     }
                                 }
                             </script>

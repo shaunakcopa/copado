@@ -32,7 +32,7 @@
                                                 <apex:repeat value="{!messages}" var="message">
                                                     <p>{!SUBSTITUTE(message, "{url}", "")}
                                                         <apex:outputPanel rendered="{!if(contains(message,'{url}'),'true','false')}">
-                                                            <a href="{!$Label.copado__rollbackdocurl}" target="_blank">{!$Label.copado__rollbackdocurl}</a>
+                                                            <a href="{!$Label.copado__RollbackDocURL}" target="_blank">{!$Label.copado__RollbackDocURL}</a>
                                                         </apex:outputPanel>
                                                     </p>
                                                 </apex:repeat>

@@ -260,7 +260,7 @@ function htmlEntities(str) {
 dw.u.upsertFile = function(parentId, filename, data) {
     var cv = new sforce.SObject("ContentVersion");
     cv.Title=filename;
-    cv.PathOnClient= filename;
+    cv.PathOnClient= filename+'.json';
     cv.VersionData= Base64.encode(data);
 
     var existingFile = dw.u.getFile(parentId, filename);
@@ -555,8 +555,8 @@ dw.u.getCachedRemote = function(opt) {
          try{
             //decode the attach body
             console.log('attach==2=> ',attach);
-            var res = Base64.decode(attach[0].Body);
-
+            var res = decodeURIComponent(escape(window.atob( attach[0].Body )));
+            
 
             //format date
             var date = Date.fromISOString(attach[0].LastModifiedDate);

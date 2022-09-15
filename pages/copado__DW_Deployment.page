@@ -80,8 +80,8 @@
                         <div class="slds-col slds-size_10-of-12">
                             <h1>{!deploymentInterface.StepGeneralHeader}</h1>
                             <p class="subtitle">
-                                <apex:outputPanel layout="none" rendered="{!deploymentActionName == 'validation'}">{!$Label.copado__us_validation_inprogress}</apex:outputPanel>
-                                <apex:outputPanel layout="none" rendered="{!deploymentActionName != 'validation'}">{!$Label.copado__deployment_in_progress}</apex:outputPanel>
+                                <apex:outputPanel layout="none" rendered="{!deploymentActionName == 'validation'}">{!$Label.copado__US_VALIDATION_INPROGRESS}</apex:outputPanel>
+                                <apex:outputPanel layout="none" rendered="{!deploymentActionName != 'validation'}">{!$Label.copado__Deployment_in_Progress}</apex:outputPanel>
                             </p>
 
                             <div class="slds-grid slds-wrap">
@@ -227,8 +227,8 @@
                             <div class="buttons slds-m-top--xx-large">
                                 <apex:outputPanel layout="none" rendered="{!enableCancelDeploymentButton}">
                                     <a class="slds-button slds-button_outline-brand btn-back" onclick="lockScreen();cancelDeploymentJob();">
-                                        <apex:outputPanel layout="none" rendered="{!deploymentActionName == 'validation'}">{!$Label.copado__stop_validation}</apex:outputPanel>
-                                        <apex:outputPanel layout="none" rendered="{!deploymentActionName != 'validation'}">{!$Label.copado__stop_deployment}</apex:outputPanel>
+                                        <apex:outputPanel layout="none" rendered="{!deploymentActionName == 'validation'}">{!$Label.copado__Stop_Validation}</apex:outputPanel>
+                                        <apex:outputPanel layout="none" rendered="{!deploymentActionName != 'validation'}">{!$Label.copado__Stop_Deployment}</apex:outputPanel>
                                     </a>
                                 </apex:outputPanel>
                             </div>
@@ -249,8 +249,8 @@
                         <div class="slds-col slds-size_4-of-6">
                             <h1>{!$Label.New_Deployment}</h1>
                             <p class="subtitle">
-                                <apex:outputPanel layout="none" rendered="{!deploymentActionName == 'validation'}">{!$Label.copado__validation_successful}</apex:outputPanel>
-                                <apex:outputPanel layout="none" rendered="{!deploymentActionName != 'validation'}">{!$Label.copado__deployment_successful}</apex:outputPanel>
+                                <apex:outputPanel layout="none" rendered="{!deploymentActionName == 'validation'}">{!$Label.copado__Validation_Successful}</apex:outputPanel>
+                                <apex:outputPanel layout="none" rendered="{!deploymentActionName != 'validation'}">{!$Label.copado__Deployment_Successful}</apex:outputPanel>
                             </p>
                             <div class="success-image">
                                 <div class="slds-media__figure">
@@ -258,8 +258,8 @@
                                 </div>
                             </div>
                             <div class="buttons slds-m-top--xx-large">
-                                <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__back_to_setup}" action="{!goToOverviewStep}" onComplete="dw.buttonOnComplete();unlockScreen();" reRender="errorPanel,headerComponent" />
-                                <apex:commandButton styleClass="slds-button slds-button_brand" onClick="lockScreen();" value="{!$Label.copado__start_deployment}" action="{!updateStepForDeployment}" onComplete="restartDeployment();" reRender="nothingtorender" />
+                                <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__Back_to_Setup}" action="{!goToOverviewStep}" onComplete="dw.buttonOnComplete();unlockScreen();" reRender="errorPanel,headerComponent" />
+                                <apex:commandButton styleClass="slds-button slds-button_brand" onClick="lockScreen();" value="{!$Label.copado__Start_Deployment}" action="{!updateStepForDeployment}" onComplete="restartDeployment();" reRender="nothingtorender" />
                             </div>
 
                         </div>
@@ -276,8 +276,8 @@
                         <div class="slds-col slds-size_4-of-6">
                             <h1>{!$Label.New_Deployment}</h1>
                             <p class="subtitle">
-                                <apex:outputPanel layout="none" rendered="{!deploymentActionName == 'validation'}">{!$Label.copado__validation_failed}</apex:outputPanel>
-                                <apex:outputPanel layout="none" rendered="{!deploymentActionName != 'validation'}">{!$Label.copado__deployment_failed}</apex:outputPanel>
+                                <apex:outputPanel layout="none" rendered="{!deploymentActionName == 'validation'}">{!$Label.copado__Validation_Failed}</apex:outputPanel>
+                                <apex:outputPanel layout="none" rendered="{!deploymentActionName != 'validation'}">{!$Label.copado__Deployment_Failed}</apex:outputPanel>
                             </p>
                             <div class="error-image">
                                 <div class="slds-media__figure">
@@ -291,14 +291,14 @@
 
                             <div class="buttons slds-m-top--xx-large">
                                 <apex:outputPanel layout="none" rendered="{!!isRollback}">
-                                    <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__review_source_target}" action="{!goToSourceStep}" onComplete="dw.buttonOnComplete();unlockScreen();" reRender="errorPanel,headerComponent" />
+                                    <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__Review_Source_Target}" action="{!goToSourceStep}" onComplete="dw.buttonOnComplete();unlockScreen();" reRender="errorPanel,headerComponent" />
                                 </apex:outputPanel>
-                                <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!IF(deploymentInterface.StepGeneralHeader == $Label.copado__new_data_deployment, $Label.copado__review_data_template, $Label.copado__review_metadata)}" action="{!goToSelectChangesStep}" onComplete="dw.buttonOnComplete();unlockScreen();" reRender="errorPanel,headerComponent" />
+                                <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!IF(deploymentInterface.StepGeneralHeader == $Label.copado__New_Data_Deployment, $Label.copado__Review_Data_Template, $Label.copado__Review_Metadata)}" action="{!goToSelectChangesStep}" onComplete="dw.buttonOnComplete();unlockScreen();" reRender="errorPanel,headerComponent" />
                                 <apex:outputPanel layout="none" rendered="{!deploymentActionName == 'validation'}">
-                                    <apex:commandButton styleClass="slds-button slds-button_brand" onClick="lockScreen();" value="{!$Label.copado__restart_validation}" action="{!deploymentDMLs}" onComplete="restartDeployment();" reRender="nothingtorender" />
+                                    <apex:commandButton styleClass="slds-button slds-button_brand" onClick="lockScreen();" value="{!$Label.copado__Restart_Validation}" action="{!deploymentDMLs}" onComplete="restartDeployment();" reRender="nothingtorender" />
                                 </apex:outputPanel>
                                 <apex:outputPanel layout="none" rendered="{!deploymentActionName != 'validation'}">
-                                    <apex:commandButton styleClass="slds-button slds-button_brand" onClick="lockScreen();" value="{!$Label.copado__restart_deployment}" action="{!deploymentDMLs}" onComplete="restartDeployment();" reRender="nothingtorender" />
+                                    <apex:commandButton styleClass="slds-button slds-button_brand" onClick="lockScreen();" value="{!$Label.copado__Restart_Deployment}" action="{!deploymentDMLs}" onComplete="restartDeployment();" reRender="nothingtorender" />
                                 </apex:outputPanel>
                             </div>
 

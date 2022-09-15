@@ -155,6 +155,7 @@
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
+    <description>This is the pipeline/environment/user specific system properties.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -168,6 +169,7 @@
     <fields>
         <fullName>copado__API_Name__c</fullName>
         <deprecated>false</deprecated>
+        <description>This is the unique name of the system property which is used as a reference in dynamic expressions.</description>
         <externalId>false</externalId>
         <label>API Name</label>
         <length>255</length>
@@ -180,6 +182,7 @@
         <fullName>copado__Environment__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
+        <description>Lookup field to the environment which is linked to the system property.</description>
         <externalId>false</externalId>
         <label>Environment</label>
         <referenceTo>copado__Environment__c</referenceTo>
@@ -193,6 +196,7 @@
         <fullName>copado__Is_Sensitive__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
+        <description>Select this checbox to hide the sensitive information.</description>
         <externalId>false</externalId>
         <label>Hide Value</label>
         <trackTrending>false</trackTrending>
@@ -215,6 +219,7 @@
         <fullName>copado__Pipeline__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
+        <description>Lookup field to the pipeline linked to the system property.</description>
         <externalId>false</externalId>
         <label>Pipeline</label>
         <referenceTo>copado__Deployment_Flow__c</referenceTo>
@@ -241,6 +246,7 @@
         <fullName>copado__User__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
+        <description>Lookup field to the user linked to the system property.</description>
         <externalId>false</externalId>
         <label>User</label>
         <referenceTo>User</referenceTo>
@@ -252,6 +258,7 @@
     <fields>
         <fullName>copado__Value__c</fullName>
         <deprecated>false</deprecated>
+        <description>This is the value of the system property.</description>
         <externalId>false</externalId>
         <label>Value</label>
         <length>131072</length>

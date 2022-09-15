@@ -129,7 +129,7 @@
         <apex:outputPanel rendered="{!!showLicenseError}">
             <apex:form id="kanbanform">
                 <apex:pageMessages id="generalPageMessages" />
-                <c:ScreenLocker msg="{!$Label.copado__loading}" lockOnLoad="true" />
+                <c:ScreenLocker msg="{!$Label.copado__LOADING}" lockOnLoad="true" />
                 <div class="slds">
                     <!--Page Header-->
                     <div class="slds-page-header slds-m-bottom--small" role="banner" style="border-radius:0.25rem;">
@@ -172,14 +172,14 @@
                             <li>
                                 <apex:commandlink action="{!kanbanViewsActions}" onClick="lockScreen();" onComplete="showModal('#viewsModal','#viewsBackdrop');unlockScreen();"
                                     reRender="viewsContent,viewsFooter,pageActionMessages">
-                                    <apex:param value="Edit" name="kanbanView" /> {!$Label.copado__edit}
+                                    <apex:param value="Edit" name="kanbanView" /> {!$Label.copado__EDIT}
                                 </apex:commandlink>
                                 &nbsp; | &nbsp;
                             </li>
                             <apex:outputPanel layout="none" rendered="{!selectedKanbanView != 'default'}">
                                 <li>
                                     <apex:commandlink action="{!deleteView}" onClick="lockScreen();">
-                                        {!$Label.copado__delete}
+                                        {!$Label.copado__DELETE}
                                     </apex:commandlink>
                                     &nbsp; | &nbsp;
                                 </li>
@@ -187,7 +187,7 @@
                             <li>
                                 <apex:commandlink action="{!kanbanViewsActions}" onClick="lockScreen();" onComplete="showModal('#viewsModal','#viewsBackdrop');unlockScreen();"
                                     reRender="viewsContent,viewsFooter,pageActionMessages">
-                                    <apex:param value="NewView" name="kanbanView" /> {!$Label.copado__create_new_view}
+                                    <apex:param value="NewView" name="kanbanView" /> {!$Label.copado__Create_New_View}
                                 </apex:commandlink>
                             </li>
                         </ul>

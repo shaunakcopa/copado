@@ -31,6 +31,13 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Delete</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Status__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Inactive</rightValue>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>Clone</value>
@@ -62,6 +69,16 @@
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
                 <identifier>force_highlightsPanel</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>communicationId</name>
+                    <value>qualityGateRuleAlerts</value>
+                </componentInstanceProperties>
+                <componentName>copado:copadoAlertPlaceHolder</componentName>
+                <identifier>c_copadoAlertPlaceHolder1</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

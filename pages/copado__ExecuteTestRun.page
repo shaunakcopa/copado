@@ -121,7 +121,7 @@
                                     </apex:column>
                                 </apex:repeat>
                                 <apex:column id="colButtons" rendered="{!showButtons}" width="100">
-                                    <apex:facet name="header">{!$Label.copado__buttons}</apex:facet>
+                                    <apex:facet name="header">{!$Label.copado__BUTTONS}</apex:facet>
                                     <apex:actionStatus id="statusButtons">
                                         <apex:facet name="start"><img src="/img/loading.gif"/></apex:facet>
                                         <apex:facet name="stop">
