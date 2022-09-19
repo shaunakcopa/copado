@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Magic__c</members>
+        <members>Student__c.Address__c</members>
+        <members>Student__c.Age__c</members>
+        <members>Student__c.External_ID__c</members>
+        <members>Student__c.Phone__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Student__c</members>
         <name>CustomObject</name>
     </types>
     <types>
-        <members>Magic__c-Magic Layout</members>
+        <members>Student__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Student__c-Student Layout</members>
         <name>Layout</name>
     </types>
     <types>
-        <members>Shaunak_Role</members>
-        <name>Role</name>
-    </types>
-    <types>
-        <members>Magic__c.Trial_WL</members>
-        <name>WebLink</name>
+        <members>Student__c</members>
+        <name>SharingRules</name>
     </types>
     <version>55.0</version>
 </Package>
