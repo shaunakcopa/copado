@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>copado__Enabled__c</field>
-        <value xsi:type="xsd:boolean">true</value>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>copado__Text_Field__c</field>
