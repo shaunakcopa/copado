@@ -14,6 +14,8 @@ global class PackageVersionCreateAction implements copado.JobExecutionCallback {
 
     }
 global class Request {
+    @InvocableVariable(label='Action Callback' description='Apex Callback Class that implements JobExecutionCallback' required=false)
+    global String actionCallback;
     @InvocableVariable(label='Description' required=false)
     global String description;
     @InvocableVariable(label='Platform related Version data JSON format' required=false)

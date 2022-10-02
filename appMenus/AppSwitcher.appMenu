@@ -176,4 +176,8 @@
         <name>Copado_DevOps_N_A</name>
         <type>ConnectedApp</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>copado__Copado_Lightning</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>

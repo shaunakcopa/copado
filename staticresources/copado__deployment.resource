@@ -814,7 +814,7 @@ var copadoApp = {
         var panelHtml = msg
             ? $copado('[id$=js-msg-' + type + ']')
                 .html()
-                .replace('__MSG__', msg)
+                .replaceAll('__MSG__', msg)
             : $copado('[id$=js-msg-' + type + ']').html();
         $copado('.fixedMsg')
             .html(panelHtml)

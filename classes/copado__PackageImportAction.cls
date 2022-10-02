@@ -11,6 +11,8 @@ global class PackageImportAction implements copado.JobExecutionCallback {
         return null;
     }
 global class Request {
+    @InvocableVariable(label='Action Callback' description='Apex Callback Class that implements JobExecutionCallback' required=false)
+    global String actionCallback;
     @InvocableVariable(label='Platform related arguments in JSON format' required=false)
     global String jsonInformation;
     @InvocableVariable(label='Package Name or Id' required=true)

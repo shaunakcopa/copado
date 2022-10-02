@@ -7,7 +7,7 @@
             <errorMessage><!-- You can only select Stage Connections that belong to the same Pipeline. --></errorMessage>
         </lookupFilter>
         <name>copado__Next_Stage_Connection__c</name>
-        <relationshipLabel><!-- Stage Connections --></relationshipLabel>
+        <relationshipLabel><!-- Previous Stage Connections --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Next Stage --></label>

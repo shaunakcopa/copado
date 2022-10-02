@@ -98,7 +98,7 @@
             <errorMessage><!-- You can only select Stage Connections that belong to the same Pipeline. --></errorMessage>
         </lookupFilter>
         <name>copado__Stage_Connection__c</name>
-        <relationshipLabel><!-- Stage Connections --></relationshipLabel>
+        <relationshipLabel><!-- Pipeline Connections --></relationshipLabel>
     </fields>
     <fields>
         <help><!-- Stage to which the source environment belongs. --></help>
