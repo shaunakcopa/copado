@@ -97,6 +97,14 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>TaxLocaleType</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TaxType</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>TotalAdjustmentAmount</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -132,6 +140,14 @@
     </fields>
     <fields>
         <fullName>TotalProductTaxAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TotalPromoAdjustmentAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TotalPromoAdjustmentTaxAmount</fullName>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>

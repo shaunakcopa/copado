@@ -7,6 +7,10 @@
         <fullName>AdjustmentBasisDetail</fullName>
     </fields>
     <fields>
+        <fullName>AdjustmentBasisReferenceId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>WebCartId</fullName>
         <type>MasterDetail</type>
     </fields>
