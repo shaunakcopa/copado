@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>ShaunakTest2Subfolder</members>
-        <members>ShaunakTest2Subfolder/Shaunak_Second_Leads_Report_inside_SFold_q3k</members>
-        <members>ShaunakTestSubFolder</members>
-        <members>ShaunakTestSubFolder/Shaunak_User_Report_8HQ</members>
-        <members>Shaunak_Test_1_Folder</members>
-        <members>Shaunak_Test_1_Folder/Shaunak_First_users_Report_cdt</members>
-        <members>unfiled$public</members>
-        <members>unfiled$public/flow_screen_prebuilt_report</members>
-        <name>Report</name>
+        <members>Student__c.All</members>
+        <name>ListView</name>
     </types>
     <version>55.0</version>
 </Package>
