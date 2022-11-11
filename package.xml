@@ -4,5 +4,9 @@
         <members>Mobile_Phone__c-Mobile Phone Layout</members>
         <name>Layout</name>
     </types>
+    <types>
+        <members>Student__c.All</members>
+        <name>ListView</name>
+    </types>
     <version>55.0</version>
 </Package>
