@@ -28,6 +28,7 @@
         <members>Currency</members>
         <members>CustomAddressField</members>
         <members>CustomerDataPlatform</members>
+        <members>CustomizablePropensityScoring</members>
         <members>DataDotCom</members>
         <members>Deployment</members>
         <members>DevHub</members>
@@ -46,7 +47,6 @@
         <members>Essentials</members>
         <members>Event</members>
         <members>ExperienceBundle</members>
-        <members>ExternalServices</members>
         <members>FieldService</members>
         <members>FileUploadAndDownloadSecurity</members>
         <members>FilesConnect</members>
@@ -71,6 +71,7 @@
         <members>MyDomain</members>
         <members>Name</members>
         <members>Notifications</members>
+        <members>OauthOidc</members>
         <members>ObjectLinking</members>
         <members>OmniChannel</members>
         <members>Opportunity</members>
@@ -94,6 +95,7 @@
         <members>RecommendationBuilder</members>
         <members>RecordPage</members>
         <members>RetailExecution</members>
+        <members>Sandbox</members>
         <members>Schema</members>
         <members>Search</members>
         <members>Security</members>
@@ -116,5 +118,5 @@
         <members>WorkDotCom</members>
         <name>Settings</name>
     </types>
-    <version>55.0</version>
+    <version>56.0</version>
 </Package>
