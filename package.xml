@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Task.WhoId</members>
+        <members>Campaign.Description</members>
+        <members>Campaign.IsActive</members>
+        <members>Campaign.Name</members>
+        <members>Campaign.OwnerId</members>
+        <members>Campaign.Status</members>
         <name>CustomField</name>
     </types>
     <types>
-        <members>Custom%3A Sales Profile</members>
-        <name>Profile</name>
+        <members>Campaign</members>
+        <name>CustomObject</name>
     </types>
-    <version>55.0</version>
+    <version>56.0</version>
 </Package>
