@@ -5,7 +5,7 @@ This read-only file shows the class's global constructors,
 methods, variables, and properties.
 To enable code to compile, all methods return null.
 */
-global class DestinationEnvironmentBranch extends copado.EnvironmentBranchHelper implements copado.ParameterExpressionCallable {
+global class DestinationEnvironmentBranch implements copado.ParameterExpressionCallable {
     global DestinationEnvironmentBranch() {
 
     }

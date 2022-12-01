@@ -761,6 +761,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                             order: filterItem.order,
                             operator: filterItem.operator,
                             fieldName: filterItem.fieldName,
+                            fieldLabel: filterItem.fieldLabel,
                             fieldType: filterItem.fieldType,
                             finalValue: filterItem.finalValue
                         };

@@ -411,7 +411,7 @@
             <isOptional>false</isOptional>
         </lookupFilter>
         <referenceTo>copado__Stage_Connection__c</referenceTo>
-        <relationshipLabel>Stage Connections</relationshipLabel>
+        <relationshipLabel>Pipeline Connections</relationshipLabel>
         <relationshipName>Stage_Connections</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>

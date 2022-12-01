@@ -191,6 +191,11 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>BundlePolicyId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>CancellationReason</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -228,7 +233,24 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>EngagementChannelTypeId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>IsAnonymousBooking</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IsBundle</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IsBundleMember</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IsManuallyBundled</fullName>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
@@ -255,6 +277,11 @@
     <fields>
         <fullName>Phone</fullName>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>RelatedBundleId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>SchedEndTime</fullName>

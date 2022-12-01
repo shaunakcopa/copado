@@ -61,6 +61,16 @@
                 <identifier>force_highlightsPanel1</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>communicationId</name>
+                    <value>automationRulePageAlerts</value>
+                </componentInstanceProperties>
+                <componentName>copado:copadoAlertPlaceHolder</componentName>
+                <identifier>c_copadoAlertPlaceHolder</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>header</name>
         <type>Region</type>
     </flexiPageRegions>
@@ -214,61 +224,9 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.copado__Environment__c</fieldItem>
-                <identifier>RecordEnvironment_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-127aa169-04a5-4987-b363-6a54b8bd56a0</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.copado__Stage__c</fieldItem>
-                <identifier>RecordStage_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-c098f076-75db-4c3c-8175-b25f37ff581d</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-127aa169-04a5-4987-b363-6a54b8bd56a0</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-c098f076-75db-4c3c-8175-b25f37ff581d</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column5</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-26441e53-1c92-491d-a61f-56774f949d8d</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>columns</name>
-                    <value>Facet-26441e53-1c92-491d-a61f-56774f949d8d</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>Evaluation Scope</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:fieldSection</componentName>
-                <identifier>flexipage_fieldSection</identifier>
+                <componentName>copado:automationRuleEvaluationScope</componentName>
+                <identifier>c_automationRuleEvaluationScope</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-1b72ce77-e918-4653-82f0-e8fbb0f258e4</name>

@@ -19,6 +19,10 @@
                 <behavior>Edit</behavior>
                 <field>AccountId</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ProductRequestId</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -143,6 +147,32 @@
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>Name</fields>
+        <fields>Product2</fields>
+        <fields>SourceProductItem</fields>
+        <fields>QuantityReceived</fields>
+        <fields>DestinationLocation</fields>
+        <fields>IsReceived</fields>
+        <fields>ReceivedBy</fields>
+        <relatedList>ProductTransfers</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>Name</fields>
+        <fields>Subject</fields>
+        <fields>Account</fields>
+        <fields>Priority</fields>
+        <fields>Status</fields>
+        <relatedList>WorkOrders</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>Name</fields>
+        <fields>WorkOrder</fields>
+        <fields>Subject</fields>
+        <fields>Priority</fields>
+        <fields>Status</fields>
+        <relatedList>WorkOrderLineItems</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>Name</fields>

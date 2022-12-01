@@ -91,6 +91,12 @@
                 <identifier>force_highlightsPanel2</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:appDetector</componentName>
+                <identifier>c_appDetector</identifier>
+            </componentInstance>
+        </itemInstances>
         <mode>Replace</mode>
         <name>header</name>
         <type>Region</type>

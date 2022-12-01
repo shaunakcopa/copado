@@ -437,8 +437,9 @@ dw.u.getFileContent = function(parentId, name) {
     return content;
 };
 
-dw.u.getAttach = function(parentId, name) {
-    var q = "Select Id, Body, LastModifiedDate, Name, ParentId From Attachment where Name='" + name + "' and parentId = '" + parentId + "' order by LastModifiedDate DESC limit 1",
+dw.u.getAttach = function(parentId, name, attId) {
+    let whereClause = (attId ? (" Id= '" + attId +  "'") :  (" Name='" + name + "'"));
+    var q = "Select Id, Body, LastModifiedDate, Name, ParentId From Attachment where " + whereClause + " and parentId = '" + parentId + "' order by LastModifiedDate DESC limit 1",
         result = sforce.connection.query(q),
         records = result.getArray("records");
     return records;
@@ -464,12 +465,10 @@ dw.u.getDecodedAttach = function(parentId, name) {
 
 
 //upsert
-dw.u.upsertAttach = function(parentId, name, body, alreadyCheck, newName) {
-
-
+dw.u.upsertAttach = function(parentId, name, body, alreadyCheck, newName, attId) {
     var Id = false;
     if (!alreadyCheck) {
-        var attach = dw.u.getAttach(parentId, name);
+        var attach = dw.u.getAttach(parentId, name, attId);
         if (attach.length) {
             Id = attach[0].Id;
         }
@@ -488,7 +487,6 @@ dw.u.upsertAttach = function(parentId, name, body, alreadyCheck, newName) {
     if (Id) {
         att.Id = Id;
     }
-
     var result = sforce.connection.upsert("Id", [att]);
 
 
@@ -530,19 +528,17 @@ dw.u.getCachedRemote = function(opt) {
     };*/
 
     var attach = dw.u.getAttach(opt.parentId, opt.name);
-    console.log('attach=1==> ',attach);
+    
     if (opt.force || attach.length != 1) {
-
+        
         //get remote and save
         dw.u.getRemote.attempts = 0;
 
         dw.u.getRemote(opt.url, function(res) {
-                console.log('getRemote ok', res);
 
                 //save as attach
                 dw.u.upsertAttach(opt.parentId, opt.name, JSON.stringify(res), !opt.force);
                 var attachLocal = dw.u.getAttach(opt.parentId, opt.name);
-                console.log('attachLocal===> ',attachLocal);
                 //format date
                 var date = Date.fromISOString(attachLocal[0].LastModifiedDate);
                 //added by UCU to be able update Refresh Cache date-time for the new attachments on Grid
@@ -554,9 +550,7 @@ dw.u.getCachedRemote = function(opt) {
     } else {
          try{
             //decode the attach body
-            console.log('attach==2=> ',attach);
-            var res = decodeURIComponent(escape(window.atob( attach[0].Body )));
-            
+            var res = decodeURIComponent(encodeURIComponent(window.atob( attach[0].Body )));
 
             //format date
             var date = Date.fromISOString(attach[0].LastModifiedDate);

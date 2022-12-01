@@ -157,9 +157,9 @@
             var showReviewConflictButton = function () {
                 var reviewConflictButton = $copado('<input id="customReviewConflictButton" type="button" class="btn" value="{!JSENCODE($Label.MERGE_CONFLICT_REVIEW)}" onclick="openResolveConflictsPage();"/>');
                 if ({!IF(Promotion__c.Merge_Conflict__c, 1, 0)
-            } || '{!JSENCODE(Promotion__c.Status__c)}' == '{!JSENCODE($Label.MERGE_CONFLICT)}') {
+            } || '{!JSENCODE(Promotion__c.Status__c)}' == '{!JSENCODE($Label.MERGE_CONFLICT)}' || {!isSmartConflict}) {
                 reviewConflictButton.appendTo($copado('[Id^="topButtonRow"]'));
-                }
+            }
             }
 
             document.onreadystatechange = function () {
@@ -312,6 +312,7 @@
             </style>
         </apex:outputPanel>
         <script type="text/javascript">
+            var proId;
             function overridePageMessages() {
                 textureEffect = 'slds-theme--alert-texture';
 
@@ -403,7 +404,14 @@
                         "scrollCollapse": true
                     }
                 );
+                proId = '{!JSENCODE(Promotion__c.Id)}';
+                replaceLink();
             });
+
+            function replaceLink(){
+                $copado('[id$="RelatedNoteList_body"] a:contains(Show more)').on('click',function(){setTimeout(replaceLink, 3000)});
+                $copado('[id$="RelatedNoteList_body"] a:contains(Go to list)').attr('href',`/lightning/r/Promotion__c/${proId}/related/CombinedAttachments/view`);
+            }
 
             function verifyPollStatus(isPollInProgress, conflictMessage) {
                 if (!isPollInProgress) {
