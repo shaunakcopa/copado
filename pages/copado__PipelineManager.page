@@ -1177,7 +1177,7 @@
                                                                                 </div>
                                                                             </div>
                                                                         </apex:outputPanel>
-                                                                        <apex:outputPanel layout="none" rendered="{!AND(pipelineMode == DIAGRAM, envWrapper.currentStep.Connection_Behavior_Override__c != null)}" style="cursor: pointer;">
+                                                                        <apex:outputPanel layout="none" rendered="{!AND(pipelineMode == DIAGRAM, envWrapper.currentStep.Connection_Behavior_Override__c != null, OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null))}" style="cursor: pointer;">
                                                                             <div class="minipagelayout" style="opacity: 0;position:fixed;">
                                                                                 <apex:outputField value="{!envWrapper.currentStep.Connection_Behavior_Override__c}" />
                                                                             </div>
@@ -1312,7 +1312,7 @@
                                                                 <div>
                                                                     <apex:outputPanel rendered="{!pipelineMode == DIAGRAM}" layout="none">
                                                                         <hr style="width: 90%;margin: 0 auto;" />
-                                                                        <apex:outputPanel layout="none" rendered="{!AND(envWrapper.currentEnvironment.Connection_Behavior__c != null, envWrapper.isDestinationEnv)}">
+                                                                        <apex:outputPanel layout="none" rendered="{!AND(envWrapper.currentEnvironment.Connection_Behavior__c != null, envWrapper.isDestinationEnv, OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null))}">
                                                                             <div class="env-connection-info">
                                                                                 <div class="env-connection-behaviour-override">
                                                                                     <div class="minipagelayout" style="opacity: 0;position:fixed;">
@@ -1358,7 +1358,7 @@
                                                                                 </div>
                                                                             </div>
                                                                         </apex:outputPanel>
-                                                                        <apex:outputPanel layout="none" rendered="{!AND(envWrapper.currentEnvironment.Connection_Behavior__c == null, envWrapper.currentEnvironment.Id != null, envWrapper.isDestinationEnv)}">
+                                                                        <apex:outputPanel layout="none" rendered="{!AND(envWrapper.currentEnvironment.Connection_Behavior__c == null, envWrapper.currentEnvironment.Id != null, envWrapper.isDestinationEnv, OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null))}">
                                                                             <div class="env-connection-info" onclick="lockScreen();createNewConnectionBehaviorAndBind('','{!envWrapper.currentEnvironment.Id}', '{!JSINHTMLENCODE(envWrapper.currentEnvironment.Name)}','');">
                                                                                 <div title="Click here to create a connection behavior" class="env-connection-behaviour-override" style="filter: grayscale(100%);opacity:60%;">
                                                                                     <div class="icon">

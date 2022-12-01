@@ -1042,6 +1042,10 @@ MetadataGrid2.prototype.refreshCache = function(callbackFinished) {
         console.info('MetadataGrid2.refreshCache() grid data refreshed');
         that.render();
         unlockScreen();
+        // set refresh cache done
+        $copado('[id="notificationModalRefresh"]').hide();
+        $copado('[id="backDropRefresh"]').hide();
+        clearMessagesMap();
         if (callbackFinished) callbackFinished(cachedDate);
     }, true);
  };

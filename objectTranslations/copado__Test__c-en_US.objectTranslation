@@ -44,6 +44,14 @@
         <relationshipLabel><!-- Tests --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Parent Id --></label>
+        <name>copado__Parent_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent --></label>
+        <name>copado__Parent__c</name>
+    </fields>
+    <fields>
         <label><!-- Priority --></label>
         <name>copado__Priority__c</name>
         <picklistValues>
@@ -62,6 +70,11 @@
             <masterLabel>Medium</masterLabel>
             <translation><!-- Medium --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Promotion --></label>
+        <name>copado__Promotion__c</name>
+        <relationshipLabel><!-- Tests --></relationshipLabel>
     </fields>
     <fields>
         <help><!-- By checking this field, you are indicating that the test is ready to be executed and the &apos;Run&apos; button will display. --></help>
@@ -95,6 +108,10 @@
             <masterLabel>Testing in Progress</masterLabel>
             <translation><!-- Testing in Progress --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Test Tool --></label>
+        <name>copado__Test_Tool__c</name>
     </fields>
     <fields>
         <label><!-- Tool - Deprecated --></label>

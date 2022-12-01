@@ -25,9 +25,6 @@
                 margin-bottom: 5px;
                 margin-left: 5px;
             }
-            .general-col {
-                width: 50%;
-            }
         </style>
         <c:IncludeStaticsResourceComponent addJQuery="true" />
         <c:IncludeConnectionJsComponent />
@@ -89,7 +86,7 @@
                                 <!-- TAB: GENERAL -->
                                 <div id="tab-scoped-1" class="slds-tabs--scoped__content slds-show" role="tabpanel" aria-labelledby="tab-scoped-1__item">
                                     <div class="slds-grid slds-wrap">
-                                        <div class="slds-col slds-p-around_medium general-col">
+                                        <div class="slds-col slds-p-around_medium">
                                             <article class="slds-card" style="background-color: #fff;">
                                                 <div class="slds-card__header slds-grid">
                                                     <header class="slds-media slds-media_center slds-has-flexi-truncate">
@@ -116,35 +113,7 @@
                                             </article>
                                         </div>
 
-                                        <div class="slds-col slds-p-around_medium general-col">
-                                            <article class="slds-card" style="background-color: #fff;">
-                                                <div class="slds-card__header slds-grid">
-                                                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
-                                                        <div class="slds-media__figure">
-                                                            <span class="slds-icon_container slds-icon-custom-custom53" title="Documentation icon">
-                                                                <svg class="slds-icon slds-icon_small" aria-hidden="true">
-                                                                    <use xlink:href="{!URLFOR($Resource.SLDS, '/assets/icons/custom-sprite/svg/symbols.svg#custom53')}" />
-                                                                </svg>
-                                                            </span>
-                                                        </div>
-                                                        <div class="slds-media__body">
-                                                            <h2>
-                                                                <span class="slds-text-heading_small">{!$Label.NotificationsCenter}</span>
-                                                            </h2>
-                                                        </div>
-                                                    </header>
-                                                    <div class="slds-no-flex">
-                                                        <a onclick="navigateTo('/lightning/n/{!JSINHTMLENCODE(namespace)}Notifications_Center');" target="_blank" class="slds-card__header-link slds-truncate">
-                                                            <button class="slds-button slds-button_neutral" type="button">{!$Label.Configure}</button>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="slds-card__body slds-card__body_inner">{!$Label.NotificationsCenterGettingStarted}</div>
-                                            </article>
-                                        </div>
-                                    </div>
-                                    <div class="slds-grid slds-wrap">
-                                        <div class="slds-col slds-p-around_medium general-col">
+                                        <div class="slds-col slds-p-around_medium">
                                             <article class="slds-card" style="background-color: #fff;">
                                                 <div class="slds-card__header slds-grid">
                                                     <header class="slds-media slds-media_center slds-has-flexi-truncate">
@@ -171,7 +140,7 @@
                                             </article>
                                         </div>
 
-                                        <div class="slds-col slds-p-around_medium general-col">
+                                        <div class="slds-col slds-p-around_medium">
                                             <article class="slds-card" style="background-color: #fff;">
                                                 <div class="slds-card__header slds-grid">
                                                     <header class="slds-media slds-media_center slds-has-flexi-truncate">

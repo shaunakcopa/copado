@@ -14,6 +14,8 @@ global class PackageVersionPublishAction implements copado.JobExecutionCallback 
         return null;
     }
 global class Request {
+    @InvocableVariable(label='Action Callback' description='Apex Callback Class that implements JobExecutionCallback' required=false)
+    global String actionCallback;
     @InvocableVariable(label='Package Version Id' required=true)
     global Id packageVersionId;
     global Request(Id packageVersionId) {

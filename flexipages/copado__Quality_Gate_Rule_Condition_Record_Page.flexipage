@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Quality Gate Rule Condition Record Page</description>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
@@ -145,10 +146,22 @@
                 <identifier>RecordPlatform_cField1</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.copado__Tests_From__c</fieldItem>
+                <identifier>RecordTests_From_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-adf3ae84-3419-4471-9933-9aad5e3c7cc8</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.copado__Stage__c</fieldItem>
+                <identifier>RecordStage_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
