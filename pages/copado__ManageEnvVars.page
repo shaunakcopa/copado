@@ -29,14 +29,14 @@
         </apex:actionFunction>
         <apex:sectionHeader title="{!$ObjectType.copado__Environmental_Variable__c.LabelPlural}" subtitle="{!copado__Deployment_Flow__c.Name}" />
 
-        <apex:pageBlock id="pbEnvVars" title="{!$Label.copado__environment_variables}">
+        <apex:pageBlock id="pbEnvVars" title="{!$Label.copado__Environment_Variables}">
             <apex:pageBlockButtons id="pbButtons">
                 <apex:commandLink onclick="promptVarName(); return false;" style="text-decoration: none; {!IF($User.UIThemeDisplayed!='Theme3','margin-right: 8px;','')}" reRender="dummyRenderForNew">
-                    <apex:commandButton value="{!$Label.copado__new}" disabled="{!editing}" />
+                    <apex:commandButton value="{!$Label.copado__NEW}" disabled="{!editing}" />
                 </apex:commandLink>
-                <apex:commandButton action="{!editModeOn}" value="{!$Label.copado__edit}" reRender="theForm" rendered="{!NOT(editing)}" />
-                <apex:commandButton immediate="true" action="{!cancel}" value="{!$Label.copado__cancel}" reRender="theForm" rendered="{!editing}" />
-                <apex:commandButton action="{!save}" value="{!$Label.copado__save}" disabled="{!NOT(editing)}" />
+                <apex:commandButton action="{!editModeOn}" value="{!$Label.copado__EDIT}" reRender="theForm" rendered="{!NOT(editing)}" />
+                <apex:commandButton immediate="true" action="{!cancel}" value="{!$Label.copado__Cancel}" reRender="theForm" rendered="{!editing}" />
+                <apex:commandButton action="{!save}" value="{!$Label.copado__Save}" disabled="{!NOT(editing)}" />
             </apex:pageBlockButtons>
             <table class="full-width list" id="tblData" border="0" cellspacing="0" cellpadding="0">
                 <tr class="headerRow">
@@ -49,7 +49,7 @@
                     <tr class="dataRow">
                         <td class="actionColumn">
                             <apex:commandLink id="delete" onclick="deleteByName('{!JSENCODE(mev.meName)}'); return false;" styleClass="actionLink">
-                                {!$Label.copado__del}
+                                {!$Label.copado__Del}
                             </apex:commandLink>
                         </td>
                         <td class="dataCell">

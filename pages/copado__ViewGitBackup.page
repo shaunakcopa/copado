@@ -20,7 +20,7 @@
         <c:IncludeConnectionJsComponent />
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
         <script type="text/javascript">
-            var loadingHTML = '<center><img src="/img/loading.gif" /><i><span id="retry-label">{!$Label.copado__loading}</span></i></center>';
+            var loadingHTML = '<center><img src="/img/loading.gif" /><i><span id="retry-label">{!$Label.copado__LOADING}</span></i></center>';
 
             var metadataselector = {
                 orgId: '{!JSENCODE(Git_Backup__c.Org__c)}',
@@ -69,7 +69,7 @@
     <body>
         <div class="copado-lightning-VF">
             <apex:pageMessages id="pmessage" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}" />
-            <apex:sectionHeader title="{!$ObjectType.copado__Git_Backup__c.Label}" subtitle="{!copado__Git_Backup__c.Name}" description="{!$Label.copado__git_backup_edit_description}"
+            <apex:sectionHeader title="{!$ObjectType.copado__Git_Backup__c.Label}" subtitle="{!copado__Git_Backup__c.Name}" description="{!$Label.copado__GIT_BACKUP_EDIT_DESCRIPTION}"
                 rendered="{!$User.UIThemeDisplayed != 'Theme4d'}" />
             <apex:outputPanel layout="block" styleClass="slds-scope copado-lightning-container" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
 
@@ -108,7 +108,7 @@
                     </div>
                     <div class="slds-grid">
                         <div class="slds-col slds-align-middle">
-                            <p class="slds-text-body_small">{!$Label.copado__git_backup_edit_description}</p>
+                            <p class="slds-text-body_small">{!$Label.copado__GIT_BACKUP_EDIT_DESCRIPTION}</p>
                         </div>
                     </div>
                     <apex:outputPanel layout="block" style="background: white;" id="headerFields">
@@ -130,7 +130,7 @@
             <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">
 
                 <apex:form >
-                    <c:ScreenLocker msg="{!$Label.copado__loading}" />
+                    <c:ScreenLocker msg="{!$Label.copado__LOADING}" />
                 </apex:form>
 
                 <apex:form id="theForm" styleClass="copado-lightning-container" style="padding-top:12px;4">
@@ -148,23 +148,23 @@
                     />
 
                     <apex:pageBlock id="pb_viewGitBackup" mode="detail" helpUrl="https://docs.copado.com/git-snapshot/git-snapshot-overview"
-                        helpTitle="{!$Label.copado__help_for_this_page}" rendered="{!AND(showOptions,!showError)}" title="{!$Label.copado__details}">
+                        helpTitle="{!$Label.copado__HELP_FOR_THIS_PAGE}" rendered="{!AND(showOptions,!showError)}" title="{!$Label.copado__DETAILS}">
                         <apex:pageblockButtons id="pbbs" rendered="{!isBackupEnabled}">
                             <apex:commandButton id="btnEdit" value="{!$Label.site.edit}" action="{!edit}" disabled="{!!isValid}" rendered="{!$Setup.copado__Copado_License__c.copado__Enable_Copado__c}"
                             />
-                            <apex:commandButton id="btnDelete" value="{!$Label.copado__delete}" action="{!deleteGitSnapshot}" rendered="{!$Setup.copado__Copado_License__c.copado__Enable_Copado__c}"
+                            <apex:commandButton id="btnDelete" value="{!$Label.copado__DELETE}" action="{!deleteGitSnapshot}" rendered="{!$Setup.copado__Copado_License__c.copado__Enable_Copado__c}"
                             />
-                            <apex:commandButton id="btnRetrieveCommits" value="Retrieve Commits" action="{!getCommits}" disabled="{!!isValid}" rendered="{!isBackupEnabled}"
+                            <apex:commandButton id="btnRetrieveCommits" value="{!$Label.copado__RetrieveCommits}" action="{!getCommits}" disabled="{!!isValid}" rendered="{!isBackupEnabled}"
                             />
                             <input id="btnDoSnapshot" type="button" class="btn" value="{!$Label.BACKUP_NOW}" onclick="openDoSnapshotModal();" />
-                            <apex:commandButton id="btnCommitNow" action="{!goToGitCommitPage}" value="{!$Label.copado__commit_now}" onClick="lockScreen();"
+                            <apex:commandButton id="btnCommitNow" action="{!goToGitCommitPage}" value="{!$Label.copado__COMMIT_NOW}" onClick="lockScreen();"
                                 onComplete="unlockScreen();" reRender="pmessage,pageMessages" />
-                            <apex:commandButton id="btnShowHookUrl" value="Show Hook URL" onclick="showWebhook(); return false;" />
-                            <apex:commandButton value="{!$Label.copado__compliance_scan_run}" action="{!gitBackupComplianceScan}" id="btnRunComplianceAnalysis"
+                            <apex:commandButton id="btnShowHookUrl" value="{!$Label.copado__Show_Hook_URL}" onclick="showWebhook(); return false;" />
+                            <apex:commandButton value="{!$Label.copado__COMPLIANCE_SCAN_RUN}" action="{!gitBackupComplianceScan}" id="btnRunComplianceAnalysis"
                                 rendered="{!complianceScanRequestAccess}" />
                         </apex:pageblockButtons>
 
-                        <apex:pageBlockSection id="pbsBasicInfo" title="{!$Label.copado__basic_information}">
+                        <apex:pageBlockSection id="pbsBasicInfo" title="{!$Label.copado__BASIC_INFORMATION}">
                             <apex:outputField id="name" value="{!copado__Git_Backup__c.Name}" />
                             <apex:outputField id="frequency" value="{!copado__Git_Backup__c.copado__Frequency__c}" />
                             <apex:outputField id="gitRepository" value="{!copado__Git_Backup__c.copado__Git_Repository__c}" />
@@ -174,17 +174,17 @@
                             <apex:outputField id="snapshotPermission" value="{!copado__Git_Backup__c.copado__Git_Snapshot_Permissions__c}" />
                         </apex:pageBlockSection>
 
-                        <apex:pageBlockSection title="{!$Label.copado__compliance_details}" collapsible="true" showHeader="true" columns="2" id="complianceSection">
+                        <apex:pageBlockSection title="{!$Label.copado__COMPLIANCE_DETAILS}" collapsible="true" showHeader="true" columns="2" id="complianceSection">
                             <apex:outputField value="{!copado__Git_Backup__c.copado__Compliance_Status__c}" id="complianceStatus" />
                             <apex:outputField value="{!copado__Git_Backup__c.copado__Last_Compliance_Scan_Date__c}" id="lastComplianceScanDate" />
                         </apex:pageBlockSection>
 
-                        <apex:pageBlockSection columns="1" title="{!$Label.copado__other_information}" rendered="{!showOtherInformation}">
+                        <apex:pageBlockSection columns="1" title="{!$Label.copado__OTHER_INFORMATION}" rendered="{!showOtherInformation}">
                             <apex:repeat value="{!$ObjectType.copado__Git_Backup__c.FieldSets.copado__CustomFields}" var="f">
                                 <apex:outputField value="{!copado__Git_Backup__c[f]}" />
                             </apex:repeat>
                         </apex:pageBlockSection>
-                        <apex:pageBlockSection Title="{!$Label.copado__advanced_metadata_filters}" collapsible="true" showHeader="true" id="pbsTypesSection"
+                        <apex:pageBlockSection Title="{!$Label.copado__ADVANCED_METADATA_FILTERS}" collapsible="true" showHeader="true" id="pbsTypesSection"
                             columns="1">
                             <apex:pageBlockTable id="pbt" value="{!sel}" var="t">
                                 <apex:column value="{!t}">
@@ -216,11 +216,11 @@
                             }
                             twistSection($copado('[id$="pbsTypesSection"]').find('img')[0]);
                         </script>
-                        <apex:pageBlockSection Title="{!$Label.copado__static_resources_title}" collapsible="true" showHeader="true" id="pbsStaticSection"
+                        <apex:pageBlockSection Title="{!$Label.copado__STATIC_RESOURCES_TITLE}" collapsible="true" showHeader="true" id="pbsStaticSection"
                             columns="1" rendered="{!AND(isStaticResourcesSelected,!showError)}">
                             <script type="text/javascript">
                                 twistSection($copado('[id$="pbsStaticSection"]').find('img')[0]);
-                            </script> {!$Label.copado__unzip_static_resources_help}
+                            </script> {!$Label.copado__UNZIP_STATIC_RESOURCES_HELP}
 
                             <apex:outputPanel >
                                 <div style="margin-bottom:10px;">
@@ -238,7 +238,7 @@
                                     <center>
                                         <img src="/img/loading.gif" />
                                         <i>
-                                            <span id="retry-label">{!$Label.copado__loading}</span>
+                                            <span id="retry-label">{!$Label.copado__LOADING}</span>
                                         </i>
                                     </center>
                                 </div>
