@@ -186,6 +186,11 @@
                     <default>true</default>
                     <label>Manual</label>
                 </value>
+                <value>
+                    <fullName>Disabled</fullName>
+                    <default>false</default>
+                    <label>Disabled</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>

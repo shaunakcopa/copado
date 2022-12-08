@@ -13,7 +13,7 @@
         </head>
         <body class="slds-scope">
             <apex:form >
-                <c:ScreenLocker msg="{!$Label.copado__loading}"/>
+                <c:ScreenLocker msg="{!$Label.copado__LOADING}"/>
                 <apex:outputPanel layout="block" id="container">
                     <apex:outputPanel rendered="{!copado__Scratch_Org_Definition__c.Id==null}">
                         <c:ScratchOrgTemplate parentPageController="{!this}" componentName="NewScratchOrgTemplate"

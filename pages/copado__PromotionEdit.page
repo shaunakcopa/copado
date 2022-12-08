@@ -90,7 +90,7 @@
                         <apex:pageBlockSectionItem />
                         <apex:inputField value="{!copado__Promotion__c.copado__Exclude_From_Auto_Resolve__c}"/>
                     </apex:pageBlockSection>
-                    <apex:pageBlockSection columns="1" title="{!$Label.copado__other_information}" rendered="{!showOtherInformation}">
+                    <apex:pageBlockSection columns="1" title="{!$Label.copado__OTHER_INFORMATION}" rendered="{!showOtherInformation}">
                         <apex:repeat value="{!$ObjectType.copado__Promotion__c.FieldSets.copado__CustomFields}" var="f">
                             <apex:inputField value="{!copado__Promotion__c[f]}"/>
                         </apex:repeat>

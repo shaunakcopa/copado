@@ -15,7 +15,7 @@
             <apex:pageBlock id="pb" mode="edit">
                 <apex:pageBlockButtons id="pbbs" location="top">
                     <button class="{!IF($User.UIThemeDisplayed=='Theme3','','copado-lightning')}" id="btnSave" onclick="copadoAppLogic.save(); return false;" >{!$Label.SAVE}</button>
-                    <apex:commandButton id="btnCancel" value="{!$Label.copado__cancel}" action="{!cancel}" />
+                    <apex:commandButton id="btnCancel" value="{!$Label.copado__Cancel}" action="{!cancel}" />
                 </apex:pageBlockButtons>
                 <apex:pageBlockSection id="pbs" columns="1">
                 	<apex:inputField id="if_Persona" value="{!copado__Persona_Permission__c.copado__Persona__c}"/>

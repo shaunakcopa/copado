@@ -5,12 +5,20 @@
         <name>copado__Bundle</name>
     </fieldSets>
     <fieldSets>
+        <label><!-- Bundle Sync Fields --></label>
+        <name>copado__Bundle_Sync_Fields</name>
+    </fieldSets>
+    <fieldSets>
         <label><!-- CBM Fields --></label>
         <name>copado__CBM_Fields</name>
     </fieldSets>
     <fieldSets>
         <label><!-- Commit Files Information --></label>
         <name>copado__Commit_Files_Information</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Commit Page --></label>
+        <name>copado__Commit_Page</name>
     </fieldSets>
     <fieldSets>
         <label><!-- Copado Header Fields --></label>
@@ -33,6 +41,10 @@
         <name>copado__PromotionRelatedList</name>
     </fieldSets>
     <fieldSets>
+        <label><!-- Promotion Related List Datatable --></label>
+        <name>copado__Promotion_Related_List_Datatable</name>
+    </fieldSets>
+    <fieldSets>
         <label><!-- SprintWall_MassUpdate --></label>
         <name>copado__SprintWall_MassUpdate</name>
     </fieldSets>
@@ -53,6 +65,10 @@
         <name>copado__Work_Manager_Relations</name>
     </fieldSets>
     <fields>
+        <label><!-- Jira Key --></label>
+        <name>Jira_Key__c</name>
+    </fields>
+    <fields>
         <label><!-- Acceptance Criteria Status --></label>
         <name>copado__Acceptance_Criteria_Status__c</name>
         <picklistValues>
@@ -71,6 +87,11 @@
     <fields>
         <label><!-- Acceptance Criteria --></label>
         <name>copado__Acceptance_Criteria__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this field to split your User Story&apos;s actual effort on implementation, reviews, testing, and documentation among different scopes. Example: Dev and QA, Frontend and Backend. You can label this field to match your scope. --></help>
+        <label><!-- Actual Points Other --></label>
+        <name>copado__Actual_Points_Other__c</name>
     </fields>
     <fields>
         <help><!-- Coverage of the Apex Classes added or committed within the User Story. --></help>
@@ -182,7 +203,7 @@
     </fields>
     <fields>
         <help><!-- If checked, this user story will not be included in the count of user stories ahead and behind. --></help>
-        <label><!-- Exclude From CBM --></label>
+        <label><!-- Exclude from Pipelines --></label>
         <name>copado__Exclude_From_CBM__c</name>
     </fields>
     <fields>
@@ -460,6 +481,10 @@
             <translation><!-- InstalledPackageLayout --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Layout</masterLabel>
+            <translation><!-- Layout --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Letterhead</masterLabel>
             <translation><!-- Letterhead --></translation>
         </picklistValues>
@@ -616,6 +641,16 @@
         <name>copado__Parent_Epic_Title__c</name>
     </fields>
     <fields>
+        <help><!-- Use this field to split your User Story effort estimation among different scopes. Example: Dev and QA, Frontend and Backend. You can label this field to match your scope. --></help>
+        <label><!-- Planned Points Other --></label>
+        <name>copado__Planned_Points_Other__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field auto-populates and displays the pipeline platform --></help>
+        <label><!-- Platform --></label>
+        <name>copado__Platform__c</name>
+    </fields>
+    <fields>
         <help><!-- Numeric value to determine which User Stories are more urgent and should be completed first. --></help>
         <label><!-- Priority --></label>
         <name>copado__Priority__c</name>
@@ -736,7 +771,7 @@
     </fields>
     <fields>
         <help><!-- If checked, the User Story will not be indexed for Copado&apos;s Overlap Awareness. --></help>
-        <label><!-- Stop Indexing Metadata --></label>
+        <label><!-- Exclude from Overlap Awareness --></label>
         <name>copado__Stop_Indexing_Metadata__c</name>
     </fields>
     <fields>
@@ -769,7 +804,12 @@
         <relationshipLabel><!-- User Stories --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- Total Story Points --></label>
+        <help><!-- Sum of Actual Points and Actual Points Other. Use this field along with Actual Points Other if you need to split your User Story effort among different scopes. --></help>
+        <label><!-- Total Actual Points --></label>
+        <name>copado__Total_Actual_Points__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Planned Points --></label>
         <name>copado__Total_Story_Points__c</name>
     </fields>
     <fields>
@@ -809,6 +849,30 @@
         <label><!-- So that... --></label>
         <name>copado__userStory_reason__c</name>
     </fields>
+    <fields>
+        <label><!-- Enable Logs --></label>
+        <name>copadoccmint__Enable_Logs__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>copadoccmint__External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- JIRA key --></label>
+        <name>copadoccmint__JIRA_key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Connect log --></label>
+        <name>copadoconnect__Connect_log__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>copadoconnect__External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Synced Date --></label>
+        <name>copadoconnect__Last_Synced_Date__c</name>
+    </fields>
     <recordTypes>
         <label><!-- Bug --></label>
         <name>copado__Bug</name>
@@ -821,9 +885,17 @@
         <label><!-- User Story --></label>
         <name>copado__User_Story</name>
     </recordTypes>
+    <recordTypes>
+        <label><!-- Utility --></label>
+        <name>copado__Utility</name>
+    </recordTypes>
     <validationRules>
         <errorMessage><!-- A cancellation reason must be given. --></errorMessage>
         <name>copado__Cancellation_reason_required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The credential must belong to the environment. --></errorMessage>
+        <name>copado__CredentialsMustBelongToTheEnvironment</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- This User Story does not meet the required Apex coverage threshold to be promoted. --></errorMessage>
@@ -832,6 +904,10 @@
     <validationRules>
         <errorMessage><!-- Test scratch orgs cannot be used for developments --></errorMessage>
         <name>copado__Test_scratch_orgs_cannot_be_used_for_dev</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Enter a value between 0 to 100 to specify the Progress in percentage. --></errorMessage>
+        <name>copado__User_Story_Progress_Range_Validation</name>
     </validationRules>
     <webLinks>
         <label><!-- Add_Apex_Tests --></label>
@@ -854,6 +930,10 @@
         <name>copado__Assign_to_Release</name>
     </webLinks>
     <webLinks>
+        <label><!-- Commit_Data --></label>
+        <name>copado__Commit_Data</name>
+    </webLinks>
+    <webLinks>
         <label><!-- Commit_Files --></label>
         <name>copado__Commit_Files</name>
     </webLinks>
@@ -872,6 +952,10 @@
     <webLinks>
         <label><!-- Import_to_User_Story --></label>
         <name>copado__Import_to_User_Story</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- MC_Commit_Changes --></label>
+        <name>copado__MC_Commit_Changes</name>
     </webLinks>
     <webLinks>
         <label><!-- Manage_Selenium_Tests --></label>

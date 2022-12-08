@@ -5,8 +5,8 @@
     </head>
     <body>
         <apex:form styleClass="copado-lightning-container">
-            <apex:sectionHeader title="{!$ObjectType.copado__Selenium_Test_Case__c.Label}" subtitle="{!$Label.copado__test_case_new_version} {!tc.Name}"/>
-            <apex:pageBlock mode="edit" id="pb_edit" title="{!$Label.copado__please_enter_a_new_name}">
+            <apex:sectionHeader title="{!$ObjectType.copado__Selenium_Test_Case__c.Label}" subtitle="{!$Label.copado__TEST_CASE_NEW_VERSION} {!tc.Name}"/>
+            <apex:pageBlock mode="edit" id="pb_edit" title="{!$Label.copado__PLEASE_ENTER_A_NEW_NAME}">
                 <apex:pageBlockButtons >
                     <apex:commandButton action="{!doClone}" value="{!$Label.site.save}" />
                     <apex:commandButton action="{!cancel}" value="{!$Label.site.cancel}" immediate="true"/>
