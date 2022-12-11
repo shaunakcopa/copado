@@ -20,6 +20,10 @@
         <apex:includeScript value="{!URLFOR($Resource.copado__DataTables10,'DataTables10/datatables.min.js')}" />
         <link rel="stylesheet" typea="text/css" href="{!URLFOR($Resource.DataTables10,'DataTables10/datatables.min.css')}" />
 
+        <apex:outputPanel id="hiddenVars">
+            <input id="hiddenRollbackFlag" type="hidden" value="{!enableRollbackEnv}" />
+        </apex:outputPanel>
+        
         <style type="text/css">
             .circle-info-half {
                 z-index: -1;
@@ -52,9 +56,9 @@
         <script>
             var copadoApp = {
                 ns: '{!JSENCODE(namespace)}',
-                promotionId: '{!JSENCODE(Promotion__c.Id)}',
-                sourceOrgId: '{!JSENCODE(Promotion__c.Source_Org_Credential__c)}',
-                destinationOrgId: '{!JSENCODE(Promotion__c.Destination_Org_Credential__c)}',
+                promotionId: '{!JSENCODE(copado__Promotion__c.Id)}',
+                sourceOrgId: '{!JSENCODE(copado__Promotion__c.copado__Source_Org_Credential__c)}',
+                destinationOrgId: '{!JSENCODE(copado__Promotion__c.copado__Destination_Org_Credential__c)}',
 
                 createDeployment: function (deploymentName, isTestOnly, testLevel, attachdeploymentfile) {
                     if (copadoApp.sourceOrgId == '') {
@@ -65,7 +69,7 @@
                         alert(copadoLabels.DESTINATION_ORG_CREDENTIAL_REQUIRED_FOR_DEPLOYMENT);
                         return false;
                     }
-                    if (isTestOnly == true) setLockScreenMessage('{!$Label.Creating_Validation_Deployment_Message}');
+                    if (isTestOnly == true) setLockScreenMessage('{!$Label.copado__Creating_Validation_Deployment_Message}');
 
                     copadoApp.callBackEnd(deploymentName, isTestOnly, testLevel, '', attachdeploymentfile);
                 },
@@ -100,9 +104,9 @@
                 return null;
             }
 
-            var gitRepo = "{!JSENCODE(flowDetails.flow.Git_Repository__c)}"
-            var pullBase = gitRepo ? "{!JSENCODE(flowDetails.flow.Git_Repository__r.Pull_Request_Base_URL__c)}" : null;
-            var pullType = gitRepo ? "{!JSENCODE(flowDetails.flow.Git_Repository__r.Git_Provider__c)}" : null;
+            var gitRepo = "{!JSENCODE(flowDetails.flow.copado__Git_Repository__c)}"
+            var pullBase = gitRepo ? "{!JSENCODE(flowDetails.flow.Git_Repository__r.copado__Pull_Request_Base_URL__c)}" : null;
+            var pullType = gitRepo ? "{!JSENCODE(flowDetails.flow.Git_Repository__r.copado__Git_Provider__c)}" : null;
 
             var createPullRequestLinks = function () {
                 $copado('a[href*="{!JSENCODE(deploymentPrefix)}"]:contains("Edit")').each(function () {
@@ -113,7 +117,7 @@
                         }
                     })
                     if (depName) {
-                        var pullLink = $copado('<a href="#" onclick="getPullRequest(\'' + depName + '\');return false;"> | {!$Label.Create_Pull_Request}</a>');
+                        var pullLink = $copado('<a href="#" onclick="getPullRequest(\'' + depName + '\');return false;"> | {!$Label.copado__Create_Pull_Request}</a>');
                         pullLink.appendTo($copado(this).parent());
                     }
                 });
@@ -125,7 +129,7 @@
                         config.type = pullType;
                         config.url = pullBase;
                         config.base = "{!JSENCODE(branch)}";
-                        config.compare = 'promotion/{!URLENCODE(Promotion__c.Name)}' + '-' + pullCompare.replace(/[^a-zA-Z 0-9]+/g, '').replace(/ /g, '');
+                        config.compare = 'promotion/{!URLENCODE(copado__Promotion__c.Name)}' + '-' + pullCompare.replace(/[^a-zA-Z 0-9]+/g, '').replace(/ /g, '');
                         var pullRequest = new PullRequest(config);
                         var win = window.open(pullRequest.URL);
                         if (win) {
@@ -133,13 +137,13 @@
                             win.focus();
                         } else {
                             //Browser has blocked it
-                            alert('{!JSENCODE($Label.POPUP_BLOCKER_MESSAGE)}');
+                            alert('{!JSENCODE($Label.copado__POPUP_BLOCKER_MESSAGE)}');
                         }
                     } catch (e) {
                         console.log('getPullRequest::error', e);
                     }
                 } else {
-                    alert('{!JSENCODE($Label.PULL_REQUEST_VALIDATION)}');
+                    alert('{!JSENCODE($Label.copado__PULL_REQUEST_VALIDATION)}');
                 }
             }
             //Modal Close
@@ -155,16 +159,25 @@
             }
 
             var showReviewConflictButton = function () {
-                var reviewConflictButton = $copado('<input id="customReviewConflictButton" type="button" class="btn" value="{!JSENCODE($Label.MERGE_CONFLICT_REVIEW)}" onclick="openResolveConflictsPage();"/>');
-                if ({!IF(Promotion__c.Merge_Conflict__c, 1, 0)
-            } || '{!JSENCODE(Promotion__c.Status__c)}' == '{!JSENCODE($Label.MERGE_CONFLICT)}' || {!isSmartConflict}) {
-                reviewConflictButton.appendTo($copado('[Id^="topButtonRow"]'));
+                var reviewConflictButton = $copado('<input id="customReviewConflictButton" type="button" class="btn" value="{!JSENCODE($Label.copado__MERGE_CONFLICT_REVIEW)}" onclick="openResolveConflictsPage();"/>');
+                if ({!IF(copado__Promotion__c.copado__Merge_Conflict__c, 1, 0)} || '{!JSENCODE(copado__Promotion__c.copado__Status__c)}' == '{!JSENCODE($Label.copado__MERGE_CONFLICT)}' || {!isSmartConflict}) {
+                    reviewConflictButton.appendTo($copado('[Id^="topButtonRow"]'));
+                }
             }
+
+            var showRollbackButton = function () {
+                var rollbackButton = $copado('<input id="customRollbackButton" type="button" class="btn" value="{!JSENCODE($Label.copado__Rollback)}" onclick="openRollbackWizardPage();"/>');
+                if ({!IF(copado__Promotion__c.copado__Is_Rolled_Back__c, false, true)} && 
+                    $copado('[id$=hiddenRollbackFlag]').val() === 'true' &&
+                    '{!JSENCODE(copado__Promotion__c.copado__Status__c)}' == '{!JSENCODE(COMPLETED)}') {
+                    rollbackButton.appendTo($copado('[Id^="topButtonRow"]'));
+                }
             }
 
             document.onreadystatechange = function () {
                 if (document.readyState === 'complete') {
                     createPullRequestLinks();
+                    showRollbackButton();
                     showReviewConflictButton();
                 }
             }
@@ -181,7 +194,7 @@
                 if ('{!AND(openCreateDeployment, enableCreateDeploymentButton)}' === 'true' && attPc == null) {
                     openModal();
                 } else if ('{!AND(openCreateDeployment, !enableCreateDeploymentButton)}' === 'true') {
-                    alert('{!$Label.CONFLICT_RESOLUTION_DEPLOYMENT_NOT_ENABLED}');
+                    alert('{!$Label.copado__CONFLICT_RESOLUTION_DEPLOYMENT_NOT_ENABLED}');
                 }
 
                 //Buttons To middle No PBtitle
@@ -568,6 +581,7 @@
                                     <apex:form id="theForm">
                                         <apex:actionFunction name="reRenderForm" reRender="theForm" />
                                         <apex:actionFunction name="reloadPromotionPage" action="{!reloadPromotion}" reRender="dummy" />
+                                        <apex:actionFunction name="openRollbackWizardPage" action="{!openRollbackWizardPage}" reRender="dummy" />
                                         <apex:actionFunction name="openResolveConflictsPage" action="{!openResolveConflictsPage}" reRender="dummy" />
                                         <apex:outputPanel id="jobManager">
                                             <c:JobsManager matchingKeys="{!jobsManagerMatchingKeys}"></c:JobsManager>

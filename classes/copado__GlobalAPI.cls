@@ -39,6 +39,9 @@ global class GlobalAPI {
     global copado.GlobalAPI.ProxyOrgResponse proxyOrgRequestSoap(copado.GlobalAPI.ProxyOrgRequest proxyRequest) {
         return null;
     }
+    global static String updateExtraHeader(Id repoId, String key, String value) {
+        return null;
+    }
     global copado.GlobalAPI.LicenseOperationResult upsertCopadoLicense(copado.GlobalAPI.UserLicense licenseDetails) {
         return null;
     }
