@@ -10965,11 +10965,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Task.WhoId</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>TimeSheet.Status</field>
         <readable>true</readable>
     </fieldPermissions>
