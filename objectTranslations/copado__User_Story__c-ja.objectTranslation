@@ -903,6 +903,10 @@
         <name>copado__CredentialsMustBelongToTheEnvironment</name>
     </validationRules>
     <validationRules>
+        <errorMessage><!-- You cannot enable the &quot;Ready to Promote&quot; or the &quot;Promote &amp; Deploy&quot; options because the &quot;Exclude from Pipeline&quot; option is enabled. Please disable this option first and try again. --></errorMessage>
+        <name>copado__Excluded_User_Stories_Not_Promotable</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- This User Story does not meet the required Apex coverage threshold to be promoted. --></errorMessage>
         <name>copado__Promote_User_Story_Apex_validation</name>
     </validationRules>

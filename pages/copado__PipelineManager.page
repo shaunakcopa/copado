@@ -1307,6 +1307,10 @@
                                                                             <div class="branch" title="{!envWrapper.currentStep.Destination_Branch__c}">{!$Label.copado__BRANCH}
                                                                                 <span>{!envWrapper.currentStep.Destination_Branch__c}</span></div>
                                                                         </apex:outputPanel>
+                                                                        <apex:outputPanel rendered="{!AND(currentPipeline.copado__Platform__c != 'Salesforce',currentPipeline.copado__Platform__c != null)}">
+                                                                            <div class="branch" title="{!envWrapper.stageName}">{!$ObjectType.copado__Deployment_Flow_Step__c.fields.copado__Stage__c.Label}
+                                                                                <span>{!envWrapper.stageName}</span></div>
+                                                                        </apex:outputPanel>
                                                                     </div>
                                                                 </div>
                                                                 <div>
@@ -2014,7 +2018,17 @@
                                 <apex:commandButton value="{!$Label.copado__Pipeline_Validate_Selections}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="validateSelections" action="{!createPromotionforValidation}" reRender="modalHeader,copadoErrorPanelForDialog,createdPromotionListPanel" onClick="lockScreen();" oncomplete="openPromotionListModal();renderPromotionPoller();" disabled="{!NOT(showUserStories)}" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}"/>
                                 <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote, $Label.copado__Pipeline_Back_Promote)}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createPromotion" action="{!createPromotion}" reRender="copadoErrorPanel,notify,modalHeader,copadoErrorPanelForDialog,createdPromotionListButtons,createdPromotionListPanel" onClick="lockScreen();" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}"/>
                                 <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeploy" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}"/>
-                                <apex:commandButton value="{!$Label.copado__Create_Promotion}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createMcPromotion" action="{!createPromotion}" reRender="mcPromotionMessages" onClick="lockScreen();" onComplete="unlockScreen();" disabled="{!NOT(showUserStories)}" rendered="{!AND(currentPipeline.copado__Platform__c != 'Salesforce',currentPipeline.copado__Platform__c != null)}"/> 
+                                <apex:outputPanel id="mcPromotionPanel"> 
+                                    <script>  
+                                    function openPromotionInNewTab() {
+                                        window.open('{!JSENCODE(mcNewPromotionUrl)}','_blank');
+                                        resetPromotionList();
+                                        unlockScreen();
+                                    }
+                                    </script>
+                                </apex:outputPanel>
+                                <apex:actionFunction name="createMCPromotionAndRedirect" action="{!createPromotion}" oncomplete="openPromotionInNewTab()" rerender="mcPromotionPanel, mcPromotionMessages" />
+                                <apex:commandButton value="{!$Label.copado__Create_Promotion}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createMcPromotion" reRender="none" onClick="lockScreen();createMCPromotionAndRedirect();" disabled="{!NOT(showUserStories)}" rendered="{!AND(currentPipeline.copado__Platform__c != 'Salesforce',currentPipeline.copado__Platform__c != null)}"/> 
                             </apex:outputPanel>
                         </div>
                         <div class="slds-grid slds-wrap slds-clearfix">

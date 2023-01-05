@@ -9728,6 +9728,17 @@ copado__Environment__c != copado__Org_Credential__r.copado__Environment__c</erro
         <errorMessage>The credential must belong to the environment.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>copado__Excluded_User_Stories_Not_Promotable</fullName>
+        <active>true</active>
+        <description>If &apos;Excluded from CBM&apos; is enable, the user story can not be mark as &quot;Ready To Promote&quot; or &quot;Promote &amp; Deploy&quot;</description>
+        <errorConditionFormula>IF(
+  AND(NOT(ISBLANK(copado__Platform__c)), copado__Platform__c != &apos;Salesforce&apos;), 
+  (IF(AND(copado__Exclude_From_CBM__c, OR(copado__Promote_Change__c, copado__Promote_and_Deploy__c)), TRUE, FALSE)),
+  FALSE
+)</errorConditionFormula>
+        <errorMessage>You cannot enable the &quot;Ready to Promote&quot; or the &quot;Promote &amp; Deploy&quot; options because the &quot;Exclude from Pipeline&quot; option is enabled. Please disable this option first and try again.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>copado__Promote_User_Story_Apex_validation</fullName>
         <active>true</active>
         <description>If User Story has apex code, validate that the minimum code coverage has been met.</description>
