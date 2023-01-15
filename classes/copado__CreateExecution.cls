@@ -20,6 +20,8 @@ global class Request {
     @InvocableVariable( required=false)
     global String destinationId;
     @InvocableVariable( required=false)
+    global String jobStepId;
+    @InvocableVariable( required=false)
     global String parentId;
     @InvocableVariable( required=false)
     global String pipelineId;

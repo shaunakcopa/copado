@@ -813,6 +813,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Release__c.copadoconnect__Pipeline_definition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Sprint__c.copadoconnect__Connect_log__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -884,6 +889,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copadoconnect__Copado_Integration__c.copadoconnect__Named_Credential__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copadoconnect__Copado_Integration__c.copadoconnect__Organization__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
