@@ -33,6 +33,11 @@
         <name>copado__ErrorMessage__c</name>
     </fields>
     <fields>
+        <label><!-- Job Step --></label>
+        <name>copado__Job_Step__c</name>
+        <relationshipLabel><!-- Job Executions --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Parent Id(Formula) --></label>
         <name>copado__ParentId__c</name>
     </fields>

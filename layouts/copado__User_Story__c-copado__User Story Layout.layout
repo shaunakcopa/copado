@@ -159,10 +159,6 @@
                 <behavior>Edit</behavior>
                 <field>copado__Is_Bundle__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copadoccmint__JIRA_key__c</field>
-            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
