@@ -262,6 +262,19 @@
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>copado__Job_Step__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Job Step</label>
+        <referenceTo>copado__JobStep__c</referenceTo>
+        <relationshipLabel>Job Executions</relationshipLabel>
+        <relationshipName>Job_Executions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>copado__ParentId__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>

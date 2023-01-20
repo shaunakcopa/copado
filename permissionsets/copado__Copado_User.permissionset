@@ -2829,6 +2829,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__UserStoryPipelinePathCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__UserStoryReadyForPromoteExtension</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -6829,6 +6833,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__System_Property__c.copado__Environment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__System_Property__c.copado__Is_Global__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

@@ -55,6 +55,10 @@
         <name>copadoconnect__Named_Credential__c</name>
     </fields>
     <fields>
+        <label><!-- Organization --></label>
+        <name>copadoconnect__Organization__c</name>
+    </fields>
+    <fields>
         <label><!-- Project --></label>
         <name>copadoconnect__Project__c</name>
         <relationshipLabel><!-- Copado Integrations --></relationshipLabel>

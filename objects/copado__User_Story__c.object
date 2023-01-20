@@ -128,14 +128,11 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>User_Story_Record_Page1</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
+        <type>Default</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
+        <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
@@ -7793,41 +7790,6 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
         <type>TextArea</type>
     </fields>
     <fields>
-        <fullName>copadoccmint__Enable_Logs__c</fullName>
-        <defaultValue>false</defaultValue>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <label>Enable Logs</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>copadoccmint__External_Id__c</fullName>
-        <deprecated>false</deprecated>
-        <externalId>true</externalId>
-        <label>External Id</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>copadoccmint__JIRA_key__c</fullName>
-        <caseSensitive>false</caseSensitive>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <label>JIRA key</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>true</unique>
-    </fields>
-    <fields>
         <fullName>copadoconnect__Connect_log__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -9726,6 +9688,17 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
 NOT ( ISBLANK(copado__Org_Credential__c) ) &amp;&amp;
 copado__Environment__c != copado__Org_Credential__r.copado__Environment__c</errorConditionFormula>
         <errorMessage>The credential must belong to the environment.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>copado__Excluded_User_Stories_Not_Promotable</fullName>
+        <active>true</active>
+        <description>If &apos;Excluded from CBM&apos; is enable, the user story can not be mark as &quot;Ready To Promote&quot; or &quot;Promote &amp; Deploy&quot;</description>
+        <errorConditionFormula>IF(
+  AND(NOT(ISBLANK(copado__Platform__c)), copado__Platform__c != &apos;Salesforce&apos;), 
+  (IF(AND(copado__Exclude_From_CBM__c, OR(copado__Promote_Change__c, copado__Promote_and_Deploy__c)), TRUE, FALSE)),
+  FALSE
+)</errorConditionFormula>
+        <errorMessage>You cannot enable the &quot;Ready to Promote&quot; or the &quot;Promote &amp; Deploy&quot; options because the &quot;Exclude from Pipeline&quot; option is enabled. Please disable this option first and try again.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>copado__Promote_User_Story_Apex_validation</fullName>

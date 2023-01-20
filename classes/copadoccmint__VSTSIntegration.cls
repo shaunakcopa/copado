@@ -6,7 +6,7 @@
  * ScheduleUserStoryFetch Susf = new ScheduleUserStoryFetch (prpjectRecordId);
  * String str = Datetime.now().addSeconds(5).format('s m H d M ? yyyy');
  * String jobID = system.schedule('ScheduleUserStoryFetch - ' + DateTime.Now() + '.' + math.mod(DateTime.now().getTime(), 1000), str, Susf);
- *
+ * @lastModifiedBy Kunal Kaushik
  * */
 
 public with sharing class VSTSIntegration extends VSTSIntegrationConstants implements IIntegration {
@@ -19,17 +19,6 @@ public with sharing class VSTSIntegration extends VSTSIntegrationConstants imple
     public VSTSIntegration(){}
     public VSTSIntegration(Id projectId){
         pId = projectId;
-    }
-    
-    public Map<String, Id> userMap {
-        get {
-            if (null == userMap) {
-                Boolean unableCommunityUser = [SELECT Id, Enable_Community_User__c FROM copado__Project__c WHERE Id = :pId].Enable_Community_User__c;
-                userMap = CopadoCCMutilities.returnUsers(unableCommunityUser);
-            }
-            return userMap;
-        }
-        private set;
     }
 
     public Map<String, String> recordTypeMap {
@@ -149,7 +138,7 @@ public with sharing class VSTSIntegration extends VSTSIntegrationConstants imple
         String finalJson = '[{';
         for (String fieldName : fieldMap.keyset()) {
             if (null != cUserStory.get(fieldName)) {
-                String fieldKey = fieldMap.get(fieldName), fieldValue = String.escapeSingleQuotes(String.valueOf(cUserStory.get(fieldName)));
+                String fieldKey = fieldMap.get(fieldName), fieldValue = String.escapeSingleQuotes(String.valueOf(cUserStory.get(fieldName))).replace('"','\\"');
                 if (fieldName == RECORD_TYPE_ID) {
                     String recordTypeId = fieldValue;
                     String recordTypeName = userStoryRecordTypeMap.get(recordTypeId);
@@ -350,18 +339,20 @@ public with sharing class VSTSIntegration extends VSTSIntegrationConstants imple
                 JSONParser parser = JSON.createParser(responseText);
                 //wrapper class direct parse
                 sprintWorkItemsWrapper sprintWrapperItem = (sprintWorkItemsWrapper) parser.readValueAs(sprintWorkItemsWrapper.class);
-                if((currentIndex != 0 || (currentIndex == 0 && wIIds[0].size() != 0)) && sprintWrapperItem.workItemRelations.size() > 0){
-                    currentIndex++;
-                    wIIds.add(new List<String>());
-                }
-                Integer counter4Ids = 0;
-                for (targetWrapper targetItem : sprintWrapperItem.workItemRelations) {
-                    wIIds[currentIndex].add(String.valueOf(targetItem.target.id));
-                    counter4Ids++;
-                    if (counter4Ids == vstsPaginationSize) {
-                        wIIds.add(new List<String>());
-                        counter4Ids = 0;
+                if(null != sprintWrapperItem.workItemRelations){
+                    if((currentIndex != 0 || (currentIndex == 0 && wIIds[0].size() != 0)) && sprintWrapperItem.workItemRelations.size() > 0){
                         currentIndex++;
+                        wIIds.add(new List<String>());
+                    }
+                    Integer counter4Ids = 0;
+                    for (targetWrapper targetItem : sprintWrapperItem.workItemRelations) {
+                        wIIds[currentIndex].add(String.valueOf(targetItem.target.id));
+                        counter4Ids++;
+                        if (counter4Ids == vstsPaginationSize) {
+                            wIIds.add(new List<String>());
+                            counter4Ids = 0;
+                            currentIndex++;
+                        }
                     }
                 }
             }
@@ -408,9 +399,7 @@ public with sharing class VSTSIntegration extends VSTSIntegrationConstants imple
                 }
                 if(String.isNotBlank(userEmail)){
                     userEmail = userEmail.toLowerCase();
-                }
-                if (userMap.containsKey(userEmail)) {
-                    keyValuepairTempMap.put(DEVELOPER_KEYWORD, userMap.get(userEmail));
+                    keyValuepairTempMap.put(DEVELOPER_KEYWORD, userEmail);
                 }
             } else if (
                 fields.get(sItem) instanceof String ||
@@ -426,9 +415,7 @@ public with sharing class VSTSIntegration extends VSTSIntegrationConstants imple
                 Map<String, Object> tempObject = (Map<String, Object>) fields.get(sItem);
                 if (null != tempObject.get(UNIQUE_NAME)) {
                     String cuEmail = String.valueOf(tempObject.get(UNIQUE_NAME)).toLowerCase();
-                    if (userMap.containsKey(cuEmail)) {
-                        keyValuepairTempMap.put(sItem.toLowerCase(), userMap.get(cuEmail));
-                    }
+                    keyValuepairTempMap.put(sItem.toLowerCase(), cuEmail);
                 } else if (null != tempObject.get(DISPLAY_NAME)) {
                     keyValuepairTempMap.put(sItem.toLowerCase(), (String) tempObject.get(DISPLAY_NAME));
                 }
@@ -447,7 +434,7 @@ public with sharing class VSTSIntegration extends VSTSIntegrationConstants imple
      * @return sprint list response
      */
     private void getSprints(copado__Project__c selectedProject) {
-        List<copado__Sprint__c> sprintsUpsert = new List<copado__Sprint__c>();
+        Set<copado__Sprint__c> sprintsUpsert = new Set<copado__Sprint__c>();
         List<String> teams = teamInfo.split(COMMA);
         for (String team : teams) {
             String encodedTeam = team.replaceAll(ONE_CHAR, SPACE_ENCODE);
@@ -468,7 +455,7 @@ public with sharing class VSTSIntegration extends VSTSIntegrationConstants imple
             Map<String, Object> results = (Map<String, Object>) JSON.deserializeUntyped(responseText);
             sprintsUpsert.addAll(upsertSprints((List<Object>) results.get(VALUE_KEYWORD), selectedProject.Id));
         }
-        upsert sprintsUpsert External_Id__c;
+        upsert new List<copado__Sprint__c>(sprintsUpsert) External_Id__c;
     }
 
     public void fetchSprints(copado__Project__c selectedProject) {
@@ -489,18 +476,20 @@ public with sharing class VSTSIntegration extends VSTSIntegrationConstants imple
      */
     private List<copado__Sprint__c> upsertSprints(List<Object> sprints, Id projectId) {
         List<copado__Sprint__c> sprintsUpsert = new List<copado__Sprint__c>();
-        for (Object obj : sprints) {
-            Map<String, Object> tempMap = (Map<String, Object>) obj;
-            Map<String, Object> attributes = (Map<String, Object>) tempMap.get(ATTRIBUTES_KEYWORD);
-            sprintsUpsert.add(
-                new copado__Sprint__c(
-                    External_Id__c = String.valueOf(tempMap.get(ID_KEYWORD)),
-                    Name = String.valueOf(tempMap.get(NAME_KEYWORD)),
-                    copado__Start_Date__c = convertStringToDate(attributes.get(START_DATE)),
-                    copado__End_Date__c = convertStringToDate(attributes.get(FINISH_DATE)),
-                    copado__Project__c = projectId
-                )
-            );
+        if(null != sprints){
+            for (Object obj : sprints) {
+                Map<String, Object> tempMap = (Map<String, Object>) obj;
+                Map<String, Object> attributes = (Map<String, Object>) tempMap.get(ATTRIBUTES_KEYWORD);
+                sprintsUpsert.add(
+                    new copado__Sprint__c(
+                        External_Id__c = String.valueOf(tempMap.get(ID_KEYWORD)),
+                        Name = String.valueOf(tempMap.get(NAME_KEYWORD)),
+                        copado__Start_Date__c = convertStringToDate(attributes.get(START_DATE)),
+                        copado__End_Date__c = convertStringToDate(attributes.get(FINISH_DATE)),
+                        copado__Project__c = projectId
+                    )
+                );
+            }
         }
         return sprintsUpsert;
     }

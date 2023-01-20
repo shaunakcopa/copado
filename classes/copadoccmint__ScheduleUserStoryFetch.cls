@@ -2,11 +2,13 @@
  * Schedulable class to retrieve external User Stories on a scheduled basis.
  *
  * @author Ümit Can Uçkan
+ * @lastModifiedBy Kunal Kaushik
  * @version 2.0
  * @since CCM Integrations 1.0
  */
 global with sharing class ScheduleUserStoryFetch implements Schedulable {
     final String VSTS = 'Visual Studio Team Services';
+    final String defaultCronExp = '0 0 12 * * ?';
     copado__Project__c project;
     Boolean isSprint;
     Boolean isBulkSprint;
@@ -35,10 +37,36 @@ global with sharing class ScheduleUserStoryFetch implements Schedulable {
         } else {
             this.chunkSize = 50;
         }
+
+        if(isSprint){
+            this.prepareSprints();
+        } 
     }
 
     public void prepareSprints() {
         IntegrationFactory.returnInstance(project.Copado_Integration_Setting__r.External_System__c).fetchSprints(project);
+    }
+
+    /**
+     * @desc : This method is used for scheduling the sync of User Stories and Sprints into Salseforce Org
+     * Project from 3rd party application.
+     * @param scheduledClass : instance of ScheduleUserStoryFetch Class
+     * @param cronExp : cron expression which will be used to schedule the sync, if provided as NULL then sync will
+     * happen everyday at 12pm.
+     */
+    global void scheduleSyncForUserStoriesAndSprintsFromThridParty(ScheduleUserStoryFetch scheduledClass, String cronExp){
+        
+        if(String.isBlank(cronExp)){
+            // if no value is provided for cronExp then the sync will happen everyday at 12pm
+            cronExp = defaultCronExp;
+        }
+        try{
+            String scheduleJobId = system.schedule('Scheduled User Story and Sprint sync..', cronExp, scheduledClass);
+        }
+        catch(Exception ex){
+            throw new ApplicationException(Label.InvalidInputParameter);
+        }
+        
     }
 
     global void execute(SchedulableContext sc) {
@@ -65,4 +93,5 @@ global with sharing class ScheduleUserStoryFetch implements Schedulable {
             }
         }
     }
+    public class ApplicationException extends Exception {}
 }

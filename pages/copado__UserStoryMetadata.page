@@ -275,7 +275,7 @@
                     <div style="padding:12px;background: #fdfdfd;border-collapse: collapse; background: #fdfdfd;border-radius: 4px;">
                         <!-- User Story Table -->
                         <div class="slds-text-heading_small slds-p-around_medium">{!$Label.RelatedUserStoryMetadata}</div>
-                        <apex:actionFunction id="pull_ac" name="preparePullRequest" action="{!preparePullRequest}" reRender="pageMessages" oncomplete="setTimeout(function(){callPullRequest('{!JSINHTMLENCODE(latestPull.gitType)}','{!JSINHTMLENCODE(latestPull.pullURL)}','{!JSINHTMLENCODE(latestPull.base)}','{!JSINHTMLENCODE(latestPull.compare)}');},250)">
+                        <apex:actionFunction id="pull_ac" name="preparePullRequest" action="{!preparePullRequest}" reRender="pageMessages" oncomplete="setTimeout(function(){callPullRequest('{!JSENCODE(latestPull.gitType)}','{!JSENCODE(latestPull.pullURL)}','{!JSENCODE(latestPull.base)}','{!JSENCODE(latestPull.compare)}');},250)">
                             <apex:param name="compareUS" value="" />
                         </apex:actionFunction>
                         <div class="slds-align_absolute-center">
