@@ -27,10 +27,6 @@
         <relationshipLabel><!-- Students (Creted user 1) --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- External ID --></label>
-        <name>External_ID__c</name>
-    </fields>
-    <fields>
         <label><!-- Phone --></label>
         <name>Phone__c</name>
     </fields>
