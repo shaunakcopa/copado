@@ -8,13 +8,13 @@
 
 
 
-    <apex:sectionHeader id="sectionHeader" title="{!$Label.copado__copado_change_management}" subtitle="{!$Label.copado__user_story_import_selection}" description="{!$Label.copado__user_story_import_description}" />
+    <apex:sectionHeader id="sectionHeader" title="{!$Label.copado__COPADO_CHANGE_MANAGEMENT}" subtitle="{!$Label.copado__USER_STORY_IMPORT_SELECTION}" description="{!$Label.copado__USER_STORY_IMPORT_DESCRIPTION}" />
     <apex:form id="theForm" styleClass="copado-lightning-container" html-novalidate="true">
         <apex:pageMessages id="theMessages" />
         <apex:pageBlock id="pb" mode="edit">
             <apex:pageBlockButtons id="pbButtons" location="top">
-                <apex:commandButton id="btnCancel" value="{!$Label.copado__cancel}" action="{!cancel}" />
-                <apex:commandButton id="btnAssign" value="{!$Label.copado__add_selections}" action="{!assign}" reRender="theMessages"/>
+                <apex:commandButton id="btnCancel" value="{!$Label.copado__Cancel}" action="{!cancel}" />
+                <apex:commandButton id="btnAssign" value="{!$Label.copado__Add_Selections}" action="{!assign}" reRender="theMessages"/>
             </apex:pageBlockButtons>
             <apex:pageBlockSection id="pbs">
                 <apex:inputField value="{!dummyUserStoryLookup.copado__User_Story__c}" />
@@ -27,7 +27,7 @@
                     </apex:dataList>
                 </apex:outputPanel>
                 <apex:outputPanel layout="none" rendered="{!AND(allMetadata != null, allMetadata.size>=1000)}">
-                    {!$Label.copado__collection_size_exceeded}
+                    {!$Label.copado__Collection_Size_Exceeded}
                 </apex:outputPanel>
             </apex:pageBlockSection>
         </apex:pageBlock>

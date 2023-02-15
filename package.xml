@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Magic__c</members>
-        <name>CustomObject</name>
+        <members>Task.WhoId</members>
+        <name>CustomField</name>
     </types>
     <types>
-        <members>Magic__c-Magic Layout</members>
+        <members>Mobile_Phone__c-Mobile Phone Layout</members>
         <name>Layout</name>
     </types>
     <types>
-        <members>Magic__c.Trial_WL</members>
-        <name>WebLink</name>
+        <members>Student__c.All</members>
+        <name>ListView</name>
     </types>
-    <version>51.0</version>
+    <types>
+        <members>Custom%3A Sales Profile</members>
+        <name>Profile</name>
+    </types>
+    <version>56.0</version>
 </Package>
