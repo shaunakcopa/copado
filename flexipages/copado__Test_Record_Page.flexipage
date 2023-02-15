@@ -22,10 +22,15 @@
                         <valueListItems>
                             <value>copado__Test__c.copado__Run</value>
                             <visibilityRule>
+                                <booleanFilter>1 AND 2</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.copado__ReadyToRun__c}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>true</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.copado__User_Story__r.Name}</leftValue>
+                                    <operator>NE</operator>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
@@ -94,6 +99,36 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>message</name>
+                    <value>{!$Label.copado__SingleTestExecutionRequiresUserStory}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>variant</name>
+                    <value>info</value>
+                </componentInstanceProperties>
+                <componentName>copado:copadoAlert</componentName>
+                <identifier>c_copadoAlert3</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.copado__ReadyToRun__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.copado__User_Story__r.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>dismissible</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>message</name>
                     <value>{!$Label.copado__TestRerunNeedsRefresh}</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -103,7 +138,7 @@
                 <componentName>copado:copadoAlert</componentName>
                 <identifier>c_copadoAlert2</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 AND 2</booleanFilter>
+                    <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.copado__ReadyToRun__c}</leftValue>
                         <operator>EQUAL</operator>
@@ -113,6 +148,14 @@
                         <leftValue>{!Record.copado__Test_Tool__c}</leftValue>
                         <operator>NE</operator>
                         <rightValue>Manual Tests</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.copado__User_Story__r.Name}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.copado__LatestJobExecution__r.Name}</leftValue>
+                        <operator>NE</operator>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -311,6 +354,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Type__c</fieldItem>
                 <identifier>RecordType_cField1</identifier>
                 <visibilityRule>
@@ -323,6 +370,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__ReadyToRun__c</fieldItem>
                 <identifier>RecordReadyToRun_cField1</identifier>
                 <visibilityRule>
@@ -335,6 +386,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Reference__c</fieldItem>
                 <identifier>RecordReference__cField</identifier>
                 <visibilityRule>
@@ -347,6 +402,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Status__c</fieldItem>
                 <identifier>RecordStatus__cField</identifier>
                 <visibilityRule>
@@ -359,6 +418,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Priority__c</fieldItem>
                 <identifier>RecordPriority__cField</identifier>
                 <visibilityRule>
@@ -371,12 +434,20 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__User_Story__c</fieldItem>
                 <identifier>RecordUser_Story__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Feature__c</fieldItem>
                 <identifier>RecordFeature__cField</identifier>
                 <visibilityRule>
@@ -389,6 +460,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Application__c</fieldItem>
                 <identifier>RecordApplication__cField</identifier>
                 <visibilityRule>
@@ -401,6 +476,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.LastModifiedById</fieldItem>
                 <identifier>RecordLastModifiedByIdField</identifier>
                 <visibilityRule>

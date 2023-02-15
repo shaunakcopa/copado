@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <customButtons>copadoccmint__Sync_External_User_Stories</customButtons>
-    <customButtons>copadoccmint__Sync_External_User_Stories_With_Sprint</customButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -47,34 +45,8 @@
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>New Section</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copadoccmint__JQL_Extended_Filter__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
-                <field>copadoccmint__Copado_Integration_Setting__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copadoccmint__Team_Info__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copadoccmint__Project_External_Id__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copadoccmint__Enable_Logs__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>copadoccmint__Enable_Community_User__c</field>
-            </layoutItems>
-        </layoutColumns>
+        <layoutColumns/>
+        <layoutColumns/>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
@@ -156,16 +128,6 @@
         <relatedList>copado__Sprint__c.copado__Project__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>NAME</fields>
-        <fields>copadoccmint__Salesforce_Field_Name__c</fields>
-        <fields>copadoccmint__Exclude_from_su__c</fields>
-        <fields>copadoccmint__Third_Party_Field_Name__c</fields>
-        <fields>copadoccmint__Exclude_from_tpu__c</fields>
-        <fields>CREATEDBY_USER</fields>
-        <fields>UPDATEDBY_USER</fields>
-        <relatedList>copadoccmint__Field_Mapping__c.copadoccmint__Project__c</relatedList>
-    </relatedLists>
-    <relatedLists>
         <customButtons>copado__Mass_Add_User_Stories</customButtons>
         <fields>NAME</fields>
         <fields>copado__User_Story_Title__c</fields>
@@ -188,16 +150,6 @@
         <fields>TASK.PRIORITY</fields>
         <fields>CORE.USERS.FULL_NAME</fields>
         <relatedList>RelatedActivityList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>copadoccmint__Salesforce_Record_Type_Name__c</fields>
-        <fields>copadoccmint__Third_Party_Record_Type_Name__c</fields>
-        <relatedList>copadoccmint__Record_Type_Mapping__c.copadoccmint__Project__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>copadoccmint__Callout_Log__c.copadoccmint__Project__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
