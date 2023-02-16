@@ -31,8 +31,8 @@
         <!-- NR to avoid vf NS issues -->
         <div class="copado-lightning-VF">
             <apex:pageMessages id="theMessages" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}" />
-            <apex:sectionHeader id="sh_org" title="{!$ObjectType.copado__Org__c.Label} {!$Label.copado__edit}" subtitle="{!IF(ISBLANK(org.Name),'New Org',org.Name)}"
-                description="{!$Label.copado__org_edit_description}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}" />
+            <apex:sectionHeader id="sh_org" title="{!$ObjectType.copado__Org__c.Label} {!$Label.copado__EDIT}" subtitle="{!IF(ISBLANK(org.Name),'New Org',org.Name)}"
+                description="{!$Label.copado__ORG_EDIT_DESCRIPTION}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}" />
 
             <apex:outputPanel layout="block" styleClass="copado-lightning-container" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
                 <div class="slds-page-header">
@@ -66,7 +66,7 @@
                     </div>
                     <div class="slds-grid">
                         <div class="slds-col slds-align-middle">
-                            <p class="slds-text-body_small">{!$Label.copado__org_edit_description}</p>
+                            <p class="slds-text-body_small">{!$Label.copado__ORG_EDIT_DESCRIPTION}</p>
                         </div>
                     </div>
                     <apex:outputPanel layout="block" style="background: white;" id="headerFields">
@@ -91,14 +91,14 @@
 
                     <apex:form id="theForm" styleClass="copado-lightning-container" style="padding-top:12px;" html-novalidate="true">
                         <apex:pageBlock id="pb_createOrg" mode="edit" helpUrl="https://docs.copado.com/org-credentials/how-to-create-an-org-credential"
-                            helpTitle="{!$Label.copado__help_for_this_page}">
+                            helpTitle="{!$Label.copado__HELP_FOR_THIS_PAGE}">
 
                             <apex:pageblockButtons id="co_pbb">
                                 <apex:commandButton id="cb_save" value="{!$Label.site.save}" styleClass="btnImportant" action="{!save}" />
                                 <apex:commandButton id="cb_cancel" value="{!$Label.site.cancel}" action="{!cancel}" />
                             </apex:pageblockButtons>
                             <apex:actionRegion id="ar_custom_domain">
-                                <apex:pageBlockSection id="pbs1" columns="1" showHeader="true" title="{!$Label.copado__basic_information}">
+                                <apex:pageBlockSection id="pbs1" columns="1" showHeader="true" title="{!$Label.copado__BASIC_INFORMATION}">
                                     <apex:inputField id="if_name" value="{!org.Name}" required="true" />
                                     <apex:selectList id="if_orgType" value="{!org.copado__Org_Type__c}" size="1" onchange="showHideCustomDomain()">
                                         <apex:selectOptions value="{!orgTypes}" />
@@ -121,10 +121,10 @@
                                 <apex:actionFunction name="changeType" action="{!setUrls}" status="as_custom_domain" rerender="pbs1" />
                             </apex:actionRegion>
 
-                            <apex:pageBlockSection title="{!$Label.copado__advanced_metadata_filters}" collapsible="true" showHeader="true" id="typesSection"
+                            <apex:pageBlockSection title="{!$Label.copado__ADVANCED_METADATA_FILTERS}" collapsible="true" showHeader="true" id="typesSection"
                                 columns="1" rendered="{!AND(!isBlank(copado__Org__c.copado__Oauth_Signature__c),!isScratchOrg)}">
                                 <apex:pageBlockSectionItem dataStyle="width: 100%;" rendered="{!!scalableGrid}">
-                                    <c:MultiselectPicklist leftLabel="{!$ObjectType.copado__Org__c.fields.copado__Metadata_Types__c.Label}" pleftOptions="{!types}" rightLabel="{!$Label.copado__selected_types}"
+                                    <c:MultiselectPicklist leftLabel="{!$ObjectType.copado__Org__c.fields.copado__Metadata_Types__c.Label}" pleftOptions="{!types}" rightLabel="{!$Label.copado__SELECTED_TYPES}"
                                         prightOptions="{!selectedTypes}" size="14" width="250px" id="siTypes" />
                                 </apex:pageBlockSectionItem>
 
