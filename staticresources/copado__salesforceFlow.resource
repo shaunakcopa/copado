@@ -55,7 +55,7 @@ var salesforceFlow = salesforceFlow || {};
     app.createChildRows = function(array) {
         var parentId = 'flowParameters';
 
-        var parent = document.getElementById(parentId);
+        var parent = document.getElementById(parentId) || {};
         while (parent.firstChild) {
             parent.removeChild(parent.firstChild);
         }

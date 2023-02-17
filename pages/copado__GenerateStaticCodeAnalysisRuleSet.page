@@ -137,14 +137,14 @@
                 		  </span>
                         </div>
                         <div class="slds-media__body">
-                            <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{!$Label.copado__apex_rules_set}">{!$Label.copado__apex_rules_set}</h1>
-                            <p class="slds-text-body_small slds-line-height_reset">{!$Label.copado__ruleset_generator}</p>
+                            <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{!$Label.copado__APEX_RULES_SET}">{!$Label.copado__APEX_RULES_SET}</h1>
+                            <p class="slds-text-body_small slds-line-height_reset">{!$Label.copado__RULESET_GENERATOR}</p>
                         </div>
                     </div>
                 </div>
                 <div class="slds-col slds-no-flex slds-grid slds-align-top ">
-                    <apex:commandButton styleClass="slds-button slds-button--neutral" value="{!$Label.copado__back}" action="{!goBack}" onClick="$copado('[id=divToast]').addClass('slds-hide');lockScreen();" />
-                    <apex:commandButton styleClass="slds-button slds-button_outline-brand" value="{!$Label.copado__generate_rulesets}" action="{!generateDefaultRuleSet}" onClick="$copado('[id=divToast]').addClass('slds-hide');lockScreen();" onComplete="applyRenderSVG();unlockScreen();" reRender="pageMessages,rulesPanel" />
+                    <apex:commandButton styleClass="slds-button slds-button--neutral" value="{!$Label.copado__BACK}" action="{!goBack}" onClick="$copado('[id=divToast]').addClass('slds-hide');lockScreen();" />
+                    <apex:commandButton styleClass="slds-button slds-button_outline-brand" value="{!$Label.copado__Generate_RuleSets}" action="{!generateDefaultRuleSet}" onClick="$copado('[id=divToast]').addClass('slds-hide');lockScreen();" onComplete="applyRenderSVG();unlockScreen();" reRender="pageMessages,rulesPanel" />
                 </div>
             </div>
         </div>
@@ -158,13 +158,13 @@
                     <thead>
                     <tr>
                         <th scope="col" style="width:10rem;">
-                            <div class="slds-truncate" title="{!$Label.copado__rule_name}">{!$Label.copado__rule_name}</div>
+                            <div class="slds-truncate" title="{!$Label.copado__RULE_NAME}">{!$Label.copado__RULE_NAME}</div>
                         </th>
                         <th scope="col" style="width:3rem;">
-                            <div class="slds-truncate" title="{!$Label.copado__priority}">{!$Label.copado__priority}</div>
+                            <div class="slds-truncate" title="{!$Label.copado__PRIORITY}">{!$Label.copado__PRIORITY}</div>
                         </th>
                         <th scope="col" style="width:25rem;">
-                            <div class="slds-truncate" title="{!$Label.copado__message_capitals}">{!$Label.copado__message_capitals}</div>
+                            <div class="slds-truncate" title="{!$Label.copado__MESSAGE_CAPITALS}">{!$Label.copado__MESSAGE_CAPITALS}</div>
                         </th>
                     </tr>
                     </thead>

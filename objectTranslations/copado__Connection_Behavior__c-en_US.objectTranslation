@@ -9,6 +9,10 @@
             <translation><!-- Automated --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Disabled</masterLabel>
+            <translation><!-- Disabled --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Manual</masterLabel>
             <translation><!-- Manual --></translation>
         </picklistValues>

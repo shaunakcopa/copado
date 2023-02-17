@@ -3,7 +3,7 @@
  -->
 
 <apex:page id="DXPackageVersion" extensions="copado.DXPackageAsyncJobHandler" standardController="copado__Artifact__c" lightningStylesheets="true"
-    title="{!$Label.copado__edit} {!$ObjectType.copado__Artifact__c.Label}" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true"
+    title="{!$Label.copado__EDIT} {!$ObjectType.copado__Artifact__c.Label}" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true"
     sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="true" docType="html-5.0">
     <style>
         .slds-scope .slds-input {
@@ -24,7 +24,7 @@
     <c:IncludeStaticsResourceComponent addJQuery="true" />
     <apex:form >
         <apex:pageMessages id="packageMsg" />
-        <c:ScreenLocker msg="{!$Label.copado__loading}" useJobsManager="true" possibleRunningJobs=",DXCreatePackage,,true;,DXCreatePackageVersion,,true;,DXPackageStatusTracking,,true;,DXPackageUpdate,,true;,DXPackageVersionUpdate,,true;,DXPromoteBetaReleased,,true;"
+        <c:ScreenLocker msg="{!$Label.copado__LOADING}" useJobsManager="true" possibleRunningJobs=",DXCreatePackage,,true;,DXCreatePackageVersion,,true;,DXPackageStatusTracking,,true;,DXPackageUpdate,,true;,DXPackageVersionUpdate,,true;,DXPromoteBetaReleased,,true;"
         />
         <script>
             window.addEventListener('copadoJobsManagerFinished', function (evt) {
@@ -51,7 +51,7 @@
                                 deleteInstallationKeyRecord();
                             }
                         }
-                        setLockScreenMessage('{!JSENCODE($Label.copado__loading)}');
+                        setLockScreenMessage('{!JSENCODE($Label.copado__LOADING)}');
                     }
                 }
             }, false);

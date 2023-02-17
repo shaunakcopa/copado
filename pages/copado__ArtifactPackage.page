@@ -16,7 +16,7 @@
     </style>
     <apex:form >
         <apex:pageMessages id="message" />
-        <c:ScreenLocker msg="{!$Label.copado__loading}" useJobsManager="true" possibleRunningJobs=",DxListOrgPackagesJob,,true;" />
+        <c:ScreenLocker msg="{!$Label.copado__LOADING}" useJobsManager="true" possibleRunningJobs=",DxListOrgPackagesJob,,true;" />
         <script>
             window.addEventListener('copadoJobsManagerFinished', function (evt) {
                 for (var i = 0; i < evt.detail.length; i++) {
@@ -75,7 +75,7 @@
         var metadataRecords;
         var selectedPackageIndex;
 
-        var loadingHTML = '<center><img src="/img/loading.gif" /> <i>{!$Label.copado__loading}<span id="retry-label"></span></i></center>';
+        var loadingHTML = '<center><img src="/img/loading.gif" /> <i>{!$Label.copado__LOADING}<span id="retry-label"></span></i></center>';
         $copado('#jqxgrid').html(loadingHTML);
         var saveSelection = function () {
             setTimeout(function () {
@@ -114,11 +114,11 @@
                     setSelected(metadataRecords);
                 } catch (e) {
                     console.error(e);
-                    var noDataHtml = '<center>{!JSENCODE($Label.copado__nodatatodisplay)}</center>';
+                    var noDataHtml = '<center>{!JSENCODE($Label.copado__NODATATODISPLAY)}</center>';
                     $copado('#jqxgrid').html(noDataHtml);
                 }
             } else {
-                var noDataHtml = '<center>{!JSENCODE($Label.copado__nodatatodisplay)}</center>';
+                var noDataHtml = '<center>{!JSENCODE($Label.copado__NODATATODISPLAY)}</center>';
                 $copado('#jqxgrid').html(noDataHtml);
             }
 
