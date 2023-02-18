@@ -52,7 +52,7 @@
                 </apex:pageBlockSection>
 
                 <div class="slds-form-element slds-align_absolute-center">
-                    <apex:commandButton value="{!$Label.copado__cancel}" action="{!cancel}" styleClass="slds-button slds-button_neutral" />
+                    <apex:commandButton value="{!$Label.copado__Cancel}" action="{!cancel}" styleClass="slds-button slds-button_neutral" />
                     <input type="button"  value="{!$Label.Save}" class="btn slds-button slds-button_brand"
                                         onClick="saveTask();"/>
                     <apex:actionFunction name="saveAct" action="{!save}" onComplete="unlockScreen();" reRender="messages">

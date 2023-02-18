@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>copado__Pipeline_Connection_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>copado__Deployment_Flow_Step__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>copado__System_Property_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>copado__System_Property__c</pageOrSobjectType>
+    </actionOverrides>
     <brand>
         <headerColor>#00C3EF</headerColor>
         <logo>copado__Copado_Logo_Symbol_Only_Blue</logo>
@@ -11,6 +29,7 @@
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <label>Copado Developer</label>
     <navType>Standard</navType>
     <setupExperience>all</setupExperience>
@@ -37,7 +56,6 @@
     <tabs>copado__Kanban_Board__c</tabs>
     <tabs>copado__Copado_DX_Panel</tabs>
     <tabs>copado__Burndown_Item__c</tabs>
-    <tabs>copado__Copado_Feature__c</tabs>
     <tabs>copado__Application__c</tabs>
     <tabs>copado__Application_Feature__c</tabs>
     <uiType>Lightning</uiType>
