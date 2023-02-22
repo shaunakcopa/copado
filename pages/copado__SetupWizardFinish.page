@@ -27,7 +27,7 @@
         <div class="slds-illustration slds-illustration_small" style="border:1px solid gray;padding:5%;margin:5% 15% 2% 15%;">
             <div class="slds-illustration slds-illustration_small">
                 <div class="slds-text-longform">
-                    <h3 class="slds-text-heading_medium">{!$Label.copado__pipeline_wizard_finish}</h3>
+                    <h3 class="slds-text-heading_medium">{!$Label.copado__Pipeline_Wizard_Finish}</h3>
                 </div>
                 <svg class="slds-illustration__svg" viewBox="0 0 454 272" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <g fill="none" fill-rule="evenodd" transform="translate(-65 -74)">
@@ -96,7 +96,7 @@
                 </svg>
                 <p class="slds-text-body_regular">{!$Label.Pipeline_Wizard_Finish_Message}</p>
                 <div class="slds-text-longform" style="margin-top:50px;">
-                    <apex:commandButton action="{!enjoyCopado}" styleClass="slds-button slds-button_brand" value="{!$Label.copado__pipeline_wizard_finish_enjoy}" onClick="lockScreen();" />
+                    <apex:commandButton action="{!enjoyCopado}" styleClass="slds-button slds-button_brand" value="{!$Label.copado__Pipeline_Wizard_Finish_Enjoy}" onClick="lockScreen();" />
                 </div>
             </div>
         </div>

@@ -78,9 +78,9 @@
                 <div class="slds-col slds-size_6-of-12">
                     <apex:outputPanel rendered="{!!hasApiKey}" layout="none">
                         <center style="font-size: initial;">
-                            <apex:outputText value="{!$Label.copado__apikeynotset}"/>
-                            <apex:commandlink action="{!redirectToAccountSummary}" value="{!$Label.copado__clickhere}" target="_blank"/>
-                            &nbsp;<apex:outputText value="{!$Label.copado__tosetapikey}"/>
+                            <apex:outputText value="{!$Label.copado__ApiKeyNotSet}"/>
+                            <apex:commandlink action="{!redirectToAccountSummary}" value="{!$Label.copado__ClickHere}" target="_blank"/>
+                            &nbsp;<apex:outputText value="{!$Label.copado__ToSetApiKey}"/>
                         </center>
                     </apex:outputPanel>
                     <h1>
@@ -125,7 +125,7 @@
                             <div class="slds-col slds-size_3-of-6" style="margin-top:30px;">
                                 <div style="margin: 10px 20px 0px 0px; float:left;">
                                     <div class="slds-media__figure">
-                                        <apex:image value="{!URLFOR($Resource.copado__SetupDashboardIcons, 'PipelineSvgIcons/ccd-link.png')}" /> {!$Label.copado__usdependency_usdependenciestitle}
+                                        <apex:image value="{!URLFOR($Resource.copado__SetupDashboardIcons, 'PipelineSvgIcons/ccd-link.png')}" /> {!$Label.copado__USDependency_USDependenciesTitle}
                                     </div>
                                 </div>
                             </div>
@@ -134,10 +134,10 @@
                                     <ul style="float:left;margin: 0px 0px 0px 0px;">
                                         <li>
                                             <apex:outputPanel rendered="{!If(dependenciesList.size > 0, false, true)}" layout="none">
-                                                <span>{!$Label.copado__no_dependencies}</span>
+                                                <span>{!$Label.copado__No_Dependencies}</span>
                                             </apex:outputPanel>
                                             <apex:outputPanel rendered="{!If(dependenciesList.size > 0, true, false)}" layout="none">
-                                                <a href="#" onclick="$copado('[id$=\'dependencyUSComponent\']').show();">({!TEXT(dependenciesList.size)}) {!$Label.copado__dependent_user_stories}</a>
+                                                <a href="#" onclick="$copado('[id$=\'dependencyUSComponent\']').show();">({!TEXT(dependenciesList.size)}) {!$Label.copado__Dependent_User_Stories}</a>
                                             </apex:outputPanel>
                                         </li>
                                     </ul>
@@ -186,7 +186,7 @@
                                         </apex:outputPanel>
                                         <apex:outputPanel rendered="{!IF(qualityGateList.size > 0, false, true)}">
                                             <li>
-                                                {!$Label.copado__no_quality_gates_will_be_created}
+                                                {!$Label.copado__No_Quality_Gates_Will_Be_Created}
                                             </li>
                                         </apex:outputPanel>
                                     </ul>

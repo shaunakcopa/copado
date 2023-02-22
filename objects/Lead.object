@@ -309,6 +309,9 @@
     </fields>
     <fields>
         <fullName>Fax</fullName>
+        <businessStatus>Active</businessStatus>
+        <complianceGroup>PII;GDPR</complianceGroup>
+        <securityClassification>Internal</securityClassification>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
