@@ -56,9 +56,9 @@
             <apex:pageBlock id="pbEnvVars" title="{!title}  Selenium Tests">
                 <apex:pageBlockButtons id="pbButtons" location="top">
                     <apex:commandButton action="{!save}" onClick="copadoUtil.setLockScreenMessage('Processing...');" styleClass="btnImportant"
-                        value="{!$Label.copado__save}" reRender="pmessages,pbEnvVars,relatedList,scriptPnl" onComplete="copadoUtil.setLockScreenMessage();"
+                        value="{!$Label.copado__Save}" reRender="pmessages,pbEnvVars,relatedList,scriptPnl" onComplete="copadoUtil.setLockScreenMessage();"
                     /> &nbsp;
-                    <apex:commandButton action="{!back}" immediate="true" value="{!$Label.copado__back}" reRender="pbEnvVars" />
+                    <apex:commandButton action="{!back}" immediate="true" value="{!$Label.copado__BACK}" reRender="pbEnvVars" />
                 </apex:pageBlockButtons>
                 <apex:outputPanel id="editor">
                     <apex:pageBlockSection >

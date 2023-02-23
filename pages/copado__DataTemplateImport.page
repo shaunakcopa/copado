@@ -31,8 +31,8 @@
                                 <div class="slds-page-header__name">
                                     <div class="slds-page-header__name-title">
                                         <h1>
-                                            <span>{!$Label.copado__data_template}</span>
-                                            <span class="slds-page-header__title">{!$Label.copado__data_template_import}</span>
+                                            <span>{!$Label.copado__Data_Template}</span>
+                                            <span class="slds-page-header__title">{!$Label.copado__Data_Template_Import}</span>
                                         </h1>
                                     </div>
                                 </div>
@@ -42,7 +42,7 @@
                     <div class="slds-page-header__col-actions">
                         <div class="slds-page-header__controls">
                             <div class="slds-page-header__control buttons">
-                                <apex:commandButton styleClass="slds-button slds-button_brand" action="{!finishImportAndClose}" value="{!$Label.copado__finish_import}" onClick="lockScreen();dti.expandDataTables();" onComplete="dti.contractDataTables();unlockScreen();" reRender="errorPanel" />
+                                <apex:commandButton styleClass="slds-button slds-button_brand" action="{!finishImportAndClose}" value="{!$Label.copado__Finish_Import}" onClick="lockScreen();dti.expandDataTables();" onComplete="dti.contractDataTables();unlockScreen();" reRender="errorPanel" />
                             </div>
                         </div>
                     </div>

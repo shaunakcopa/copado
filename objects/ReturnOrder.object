@@ -179,6 +179,16 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>ProductRequestId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProductServiceCampaignId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>ReturnedById</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
@@ -275,21 +285,25 @@
     <searchLayouts>
         <customTabListAdditionalFields>Account</customTabListAdditionalFields>
         <customTabListAdditionalFields>Contact</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ProductRequest</customTabListAdditionalFields>
         <customTabListAdditionalFields>Case</customTabListAdditionalFields>
         <customTabListAdditionalFields>SourceLocation</customTabListAdditionalFields>
         <customTabListAdditionalFields>ReturnedBy</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>Account</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Contact</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ProductRequest</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Case</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>SourceLocation</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ReturnedBy</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Account</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Contact</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ProductRequest</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Case</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>SourceLocation</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ReturnedBy</lookupPhoneDialogsAdditionalFields>
         <searchResultsAdditionalFields>Account</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Contact</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ProductRequest</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Case</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>SourceLocation</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ReturnedBy</searchResultsAdditionalFields>

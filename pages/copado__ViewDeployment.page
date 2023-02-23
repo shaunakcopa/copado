@@ -16,8 +16,8 @@
     
         <apex:outputPanel id="pnlDetail">
             <apex:pageMessages />
-            <apex:pageMessage id="msgStarting" severity="INFO" strength="2" summary="{!$Label.copado__deployment_starting}" rendered="{!AND(deployment.copado__Status__c=='Scheduled',deployment.copado__Schedule__c=='Deploy now')}" />
-            <c:rateCopado id="rateCopado" rendered="{!deployment.copado__Status__c=='Completed Successfully'}" messageType="DeploymentSuccess" messageTitle="{!$Label.copado__deployment_completed_successfully}" />
+            <apex:pageMessage id="msgStarting" severity="INFO" strength="2" summary="{!$Label.copado__DEPLOYMENT_STARTING}" rendered="{!AND(deployment.copado__Status__c=='Scheduled',deployment.copado__Schedule__c=='Deploy now')}" />
+            <c:rateCopado id="rateCopado" rendered="{!deployment.copado__Status__c=='Completed Successfully'}" messageType="DeploymentSuccess" messageTitle="{!$Label.copado__DEPLOYMENT_COMPLETED_SUCCESSFULLY}" />
             <apex:detail id="detailDeployment" subject="{!copado__Deployment__c.Id}" relatedList="false" title="true" showChatter="true"/>
         </apex:outputPanel>
     
@@ -46,7 +46,7 @@
                             <apex:outputPanel rendered="{!mapDeploymentJobsString[m.step.Id+''+d.Id].Status__c=='Cancelled'}">&nbsp;</apex:outputPanel>
                             <apex:outputLabel value="{!mapDeploymentJobsString[m.step.Id+''+d.Id].Status__c}" rendered="{!mapDeploymentJobsString[m.step.Id+''+d.Id].Status__c=='Cancelled'}" />&nbsp;
                             <apex:outputPanel rendered="{!AND(mapDeploymentJobsString[m.step.Id+''+d.Id].Status__c!='Pending',mapDeploymentJobsString[m.step.Id+''+d.Id].Status__c!='In progress',mapAttachments[mapDeploymentJobsString[m.step.Id+''+d.Id].Id+'.json']==true)}">&nbsp;</apex:outputPanel>
-                            <apex:outputLink value="#" rendered="{!AND(mapDeploymentJobsString[m.step.Id+''+d.Id].Status__c!='Pending',mapDeploymentJobsString[m.step.Id+''+d.Id].Status__c!='In progress',mapAttachments[mapDeploymentJobsString[m.step.Id+''+d.Id].Id+'.json']==true)}" onclick="getResult('{!mapDeploymentJobsString[m.step.Id+''+d.Id].Id}','deployment job');return false;">{!$Label.copado__view_results}</apex:outputLink>
+                            <apex:outputLink value="#" rendered="{!AND(mapDeploymentJobsString[m.step.Id+''+d.Id].Status__c!='Pending',mapDeploymentJobsString[m.step.Id+''+d.Id].Status__c!='In progress',mapAttachments[mapDeploymentJobsString[m.step.Id+''+d.Id].Id+'.json']==true)}" onclick="getResult('{!mapDeploymentJobsString[m.step.Id+''+d.Id].Id}','deployment job');return false;">{!$Label.copado__VIEW_RESULTS}</apex:outputLink>
                         </apex:outputPanel>
                         <apex:facet name="footer">
                             <apex:outputPanel >
@@ -65,34 +65,34 @@
                     <apex:outputPanel >
                         <apex:pageBlockSection id="pbsStepDataDetail" title="{!step.Name}" collapsible="true" rendered="{!AND(step.Id != null,OR(step.copado__Type__c=='Data',step.copado__Type__c=='Bulk Data'))}" columns="1">
                             <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="{!$Label.copado__query}" />
+                                <apex:outputLabel value="{!$Label.copado__QUERY}" />
                                 <apex:outputText value="{!dataStepQuery}" />
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="{!$Label.copado__object}" />
+                                <apex:outputLabel value="{!$Label.copado__OBJECT}" />
                                 <apex:outputText value="{!dataStepObject}" />
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="{!$Label.copado__external_id}" />
+                                <apex:outputLabel value="{!$Label.copado__EXTERNAL_ID}" />
                                 <apex:outputText value="{!dataStepExternalId}" />
                             </apex:pageBlockSectionItem>
                         </apex:pageBlockSection>
                     
                         <apex:pageBlockSection id="pbsStepDetail" title="{!step.Name}" collapsible="true" rendered="{!AND(step.Id != null,NOT(OR(step.copado__Type__c=='Data',step.copado__Type__c=='Bulk Data')))}" columns="1">
 				            <apex:pageBlockSectionItem rendered="{!step.copado__Type__c=='Users'}" >
-				                <apex:outputLabel value="{!$Label.copado__from_suffix}" for="fromSuffix" />
+				                <apex:outputLabel value="{!$Label.copado__FROM_SUFFIX}" for="fromSuffix" />
 				                <apex:outputText id="fromSuffix" />
 				            </apex:pageBlockSectionItem>
 				            <apex:pageBlockSectionItem rendered="{!step.copado__Type__c=='Users'}" >
-				                <apex:outputLabel value="{!$Label.copado__to_suffix}" for="toSuffix" />
+				                <apex:outputLabel value="{!$Label.copado__TO_SUFFIX}" for="toSuffix" />
 				                <apex:outputText id="toSuffix" />
 				            </apex:pageBlockSectionItem>
 				            <apex:pageBlockSectionItem rendered="{!step.copado__Type__c=='Users'}" >
-				                <apex:outputLabel value="{!$Label.copado__activate_users}" for="actives" />
+				                <apex:outputLabel value="{!$Label.copado__ACTIVATE_USERS}" for="actives" />
 				                <apex:inputCheckbox id="actives" disabled="true"/>
 				            </apex:pageBlockSectionItem>
 				            <apex:pageBlockSectionItem id="d-useTerritories" rendered="{!step.copado__Type__c=='Users'}" >
-				                <apex:outputLabel value="{!$Label.copado__user_territories}" for="useTerritories" />
+				                <apex:outputLabel value="{!$Label.copado__USER_TERRITORIES}" for="useTerritories" />
 				                <apex:inputCheckbox id="useTerritories" disabled="true"/>
 				            </apex:pageBlockSectionItem>
                            	<div id="stepDetail" style="padding-bottom:20px;"></div>
@@ -210,17 +210,17 @@
                 oTable = $copado('#errorsTable').dataTable( {
                     "aaData": array_name,
                     "aoColumns": [
-                        { "sTitle": "{!$Label.copado__level}" },
-                        { "sTitle": "{!$Label.copado__message}", "sType": "html",  
+                        { "sTitle": "{!$Label.copado__LEVEL}" },
+                        { "sTitle": "{!$Label.copado__MESSAGE}", "sType": "html",  
                             "mRender": function ( data, type, full ) {
                                 return '<pre style="overflow:hidden; word-wrap:break-word;">'+data+'</pre>';
                             }
                         },
-                        { "sTitle": "{!$Label.copado__copado_tip}" }
+                        { "sTitle": "{!$Label.copado__COPADO_TIP}" }
                     ],
                     "bAutoWidth": false,
                     "iDisplayLength": -1,
-                    "aLengthMenu": [[10, 20, 30, 50, 100, 200, -1], [10, 20, 30, 50, 100, 200, "{!$Label.copado__all}"]]
+                    "aLengthMenu": [[10, 20, 30, 50, 100, 200, -1], [10, 20, 30, 50, 100, 200, "{!$Label.copado__ALL}"]]
                 } );
             }
         

@@ -69,10 +69,10 @@
                         <div class="slds-form-element">
                             <label class="slds-form-element__label" for="deploymentName">
                                 <abbr class="slds-required" title="required">*</abbr>
-                                {!$Label.copado__give_your_deployment_a_name}
+                                {!$Label.copado__Give_Your_Deployment_a_Name}
                             </label>
                             <div class="slds-form-element__control">
-                                <apex:inputField id="deploymentName" value="{!deployment.Name}" styleClass="slds-input" html-placeholder="{!$Label.copado__your_deployment_name}" />
+                                <apex:inputField id="deploymentName" value="{!deployment.Name}" styleClass="slds-input" html-placeholder="{!$Label.copado__Your_Deployment_Name}" />
                             </div>
                         </div>
 
@@ -80,7 +80,7 @@
                             <fieldset class="slds-form-element">
                                 <div class="slds-form-element__control">
                                     <div class="slds-form-element">
-                                        <label class="slds-form-element__label" for="source">{!$Label.copado__select_source}</label>
+                                        <label class="slds-form-element__label" for="source">{!$Label.copado__Select_Source}</label>
                                         <div class="visual-options">
                                             <apex:repeat value="{!sourceTypeList}" var="sType">
                                                 <div class="slds-visual-picker slds-visual-picker_medium">
@@ -126,8 +126,8 @@
 
                     <apex:outputPanel layout="block" id="tablePanels">
                         <div class="orgtable-wrapper">
-                            <apex:outputPanel layout="none" rendered="{!deploymentInterface.StepGeneralHeader == $Label.copado__new_data_deployment}">
-                                <label class="slds-form-element__label" for="source">{!$Label.copado__select_source}</label>
+                            <apex:outputPanel layout="none" rendered="{!deploymentInterface.StepGeneralHeader == $Label.copado__New_Data_Deployment}">
+                                <label class="slds-form-element__label" for="source">{!$Label.copado__Select_Source}</label>
                             </apex:outputPanel>
                             <apex:outputPanel layout="none" rendered="{!selectedSourceType == 'org'}">
                                 <div class="table">
@@ -190,8 +190,8 @@
                     </apex:outputPanel>
 
                     <apex:outputPanel layout="block" styleClass="buttons" id="buttonsPanel">
-                        <apex:commandButton styleClass="slds-button slds-button_outline-brand btn-back" onClick="lockScreen();" value="{!$Label.copado__back}" action="{!goToDeploymentTab}" onComplete="dw.buttonOnComplete();unlockScreen();" reRender="errorPanel" />
-                        <apex:commandButton styleClass="slds-button slds-button_outline-brand btn-save" onClick="lockScreen();" value="{!$Label.copado__save_and_close}" action="{!configureSource}" onComplete="validateOrgSaveAndClose();" />
+                        <apex:commandButton styleClass="slds-button slds-button_outline-brand btn-back" onClick="lockScreen();" value="{!$Label.copado__BACK}" action="{!goToDeploymentTab}" onComplete="dw.buttonOnComplete();unlockScreen();" reRender="errorPanel" />
+                        <apex:commandButton styleClass="slds-button slds-button_outline-brand btn-save" onClick="lockScreen();" value="{!$Label.copado__SAVE_AND_CLOSE}" action="{!configureSource}" onComplete="validateOrgSaveAndClose();" />
                         <apex:outputPanel layout="none" rendered="{!selectedSourceType != ''}">
                             <input type="button" class="slds-button slds-button_brand btn-confirm disabled disabled-Buttons" onClick="lockScreen();configureSource('nextStep',dw.selection);" value="{!IF(selectedSourceType == 'org',$Label.Confirm_Source,$Label.Confirm_Git_Commit)}" />
                         </apex:outputPanel>

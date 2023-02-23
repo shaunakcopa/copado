@@ -263,7 +263,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                 var childRelationKey = {};
 
                 if (response.records) {
-                    contents = JSON.parse(sforce.Base64Binary.prototype.decode(response.records.Body));
+                    contents = convertBase64toObject(response.records.Body);
                     if (dataObject.importedObject.values.relationList.length > 0) {
                         if (contents.childrenObjectsReferenceList.length > 0) {
                             contents.childrenObjectsReferenceList.forEach((childrenRelation) => {
@@ -304,7 +304,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                         }
                     }
 
-                    response.records.Body = btoa(JSON.stringify(contents));
+                    response.records.Body = convertObjectToBase64(contents);
 
                     var result = sforce.connection.update([response.records]);
                 }
@@ -613,7 +613,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
         }
 
         var populatedData = createDataTemplateAttachmentBody(attachmentBodyData);
-        blobValue = btoa(JSON.stringify(populatedData.attachmentBody));
+        blobValue = convertObjectToBase64(populatedData.attachmentBody);
         templateDetailAttachment.Body = blobValue;
         attachmentArray.push(templateDetailAttachment);
 
@@ -621,7 +621,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
         var sobjectAttachment = new sforce.SObject("Attachment");
         sobjectAttachment.ParentId = attachmentData.parentId;
         sobjectAttachment.Name = 'ADD_Describe_SObject_Result';
-        blobValue = btoa(populatedData.describeResult);
+        blobValue = convertObjectToBase64(JSON.parse(populatedData.describeResult));
         sobjectAttachment.Body = blobValue;
         attachmentArray.push(sobjectAttachment);
 
@@ -630,7 +630,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
             var globalAttachment = new sforce.SObject("Attachment");
             globalAttachment.ParentId = attachmentData.parentId;
             globalAttachment.Name = 'ADD_Describe_Global_Result';
-            blobValue = btoa(attachmentData.globalDescribe);
+            blobValue = convertObjectToBase64(JSON.parse(attachmentData.globalDescribe));
             globalAttachment.Body = blobValue;
             attachmentArray.push(globalAttachment);
         }
@@ -639,6 +639,13 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
         cbOnEnd && cbOnEnd();
     };
 
+    const convertObjectToBase64 = (obj) => {
+        return btoa(unescape(encodeURIComponent(JSON.stringify(obj))));
+    }
+
+    const convertBase64toObject = (body) => {
+        return JSON.parse(decodeURIComponent(escape(sforce.Base64Binary.prototype.decode((body)))));
+    }
 
     // it is used to create data template record for each imported data template json
     var createDataTemplate = (creationData, cbOnEnd) => {
@@ -717,7 +724,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                 requestHeaders: {
                     'userId': dataObject.userId,
                     'orgId': dataObject.organizationId,
-                    'token': dataObject.token
+                    'token2': dataObject.token2
                 },
                 method: 'GET',
                 onSuccess: (response) => {
@@ -794,7 +801,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                 sourceOrgId: existingDataObject.sourceOrgId,
                 userId: existingDataObject.userId,
                 organizationId: existingDataObject.organizationId,
-                token: existingDataObject.token,
+                token2: existingDataObject.token2,
                 endpoint: existingDataObject.endpoint,
                 globalDescribe: existingDataObject.globalDescribe,
                 namespace: existingDataObject.namespace ? existingDataObject.namespace : ''
@@ -859,7 +866,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                 sourceOrgId: parsedData.sourceOrgId,
                 userId: parsedData.userId,
                 organizationId: parsedData.organizationId,
-                token: parsedData.token,
+                token2: parsedData.token2,
                 endpoint: parsedData.objectCalloutEndpoint,
                 namespace: parsedData.namespace ? parsedData.namespace : ''
             };
@@ -871,7 +878,7 @@ var globalSldsResourcePath = globalSldsResourcePath ? globalSldsResourcePath : u
                         requestHeaders: {
                             'userId': parsedData.userId,
                             'orgId': parsedData.organizationId,
-                            'token': parsedData.token
+                            'token2': parsedData.token2
                         },
                         method: 'GET',
                         onSuccess: (response) => {
