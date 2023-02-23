@@ -91,8 +91,8 @@
 
 
                     <div class="buttons">
-                        <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__back}" action="{!goToPreviousStep}"  onComplete="dw.buttonOnComplete();unlockScreen();" reRender="errorPanel,headerComponent" />
-                        <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__save_and_close}" action="{!checkIfSelectedOrgIsValid}" onComplete="upsertDestinationOrgClose();"/>
+                        <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__BACK}" action="{!goToPreviousStep}"  onComplete="dw.buttonOnComplete();unlockScreen();" reRender="errorPanel,headerComponent" />
+                        <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__SAVE_AND_CLOSE}" action="{!checkIfSelectedOrgIsValid}" onComplete="upsertDestinationOrgClose();"/>
                         <input type="button" class="slds-button slds-button_brand disabled disabled-Buttons" onClick="lockScreen();checkIfValid(dw.selection);" value="{!$Label.Confirm_Target}"/>
                     </div>
 

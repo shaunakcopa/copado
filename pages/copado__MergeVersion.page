@@ -18,7 +18,7 @@
             }
 
             var showApplyTagReleaseButton = function(){
-                var mergeVersionButton = $copado('<input id="mergeVersion" type="button" class="btn" value="{!JSENCODE($Label.copado__merge_version)}" onclick="mergeVerisions();"/>');
+                var mergeVersionButton = $copado('<input id="mergeVersion" type="button" class="btn" value="{!JSENCODE($Label.copado__Merge_Version)}" onclick="mergeVerisions();"/>');
                 mergeVersionButton.appendTo($copado('[Id^="topButtonRow"]'));
             }
         </script>
@@ -26,7 +26,7 @@
 
     <apex:form >
         <apex:pageMessages id="dxOperationErrors"/>
-        <c:ScreenLocker msg="{!$Label.copado__loading}" useJobsManager="true" possibleRunningJobs=",DxArtifactMergeReleaseJob,,true;"/>
+        <c:ScreenLocker msg="{!$Label.copado__LOADING}" useJobsManager="true" possibleRunningJobs=",DxArtifactMergeReleaseJob,,true;"/>
         <script>
                     window.addEventListener('copadoJobsManagerFinished', function (evt) {
                         for(var i=0 ; i < evt.detail.length ; i++ ) {
