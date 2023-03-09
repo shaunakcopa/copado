@@ -5,6 +5,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CopadoFunctions</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__FunctionReferences</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -28,6 +32,10 @@
         <enabled>true</enabled>
         <name>copado__StandardResources__mdt</name>
     </customMetadataTypeAccesses>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>copado__Copado_Functions_Admin</name>
+    </customPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Deployment_Job__c.copado__Destination_Id__c</field>
@@ -264,7 +272,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>Copado Functions</label>
+    <label>Copado Functions Admin</label>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
