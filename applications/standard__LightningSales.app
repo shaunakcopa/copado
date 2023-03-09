@@ -27,4 +27,5 @@
     <tabs>standard-Forecasting3</tabs>
     <tabs>copado__Pull_Request__c</tabs>
     <uiType>Lightning</uiType>
+    <utilityBar>LightningSales_UtilityBar</utilityBar>
 </CustomApplication>

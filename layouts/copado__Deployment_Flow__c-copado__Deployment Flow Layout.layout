@@ -14,10 +14,6 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>copado__Platform__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
                 <field>Name</field>
             </layoutItems>
             <layoutItems>
@@ -35,6 +31,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>copado__Calculate_Based_on__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>copado__Platform__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -133,7 +133,6 @@
         <fields>copado__Active__c</fields>
         <fields>copado__Git_Repository__c</fields>
         <fields>copado__Main_Branch__c</fields>
-        <fields>copado__Platform__c</fields>
     </miniLayout>
     <platformActionList>
         <actionListContext>Record</actionListContext>
@@ -193,6 +192,14 @@
             <sortOrder>10</sortOrder>
         </platformActionListItems>
     </platformActionList>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>copado__Automation_Rule__c.copado__Pipeline__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>copado__Stage_Connection__c.copado__Pipeline__c</relatedList>
+    </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
         <fields>copado__Source_Environment__c</fields>
