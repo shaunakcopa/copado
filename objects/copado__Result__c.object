@@ -211,7 +211,7 @@
         <deprecated>false</deprecated>
         <description>Time taken in minutes to execute the function.</description>
         <externalId>false</externalId>
-        <label>Custom Function Used Minutes</label>
+        <label>Function Used Minutes</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>

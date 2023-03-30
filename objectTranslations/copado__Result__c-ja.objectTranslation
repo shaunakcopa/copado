@@ -18,7 +18,7 @@
         <name>copado__Custom_Function_Used_Credits__c</name>
     </fields>
     <fields>
-        <label><!-- Custom Function Used Minutes --></label>
+        <label><!-- Function Used Minutes --></label>
         <name>copado__Custom_Function_Used_Minutes__c</name>
     </fields>
     <fields>
