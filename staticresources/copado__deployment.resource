@@ -814,7 +814,7 @@ var copadoApp = {
         var panelHtml = msg
             ? $copado('[id$=js-msg-' + type + ']')
                 .html()
-                .replaceAll('__MSG__', msg)
+                .replace('__MSG__', msg)
             : $copado('[id$=js-msg-' + type + ']').html();
         $copado('.fixedMsg')
             .html(panelHtml)
@@ -954,7 +954,6 @@ var copadoApp = {
                         $el.closest('.dataRow').remove();
                         reloadHistory();
                         me.showMessage('CONFIRM', copadoLabels.STEP_DELETED);
-                        me.reorderStepsController();
                     } else {
                         // Delete failed so throw and error to UI
                         me.showMessage('ERROR', event.message);
@@ -2823,7 +2822,7 @@ var copadoGrid = {
 
             $copado('#jqxgrid').empty();
             $copado('#jqxgrid').html($grid);
-
+            
             var params = copadoGrid.getBasicParams();
             params.source = copadoGrid.makeSource(type, data);
             params.columns = copadoGrid.getColumnsByType(type);
@@ -2847,7 +2846,7 @@ var copadoGrid = {
             if (countries.length > 0) {
                 copadoGrid.$currentGrid.jqxGrid('setcolumnproperty', 'c', 'filteritems', countries);
             }
-            if (profiles.length > 0) {
+            if(profiles.length > 0){
                 copadoGrid.$currentGrid.jqxGrid('setcolumnproperty', 'p', 'filteritems', profiles);
             }
 
@@ -6146,7 +6145,7 @@ var copadoFunctionStep = {
                 '" class="js-param" value="' +
                 parameter.name +
                 '" />';
-            var parameterValue = parameter.defaultValue || parameter.value || '';
+            var parameterValue = parameter.defaultValue || parameter.value;
             var valueField =
                 '<input type="text" style="margin: 0.5rem" placeholder="' +
                 copadoLabels.PARAMETER_VALUE +
@@ -6214,7 +6213,7 @@ var copadoTestStep = {
                 copadoApp.ns +
                 'ExtensionConfiguration__r.Name, ' +
                 copadoApp.ns +
-                'ExtensionConfiguration__r.' +
+                'ExtensionConfiguration__r.' + 
                 copadoApp.ns +
                 'ExtensionTool__c, ' +
                 copadoApp.ns +
@@ -6223,7 +6222,7 @@ var copadoTestStep = {
                 "Test__c WHERE Id = '" +
                 testId +
                 "' LIMIT 1";
-        }
+        } 
         sforce.connection.query(query, {
             onSuccess: function (result) {
                 var records = result.getArray('records');
@@ -6264,9 +6263,9 @@ var copadoTestStep = {
     addTestFieldsToLayout: function (testRecord) {
         var extensionConfiguration = testRecord[copadoApp.ns + 'ExtensionConfiguration__r'];
         var tool = extensionConfiguration[copadoApp.ns + 'ExtensionTool__c'];
-        var type = testRecord[copadoApp.ns + 'Type__c'] != null ? testRecord[copadoApp.ns + 'Type__c'] : '';
+        var type = testRecord[copadoApp.ns + 'Type__c'] != null ? testRecord[copadoApp.ns + 'Type__c'] : ''; 
         var configUrl = copadoTestStep.getExtConfigUrl(testRecord[copadoApp.ns + 'ExtensionConfiguration__c']);
-
+        
         copadoTestStep.deleteFieldsFromLayout();
         var tableElements = $copado('[Id$=js-stepBlock-Test]').find('table');
         var rows = tableElements[0].rows;
@@ -6280,10 +6279,10 @@ var copadoTestStep = {
         // Add Tool and Type
         tableElements[0].insertRow(1);
         rows[1].innerHTML = ' <th class="labelCol vfLabelColTextWrap" scope="row"><label>' + copadoLabels.TOOL + '</label></th>'
-            + '<td class="dataCol">' + tool + '</td>'
-            + '<th class="labelCol vfLabelColTextWrap" scope="row"><label>' + copadoLabels.type + '</label></th>'
-            + '<td class="dataCol">' + type + '</td>';
-
+                            + '<td class="dataCol">' + tool + '</td>'
+                            + '<th class="labelCol vfLabelColTextWrap" scope="row"><label>' + copadoLabels.type + '</label></th>'
+                            + '<td class="dataCol">' + type + '</td>';
+            
     },
     deleteFieldsFromLayout: function () {
         var tableElements = $copado('[Id$=js-stepBlock-Test]').find('table');
