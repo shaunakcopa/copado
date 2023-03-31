@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <fieldSets>
+        <label><!-- Bundle --></label>
+        <name>copado__Bundle</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Bundle Sync Fields --></label>
+        <name>copado__Bundle_Sync_Fields</name>
+    </fieldSets>
+    <fieldSets>
         <label><!-- CBM Fields --></label>
         <name>copado__CBM_Fields</name>
     </fieldSets>
     <fieldSets>
         <label><!-- Commit Files Information --></label>
         <name>copado__Commit_Files_Information</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Commit Page --></label>
+        <name>copado__Commit_Page</name>
     </fieldSets>
     <fieldSets>
         <label><!-- Copado Header Fields --></label>
@@ -29,6 +41,10 @@
         <name>copado__PromotionRelatedList</name>
     </fieldSets>
     <fieldSets>
+        <label><!-- Promotion Related List Datatable --></label>
+        <name>copado__Promotion_Related_List_Datatable</name>
+    </fieldSets>
+    <fieldSets>
         <label><!-- SprintWall_MassUpdate --></label>
         <name>copado__SprintWall_MassUpdate</name>
     </fieldSets>
@@ -49,6 +65,10 @@
         <name>copado__Work_Manager_Relations</name>
     </fieldSets>
     <fields>
+        <label><!-- Jira Key --></label>
+        <name>Jira_Key__c</name>
+    </fields>
+    <fields>
         <label><!-- Acceptance Criteria Status --></label>
         <name>copado__Acceptance_Criteria_Status__c</name>
         <picklistValues>
@@ -67,6 +87,11 @@
     <fields>
         <label><!-- Acceptance Criteria --></label>
         <name>copado__Acceptance_Criteria__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this field to split your User Story&apos;s actual effort on implementation, reviews, testing, and documentation among different scopes. Example: Dev and QA, Frontend and Backend. You can label this field to match your scope. --></help>
+        <label><!-- Actual Points Other --></label>
+        <name>copado__Actual_Points_Other__c</name>
     </fields>
     <fields>
         <help><!-- Coverage of the Apex Classes added or committed within the User Story. --></help>
@@ -178,7 +203,7 @@
     </fields>
     <fields>
         <help><!-- If checked, this user story will not be included in the count of user stories ahead and behind. --></help>
-        <label><!-- Exclude From CBM --></label>
+        <label><!-- Exclude from Pipelines --></label>
         <name>copado__Exclude_From_CBM__c</name>
     </fields>
     <fields>
@@ -209,9 +234,17 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Git Repository --></label>
+        <name>copado__Git_Repository__c</name>
+    </fields>
+    <fields>
         <help><!-- Value automatically updated by Copado whenever there are Apex Classes added or committed in the User Story. --></help>
         <label><!-- Has Apex Code --></label>
         <name>copado__Has_Apex_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Bundle --></label>
+        <name>copado__Is_Bundle__c</name>
     </fields>
     <fields>
         <help><!-- Latest Compliance Scan execution date. --></help>
@@ -448,6 +481,10 @@
             <translation><!-- InstalledPackageLayout --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Layout</masterLabel>
+            <translation><!-- Layout --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Letterhead</masterLabel>
             <translation><!-- Letterhead --></translation>
         </picklistValues>
@@ -595,13 +632,23 @@
     </fields>
     <fields>
         <help><!-- Org Credential used to add or commit metadata and to promote and deploy the User Story to the next Environment. --></help>
-        <label><!-- Org Credential --></label>
+        <label><!-- Credential --></label>
         <name>copado__Org_Credential__c</name>
-        <relationshipLabel><!-- User Stories (Org Credential) --></relationshipLabel>
+        <relationshipLabel><!-- User Stories (Credential) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Parent Epic Title --></label>
         <name>copado__Parent_Epic_Title__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this field to split your User Story effort estimation among different scopes. Example: Dev and QA, Frontend and Backend. You can label this field to match your scope. --></help>
+        <label><!-- Planned Points Other --></label>
+        <name>copado__Planned_Points_Other__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field auto-populates and displays the pipeline platform --></help>
+        <label><!-- Platform --></label>
+        <name>copado__Platform__c</name>
     </fields>
     <fields>
         <help><!-- Numeric value to determine which User Stories are more urgent and should be completed first. --></help>
@@ -724,7 +771,7 @@
     </fields>
     <fields>
         <help><!-- If checked, the User Story will not be indexed for Copado&apos;s Overlap Awareness. --></help>
-        <label><!-- Stop Indexing Metadata --></label>
+        <label><!-- Exclude from Overlap Awareness --></label>
         <name>copado__Stop_Indexing_Metadata__c</name>
     </fields>
     <fields>
@@ -757,13 +804,23 @@
         <relationshipLabel><!-- User Stories --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- Total Story Points --></label>
+        <help><!-- Sum of Actual Points and Actual Points Other. Use this field along with Actual Points Other if you need to split your User Story effort among different scopes. --></help>
+        <label><!-- Total Actual Points --></label>
+        <name>copado__Total_Actual_Points__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Planned Points --></label>
         <name>copado__Total_Story_Points__c</name>
     </fields>
     <fields>
         <help><!-- Number of triggers without the minimum required coverage. --></help>
         <label><!-- Triggers Without Coverage --></label>
         <name>copado__Triggers_Without_Coverage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feature --></label>
+        <name>copado__US_Feature__c</name>
+        <relationshipLabel><!-- User Stories --></relationshipLabel>
     </fields>
     <fields>
         <help><!-- Short description of the User Story or requirement. Technical and non-technical team members should be able to understand the description. --></help>
@@ -792,6 +849,18 @@
         <label><!-- So that... --></label>
         <name>copado__userStory_reason__c</name>
     </fields>
+    <fields>
+        <label><!-- Connect log --></label>
+        <name>copadoconnect__Connect_log__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>copadoconnect__External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Synced Date --></label>
+        <name>copadoconnect__Last_Synced_Date__c</name>
+    </fields>
     <recordTypes>
         <label><!-- Bug --></label>
         <name>copado__Bug</name>
@@ -804,9 +873,21 @@
         <label><!-- User Story --></label>
         <name>copado__User_Story</name>
     </recordTypes>
+    <recordTypes>
+        <label><!-- Utility --></label>
+        <name>copado__Utility</name>
+    </recordTypes>
     <validationRules>
         <errorMessage><!-- A cancellation reason must be given. --></errorMessage>
         <name>copado__Cancellation_reason_required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The credential must belong to the environment. --></errorMessage>
+        <name>copado__CredentialsMustBelongToTheEnvironment</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot enable the &quot;Ready to Promote&quot; or the &quot;Promote &amp; Deploy&quot; options because the &quot;Exclude from Pipeline&quot; option is enabled. Please disable this option first and try again. --></errorMessage>
+        <name>copado__Excluded_User_Stories_Not_Promotable</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- This User Story does not meet the required Apex coverage threshold to be promoted. --></errorMessage>
@@ -815,6 +896,10 @@
     <validationRules>
         <errorMessage><!-- Test scratch orgs cannot be used for developments --></errorMessage>
         <name>copado__Test_scratch_orgs_cannot_be_used_for_dev</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Enter a value between 0 to 100 to specify the Progress in percentage. --></errorMessage>
+        <name>copado__User_Story_Progress_Range_Validation</name>
     </validationRules>
     <webLinks>
         <label><!-- Add_Apex_Tests --></label>
@@ -837,6 +922,10 @@
         <name>copado__Assign_to_Release</name>
     </webLinks>
     <webLinks>
+        <label><!-- Commit_Data --></label>
+        <name>copado__Commit_Data</name>
+    </webLinks>
+    <webLinks>
         <label><!-- Commit_Files --></label>
         <name>copado__Commit_Files</name>
     </webLinks>
@@ -845,12 +934,20 @@
         <name>copado__Copado_DX</name>
     </webLinks>
     <webLinks>
+        <label><!-- Create_Bundle --></label>
+        <name>copado__Create_Bundle</name>
+    </webLinks>
+    <webLinks>
         <label><!-- Create_Scratch_Org --></label>
         <name>copado__Create_Scratch_Org</name>
     </webLinks>
     <webLinks>
         <label><!-- Import_to_User_Story --></label>
         <name>copado__Import_to_User_Story</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- MC_Commit_Changes --></label>
+        <name>copado__MC_Commit_Changes</name>
     </webLinks>
     <webLinks>
         <label><!-- Manage_Selenium_Tests --></label>
@@ -863,6 +960,10 @@
     <webLinks>
         <label><!-- Mass_Add_User_Stories_Sprint --></label>
         <name>copado__Mass_Add_User_Stories_Sprint</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Open_Org --></label>
+        <name>copado__Open_Org</name>
     </webLinks>
     <webLinks>
         <label><!-- Perform_Validation --></label>

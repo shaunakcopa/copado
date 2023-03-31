@@ -58,7 +58,7 @@
         </apex:outputPanel>
 
         <apex:form id="theForm" rendered="{!!showError}" styleClass="copado-lightning-container" style="padding-top:12px;">
-            <c:ScreenLocker msg="{!$Label.copado__loading}" useJobsManager="true" possibleRunningJobs=",DxListRepositoryBranches,,true;,GitDeleteBranches,,true;" />
+            <c:ScreenLocker msg="{!$Label.copado__LOADING}" useJobsManager="true" possibleRunningJobs=",DxListRepositoryBranches,,true;,GitDeleteBranches,,true;" />
             <script>
                         window.addEventListener('copadoJobsManagerFinished', function (evt) {
                             for(var i=0 ; i < evt.detail.length ; i++ ) {
@@ -89,7 +89,7 @@
             <apex:pageBlock id="pb_deleteBranches">
 
                 <apex:pageblockButtons >
-                    <apex:commandButton value="{!$Label.copado__delete_selected_branches}" onclick="openConfirmModal(); return false;" id="btnDelete" />
+                    <apex:commandButton value="{!$Label.copado__DELETE_SELECTED_BRANCHES}" onclick="openConfirmModal(); return false;" id="btnDelete" />
                     <apex:commandButton value="{!$Label.site.cancel}" action="{!Cancel}" id="btnCancel" />
                 </apex:pageblockButtons>
 
@@ -111,7 +111,7 @@
                 </apex:pageBlockSection>
 
 
-                <apex:pageBlockSection title="{!$Label.copado__select_branches}" collapsible="false" columns="1" showHeader="true">
+                <apex:pageBlockSection title="{!$Label.copado__SELECT_BRANCHES}" collapsible="false" columns="1" showHeader="true">
                     <apex:outputPanel layout="block" id="branchGridContainer">
                         <apex:outputPanel id="branchGrid" layout="block">
                             <apex:outputPanel layout="none">
@@ -134,7 +134,7 @@
                                 <div>
                                     <div id="removeCacheContainer">
                                         <apex:commandLink style="display:none;" action="{!refreshBranchCache}" onComplete="unlockScreen();"
-                                                          value="{!$Label.copado__cache_refreshed_now}"
+                                                          value="{!$Label.copado__CACHE_REFRESHED_NOW}"
                                                           onclick="lockScreen();"
                                                           rerender="opDummy" id="removeCache" />
                                     </div>
@@ -146,7 +146,7 @@
 
                                     <div id="branchSelectorGrid">
                                         <center><img src="/img/loading.gif" /><i><span
-                                                        id="retry-label">{!$Label.copado__loading}</span></i></center>
+                                                        id="retry-label">{!$Label.copado__LOADING}</span></i></center>
                                     </div>
                                 </div>
                             </apex:outputPanel>

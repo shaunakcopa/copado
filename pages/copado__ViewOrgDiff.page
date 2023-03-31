@@ -38,7 +38,7 @@
     <body>
         <div class="copado-lightning-VF">
             <apex:pageMessages id="pmessage" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"/>
-            <apex:sectionHeader title="{!$ObjectType.copado__OrgDiff__c.LabelPlural}" subtitle="{!copado__OrgDiff__c.Name}" description="{!$Label.copado__org_diff_description}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"/>
+            <apex:sectionHeader title="{!$ObjectType.copado__OrgDiff__c.LabelPlural}" subtitle="{!copado__OrgDiff__c.Name}" description="{!$Label.copado__ORG_DIFF_DESCRIPTION}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"/>
             <apex:outputPanel layout="block" styleClass="slds-scope copado-lightning-container" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
                 <div class="slds-page-header">
                   <apex:outputPanel layout="block" id="pageMessages">
@@ -69,7 +69,7 @@
                   </div>
                   <div class="slds-grid">
                     <div class="slds-col slds-align-middle">
-                        <p class="slds-text-body_small">{!$Label.copado__org_diff_description}</p>
+                        <p class="slds-text-body_small">{!$Label.copado__ORG_DIFF_DESCRIPTION}</p>
                     </div>
                   </div>
                     <apex:outputPanel layout="block" style="background: white;" id="headerFields">
@@ -89,19 +89,19 @@
             </apex:outputPanel>
             <apex:outputPanel layout="block" rendered="{!AND(showOptions,!showError)}" styleClass="copado-lightning-container copado-lightning-radius">
                 <apex:form id="theForm" styleClass="copado-lightning-container" style="padding-top:12px;">
-                    <apex:pageBlock helpUrl="https://docs.copado.com/org-differences/org-differences-overview" helpTitle="{!$Label.copado__help_for_this_page}" title="{!$Label.copado__details}">
+                    <apex:pageBlock helpUrl="https://docs.copado.com/org-differences/org-differences-overview" helpTitle="{!$Label.copado__HELP_FOR_THIS_PAGE}" title="{!$Label.copado__DETAILS}">
                         <apex:pageBlockButtons >
                             <apex:commandButton action="{!edit}" value="{!$Label.site.edit}" rendered="{!isDiffEnabled}"/>
-                            <apex:commandButton action="{!deploy}" value="{!$Label.copado__create} {!$ObjectType.copado__Deployment__c.Label}" rendered="{!isDiffEnabled}"/>
-                            <apex:commandButton action="{!delete}" value="{!$Label.copado__delete}"  rendered="{!isDiffEnabled}"/>
+                            <apex:commandButton action="{!deploy}" value="{!$Label.copado__CREATE} {!$ObjectType.copado__Deployment__c.Label}" rendered="{!isDiffEnabled}"/>
+                            <apex:commandButton action="{!delete}" value="{!$Label.copado__DELETE}"  rendered="{!isDiffEnabled}"/>
                             <input value="{!$Label.CLONE}" class="btn" name="Clone" 
                                 onclick="navigateToUrl('/{!copado__OrgDiff__c.Id}/e?clone=1&id={!OrgDiff__c.id}&retURL=%2F{!OrgDiff__c.id}')" 
                                 title="{!$Label.CLONE}" type="button" rendered="{!isDiffEnabled}"/>
-                            <apex:commandButton value="{!$Label.copado__share}" action="{!URLFOR($Action.Org__c.Share,OrgDiff__c.Id)}" rendered="{!isShareable}"/>
+                            <apex:commandButton value="{!$Label.copado__SHARE}" action="{!URLFOR($Action.Org__c.Share,OrgDiff__c.Id)}" rendered="{!isShareable}"/>
                         </apex:pageBlockButtons>
                         <!--apex:tabPanel > 
-                            <apex:tab label="{!$Label.copado__basic_information}"-->
-                                <apex:pageBlockSection showHeader="true" title="{!$Label.copado__basic_information}"> 
+                            <apex:tab label="{!$Label.copado__BASIC_INFORMATION}"-->
+                                <apex:pageBlockSection showHeader="true" title="{!$Label.copado__BASIC_INFORMATION}"> 
                                     <apex:outputField value="{!copado__OrgDiff__c.Name}"/>
                                     <apex:outputField value="{!copado__OrgDiff__c.copado__From_Date__c}"/>
                                     <apex:outputField value="{!copado__OrgDiff__c.copado__From_Org__c}"/>
@@ -109,21 +109,21 @@
                                     <apex:outputField value="{!copado__OrgDiff__c.copado__To_Org__c}"/>
                                     <apex:outputField value="{!copado__OrgDiff__c.copado__Last_Modified_By_Name__c}"/>
                                 </apex:pageBlockSection>
-                                <apex:pageBlockSection showHeader="true" title="{!$Label.copado__create_deployment_options}">
+                                <apex:pageBlockSection showHeader="true" title="{!$Label.copado__CREATE_DEPLOYMENT_OPTIONS}">
                                     <apex:pageBlockSectionItem >
-                                        <apex:outputLabel for="label_create" value="{!$Label.copado__with_create}"/>
+                                        <apex:outputLabel for="label_create" value="{!$Label.copado__WITH_CREATE}"/>
                                         <apex:inputCheckbox value="{!withCreate}" id="label_create"/>
                                     </apex:pageBlockSectionItem>
                                     <apex:pageBlockSectionItem >
-                                        <apex:outputLabel for="label_delete" value="{!$Label.copado__with_delete}"/>
+                                        <apex:outputLabel for="label_delete" value="{!$Label.copado__WITH_DELETE}"/>
                                         <apex:inputCheckbox value="{!withDelete}" id="label_delete"/>
                                     </apex:pageBlockSectionItem>
                                     <apex:pageBlockSectionItem >
-                                        <apex:outputLabel for="label_update" value="{!$Label.copado__with_update}"/>
+                                        <apex:outputLabel for="label_update" value="{!$Label.copado__WITH_UPDATE}"/>
                                         <apex:inputCheckbox value="{!withUpdate}" id="label_update"/>
                                     </apex:pageBlockSectionItem>
                                 </apex:pageBlockSection>
-                                <apex:pageBlockSection title="{!$Label.copado__advanced_metadata_filters}" 
+                                <apex:pageBlockSection title="{!$Label.copado__ADVANCED_METADATA_FILTERS}" 
                                     collapsible="true"
                                     showHeader="true"
                                     id="typesSection"

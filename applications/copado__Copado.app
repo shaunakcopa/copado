@@ -5,6 +5,7 @@
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <label>Copado Release Manager</label>
     <logo>copado__Copado/copado__Copado_Logo.png</logo>
     <tabs>copado__Getting_Started</tabs>
@@ -24,4 +25,5 @@
     <tabs>copado__External_CI_Job__c</tabs>
     <tabs>copado__Data_Template__c</tabs>
     <tabs>copado__Record_Matching_Formula__c</tabs>
+    <tabs>copado__Pull_Request__c</tabs>
 </CustomApplication>
