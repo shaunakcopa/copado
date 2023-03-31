@@ -717,11 +717,11 @@
                                         xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#close')}">
                                 </use>
                             </svg>
-                            <span class="slds-assistive-text">{!$Label.copado__close}</span>
+                            <span class="slds-assistive-text">{!$Label.copado__CLOSE}</span>
                         </button>
                         <apex:outputPanel id="Notes" layout="block">
                             <h2 id="logsHeaderText" class="slds-text-heading_medium slds-hyphenate">
-                                <apex:outputText value="{!$Label.copado__latest_sync_logs}" />
+                                <apex:outputText value="{!$Label.copado__LATEST_SYNC_LOGS}" />
                             </h2>
                         </apex:outputPanel>
                     </header>
@@ -760,7 +760,7 @@
                                             xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#close')}">
                                     </use>
                                 </svg>
-                                <span class="slds-assistive-text">{!$Label.copado__close}</span>
+                                <span class="slds-assistive-text">{!$Label.copado__CLOSE}</span>
                             </button>
                             <apex:outputPanel id="EnvVarH" layout="block">
                                 <table id="dt4dt">
@@ -769,21 +769,21 @@
                                         <td class="slds-modal__header">
                                             <center>
                                                 <h2 id="VarHeaderText" class="slds-text-heading_medium slds-hyphenate">
-                                                    <apex:outputText value="{!$Label.copado__varenv}" />
+                                                    <apex:outputText value="{!$Label.copado__VarEnv}" />
                                                 </h2>
                                             </center>
                                         </td>
                                         <td class="slds-modal__header">
                                             <center>
                                                 <h2 id="VarHeaderText" class="slds-text-heading_medium slds-hyphenate">
-                                                    <apex:outputText value="{!$Label.copado__varname}" />
+                                                    <apex:outputText value="{!$Label.copado__VarName}" />
                                                 </h2>
                                             </center>
                                         </td>
                                         <td class="slds-modal__header">
                                             <center>
                                                 <h2 id="VarHeaderText" class="slds-text-heading_medium slds-hyphenate">
-                                                    <apex:outputText value="{!$Label.copado__varval}" />
+                                                    <apex:outputText value="{!$Label.copado__VarVal}" />
                                                 </h2>
                                             </center>
                                         </td>
@@ -821,7 +821,7 @@
                                         <tr>
                                             <td colspan="3" style="padding-top:20px;">
                                                 <center>
-                                                    {!$Label.copado__noenvvar}
+                                                    {!$Label.copado__NoEnvVar}
                                                 </center>
                                             </td>
                                         </tr>
@@ -886,7 +886,7 @@
                                             xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#close')}">
                                     </use>
                                 </svg>
-                                <span class="slds-assistive-text">{!$Label.copado__close}</span>
+                                <span class="slds-assistive-text">{!$Label.copado__CLOSE}</span>
                             </button>
                             <apex:outputPanel id="rebaseHeader" layout="block">
                                 <h2 id="logsHeaderText" class="slds-text-heading_medium slds-hyphenate">
@@ -900,7 +900,7 @@
                                 <div class="slds-grid" style="padding-bottom: 10px;">
                                     <div class="slds-col" style="width: 0%;">
                                         <label class="slds-form-element__label" for="rebaseSourceList">
-                                            <span>{!$Label.copado__source_environment}</span>
+                                            <span>{!$Label.copado__SOURCE_ENVIRONMENT}</span>
                                         </label>
                                         <apex:selectList id="rebaseSourceList" html-data-id="rebaseSourceList" value="{!rebaseSource}" multiselect="false" size="1" styleClass="slds-select">
                                             <apex:selectOptions value="{!rebaseSourceEnvironments}" />
@@ -935,19 +935,19 @@
                                         <apex:outputPanel layout="block" rendered="{!AND(rebaseUserStoriesWrapper.size > 0, OR(AND(NOT(ISNULL(rebaseProject)), rebaseProject != '--None--'),AND(NOT(ISNULL(rebaseRelease)), rebaseRelease != '--None--')))}">
                                             <div class="slds-grid" style="padding-bottom: 15px;">
                                                 <div class="slds-col">
-                                                    <apex:commandLink html-data-isSelected="false" html-data-type="US" value="{!$Label.copado__unselect_all_user_stories}" onclick="renderUsToggle(true)" immediate="true" styleClass="slds-button slds-button_brand slds-path__mark-complete slds-m-horizontal_small" id="toggleUSSelection" reRender="xxx">
+                                                    <apex:commandLink html-data-isSelected="false" html-data-type="US" value="{!$Label.copado__Unselect_All_User_Stories}" onclick="renderUsToggle(true)" immediate="true" styleClass="slds-button slds-button_brand slds-path__mark-complete slds-m-horizontal_small" id="toggleUSSelection" reRender="xxx">
                                                         <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
                                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#add')}">
                                                             </use>
                                                         </svg>
                                                     </apex:commandLink>
-                                                    <apex:commandLink html-data-isSelected="false" html-data-type="ENV" value="{!$Label.copado__unselect_all_environments}" onclick="renderEnvToggle(true);" immediate="true" styleClass="slds-button slds-button_brand slds-path__mark-complete slds-m-horizontal_small" id="toggleEnvSelection" reRender="xxx">
+                                                    <apex:commandLink html-data-isSelected="false" html-data-type="ENV" value="{!$Label.copado__Unselect_All_Environments}" onclick="renderEnvToggle(true);" immediate="true" styleClass="slds-button slds-button_brand slds-path__mark-complete slds-m-horizontal_small" id="toggleEnvSelection" reRender="xxx">
                                                         <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
                                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#add')}">
                                                             </use>
                                                         </svg>
                                                     </apex:commandLink>
-                                                    <apex:commandLink html-data-isSelected="true" html-data-type="OVR" value="{!$Label.copado__enable_auto_selection}" onclick="lock();renderOvrToggle(true);" immediate="true" styleClass="slds-button slds-button_success slds-path__mark-complete slds-m-horizontal_small" id="toggleOverwriteSelection" action="{!toggleRebaseListView}" reRender="rebasePromotionButtons" oncomplete="unlock();">
+                                                    <apex:commandLink html-data-isSelected="true" html-data-type="OVR" value="{!$Label.copado__Enable_Auto_Selection}" onclick="lock();renderOvrToggle(true);" immediate="true" styleClass="slds-button slds-button_success slds-path__mark-complete slds-m-horizontal_small" id="toggleOverwriteSelection" action="{!toggleRebaseListView}" reRender="rebasePromotionButtons" oncomplete="unlock();">
                                                         <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
                                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#touch_action')}">
                                                             </use>
@@ -1037,21 +1037,21 @@
                             <apex:actionFunction action="{!createRebasePromotions}" name="createRebasePromotions" reRender="rebaseMessage,rebaseMainRender,rebaseEnvironments,rebasePromotionsPanel,createdPromotionButtons" oncomplete="unlock();overridePageMessages();" />
                             <apex:actionFunction action="{!createRebasePromotionsAndDeploy}" name="createRebasePromotionsAndDeploy" reRender="rebaseMessage,rebaseMainRender,rebaseEnvironments,rebasePromotionsPanel,createdPromotionButtons" oncomplete="unlock();overridePageMessages();" />
                             <apex:outputPanel id="rebasePromotionButtons" layout="block">
-                                <apex:outputText value="{!$Label.copado__mass_bp_disable_autoselect_warning}" style="text-align: left;color:orange;" rendered="{!showHiddenCheckboxes}" />
+                                <apex:outputText value="{!$Label.copado__MASS_BP_DISABLE_AUTOSELECT_WARNING}" style="text-align: left;color:orange;" rendered="{!showHiddenCheckboxes}" />
 
                                 <apex:outputPanel rendered="{!AND(rebaseUserStoriesWrapper.size > 0, OR(AND(NOT(ISNULL(rebaseProject)), rebaseProject != '--None--'),AND(NOT(ISNULL(rebaseRelease)), rebaseRelease != '--None--')))}" layout="none" id="rebaseButtons">
-                                    <apex:commandLink action="{!goToPromotions}" rendered="{!rebasePromotionKeySize > 0}" target="_blank" value="{!$Label.copado__go_to_promotions}" onclick="lock();" styleClass="slds-button slds-button_neutral slds-path__mark-complete slds-m-horizontal_small" oncomplete="unlock();" reRender="rebaseMainRender" />
+                                    <apex:commandLink action="{!goToPromotions}" rendered="{!rebasePromotionKeySize > 0}" target="_blank" value="{!$Label.copado__Go_To_Promotions}" onclick="lock();" styleClass="slds-button slds-button_neutral slds-path__mark-complete slds-m-horizontal_small" oncomplete="unlock();" reRender="rebaseMainRender" />
 
-                                    <apex:commandLink target="_blank" value="{!$Label.copado__create} {!promotionBtnLabel}" onclick="lock();" styleClass="slds-button slds-button_brand slds-path__mark-complete slds-m-horizontal_small" id="createRebasePromotions" oncomplete="createRebasePromotions();" reRender="xx" />
+                                    <apex:commandLink target="_blank" value="{!$Label.copado__CREATE} {!promotionBtnLabel}" onclick="lock();" styleClass="slds-button slds-button_brand slds-path__mark-complete slds-m-horizontal_small" id="createRebasePromotions" oncomplete="createRebasePromotions();" reRender="xx" />
 
-                                    <apex:commandLink target="_blank" value="{!$Label.copado__create} {!promotionBtnLabel} & Deploy" onclick="lock();" styleClass="slds-button slds-button_success slds-path__mark-complete slds-m-horizontal_small" id="createRebasePromotionsAndDeploy" oncomplete="createRebasePromotionsAndDeploy();" reRender="xx" />
+                                    <apex:commandLink target="_blank" value="{!$Label.copado__CREATE} {!promotionBtnLabel} & Deploy" onclick="lock();" styleClass="slds-button slds-button_success slds-path__mark-complete slds-m-horizontal_small" id="createRebasePromotionsAndDeploy" oncomplete="createRebasePromotionsAndDeploy();" reRender="xx" />
 
-                                    <button class="slds-button slds-button_neutral slds-path__mark-complete" onclick="closeRebaseModal(); return false;">{!$Label.copado__cancel}</button>
+                                    <button class="slds-button slds-button_neutral slds-path__mark-complete" onclick="closeRebaseModal(); return false;">{!$Label.copado__Cancel}</button>
                                 </apex:outputPanel>
                                 <apex:outputPanel layout="block" rendered="{!rebaseUserStoriesWrapper.size == 0}">
                                     <apex:commandLink action="{!goToPromotions}" rendered="{!rebasePromotionKeySize > 0}" target="_blank" value="Go to promotions" onclick="lock();" styleClass="slds-button slds-button_neutral slds-path__mark-complete slds-m-horizontal_small" oncomplete="unlock();" reRender="rebaseMainRender" />
 
-                                    <button class="slds-button slds-button_neutral slds-path__mark-complete" onclick="closeRebaseModal(); return false;">{!$Label.copado__cancel}</button>
+                                    <button class="slds-button slds-button_neutral slds-path__mark-complete" onclick="closeRebaseModal(); return false;">{!$Label.copado__Cancel}</button>
                                 </apex:outputPanel>
                             </apex:outputPanel>
                         </footer>
@@ -1076,11 +1076,11 @@
                                         xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#close')}">
                                 </use>
                             </svg>
-                            <span class="slds-assistive-text">{!$Label.copado__close}</span>
+                            <span class="slds-assistive-text">{!$Label.copado__CLOSE}</span>
                         </button>
                         <apex:outputPanel id="rebasePromotionsHeader" layout="block">
                             <h2 id="logsHeaderText" class="slds-text-heading_medium slds-hyphenate">
-                                <apex:outputText value="{!$Label.copado__created_back_promotions}" />
+                                <apex:outputText value="{!$Label.copado__CREATED_BACK_PROMOTIONS}" />
                             </h2>
                         </apex:outputPanel>
                     </header>
@@ -1239,12 +1239,12 @@
                         <apex:actionFunction name="reRenderDeploy" reRender="createdPromotionButtons" />
                         <apex:outputPanel id="createdPromotionButtons" layout="block">
                             <apex:outputPanel rendered="{!!promotionOnly}">
-                                <button class="slds-button slds-button_neutral slds-path__mark-complete" onclick="closeRebasePromotionsModal(); return false;">{!$Label.copado__close}</button>
+                                <button class="slds-button slds-button_neutral slds-path__mark-complete" onclick="closeRebasePromotionsModal(); return false;">{!$Label.copado__CLOSE}</button>
                             </apex:outputPanel>
                             <apex:outputPanel rendered="{!promotionOnly}">
-                                <button class="slds-button slds-button_neutral slds-path__mark-complete" onclick="lock();resetPromotions(); return false;">{!$Label.copado__prepare_another_promotion}</button>
-                                <button class="slds-button slds-button_neutral slds-path__mark-complete" onclick="deployPromotions(); return false;">{!$Label.copado__deploy_promotions}</button>
-                                <button class="slds-button slds-button_neutral slds-path__mark-complete" onclick="closeRebasePromotionsModal(); return false;">{!$Label.copado__close}</button>
+                                <button class="slds-button slds-button_neutral slds-path__mark-complete" onclick="lock();resetPromotions(); return false;">{!$Label.copado__Prepare_Another_Promotion}</button>
+                                <button class="slds-button slds-button_neutral slds-path__mark-complete" onclick="deployPromotions(); return false;">{!$Label.copado__Deploy_Promotions}</button>
+                                <button class="slds-button slds-button_neutral slds-path__mark-complete" onclick="closeRebasePromotionsModal(); return false;">{!$Label.copado__CLOSE}</button>
                             </apex:outputPanel>
                         </apex:outputPanel>
                     </footer>
@@ -1479,7 +1479,7 @@
                     $copado('input[name$=selectAll]').prop('checked',true);
                     selectAllRebaseUserStoryBoxes(true);
                     item.attr('data-isSelected',false);
-                    item.text('{!JSENCODE($Label.copado__unselect_all_user_stories)}');
+                    item.text('{!JSENCODE($Label.copado__Unselect_All_User_Stories)}');
                     item.removeClass('slds-button_neutral').addClass('slds-button_brand');
                 }
                 item.prepend(SVG.append(SVGUse));
@@ -1490,7 +1490,7 @@
                     $copado('input[name$=selectAll]').prop('checked',false);
                     selectAllRebaseUserStoryBoxes(false);
                     item.attr('data-isSelected',true);
-                    item.text('{!JSENCODE($Label.copado__select_all_user_stories)}');
+                    item.text('{!JSENCODE($Label.copado__Select_All_User_Stories)}');
                     item.addClass('slds-button_neutral').removeClass('slds-button_brand');
                 }
                 item.prepend(SVG.append(SVGUse));
@@ -1513,7 +1513,7 @@
                 if(isClicked){
                     selectAllRebaseEnvironmentBoxes(true);
                     item.attr('data-isSelected',false);
-                    item.text('{!JSENCODE($Label.copado__unselect_all_environments)}');
+                    item.text('{!JSENCODE($Label.copado__Unselect_All_Environments)}');
                     item.removeClass('slds-button_neutral').addClass('slds-button_brand');
                 }
                 item.prepend(SVG.append(SVGUse));
@@ -1524,7 +1524,7 @@
                 if(isClicked){
                     selectAllRebaseEnvironmentBoxes(false);
                     item.attr('data-isSelected',true);
-                    item.text('{!JSENCODE($Label.copado__select_all_environments)}');
+                    item.text('{!JSENCODE($Label.copado__Select_All_Environments)}');
                     item.addClass('slds-button_neutral').removeClass('slds-button_brand');
                 }
                 item.prepend(SVG.append(SVGUse));
@@ -1552,7 +1552,7 @@
                     toggleRebaseAlgorithm(true);
                 }
                 item.attr('data-isSelected',false);
-                item.text('{!JSENCODE($Label.copado__disable_auto_selection_overwrite)}');
+                item.text('{!JSENCODE($Label.copado__Disable_Auto_Selection_Overwrite)}');
                 item.removeClass('slds-button_destructive').addClass('slds-button_success');
                 item.prepend(SVG.append(SVGUse));
                 item.html(item.html());
@@ -1563,7 +1563,7 @@
                     toggleRebaseAlgorithm(false);
                 }
                 item.attr('data-isSelected',true);
-                item.text('{!JSENCODE($Label.copado__enable_auto_selection_overwrite)}')
+                item.text('{!JSENCODE($Label.copado__Enable_Auto_Selection_Overwrite)}')
                 item.removeClass('slds-button_success').addClass('slds-button_destructive');
                 item.prepend(SVG.append(SVGUse));
                 item.html(item.html());
@@ -1997,10 +1997,10 @@
                                         <apex:commandLink style="text-decoration:none;" styleClass="slds-context-bar__label-action" reRender="fieldSets,pins,GeneralActionButtons" action="{!showUserStories}" onclick="lock();" oncomplete="bindSelectAll();bindLookupChanges();renderSVGArrow();unlock();">
                                         <span class="slds-truncate">
                                         <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType == 'merge'}">
-                                            {!$Label.copado__user_stories_ahead} ({!allStorySize})
+                                            {!$Label.copado__USER_STORIES_AHEAD} ({!allStorySize})
                                         </apex:outputPanel>
                                          <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType != 'merge'}">
-                                            {!$Label.copado__user_stories_behind} ({!allStorySize})
+                                            {!$Label.copado__USER_STORIES_BEHIND} ({!allStorySize})
                                         </apex:outputPanel>
                                     </span>
                                         </apex:commandLink>
@@ -2010,10 +2010,10 @@
                                             <apex:commandLink style="text-decoration:none;" styleClass="slds-context-bar__label-action" action="{!showCommits}" oncomplete="renderSVGFlow();bindSelectAll();unlock();" onclick="lock();" reRender="fieldSets,pins,GeneralActionButtons">
                                             <span class="slds-truncate">
                                             <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType == 'merge'}">
-                                                {!$Label.copado__commits_ahead} (<span id="commAhead">0</span>)
+                                                {!$Label.copado__COMMITS_AHEAD} (<span id="commAhead">0</span>)
                                             </apex:outputPanel>
                                             <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType != 'merge'}">
-                                                {!$Label.copado__commits_behind} (<span id="commBehind">0</span>)
+                                                {!$Label.copado__COMMITS_BEHIND} (<span id="commBehind">0</span>)
                                             </apex:outputPanel>
                                         </span>
                                             </apex:commandLink>
@@ -2025,7 +2025,7 @@
                                         <li class="slds-context-bar__item slds-context-bar__item_divider-right" style="{!IF(AND(errorSize != null,errorSize > 0),'font-weight: bolder;','')};{!IF(showErrors, 'background-color: rgb(244,246,249)','')}">
                                             <apex:commandLink style="text-decoration:none;" styleClass="slds-context-bar__label-action" action="{!showErrors}" onclick="lock();" oncomplete="unlock();" reRender="fieldSets,pins,GeneralActionButtons">
                                         <span class="slds-truncate">
-                                        {!$Label.copado__deployment_errors} ({!errorSize})
+                                        {!$Label.copado__DEPLOYMENT_ERRORS} ({!errorSize})
                                     </span>
                                             </apex:commandLink>
                                         </li>
@@ -2034,7 +2034,7 @@
                                         <li class="slds-context-bar__item slds-context-bar__item_divider-right" style="{!IF(showFileDifferences, 'background-color: rgb(244,246,249)','')}">
                                             <apex:commandLink onclick="lock();" oncomplete="unlock();" style="text-decoration:none;" styleClass="slds-context-bar__label-action" action="{!showFileDifferences}" reRender="fieldSets,pins,GeneralActionButtons">
                                         <span class="slds-truncate">
-                                            {!$Label.copado__file_differences} (<span id="filediff">0</span>)
+                                            {!$Label.copado__FILE_DIFFERENCES} (<span id="filediff">0</span>)
                                     </span>
                                             </apex:commandLink>
                                         </li>
@@ -2043,7 +2043,7 @@
                                         <li class="slds-context-bar__item slds-context-bar__item_divider-right" style="{!IF(showAutoResolves, 'background-color: rgb(244,246,249)','')}">
                                             <apex:commandLink onclick="lock();" oncomplete="unlock();" style="text-decoration:none;" styleClass="slds-context-bar__label-action" action="{!showAutoResolves}" reRender="fieldSets,pins,GeneralActionButtons">
                                         <span class="slds-truncate">
-                                        {!$Label.copado__auto_resolved_conflicts} (<span id="autoresolved">0</span>)
+                                        {!$Label.copado__AUTO_RESOLVED_CONFLICTS} (<span id="autoresolved">0</span>)
                                     </span>
                                             </apex:commandLink>
                                         </li>
@@ -2052,7 +2052,7 @@
                                         <li class="slds-context-bar__item slds-context-bar__item_divider-right" style="{!IF(showMergeDifferences, 'background-color: rgb(244,246,249)','')}">
                                             <apex:commandLink onclick="lock();" oncomplete="unlock();" style="text-decoration:none;" styleClass="slds-context-bar__label-action" action="{!showMergeDifferences}" reRender="fieldSets,pins,GeneralActionButtons">
                                         <span class="slds-truncate">
-                                            {!$Label.copado__merged_files} (<span id="mergeddiffsize">0</span>)
+                                            {!$Label.copado__MERGED_FILES} (<span id="mergeddiffsize">0</span>)
                                         </span>
                                             </apex:commandLink>
                                         </li>
@@ -2061,7 +2061,7 @@
                                         <li class="slds-context-bar__item slds-context-bar__item_divider-right" style="{!IF(showSeleniumResults, 'background-color: rgb(244,246,249)','')}">
                                             <apex:commandLink onclick="lock();" oncomplete="unlock();" style="text-decoration:none;" styleClass="slds-context-bar__label-action" action="{!showSeleniumResults}" reRender="fieldSets,pins,GeneralActionButtons">
                                         <span class="slds-truncate">
-                                            {!$Label.copado__str} (<span id="strsize">{!strSize}</span>)
+                                            {!$Label.copado__STR} (<span id="strsize">{!strSize}</span>)
                                         </span>
                                             </apex:commandLink>
                                         </li>
@@ -2070,7 +2070,7 @@
                                         <li class="slds-context-bar__item slds-context-bar__item_divider-right" style="{!IF(showComplianceResults, 'background-color: rgb(244,246,249)','')}">
                                             <apex:commandLink onclick="lock();" oncomplete="unlock();" style="text-decoration:none;" styleClass="slds-context-bar__label-action" action="{!showComplianceResults}" reRender="fieldSets,pins,GeneralActionButtons">
                                         <span class="slds-truncate">
-                                            {!$Label.copado__csr} (<span id="csrsize">{!csrSize}</span>)
+                                            {!$Label.copado__CSR} (<span id="csrsize">{!csrSize}</span>)
                                         </span>
                                             </apex:commandLink>
                                         </li>
@@ -2082,7 +2082,7 @@
                             <!-- USER STORIES FIELDSET -->
                             <apex:outputPanel id="userStories" layout="block" rendered="{!showUserStories}">
 
-                                <h3 style="font-weight: bolder;">{!$Label.copado__please_select_project_or_release}</h3>
+                                <h3 style="font-weight: bolder;">{!$Label.copado__Please_Select_Project_or_Release}</h3>
                                 <div class="slds-grid">
                                     <div class="slds-col" style="padding-right: 10px;">
                                         <label class="slds-form-element__label" for="projectPicklist">
@@ -2105,10 +2105,10 @@
                                 <fieldset class="slds-box slds-theme--default slds-container--fluid">
                                     <legend class="slds-text-heading--medium " style="padding-top: 10px;">
                                         <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType == 'merge'}">
-                                            {!$Label.copado__user_stories_ahead}
+                                            {!$Label.copado__USER_STORIES_AHEAD}
                                         </apex:outputPanel>
                                         <apex:outputPanel layout="none" rendered="{!latestOverlay.pathType != 'merge'}">
-                                            {!$Label.copado__user_stories_behind}
+                                            {!$Label.copado__USER_STORIES_BEHIND}
                                         </apex:outputPanel>
                                     </legend>
                                     <table class="slds-table slds-table_resizable-cols slds-table_fixed-layout slds-table_bordered slds-table_striped sortableTable" role="grid" id="userStoriesTable">
@@ -2614,7 +2614,7 @@
                     <footer class="slds-modal__footer">
                         <apex:outputPanel id="GeneralActionButtons" layout="block">
                             <apex:outputPanel id="promotionButton" layout="none" rendered="{!showUserStories}">
-                                <button class="slds-button slds-button_neutral slds-path__mark-complete slds-m-horizontal_small" onclick="closeModal(); return false;">{!$Label.copado__cancel}</button>
+                                <button class="slds-button slds-button_neutral slds-path__mark-complete slds-m-horizontal_small" onclick="closeModal(); return false;">{!$Label.copado__Cancel}</button>
                                 <apex:commandLink value="Validate Selections" styleClass="slds-button slds-button_brand slds-path__mark-complete slds-m-horizontal_small" id="validateSelections" action="{!createPromotionforValidation}" reRender="maodalHeader" onClick="setLockScreenMessage('Loading...');" oncomplete="redirectToPromotion();overridePageMessages();setLockScreenMessage('');" />
                                 <apex:actionFunction name="redirectToPromotion" action="{!redirectToPromotion}" reRender="xxx" />
                                 <apex:commandLink rendered="{!IF(AND(NOT(ISNULL(allStorySize)),allStorySize > 0),true,false)}" target="_blank" value="Create {!promotionBtnLabel}" styleClass="slds-button slds-button_brand slds-path__mark-complete slds-m-horizontal_small" id="createPromotion" action="{!createPromotion}" reRender="maodalHeader" onClick="lockScreen();clearSearchFilter();" oncomplete="overridePageMessages();">
@@ -2627,11 +2627,11 @@
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#upload')}"></use>
                                     </svg>
                                 </apex:commandLink>
-                                <apex:commandlink id="warningLink" style="float: right;padding-top: 4px;" rendered="{!AND(dependenciesList != null,dependenciesList.size>0)}" title="{!$Label.copado__usdependency_icontitle}" onclick="openUSDep(); return false;" styleClass="icon-blinker">
+                                <apex:commandlink id="warningLink" style="float: right;padding-top: 4px;" rendered="{!AND(dependenciesList != null,dependenciesList.size>0)}" title="{!$Label.copado__USDependency_IconTitle}" onclick="openUSDep(); return false;" styleClass="icon-blinker">
                                 </apex:commandlink>
                             </apex:outputPanel>
                             <apex:outputPanel id="syncButton" layout="none" rendered="{!showCommits}">
-                                <button class="slds-button slds-button_neutral slds-path__mark-complete slds-m-horizontal_small" onclick="closeModal(); return false;">{!$Label.copado__cancel}</button>
+                                <button class="slds-button slds-button_neutral slds-path__mark-complete slds-m-horizontal_small" onclick="closeModal(); return false;">{!$Label.copado__Cancel}</button>
                                 <apex:outputPanel layout="none" rendered="{!and(!isnull(latestOverlay.commitsAhead), !isnull(latestOverlay.commitsBehind), or(latestOverlay.commitsAhead>0, latestOverlay.commitsBehind>0))}">
 
                                     <apex:outputPanel rendered="{!errorSize<=0}">
@@ -2640,7 +2640,7 @@
                                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/action-sprite/svg/symbols.svg#flow')}">
                                                 </use>
                                             </svg>
-                                            {!$Label.copado__sync}
+                                            {!$Label.copado__Sync}
                                         </button>
                                     </apex:outputPanel>
                                     <apex:outputPanel rendered="{!errorSize>0}">
@@ -2648,7 +2648,7 @@
                                             <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
                                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/action-sprite/svg/symbols.svg#flow')}"></use>
                                             </svg>
-                                            {!$Label.copado__sync}
+                                            {!$Label.copado__Sync}
                                         </button>
                                     </apex:outputPanel>
 
@@ -2670,7 +2670,7 @@
                             <svg class="slds-button__icon slds-button__icon_large slds-icon-text-error" aria-hidden="true">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
                             </svg>
-                            <span class="slds-assistive-text">{!$Label.copado__close}</span>
+                            <span class="slds-assistive-text">{!$Label.copado__CLOSE}</span>
                         </button>
                         <apex:outputPanel id="fileNames" layout="block">
                             <h2 id="fileModalHeading" class="slds-text-heading_medium slds-hyphenate"></h2>
@@ -2687,7 +2687,7 @@
                                     <div class="slds-grid" style="margin-bottom: 10px">
                                         <div class="slds-grid" style="width: 100%">
                                             <div class="slds-col">
-                                                <apex:outputLabel >{!$Label.copado__display_differences}</apex:outputLabel>
+                                                <apex:outputLabel >{!$Label.copado__Display_Differences}</apex:outputLabel>
                                                 <apex:outputPanel >
                                                     <select id="viewTypeSelector-bh" class="js-viewType" size="1" onchange="reRenderFromRenderOption(this, 'pull');">
                                                         <option value="0" label="Side by Side">{!$Label.Side_by_Side}</option>
@@ -2696,7 +2696,7 @@
                                                 </apex:outputPanel>
                                             </div>
                                             <div class="slds-col">
-                                                <apex:outputLabel >{!$Label.copado__context_size_optional}</apex:outputLabel>
+                                                <apex:outputLabel >{!$Label.copado__Context_size_optional}</apex:outputLabel>
                                                 <apex:outputPanel >
                                                     <select id="contextSelector-bh" class="js-context" size="1" onChange="reRenderFromContextSelector(this, 'pull');">
                                                         <option value="1" label="1">1</option>
@@ -2720,7 +2720,7 @@
                                     <div class="slds-grid" style="margin-bottom: 10px">
                                         <div class="slds-grid" style="width: 100%">
                                             <div class="slds-col">
-                                                <apex:outputLabel >{!$Label.copado__display_differences}</apex:outputLabel>
+                                                <apex:outputLabel >{!$Label.copado__Display_Differences}</apex:outputLabel>
                                                 <apex:outputPanel >
                                                     <select id="viewTypeSelector-ah" class="js-viewType" size="1" onchange="reRenderFromRenderOption(this, 'merge');">
                                                         <option value="0" label="Side by Side">{!$Label.Side_by_Side}</option>
@@ -2729,7 +2729,7 @@
                                                 </apex:outputPanel>
                                             </div>
                                             <div class="slds-col">
-                                                <apex:outputLabel >{!$Label.copado__context_size_optional}</apex:outputLabel>
+                                                <apex:outputLabel >{!$Label.copado__Context_size_optional}</apex:outputLabel>
                                                 <apex:outputPanel >
                                                     <select id="contextSelector-ah" class="js-context" size="1" onChange="reRenderFromContextSelector(this, 'merge');">
                                                         <option value="1" label="1">1</option>
@@ -2752,7 +2752,7 @@
                                     <apex:pageBlock >
                                         <apex:pageBlockSection >
                                             <apex:pageBlockSectionItem >
-                                                <apex:outputLabel >{!$Label.copado__display_differences}</apex:outputLabel>
+                                                <apex:outputLabel >{!$Label.copado__Display_Differences}</apex:outputLabel>
                                                 <apex:outputPanel >
                                                     <select id="viewTypeSelector-pe" class="js-viewType" size="1" onchange="reRenderFromRenderOption(this, 'div-p-e');">
                                                         <option value="0" label="Side by Side">{!$Label.Side_by_Side}</option>
@@ -2761,7 +2761,7 @@
                                                 </apex:outputPanel>
                                             </apex:pageBlockSectionItem>
                                             <apex:pageBlockSectionItem >
-                                                <apex:outputLabel >{!$Label.copado__context_size_optional}</apex:outputLabel>
+                                                <apex:outputLabel >{!$Label.copado__Context_size_optional}</apex:outputLabel>
                                                 <apex:outputPanel >
                                                     <select id="contextSelector-pe" class="js-context" size="1" onChange="reRenderFromContextSelector(this, 'div-p-e');">
                                                         <option value="1" label="1">1</option>
@@ -2780,7 +2780,7 @@
                                     <apex:pageBlock >
                                         <apex:pageBlockSection >
                                             <apex:pageBlockSectionItem >
-                                                <apex:outputLabel >{!$Label.copado__display_differences}</apex:outputLabel>
+                                                <apex:outputLabel >{!$Label.copado__Display_Differences}</apex:outputLabel>
                                                 <apex:outputPanel >
                                                     <select id="viewTypeSelector-me" class="js-viewType" size="1" onchange="reRenderFromRenderOption(this, 'div-m-e');">
                                                         <option value="0" label="Side by Side">{!$Label.Side_by_Side}</option>
@@ -2789,7 +2789,7 @@
                                                 </apex:outputPanel>
                                             </apex:pageBlockSectionItem>
                                             <apex:pageBlockSectionItem >
-                                                <apex:outputLabel >{!$Label.copado__context_size_optional}</apex:outputLabel>
+                                                <apex:outputLabel >{!$Label.copado__Context_size_optional}</apex:outputLabel>
                                                 <apex:outputPanel >
                                                     <select id="contextSelector-me" class="js-context" size="1" onChange="reRenderFromContextSelector(this, 'div-m-e');">
                                                         <option value="1" label="1">1</option>
@@ -2812,7 +2812,7 @@
                                     <apex:pageBlock >
                                         <apex:pageBlockSection >
                                             <apex:pageBlockSectionItem >
-                                                <apex:outputLabel >{!$Label.copado__display_differences}</apex:outputLabel>
+                                                <apex:outputLabel >{!$Label.copado__Display_Differences}</apex:outputLabel>
                                                 <apex:outputPanel >
                                                     <select id="viewTypeSelector-pm" class="js-viewType" size="1" onchange="reRenderFromRenderOption(this, 'div-p-m');">
                                                         <option value="0" label="Side by Side">{!$Label.Side_by_Side}</option>
@@ -2821,7 +2821,7 @@
                                                 </apex:outputPanel>
                                             </apex:pageBlockSectionItem>
                                             <apex:pageBlockSectionItem >
-                                                <apex:outputLabel >{!$Label.copado__context_size_optional}</apex:outputLabel>
+                                                <apex:outputLabel >{!$Label.copado__Context_size_optional}</apex:outputLabel>
                                                 <apex:outputPanel >
                                                     <select id="contextSelector-pm" class="js-context" size="1" onChange="reRenderFromContextSelector(this, 'div-p-m');">
                                                         <option value="1" label="1">1</option>
@@ -2840,7 +2840,7 @@
                                     <apex:pageBlock >
                                         <apex:pageBlockSection >
                                             <apex:pageBlockSectionItem >
-                                                <apex:outputLabel >{!$Label.copado__display_differences}</apex:outputLabel>
+                                                <apex:outputLabel >{!$Label.copado__Display_Differences}</apex:outputLabel>
                                                 <apex:outputPanel >
                                                     <select id="viewTypeSelector-mm" class="js-viewType" size="1" onchange="reRenderFromRenderOption(this, 'div-m-m');">
                                                         <option value="0" label="Side by Side">{!$Label.Side_by_Side}</option>
@@ -2849,7 +2849,7 @@
                                                 </apex:outputPanel>
                                             </apex:pageBlockSectionItem>
                                             <apex:pageBlockSectionItem >
-                                                <apex:outputLabel >{!$Label.copado__context_size_optional}</apex:outputLabel>
+                                                <apex:outputLabel >{!$Label.copado__Context_size_optional}</apex:outputLabel>
                                                 <apex:outputPanel >
                                                     <select id="contextSelector-mm" class="js-context" size="1" onChange="reRenderFromContextSelector(this, 'div-m-m');">
                                                         <option value="1" label="1">1</option>
@@ -2884,7 +2884,7 @@
                             <svg class="slds-button__icon slds-button__icon_large slds-icon-text-error" aria-hidden="true">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
                             </svg>
-                            <span class="slds-assistive-text">{!$Label.copado__close}</span>
+                            <span class="slds-assistive-text">{!$Label.copado__CLOSE}</span>
                         </button>
                         <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{!$label.USDependency_USDependenciesTitle}</h2>
                     </header>

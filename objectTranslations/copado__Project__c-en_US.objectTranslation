@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
+        <help><!-- Use this field as an identifier for the Project record when referencing it in an action. --></help>
+        <label><!-- API Name --></label>
+        <name>copado__API_Name__c</name>
+    </fields>
+    <fields>
         <help><!-- If working with Copado Change Management, the Project must be linked to a Pipeline. --></help>
         <label><!-- Pipeline --></label>
         <name>copado__Deployment_Flow__c</name>
@@ -58,5 +63,21 @@
             <masterLabel>Planned</masterLabel>
             <translation><!-- Planned --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Connect log --></label>
+        <name>copadoconnect__Connect_log__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>copadoconnect__External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Synced Date --></label>
+        <name>copadoconnect__Last_Synced_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization --></label>
+        <name>copadoconnect__Organization__c</name>
     </fields>
 </CustomObjectTranslation>
