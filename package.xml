@@ -5,5 +5,9 @@
         <members>TemperatureConverterTest</members>
         <name>ApexClass</name>
     </types>
+    <types>
+        <members>Salesforce API Only System Integrations</members>
+        <name>Profile</name>
+    </types>
     <version>57.0</version>
 </Package>
