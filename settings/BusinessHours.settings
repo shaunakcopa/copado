@@ -20,4 +20,13 @@
         <wednesdayEndTime>00:00:00.000Z</wednesdayEndTime>
         <wednesdayStartTime>00:00:00.000Z</wednesdayStartTime>
     </businessHours>
+    <holidays>
+        <description>Shaunak Birthdat</description>
+        <isRecurring>true</isRecurring>
+        <name>Birthday</name>
+        <recurrenceDayOfMonth>15</recurrenceDayOfMonth>
+        <recurrenceMonthOfYear>August</recurrenceMonthOfYear>
+        <recurrenceStartDate>2021-08-15</recurrenceStartDate>
+        <recurrenceType>RecursYearly</recurrenceType>
+    </holidays>
 </BusinessHoursSettings>
