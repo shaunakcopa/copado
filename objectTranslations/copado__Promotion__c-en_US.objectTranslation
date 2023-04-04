@@ -17,8 +17,13 @@
         <name>copado__Pipeline_Manager</name>
     </fieldSets>
     <fields>
-        <label><!-- Back Promotion --></label>
+        <label><!-- Is Back-Promotion --></label>
         <name>copado__Back_Promotion__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is checked by Copado once the promotion is merged and deployed successfully for multi-cloud platform. --></help>
+        <label><!-- Completed --></label>
+        <name>copado__Completed__c</name>
     </fields>
     <fields>
         <label><!-- Connection Behavior --></label>
@@ -41,14 +46,26 @@
     </fields>
     <fields>
         <help><!-- The credential to the Destination Environment that should be used when creating a deployment. This may be auto-populated, if left blank, based on the project&apos;s deployment flow if you are the owner of an Org Credential to the Destination Environment. --></help>
-        <label><!-- Destination Org Credential --></label>
+        <label><!-- Destination Credential --></label>
         <name>copado__Destination_Org_Credential__c</name>
-        <relationshipLabel><!-- Promotions (Destination Org Credential) --></relationshipLabel>
+        <relationshipLabel><!-- Promotions (Destination Credential) --></relationshipLabel>
     </fields>
     <fields>
         <help><!-- Conflicts found in the selected metadata types are not auto-resolved by Copado when merging feature branches into the promotion branch. The conflicts can be manually resolved using Copado. --></help>
         <label><!-- Exclude From Auto Resolve --></label>
         <name>copado__Exclude_From_Auto_Resolve__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Rolled Back? --></label>
+        <name>copado__Is_Rolled_Back__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Deployment Execution Id --></label>
+        <name>copado__Last_Deployment_Execution_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Promotion Execution Id --></label>
+        <name>copado__Last_Promotion_Execution_Id__c</name>
     </fields>
     <fields>
         <help><!-- Indicates that this promotion includes a manual conflict resolution. --></help>
@@ -59,6 +76,11 @@
         <help><!-- Fill this field only if you want to change the selected user stories order on deployment. (usage exp: name asc, copado__backlog_rank__c desc) --></help>
         <label><!-- Order User Stories by --></label>
         <name>copado__Order_by__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field auto-populates and displays the pipeline platform. --></help>
+        <label><!-- Platform --></label>
+        <name>copado__Platform__c</name>
     </fields>
     <fields>
         <help><!-- The selected Project should be linked to an active Deployment Flow --></help>
@@ -72,7 +94,7 @@
         <relationshipLabel><!-- Promotions --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- Send Deployment Complete email --></label>
+        <label><!-- Notify When Complete --></label>
         <name>copado__Send_Deployment_Complete_email__c</name>
     </fields>
     <fields>
@@ -82,9 +104,9 @@
     </fields>
     <fields>
         <help><!-- The credential to the Source Environment that should be used when creating a deployment. This may be auto-populated, if left blank, based on the project&apos;s deployment flow if you are the owner of an Org Credential to the Source Environment. --></help>
-        <label><!-- Source Org Credential --></label>
+        <label><!-- Source Credential --></label>
         <name>copado__Source_Org_Credential__c</name>
-        <relationshipLabel><!-- Promotions (Source Org Credential) --></relationshipLabel>
+        <relationshipLabel><!-- Promotions (Source Credential) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Status --></label>
@@ -134,4 +156,8 @@
         <errorMessage><!-- Back Promotions to Scratch Orgs are not allowed --></errorMessage>
         <name>copado__Scratch_Orgs_Disabled_for_Back_Promoting</name>
     </validationRules>
+    <webLinks>
+        <label><!-- Rollback --></label>
+        <name>copado__Rollback</name>
+    </webLinks>
 </CustomObjectTranslation>

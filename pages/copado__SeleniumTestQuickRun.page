@@ -5,7 +5,7 @@
     </head>
 
     <body>
-    <apex:sectionHeader id="theHeader" title="Copado Selenium Testing" subtitle="{!IF(mode=='create', $Label.copado__create_selenium_settings, suite.Name)}" />
+    <apex:sectionHeader id="theHeader" title="Copado Selenium Testing" subtitle="{!IF(mode=='create', $Label.copado__CREATE_SELENIUM_SETTINGS, suite.Name)}" />
 
     <!-- check that the feature is enabled, and the user has a license assigned -->
     <apex:pageMessage severity="WARNING" strength="2" summary="{!possibleCSTErrorMsg}" rendered="{!!ISNULL(possibleCSTErrorMsg)}" />
@@ -25,15 +25,15 @@
         <apex:pageBlock id="pb" mode="edit">
             <apex:pageBlockButtons id="pbs">
                 <apex:commandButton id="btnContinue" action="{!quickRunConfirmed}" value="Continue" rendered="{!mode=='confirm'}" />
-                <apex:commandButton id="btnSave" action="{!save}" value="{!$Label.copado__save_and_run}" rendered="{!mode=='create'}" />
+                <apex:commandButton id="btnSave" action="{!save}" value="{!$Label.copado__Save_And_Run}" rendered="{!mode=='create'}" />
                 <apex:commandButton action="{!cancel}" value="{!$Label.site.cancel}" immediate="true" />
             </apex:pageBlockButtons>
             <apex:pageMessages />
             <apex:outputPanel rendered="{!mode=='create'}">
-                <apex:pageMessage summary="{!$Label.copado__create_selenium_settings_info}" severity="INFO" strength="2" />
-                <apex:pageBlockSection title="{!$Label.copado__createquicktestsettings}" columns="1">
+                <apex:pageMessage summary="{!$Label.copado__CREATE_SELENIUM_SETTINGS_INFO}" severity="INFO" strength="2" />
+                <apex:pageBlockSection title="{!$Label.copado__CreateQuickTestSettings}" columns="1">
                     <script>
-                        if(confirm("{!$Label.copado__warning2createseleniumsetting}")){
+                        if(confirm("{!$Label.copado__Warning2CreateSeleniumSetting}")){
                             location.href = '{!JSENCODE(hostUrl)}/apex/editSeleniumSettingOverride'+location.search+'&fromQuickRun={!JSENCODE($User.Alias)}';
                         }else{
                             history.back();

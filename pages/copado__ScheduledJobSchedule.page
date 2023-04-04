@@ -18,11 +18,11 @@
     	<apex:form id="theForm">
             <apex:pageMessages id="theMessages"/>
         	<apex:pageBlock id="pb_main" mode="edit" rendered="{!AND(showOptions,!showError)}">
-            <apex:pageBlockButtons id="pbb_main" title="{!$Label.copado__details}">
-                <apex:commandButton action="{!save_job}" value="{!$Label.copado__save}" id="btnSave"/>
-                <apex:commandButton action="{!cancel}" value="{!$Label.copado__cancel}" id="btnCancel" immediate="true"/>
+            <apex:pageBlockButtons id="pbb_main" title="{!$Label.copado__DETAILS}">
+                <apex:commandButton action="{!save_job}" value="{!$Label.copado__Save}" id="btnSave"/>
+                <apex:commandButton action="{!cancel}" value="{!$Label.copado__Cancel}" id="btnCancel" immediate="true"/>
             </apex:pageBlockButtons>
-    		<apex:pageBlockSection title="{!$Label.copado__basic_information}" id="pbs_info" columns="1">
+    		<apex:pageBlockSection title="{!$Label.copado__BASIC_INFORMATION}" id="pbs_info" columns="1">
     			<div id="jqxTabs">
                     <ul>
                         <li style="margin-left: 30px;" onclick="cronExpression.selectedTab='hourly';">{!$Label.HOURLY}</li>
@@ -337,7 +337,7 @@
                     
                     <apex:pageBlockSectionItem >
                     	<apex:outputPanel ></apex:outputPanel>
-                        <apex:outputText >{!$Label.copado__use_cronmaker}</apex:outputText>
+                        <apex:outputText >{!$Label.copado__USE_CRONMAKER}</apex:outputText>
                     </apex:pageBlockSectionItem>
                 </div>
             </apex:pageBlockSection>
