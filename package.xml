@@ -6,8 +6,8 @@
         <name>ApexClass</name>
     </types>
     <types>
-        <members>Salesforce API Only System Integrations</members>
-        <name>Profile</name>
+        <members>Student__c</members>
+        <name>CustomObject</name>
     </types>
     <version>57.0</version>
 </Package>
