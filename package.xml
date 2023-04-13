@@ -4,9 +4,5 @@
         <members>Mobile_Phone__c.Test_Data_External_Field__c</members>
         <name>CustomField</name>
     </types>
-    <types>
-        <members>Mobile_Phone__c-Mobile Phone Layout</members>
-        <name>Layout</name>
-    </types>
     <version>57.0</version>
 </Package>
