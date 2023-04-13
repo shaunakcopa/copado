@@ -27,6 +27,10 @@
                 <behavior>Edit</behavior>
                 <field>Modal__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Test_Data_External_Field__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
