@@ -130,6 +130,10 @@
     <enableFeeds>false</enableFeeds>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
+        <fullName>ApptStartTimeIntvlInMin</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>BlockTimeAfterAppointment</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -163,6 +167,10 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>MinimumCrewSize</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>Name</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -175,6 +183,19 @@
         <fullName>OwnerId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RecommendedCrewSize</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ServiceReportTemplateId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ShouldAutoCreateSvcAppt</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>TimeFrameEndUnit</fullName>

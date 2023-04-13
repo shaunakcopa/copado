@@ -103,12 +103,12 @@
 				<!-- ACTION BUTTONS -->
 				<div class="slds-col slds-no-flex slds-grid slds-align-top ">
 					<div class="slds-button-group" role="group">
-						<apex:commandButton value="{!$Label.copado__edit}" action="{!edit}" styleClass="slds-button slds-button--neutral" rendered="{!AND(showOptions,!showError)}"/>
+						<apex:commandButton value="{!$Label.copado__EDIT}" action="{!edit}" styleClass="slds-button slds-button--neutral" rendered="{!AND(showOptions,!showError)}"/>
 						<apex:outputLink rendered="{!AND(externalCIJob.Id != null,(AND(showOptions,!showError)))}" value="{!URLFOR($Action.copado__External_CI_Job__c.Clone,externalCIJob.Id)}" styleClass="slds-button slds-button--neutral">
-							<span class="slds-truncate" title="Menu Item One">{!$Label.copado__clone}</span>
+							<span class="slds-truncate" title="Menu Item One">{!$Label.copado__CLONE}</span>
 						</apex:outputLink>
-						<apex:commandButton value="{!$Label.copado__delete}" action="{!deleteJob}" styleClass="slds-button slds-button--neutral" reRender="pageMessages" oncomplete="overridePageMessages()" rendered="{!AND(showOptions,!showError)}"/>
-						<apex:commandButton value="{!$Label.copado__build_job}" status="status" action="{!BuildJob}" styleClass="slds-button slds-button--neutral" reRender="pageMessages, stdRelatedList, relatedLists" oncomplete="overridePageMessages()" rendered="{!AND(showOptions,!showError)}"/>
+						<apex:commandButton value="{!$Label.copado__DELETE}" action="{!deleteJob}" styleClass="slds-button slds-button--neutral" reRender="pageMessages" oncomplete="overridePageMessages()" rendered="{!AND(showOptions,!showError)}"/>
+						<apex:commandButton value="{!$Label.copado__BUILD_JOB}" status="status" action="{!BuildJob}" styleClass="slds-button slds-button--neutral" reRender="pageMessages, stdRelatedList, relatedLists" oncomplete="overridePageMessages()" rendered="{!AND(showOptions,!showError)}"/>
 
 					</div>
 				</div>

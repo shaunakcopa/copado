@@ -1,4 +1,4 @@
-<apex:page id="CopadoLicensesWizard" lightningStyleSheets="true" sideBar="false" docType="html-5.0" title="{!$Label.copado__copado_license}">
+<apex:page id="CopadoLicensesWizard" lightningStyleSheets="true" sideBar="false" docType="html-5.0" title="{!$Label.copado__Copado_License}">
     <apex:slds />
     <c:IncludeStaticsResourceComponent addJQuery="true" addUIjs="true" />
     <apex:includeScript value="{!URLFOR($Resource.copado__SetupDashboardJS)}" />
