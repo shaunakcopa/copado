@@ -21,6 +21,10 @@
         <name>Price__c</name>
     </fields>
     <fields>
+        <label><!-- Test Data External Field --></label>
+        <name>Test_Data_External_Field__c</name>
+    </fields>
+    <fields>
         <label><!-- Test Field #1 --></label>
         <name>Test_Field_1__c</name>
     </fields>

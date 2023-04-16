@@ -658,6 +658,15 @@
             </valueSetDefinition>
         </valueSet>
     </fields>
+    <fields>
+        <fullName>copadometrics__Production_Org__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Production Org?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
     <label>Environment</label>
     <listViews>
         <fullName>copado__All</fullName>

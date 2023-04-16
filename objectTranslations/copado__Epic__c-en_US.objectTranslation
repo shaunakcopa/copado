@@ -75,4 +75,8 @@
         <label><!-- Last Synced Date --></label>
         <name>copadoconnect__Last_Synced_Date__c</name>
     </fields>
+    <fields>
+        <label><!-- Completion % --></label>
+        <name>copadometrics__Completion__c</name>
+    </fields>
 </CustomObjectTranslation>

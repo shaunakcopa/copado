@@ -156,6 +156,14 @@
             <translation>検証に失敗しました</translation>
         </picklistValues>
     </fields>
+    <fields>
+        <label><!-- Caused Business Disruption? --></label>
+        <name>copadometrics__Caused_Business_Disruption__c</name>
+    </fields>
+    <fields>
+        <label><!-- Destination is a Production Org? --></label>
+        <name>copadometrics__Destination_is_a_Production_Org__c</name>
+    </fields>
     <nameFieldLabel><!-- Promotion Name --></nameFieldLabel>
     <validationRules>
         <errorMessage><!-- Back Promotions to Scratch Orgs are not allowed --></errorMessage>

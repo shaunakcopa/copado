@@ -91,6 +91,10 @@
         <label><!-- Last Synced Date --></label>
         <name>copadoconnect__Last_Synced_Date__c</name>
     </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>copadometrics__Active__c</name>
+    </fields>
     <validationRules>
         <errorMessage><!-- You must introduce an End Date greater than the Start Date. --></errorMessage>
         <name>copado__EndDate_Should_be_Greater_than_StartDate</name>
