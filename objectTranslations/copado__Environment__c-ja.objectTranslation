@@ -232,6 +232,10 @@
             <translation>ユーザーが組織クレデンシャルを持っていない場合のみ</translation>
         </picklistValues>
     </fields>
+    <fields>
+        <label><!-- Production Org? --></label>
+        <name>copadometrics__Production_Org__c</name>
+    </fields>
     <nameFieldLabel><!-- Environment Name --></nameFieldLabel>
     <validationRules>
         <errorMessage><!-- An environment cannot have the same job template for Commit, Promote and Deploy. --></errorMessage>

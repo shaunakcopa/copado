@@ -228,6 +228,10 @@
             <translation><!-- Only If User Has No Org Credential --></translation>
         </picklistValues>
     </fields>
+    <fields>
+        <label><!-- Production Org? --></label>
+        <name>copadometrics__Production_Org__c</name>
+    </fields>
     <validationRules>
         <errorMessage><!-- An environment cannot have the same job template for Commit, Promote and Deploy. --></errorMessage>
         <name>copado__Unique_Job_Template</name>

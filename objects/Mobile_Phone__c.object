@@ -159,8 +159,21 @@
         <label>Company</label>
         <length>20</length>
         <required>false</required>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Demo_Field__c</fullName>
+        <externalId>false</externalId>
+        <label>Demo Field</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -176,12 +189,24 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Modal__c</fullName>
+        <externalId>false</externalId>
+        <label>Modal</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Price__c</fullName>
         <externalId>false</externalId>
         <label>Price</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>

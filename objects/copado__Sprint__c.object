@@ -418,6 +418,19 @@
         <trackHistory>false</trackHistory>
         <type>DateTime</type>
     </fields>
+    <fields>
+        <fullName>copadometrics__Active__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>AND(
+TODAY() &gt;= copado__Start_Date__c,
+TODAY() &lt;= copado__End_Date__c
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Active</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
     <label>Sprint</label>
     <listViews>
         <fullName>copado__All</fullName>

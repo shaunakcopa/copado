@@ -152,6 +152,14 @@
             <translation><!-- Validation failed --></translation>
         </picklistValues>
     </fields>
+    <fields>
+        <label><!-- Caused Business Disruption? --></label>
+        <name>copadometrics__Caused_Business_Disruption__c</name>
+    </fields>
+    <fields>
+        <label><!-- Destination is a Production Org? --></label>
+        <name>copadometrics__Destination_is_a_Production_Org__c</name>
+    </fields>
     <validationRules>
         <errorMessage><!-- Back Promotions to Scratch Orgs are not allowed --></errorMessage>
         <name>copado__Scratch_Orgs_Disabled_for_Back_Promoting</name>

@@ -332,6 +332,17 @@
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
     </fields>
+    <fields>
+        <fullName>copadometrics__Completion__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Completion %</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
     <label>Epic</label>
     <listViews>
         <fullName>copado__All</fullName>

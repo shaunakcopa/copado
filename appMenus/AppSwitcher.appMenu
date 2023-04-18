@@ -176,4 +176,12 @@
         <name>copado__Copado_Lightning</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>copadometrics__DevOps_Analytics</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>DevOps_Analytics</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
 </AppMenu>
