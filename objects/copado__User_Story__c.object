@@ -7475,7 +7475,7 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
         <inlineHelpText>Current status of the implementation of the User Story.</inlineHelpText>
         <label>Status</label>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -7822,6 +7822,288 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>copadometrics__Business_Disruption_Failure__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(OR(TEXT(copadometrics__Severity__c) == &apos;P0 - Blocker - Business Disruption&apos;, TEXT(copadometrics__Severity__c) == &apos;P1 - Critical - No Workaround&apos;), true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Business Disruption Failure?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>copadometrics__Development_Complete__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Development Complete</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>copadometrics__Elapsed_Time_to_Resolve__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(IF(
+ISBLANK(copadometrics__First_Time_Promoted_to_Production__c),
+FLOOR(NOW() - CreatedDate)
+,
+FLOOR(copadometrics__First_Time_Promoted_to_Production__c - CreatedDate)
+))
+
+&amp; &quot; days &quot; &amp;
+
+TEXT(IF(
+ISBLANK(copadometrics__First_Time_Promoted_to_Production__c),
+FLOOR(MOD((NOW() - CreatedDate)*24, 24))
+,
+FLOOR(MOD((copadometrics__First_Time_Promoted_to_Production__c - CreatedDate)*24, 24))
+))
+ 
+&amp; &quot; hours &quot; &amp; 
+
+TEXT(IF(
+ISBLANK(copadometrics__First_Time_Promoted_to_Production__c),
+ROUND(MOD((NOW() - CreatedDate)*1440, 60), 0)
+,
+ROUND(MOD((copadometrics__First_Time_Promoted_to_Production__c - CreatedDate)*1440, 60), 0)
+)) &amp; &quot; minutes&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Elapsed Time to Resolve</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copadometrics__Elapsed_Time_to_Resolve_days__c</fullName>
+        <businessStatus>DeprecateCandidate</businessStatus>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(
+ISBLANK(copadometrics__First_Time_Promoted_to_Production__c),
+FLOOR(NOW() - CreatedDate)
+,
+FLOOR(copadometrics__First_Time_Promoted_to_Production__c - CreatedDate)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Elapsed Time to Resolve (days)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copadometrics__Elapsed_Time_to_Resolve_hours__c</fullName>
+        <businessStatus>DeprecateCandidate</businessStatus>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(
+ISBLANK(copadometrics__First_Time_Promoted_to_Production__c),
+FLOOR(MOD((NOW() - CreatedDate)*24, 24))
+,
+FLOOR(MOD((copadometrics__First_Time_Promoted_to_Production__c - CreatedDate)*24, 24))
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Elapsed Time to Resolve (hours)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copadometrics__Elapsed_Time_to_Resolve_minutes__c</fullName>
+        <businessStatus>DeprecateCandidate</businessStatus>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(
+ISBLANK(copadometrics__First_Time_Promoted_to_Production__c),
+ROUND(MOD((NOW() - CreatedDate)*1440, 60), 0)
+,
+ROUND(MOD((copadometrics__First_Time_Promoted_to_Production__c - CreatedDate)*1440, 60), 0)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Elapsed Time to Resolve (minutes)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copadometrics__First_Ready_to_Promote_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>First Ready to Promote Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>copadometrics__First_Time_Promoted_to_Production__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>First Time Promoted to Production</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>copadometrics__Found_in_Promotion__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Found in Promotion</label>
+        <referenceTo>copado__Promotion__c</referenceTo>
+        <relationshipLabel>User Stories (Found in Promotion)</relationshipLabel>
+        <relationshipName>User_Stories</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copadometrics__Lead_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(IF(
+AND(NOT(ISBLANK(copadometrics__First_Time_Promoted_to_Production__c)), NOT(ISBLANK(copadometrics__First_Ready_to_Promote_Time__c))),
+FLOOR(copadometrics__First_Time_Promoted_to_Production__c - copadometrics__First_Ready_to_Promote_Time__c)
+,
+0)) 
+&amp; &quot; days &quot; &amp; 
+
+
+TEXT(IF(
+AND(NOT(ISBLANK(copadometrics__First_Time_Promoted_to_Production__c)), NOT(ISBLANK(copadometrics__First_Ready_to_Promote_Time__c))),
+FLOOR(MOD((copadometrics__First_Time_Promoted_to_Production__c - copadometrics__First_Ready_to_Promote_Time__c)*24, 24))
+,
+0)) &amp; &quot; hours &quot; &amp; 
+
+
+TEXT(IF(
+AND(NOT(ISBLANK(copadometrics__First_Time_Promoted_to_Production__c)), NOT(ISBLANK(copadometrics__First_Ready_to_Promote_Time__c))),
+ROUND(MOD((copadometrics__First_Time_Promoted_to_Production__c - copadometrics__First_Ready_to_Promote_Time__c)*1440, 60), 0)
+,
+0))  &amp; &quot; minutes &quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lead Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copadometrics__Lead_Time_days__c</fullName>
+        <businessStatus>DeprecateCandidate</businessStatus>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(
+AND(NOT(ISBLANK(copadometrics__First_Time_Promoted_to_Production__c)), NOT(ISBLANK(copadometrics__First_Ready_to_Promote_Time__c))),
+FLOOR(copadometrics__First_Time_Promoted_to_Production__c - copadometrics__First_Ready_to_Promote_Time__c)
+,
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lead Time (days)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copadometrics__Lead_Time_hours__c</fullName>
+        <businessStatus>DeprecateCandidate</businessStatus>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(
+AND(NOT(ISBLANK(copadometrics__First_Time_Promoted_to_Production__c)), NOT(ISBLANK(copadometrics__First_Ready_to_Promote_Time__c))),
+FLOOR(MOD((copadometrics__First_Time_Promoted_to_Production__c - copadometrics__First_Ready_to_Promote_Time__c)*24, 24))
+,
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lead Time (hours)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copadometrics__Lead_Time_minutes__c</fullName>
+        <businessStatus>DeprecateCandidate</businessStatus>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(
+AND(NOT(ISBLANK(copadometrics__First_Time_Promoted_to_Production__c)), NOT(ISBLANK(copadometrics__First_Ready_to_Promote_Time__c))),
+ROUND(MOD((copadometrics__First_Time_Promoted_to_Production__c - copadometrics__First_Ready_to_Promote_Time__c)*1440, 60), 0)
+,
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lead Time (minutes)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copadometrics__Severity__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Severity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>P0 - Blocker - Business Disruption</fullName>
+                    <default>false</default>
+                    <label>P0 - Blocker - Business Disruption</label>
+                </value>
+                <value>
+                    <fullName>P1 - Critical - No Workaround</fullName>
+                    <default>false</default>
+                    <label>P1 - Critical - No Workaround</label>
+                </value>
+                <value>
+                    <fullName>P2 - Major</fullName>
+                    <default>false</default>
+                    <label>P2 - Major</label>
+                </value>
+                <value>
+                    <fullName>P3 - Minor</fullName>
+                    <default>false</default>
+                    <label>P3 - Minor</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <label>User Story</label>
     <listViews>
@@ -8303,6 +8585,25 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
                 <default>false</default>
             </values>
         </picklistValues>
+        <picklistValues>
+            <picklist>copadometrics__Severity__c</picklist>
+            <values>
+                <fullName>P0 - Blocker - Business Disruption</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P1 - Critical - No Workaround</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P2 - Major</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P3 - Minor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
     </recordTypes>
     <recordTypes>
         <fullName>copado__Investigation</fullName>
@@ -8747,6 +9048,25 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
             </values>
             <values>
                 <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>copadometrics__Severity__c</picklist>
+            <values>
+                <fullName>P0 - Blocker - Business Disruption</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P1 - Critical - No Workaround</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P2 - Major</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P3 - Minor</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -9197,6 +9517,25 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
                 <default>false</default>
             </values>
         </picklistValues>
+        <picklistValues>
+            <picklist>copadometrics__Severity__c</picklist>
+            <values>
+                <fullName>P0 - Blocker - Business Disruption</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P1 - Critical - No Workaround</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P2 - Major</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P3 - Minor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
     </recordTypes>
     <recordTypes>
         <fullName>copado__Utility</fullName>
@@ -9641,6 +9980,25 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
             </values>
             <values>
                 <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>copadometrics__Severity__c</picklist>
+            <values>
+                <fullName>P0 - Blocker - Business Disruption</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P1 - Critical - No Workaround</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P2 - Major</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P3 - Minor</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
