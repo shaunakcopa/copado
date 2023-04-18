@@ -928,6 +928,25 @@
             </valueSetDefinition>
         </valueSet>
     </fields>
+    <fields>
+        <fullName>copadometrics__Caused_Business_Disruption__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Caused Business Disruption?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>copadometrics__Destination_is_a_Production_Org__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>If(NOT(ISNULL(copado__Destination_Environment__c)), copado__Destination_Environment__r.copadometrics__Production_Org__c, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Destination is a Production Org?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
     <label>Promotion</label>
     <listViews>
         <fullName>copado__All</fullName>

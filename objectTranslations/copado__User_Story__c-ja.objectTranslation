@@ -865,6 +865,79 @@
         <label><!-- Last Synced Date --></label>
         <name>copadoconnect__Last_Synced_Date__c</name>
     </fields>
+    <fields>
+        <label><!-- Business Disruption Failure? --></label>
+        <name>copadometrics__Business_Disruption_Failure__c</name>
+    </fields>
+    <fields>
+        <label><!-- Development Complete --></label>
+        <name>copadometrics__Development_Complete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Elapsed Time to Resolve --></label>
+        <name>copadometrics__Elapsed_Time_to_Resolve__c</name>
+    </fields>
+    <fields>
+        <label><!-- Elapsed Time to Resolve (days) --></label>
+        <name>copadometrics__Elapsed_Time_to_Resolve_days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Elapsed Time to Resolve (hours) --></label>
+        <name>copadometrics__Elapsed_Time_to_Resolve_hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Elapsed Time to Resolve (minutes) --></label>
+        <name>copadometrics__Elapsed_Time_to_Resolve_minutes__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Ready to Promote Time --></label>
+        <name>copadometrics__First_Ready_to_Promote_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Time Promoted to Production --></label>
+        <name>copadometrics__First_Time_Promoted_to_Production__c</name>
+    </fields>
+    <fields>
+        <label><!-- Found in Promotion --></label>
+        <name>copadometrics__Found_in_Promotion__c</name>
+        <relationshipLabel><!-- User Stories (Found in Promotion) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Lead Time --></label>
+        <name>copadometrics__Lead_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Time (days) --></label>
+        <name>copadometrics__Lead_Time_days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Time (hours) --></label>
+        <name>copadometrics__Lead_Time_hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Time (minutes) --></label>
+        <name>copadometrics__Lead_Time_minutes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Severity --></label>
+        <name>copadometrics__Severity__c</name>
+        <picklistValues>
+            <masterLabel>P0 - Blocker - Business Disruption</masterLabel>
+            <translation><!-- P0 - Blocker - Business Disruption --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P1 - Critical - No Workaround</masterLabel>
+            <translation><!-- P1 - Critical - No Workaround --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P2 - Major</masterLabel>
+            <translation><!-- P2 - Major --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P3 - Minor</masterLabel>
+            <translation><!-- P3 - Minor --></translation>
+        </picklistValues>
+    </fields>
     <nameFieldLabel><!-- User Story Reference --></nameFieldLabel>
     <recordTypes>
         <label><!-- Bug --></label>
