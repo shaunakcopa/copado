@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Account.Test_Field_on_Account__c</members>
-        <members>Account.Test_for_Copado_User_Rollback__c</members>
-        <name>CustomField</name>
-    </types>
-    <types>
-        <members>Account-Account Layout</members>
-        <name>Layout</name>
+        <members>Test</members>
+        <name>NamedCredential</name>
     </types>
     <version>57.0</version>
 </Package>
