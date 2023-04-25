@@ -9,9 +9,5 @@
         <members>Test00067119</members>
         <name>NamedCredential</name>
     </types>
-    <types>
-        <members>Admin</members>
-        <name>Profile</name>
-    </types>
     <version>57.0</version>
 </Package>
