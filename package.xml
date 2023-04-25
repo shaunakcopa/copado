@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Mobile_Phone__c.Company__c</members>
-        <members>Mobile_Phone__c.Demo_Field__c</members>
-        <members>Mobile_Phone__c.Formula_for_Template__c</members>
-        <members>Mobile_Phone__c.Modal__c</members>
-        <members>Mobile_Phone__c.Price__c</members>
-        <members>Mobile_Phone__c.Test_Data_External_Field__c</members>
+        <members>Account.Test_Field_on_Account__c</members>
+        <members>Account.Test_for_Copado_User_Rollback__c</members>
         <name>CustomField</name>
     </types>
     <types>
-        <members>Mobile_Phone__c-Mobile Phone Layout</members>
+        <members>Account-Account Layout</members>
         <name>Layout</name>
-    </types>
-    <types>
-        <members>Mobile_Phone__c.Record_Type_A</members>
-        <members>Mobile_Phone__c.Record_Type_B</members>
-        <name>RecordType</name>
     </types>
     <version>57.0</version>
 </Package>

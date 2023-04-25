@@ -186,7 +186,7 @@
     </fields>
     <fields>
         <fullName>IsAllDayEvent</fullName>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
     </fields>
     <fields>
         <fullName>IsPrivate</fullName>
@@ -240,7 +240,7 @@
     </fields>
     <fields>
         <fullName>WhoId</fullName>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Lookup</type>
     </fields>
     <listViews>
