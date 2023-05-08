@@ -44,7 +44,7 @@
                         <span>
                             <apex:outputLink value="{!IF(csvAttachmentId != null,URLFOR($Action.Attachment.Download, csvAttachmentId),'')}" target="_blank" disabled="{!csvAttachmentId == null}">
                                 <apex:image value="{!URLFOR($Resource.copado__DTS_images,'download.png')}" style="padding-bottom:3px"/>
-                                {!IF(csvAttachmentId != null,$Label.copado__datatemplate_download_all_results,$Label.copado__no_csv_file_available)}
+                                {!IF(csvAttachmentId != null,$Label.copado__DataTemplate_Download_All_Results,$Label.copado__No_CSV_file_available)}
                             </apex:outputLink>
                         </span>
                     </div>

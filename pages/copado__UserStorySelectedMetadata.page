@@ -8,14 +8,14 @@
         <apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" />
         <apex:includeScript value="{!URLFOR($Resource.utilsV2) }"/>
         <apex:includeScript value="{!URLFOR($Resource.UserStorySelectedMetadata) }"/>
-        <script>
+        <script> 
             var Copado_Licenses = {!CurrentUserLicenses};
         </script>
         <c:IncludeConnectionJsComponent />
     </head>
     
     <apex:pageMessages id="theMessages" />
-    <apex:form ><c:ScreenLocker id="cmpScreenLocker" msg="{!$Label.copado__loading}" /></apex:form>
+    <apex:form ><c:ScreenLocker id="cmpScreenLocker" msg="{!$Label.copado__LOADING}" /></apex:form>
         
     <apex:form id="theForm" rendered="{!hasOrg}">      
         <apex:pageBlock id="pb">
@@ -23,7 +23,7 @@
                 <input id="btnLoadGitData" type="button" onclick="USselectedMetadata.getGitMetadata()" value="{!$Label.REFRESH_GIT_SELECTIONS}" class="btn" />
                 <input id="btnAddTestClasses" type="button" onclick="addtestclasses();" value="{!$Label.ADD_TEST_CLASSES}" class="btn" />
             </apex:pageBlockButtons>
-            <div id="loadingDiv"><center><img src="/img/loading.gif" /> <i>{!$Label.copado__loading}<span id="retry-label"></span></i></center></div>  
+            <div id="loadingDiv"><center><img src="/img/loading.gif" /> <i>{!$Label.copado__LOADING}<span id="retry-label"></span></i></center></div>  
             <div id="jqxgrid_metadata"></div>
         </apex:pageBlock>
 
@@ -40,14 +40,15 @@
                 server: {
                     USgitMetadataUrl: '{!JSENCODE(urlBase)}userStoryGitMetadata/__USERSTORYID__{!JSENCODE(urlParameters)}&repositoryId=__repoId__&branch=__branch__'
                 },
-                ns: '{!JSENCODE(namespace)}'
+                ns: '{!JSENCODE(namespace)}',
+                platform: '{!JSENCODE(copado__User_Story__c.Org_Credential__r.copado__Platform__c)}',
             };
             var copadoApp = {
                 init: function(){
                     USselectedMetadata.init(_config);
                 }
             }
-            copadoApp.init();
+            copadoApp.init( );
         </script>
     </apex:form>
     
