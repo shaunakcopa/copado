@@ -221,7 +221,7 @@
 
     <body>
         <div class="copado-lightning-VF">
-            <apex:sectionHeader id="theHeader" title="{!$ObjectType.copado__Selenium_Test_Suite__c.Label}" subtitle="{!copado__Selenium_Test_Suite__c.Name}" description="{!$Label.copado__test_cases_per_suite_description}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}" />
+            <apex:sectionHeader id="theHeader" title="{!$ObjectType.copado__Selenium_Test_Suite__c.Label}" subtitle="{!copado__Selenium_Test_Suite__c.Name}" description="{!$Label.copado__TEST_CASES_PER_SUITE_DESCRIPTION}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}" />
 
             <!-- check that the feature is enabled, and the user has a license assigned -->
             <apex:pageMessage severity="WARNING" strength="2" summary="{!HTMLENCODE(possibleCSTErrorMsg)}" rendered="{!AND(!ISNULL(possibleCSTErrorMsg),$User.UIThemeDisplayed != 'Theme4d')}"></apex:pageMessage>
@@ -259,7 +259,7 @@
                   </div>
                   <div class="slds-grid">
                     <div class="slds-col slds-align-middle">
-                        <p class="slds-text-body_small">{!$Label.copado__test_cases_per_suite_description}</p>
+                        <p class="slds-text-body_small">{!$Label.copado__TEST_CASES_PER_SUITE_DESCRIPTION}</p>
                     </div>
                   </div>
                   <div style="background: white; height: 25px;">
@@ -270,7 +270,7 @@
 
             <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">
                 <apex:form id="theForm" rendered="{!$Setup.copado__Copado_License__c.copado__Enable_CST__c}" styleClass="copado-lightning-container" style="padding-top:12px;">
-                    <apex:pageBlock id="pb" title="{!$Label.copado__add_remove_test_case_description}">
+                    <apex:pageBlock id="pb" title="{!$Label.copado__ADD_REMOVE_TEST_CASE_DESCRIPTION}">
                         <apex:pageBlockButtons >
                             <apex:commandButton action="{!saveTestCasesPerSuite}" value="{!$Label.site.save}" onclick="cps.pre_save()" />
                             <apex:commandButton action="{!cancel}" value="{!$Label.site.cancel}" immediate="true" />

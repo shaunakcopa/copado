@@ -105,8 +105,8 @@
     						  </span>
     						</div>
     						<div class="slds-media__body">
-    						  <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="User Story Code Analysis">{!$Label.copado__user_story_code_analysis}</h1>
-    						  <p class="slds-text-body_small slds-line-height_reset">{!$Label.copado__source_code_analysis}</p>
+    						  <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="User Story Code Analysis">{!$Label.copado__USER_STORY_CODE_ANALYSIS}</h1>
+    						  <p class="slds-text-body_small slds-line-height_reset">{!$Label.copado__SOURCE_CODE_ANALYSIS}</p>
     						</div>
     					</div>
     				</div>
