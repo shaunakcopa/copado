@@ -1,4 +1,4 @@
-<apex:page standardController="copado__Selenium_Test_Run__c" recordSetVar="runs" extensions="copado.MassAddRunsToGroup" title="{!$Label.copado__select_group_to_add_runs}" lightningStylesheets="true">
+<apex:page standardController="copado__Selenium_Test_Run__c" recordSetVar="runs" extensions="copado.MassAddRunsToGroup" title="{!$Label.copado__SELECT_GROUP_TO_ADD_RUNS}" lightningStylesheets="true">
     <head>
         <c:GAnalytics />
         <apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" />
@@ -6,7 +6,7 @@
     <body>
         <apex:form id="theForm" styleClass="copado-lightning-container" html-novalidate="true">
             <apex:pageMessages />
-            <apex:sectionHeader title="{!$ObjectType.copado__Selenium_Test_Group__c.Label}" subtitle="{!$Label.copado__add_suites_to_a_group}" description="{!$Label.copado__select_group_to_add_runs}"/>
+            <apex:sectionHeader title="{!$ObjectType.copado__Selenium_Test_Group__c.Label}" subtitle="{!$Label.copado__ADD_SUITES_TO_A_GROUP}" description="{!$Label.copado__SELECT_GROUP_TO_ADD_RUNS}"/>
             <apex:pageBlock mode="edit">
                 <apex:pageblockButtons >
                     <apex:commandButton value="{!$Label.site.cancel}" action="{!cancel}" />
