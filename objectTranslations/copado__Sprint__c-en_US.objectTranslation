@@ -5,6 +5,11 @@
         <name>copado__ActualVelocity__c</name>
     </fields>
     <fields>
+        <help><!-- This value is calculated by adding up the total planned points of the user stories in the sprint when their status is changed to Completed. This status can be configured in the Actual Velocity Statuses custom metadata type. Please refer to the Copado Sprint Velocity article for more information. --></help>
+        <label><!-- Actual Velocity --></label>
+        <name>copado__Actual_Velocity__c</name>
+    </fields>
+    <fields>
         <label><!-- Days in sprint --></label>
         <name>copado__Days_in_sprint__c</name>
     </fields>
@@ -27,6 +32,11 @@
     <fields>
         <label><!-- Planned Velocity --></label>
         <name>copado__PlannedVelocity__c</name>
+    </fields>
+    <fields>
+        <help><!-- This value is recalculated with every change made to the Planned Points or Planned Points Other assigned to all the user stories in the sprint or when new user stories are added. --></help>
+        <label><!-- Planned Velocity --></label>
+        <name>copado__Planned_Velocity__c</name>
     </fields>
     <fields>
         <label><!-- Project --></label>

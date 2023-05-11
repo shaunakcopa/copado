@@ -2299,7 +2299,16 @@ var copadoStep = {
             //update step data for commit and repository
             //copadoStep
             //update metadata selected attach
-            dw.u.upsertAttach(copadoStep.stepId, 'MetaData', JSON.stringify(list));
+            let MetaDataList = [], GitDeletionList=[];
+            for(let l of list){
+                if(l.cmm === 'deleted'){
+                    GitDeletionList.push(l);
+                }else{
+                    MetaDataList.push(l);
+                }
+            }
+            dw.u.upsertAttach(copadoStep.stepId, 'MetaData', JSON.stringify(MetaDataList));
+            dw.u.upsertAttach(copadoStep.stepId, 'Git Deletion', JSON.stringify(GitDeletionList));
             cb && cb();
         };
         me.handlers['Git Promotion'].updateStepFields = function (step, obj) {
@@ -3842,6 +3851,7 @@ rock.getSelectedObj = function () {
                 t: data[len].t,
                 n: data[len].n,
                 vk: data[len].vk,
+                cmm : data[len].hasOwnProperty('cmm') ? data[len].cmm : '',
                 s: true
             });
     }
@@ -5677,12 +5687,17 @@ var copadoGitPromotionStep = {
             //get saved data
             if (me.stepObj.Id) {
                 var prev = dw.u.getDecodedAttach(me.stepObj.Id, 'MetaData');
+                var prevDel = dw.u.getDecodedAttach(me.stepObj.Id, 'Git Deletion');
                 if (prev) {
                     me.data.prevAttId = prev.Id;
                 }
             }
 
             prev = prev ? JSON.parse(prev.Body) : [];
+            prevDel = prevDel ? JSON.parse(prevDel.Body) : [];
+            if(prevDel.length>0){
+                prev.push(...prevDel);
+            }
 
             setTimeout(function () {
                 cb && cb(att, prev);

@@ -161,7 +161,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>User Stories by Status</value>
+                    <value>{!$Label.copado__User_Stories_by_Status}</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>reportFilter</name>
