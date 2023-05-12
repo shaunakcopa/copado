@@ -205,14 +205,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__AutomationTemplateService</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__AutomationTemplateUpgrade</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>copado__BackupBatch</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -378,6 +370,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__CommitAction</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CommitChangeIntermediaryCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -1045,10 +1041,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__DeploymentStatusService</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>copado__DeploymentStepsUtils</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -1130,6 +1122,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__DynamicExpression</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DynamicExpressionHelperCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -1542,6 +1538,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__JobExecutionCallback</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__JobExecutionFieldsPicklist</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__JobExecutionMonitorCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -2581,6 +2585,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__SprintSnapshotBatch</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__SprintTriggerHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -2934,10 +2942,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__WizardUtilsController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__WorkDisplayService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -3711,12 +3715,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Burndown_Item__c.copado__Actual_Velocity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Burndown_Item__c.copado__Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Burndown_Item__c.copado__Expected_Story_Point__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Burndown_Item__c.copado__Planned_Velocity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Burndown_Item__c.copado__Snapshot_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6371,7 +6390,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>copado__Sprint__c.copado__ActualVelocity__c</field>
+        <field>copado__Sprint__c.copado__Actual_Velocity__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6401,7 +6420,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>copado__Sprint__c.copado__PlannedVelocity__c</field>
+        <field>copado__Sprint__c.copado__Planned_Velocity__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
