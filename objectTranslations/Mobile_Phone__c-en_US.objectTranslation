@@ -9,31 +9,27 @@
         <value>Mobile Phones</value>
     </caseValues>
     <fields>
-        <label><!-- Company --></label>
+        <label></label>
         <name>Company__c</name>
     </fields>
     <fields>
-        <label><!-- Formula for Template --></label>
+        <label></label>
         <name>Formula_for_Template__c</name>
     </fields>
     <fields>
-        <label><!-- Price --></label>
+        <label></label>
         <name>Price__c</name>
     </fields>
     <fields>
-        <label><!-- Test Data External Field --></label>
-        <name>Test_Data_External_Field__c</name>
-    </fields>
-    <fields>
-        <label><!-- Test Field #1 --></label>
+        <label></label>
         <name>Test_Field_1__c</name>
     </fields>
     <recordTypes>
-        <label><!-- Record Type A --></label>
+        <label></label>
         <name>Record_Type_A</name>
     </recordTypes>
     <recordTypes>
-        <label><!-- Record Type B --></label>
+        <label></label>
         <name>Record_Type_B</name>
     </recordTypes>
     <startsWith>Consonant</startsWith>
