@@ -14,10 +14,6 @@
     </fields>
     <fields>
         <label></label>
-        <name>Formula_for_Template__c</name>
-    </fields>
-    <fields>
-        <label></label>
         <name>Price__c</name>
     </fields>
     <fields>
