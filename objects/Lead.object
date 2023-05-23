@@ -270,6 +270,7 @@
     </fields>
     <fields>
         <fullName>CleanStatus</fullName>
+        <complianceGroup>GDPR</complianceGroup>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
@@ -309,9 +310,9 @@
     </fields>
     <fields>
         <fullName>Fax</fullName>
-        <businessStatus>Active</businessStatus>
-        <complianceGroup>PII;GDPR</complianceGroup>
-        <securityClassification>Internal</securityClassification>
+        <complianceGroup>PII</complianceGroup>
+        <description>This is a Lead Field</description>
+        <inlineHelpText>This is another Lead Field</inlineHelpText>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
