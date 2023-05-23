@@ -10356,17 +10356,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Mobile_Phone__c.Formula_for_Template__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Mobile_Phone__c.Price__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Mobile_Phone__c.Test_Data_External_Field__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
