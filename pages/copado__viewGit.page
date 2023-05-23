@@ -1,4 +1,4 @@
-<apex:page standardController="copado__Git_Repository__c" extensions="copado.EditGit" action="{!validate}" title="{!$Label.copado__view} {!$ObjectType.copado__Git_Repository__c.Label}" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
+<apex:page standardController="copado__Git_Repository__c" extensions="copado.EditGit" action="{!validate}" title="{!$Label.copado__VIEW} {!$ObjectType.copado__Git_Repository__c.Label}" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds />
     <head>
         <title>Git Repository {!copado__Git_Repository__c.Name} | Copado</title>
@@ -100,41 +100,41 @@
                     <apex:param name="branch" value="" />
                 </apex:actionFunction>
 
-                <apex:pageBlock id="pb_createGit" mode="detail" helpUrl="https://docs.copado.com/git-repository/git-repository-overview" helpTitle="{!$Label.copado__help_for_this_page}" title="{!$Label.copado__details}">
+                <apex:pageBlock id="pb_createGit" mode="detail" helpUrl="https://docs.copado.com/git-repository/git-repository-overview" helpTitle="{!$Label.copado__HELP_FOR_THIS_PAGE}" title="{!$Label.copado__DETAILS}">
                     <apex:pageblockButtons >
                         <apex:commandButton value="{!$Label.site.edit}" action="{!edit}" />
-                        <apex:commandButton value="{!$Label.copado__delete}" action="{!deleteGitRepository}" />
-                        <apex:commandButton value="{!$Label.copado__share}" action="{!URLFOR($Action.Git_Repository__c.Share,Git_Repository__c.Id)}" rendered="{!isShareable}" />
-                        <apex:commandButton value="{!$Label.copado__create_ssh_keys}" action="{!createSSHKey}" rendered="{!isSSHauthentication}" />
-                        <apex:commandButton value="{!$Label.copado__create_deployment}" action="{!deployCommits}" />
+                        <apex:commandButton value="{!$Label.copado__DELETE}" action="{!deleteGitRepository}" />
+                        <apex:commandButton value="{!$Label.copado__SHARE}" action="{!URLFOR($Action.Git_Repository__c.Share,Git_Repository__c.Id)}" rendered="{!isShareable}" />
+                        <apex:commandButton value="{!$Label.copado__CREATE_SSH_KEYS}" action="{!createSSHKey}" rendered="{!isSSHauthentication}" />
+                        <apex:commandButton value="{!$Label.copado__CREATE_DEPLOYMENT}" action="{!deployCommits}" />
                         <apex:commandButton value="Retrieve Commits" onclick="openBranchNameModal();" rerender="theMessages" />
-                        <apex:commandButton value="{!$Label.copado__manage_git_branches}" action="{!goToManageGITBranches}" rendered="{!AND(showOptions,!showError)}" />
+                        <apex:commandButton value="{!$Label.copado__MANAGE_GIT_BRANCHES}" action="{!goToManageGITBranches}" rendered="{!AND(showOptions,!showError)}" />
                     </apex:pageblockButtons>
                     <apex:pageBlockSection columns="1">
                         <apex:outputField id="of_name" value="{!git.Name}" />
                         <apex:outputField id="sourceFormat" value="{!git.copado__Source_Format__c}" />
                         <apex:outputField id="of_uri" value="{!git.copado__URI__c}" />
                         <apex:pageBlockSectionItem rendered="{!!isSSHauthentication}">
-                            {!$Label.copado__username}
+                            {!$Label.copado__USERNAME}
                             <apex:outputText id="of_username" value="{!c_username}" />
                         </apex:pageBlockSectionItem>
                     </apex:pageBlockSection>
-                    <apex:pageBlockSection columns="1" title="{!$Label.copado__other_information}" rendered="{!showOtherInformation}">
+                    <apex:pageBlockSection columns="1" title="{!$Label.copado__OTHER_INFORMATION}" rendered="{!showOtherInformation}">
                         <apex:repeat value="{!$ObjectType.copado__Git_Repository__c.FieldSets.copado__CustomFields}" var="field">
                             <apex:outputField value="{!copado__Git_Repository__c[field]}" />
                         </apex:repeat>
                     </apex:pageBlockSection>
-                    <apex:pageBlockSection title="{!$Label.copado__current_keys}" rendered="{!hasKeys}" columns="1">
+                    <apex:pageBlockSection title="{!$Label.copado__CURRENT_KEYS}" rendered="{!hasKeys}" columns="1">
                         <apex:pageBlockTable id="tblKeys" value="{!attachments}" var="att">
                             <apex:column id="col1">
                                 <apex:facet name="header">
-                                    <apex:outputLabel >{!$Label.copado__action_column_header}</apex:outputLabel>
+                                    <apex:outputLabel >{!$Label.copado__ACTION_COLUMN_HEADER}</apex:outputLabel>
                                 </apex:facet>
                                 <apex:outputPanel >
-                                    <apex:commandLink action="{!viewKey}">{!$Label.copado__view}
+                                    <apex:commandLink action="{!viewKey}">{!$Label.copado__VIEW}
                                         <apex:param assignTo="{!selectedKeyId}" value="{!att.Id}" name="selectedKeyId" />
                                     </apex:commandLink>&nbsp;|&nbsp;
-                                    <apex:commandLink action="{!deleteKey}">{!$Label.copado__delete}
+                                    <apex:commandLink action="{!deleteKey}">{!$Label.copado__DELETE}
                                         <apex:param assignTo="{!selectedKeyId}" value="{!att.Id}" name="selectedKeyId" />
                                     </apex:commandLink>
                                 </apex:outputPanel>
@@ -153,9 +153,9 @@
                             </apex:column>
                         </apex:pageBlockTable>
                     </apex:pageBlockSection>
-                    <apex:pageBlockSection id="pbsViewKey" columns="1" rendered="{!keyVisible}" title="{!$Label.copado__key_content}" collapsible="false">
+                    <apex:pageBlockSection id="pbsViewKey" columns="1" rendered="{!keyVisible}" title="{!$Label.copado__KEY_CONTENT}" collapsible="false">
                         <textarea id="wrap" readonly="true" cols="150" rows="10" wrap="hard">{!selectedKeyContent}</textarea>
-                        <apex:commandButton id="btnHideKey" value="{!$Label.copado__hide_key}" action="{!hideSSHkey}" />
+                        <apex:commandButton id="btnHideKey" value="{!$Label.copado__HIDE_KEY}" action="{!hideSSHkey}" />
                     </apex:pageBlockSection>
                     <apex:pageBlockSection columns="1" title="Latest Commits">
                         <apex:pageBlockTable var="cm" value="{!commits}">

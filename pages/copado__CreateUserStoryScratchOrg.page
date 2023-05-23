@@ -12,14 +12,13 @@
 
         </script>
         <c:IncludeConnectionJsComponent />
-        <c:IncludeCodeMirrorResourceComponent addCMjs="true" addYamljs="false" addActiveLinejs="true" addJSONLintjs="true" addLintjs="true" addAutoRefreshjs="false" addCommentjs="true" addCMcss="true" addEclipsecss="true" addLintcss="true"/>
 
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
     </head>
     <body>
     <apex:form >
         <c:CopadoSmartHelpComponent />
-        <c:ScreenLocker msg="{!$Label.copado__loading}" useJobsManager="true"
+        <c:ScreenLocker msg="{!$Label.copado__LOADING}" useJobsManager="true"
                         possibleRunningJobs=",DxCreateFullScratchOrgJob,,true;,DxListRepositoryBranches,,true;,DxListOrgPackagesJob,,true" />
         <script>
 			window.addEventListener('copadoJobsManagerFinished', function (evt) {
@@ -41,7 +40,7 @@
                         } else if(jobFinished && jobSuccess && jobType == 'DxCreateFullScratchOrgJob') {
                             CompleteFullCreate();
                         } else if(jobFinished){
-                            setLockScreenMessage('{!JSENCODE($Label.copado__loading)}');
+                            setLockScreenMessage('{!JSENCODE($Label.copado__LOADING)}');
                         }
                     }
                 }, false);
@@ -53,7 +52,7 @@
             <apex:param value="" name="jobMessage" />
             <apex:param value="" name="jobType" />
         </apex:actionFunction>
-        <apex:actionFunction name="CompleteFullCreate" action="{!fullCreateCompleted}" reRender="componentSection" onComplete="setLockScreenMessage('{!JSENCODE($Label.copado__loading)}');"/>
+        <apex:actionFunction name="CompleteFullCreate" action="{!fullCreateCompleted}" reRender="componentSection" onComplete="setLockScreenMessage('{!JSENCODE($Label.copado__LOADING)}');"/>
         <apex:outputPanel layout="block" id="dxNotEnabled" rendered="{!!isDXEnabled}">
             <apex:pageMessages id="dxNotEnabledMessage" />
         </apex:outputPanel>
@@ -164,37 +163,33 @@
                 <apex:outputPanel layout="block" rendered="{!metadata == 'CURRENT'}">
                     <apex:actionFunction name="renderParent" reRender="progressContainer" />
                     <c:ScratchOrgMetadata parentPageController="{!this}" componentName="ScratchOrgMetadata"
-                                          showActionButtons="false" mode="wizard" />
+                                          showActionButtons="false" mode="wizard"/>
                 </apex:outputPanel>
                 <apex:outputPanel layout="block" rendered="{!definition == 'CURRENT'}">
                     <apex:actionFunction name="renderParent" reRender="progressContainer" />
                     <c:ScratchOrgTemplate parentPageController="{!this}" componentName="ScratchOrgTemplate"
-                                          showActionButtons="false" mode="wizard" showAllTemplateButtons="true" /> 
+                                          showActionButtons="false" mode="wizard" showAllTemplateButtons="true" />
                 </apex:outputPanel>
                 <apex:outputPanel layout="block" rendered="{!extension == 'CURRENT'}">
                     <apex:actionFunction name="renderParent" reRender="progressContainer" />
                     <c:ScratchOrgExtensions parentPageController="{!this}" componentName="ScratchOrgExtensions" mode="wizard" />
                 </apex:outputPanel>
                 <apex:outputPanel layout="block" rendered="{!AND(OR(review == 'CURRENT',review == 'COMPLETE'),!showExtensionStatus)}">
-                    <c:ScratchOrgCompletion id="soc" parentPageController="{!this}" componentName="ScratchOrgCompletion"
+                    <c:ScratchOrgCompletion id="reviewComponent" parentPageController="{!this}" componentName="ScratchOrgCompletion"
                                             showActionButtons="false" mode="wizard" />
                     <apex:inputHidden value="{!selectedPermissions}" id="permSetsPage" />
-                    <apex:actionFunction name="loadReviewData" action="{!loadReviewData}" reRender="soc" />
+                    <apex:actionFunction name="loadReviewData" action="{!loadReviewData}" reRender="reviewComponent" />
                     <script type="application/javascript">
                     (function () {
-                        setTimeout(
-                            function () {
-                                loadReviewData()
-                            }
-                            , 100
-                        )
+                        setTimeout(function () {
+                            loadReviewData();
+                        }, 100)
                     })();
-
                     </script>
                 </apex:outputPanel>
                 <apex:outputPanel layout="block" rendered="{!showExtensionStatus}">
                     <apex:actionFunction name="renderParent" reRender="progressContainer" />
-                    <c:DXExtensionStatuses parentPageController="{!this}" componentName="ExtensionStatuses" mode="wizard" destinationEnvironmentName="Scratch Org For {!parentUS.Name}" />
+                    <c:DXExtensionStatuses parentPageController="{!this}" componentName="ExtensionStatuses" mode="wizard" destinationEnvironmentName="Scratch Org For {!thisUserStory.Name}" />
                 </apex:outputPanel>
             </apex:outputPanel>
         </apex:outputPanel>

@@ -8,7 +8,7 @@
     <apex:slds />
     <apex:form styleClass="slds-scope">
         <apex:pageMessages id="packageMsg" />
-        <c:ScreenLocker msg="{!$Label.copado__loading}" useJobsManager="true" possibleRunningJobs=",DXCreatePackage,,true;,DXCreatePackageVersion,,true;,DXPackageStatusTracking,,true;,DXPackageUpdate,,true;,DXPackageVersionUpdate,,true;,DXPromoteBetaReleased,,true;"/>
+        <c:ScreenLocker msg="{!$Label.copado__LOADING}" useJobsManager="true" possibleRunningJobs=",DXCreatePackage,,true;,DXCreatePackageVersion,,true;,DXPackageStatusTracking,,true;,DXPackageUpdate,,true;,DXPackageVersionUpdate,,true;,DXPromoteBetaReleased,,true;"/>
         <script>
             window.addEventListener('copadoJobsManagerFinished', function (evt) {
                 for(var i=0 ; i < evt.detail.length ; i++ ) {
@@ -22,7 +22,7 @@
                     console.debug("Job Type: ", jobType);
                     jobstatus(jobFinished,jobSuccess,jobMessage,jobType);
                     if(jobFinished){
-                        setLockScreenMessage('{!JSENCODE($Label.copado__loading)}');
+                        setLockScreenMessage('{!JSENCODE($Label.copado__LOADING)}');
                     }
                 }
             }, false);

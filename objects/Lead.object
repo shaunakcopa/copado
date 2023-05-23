@@ -270,6 +270,7 @@
     </fields>
     <fields>
         <fullName>CleanStatus</fullName>
+        <complianceGroup>GDPR</complianceGroup>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
@@ -309,7 +310,15 @@
     </fields>
     <fields>
         <fullName>Fax</fullName>
+        <complianceGroup>PII</complianceGroup>
+        <description>This is a Lead Field</description>
+        <inlineHelpText>This is another Lead Field</inlineHelpText>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>GenderIdentity</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>HasOptedOutOfEmail</fullName>
@@ -423,6 +432,11 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Pronouns</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Rating</fullName>

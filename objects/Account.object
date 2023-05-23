@@ -270,6 +270,7 @@
     </fields>
     <fields>
         <fullName>CleanStatus</fullName>
+        <complianceGroup>HIPAA</complianceGroup>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
@@ -344,6 +345,7 @@
     </fields>
     <fields>
         <fullName>NumberofLocations__c</fullName>
+        <description>Amazing description</description>
         <externalId>false</externalId>
         <label>Number of Locations</label>
         <precision>3</precision>
@@ -454,6 +456,9 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Tier</fullName>
+    </fields>
+    <fields>
         <fullName>Tradestyle</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -497,6 +502,14 @@
     <fields>
         <fullName>YearStarted</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>istest__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>istest</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
     </fields>
     <listViews>
         <fullName>AllAccounts</fullName>
