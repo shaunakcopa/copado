@@ -285,7 +285,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Information</value>
+                    <value>{!$Label.copado__INFO}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection1</identifier>
@@ -299,7 +299,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Advanced Options</value>
+                    <value>{!$Label.copado__Advanced_Options}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection5</identifier>
@@ -599,7 +599,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Projects</value>
+                    <value>{!$Label.copado__Projects}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab6</identifier>
@@ -613,7 +613,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Settings</value>
+                    <value>{!$Label.copado__Settings}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab</identifier>
@@ -627,7 +627,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Structure</value>
+                    <value>{!$Label.copado__Structure}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab12</identifier>
@@ -641,7 +641,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Job Executions</value>
+                    <value>{!$Label.copado__Job_Executions}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab13</identifier>
@@ -655,7 +655,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Quality Gates</value>
+                    <value>{!$Label.copado__QUALITY_GATES}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab10</identifier>
@@ -669,7 +669,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Automations</value>
+                    <value>{!$Label.copado__Automations}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab9</identifier>
@@ -683,7 +683,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Notes &amp; Attachments</value>
+                    <value>{!$Label.copado__NOTES_ATTACHMENTS}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab7</identifier>
@@ -987,7 +987,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Information</value>
+                    <value>{!$Label.copado__INFO}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection</identifier>
@@ -1001,7 +1001,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Advanced Options</value>
+                    <value>{!$Label.copado__Advanced_Options}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection3</identifier>
@@ -1015,7 +1015,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Copado DX</value>
+                    <value>{!$Label.copado__Copado_DX}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection4</identifier>
@@ -1195,7 +1195,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Pipeline Connections</value>
+                    <value>{!$Label.copado__DEPLOYMENT_FLOW_STEPS}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>customTab</identifier>
@@ -1209,7 +1209,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Projects</value>
+                    <value>{!$Label.copado__Projects}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>customTab2</identifier>
@@ -1223,7 +1223,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Views</value>
+                    <value>{!$Label.copado__Views}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>customTab3</identifier>
@@ -1237,7 +1237,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Environment Variables</value>
+                    <value>{!$Label.copado__Environment_Variables}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab1</identifier>
@@ -1251,7 +1251,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>System Properties</value>
+                    <value>{!$Label.copado__SYSTEM_PROPERTIES}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>customTab4</identifier>
@@ -1265,7 +1265,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Notes &amp; Attachments</value>
+                    <value>{!$Label.copado__NOTES_ATTACHMENTS}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab2</identifier>

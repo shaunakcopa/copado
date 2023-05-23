@@ -50,7 +50,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>CustomButton.copado__User_Story__c.copado__MC_Commit_Changes</value>
+                            <value>copado__User_Story__c.copado__Commit_Changes</value>
                             <visibilityRule>
                                 <booleanFilter>1 AND 2 AND 3</booleanFilter>
                                 <criteria>
@@ -71,6 +71,26 @@
                         </valueListItems>
                         <valueListItems>
                             <value>CustomButton.copado__User_Story__c.copado__Perform_Validation</value>
+                            <visibilityRule>
+                                <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+                                <criteria>
+                                    <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
+                                    <operator>NE</operator>
+                                    <rightValue>Investigation</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Platform__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Salesforce</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Platform__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CustomButton.copado__User_Story__c.copado__Commit_Data</value>
                             <visibilityRule>
                                 <booleanFilter>1 AND (2 OR 3)</booleanFilter>
                                 <criteria>
@@ -121,26 +141,6 @@
                         </valueListItems>
                         <valueListItems>
                             <value>CustomButton.copado__User_Story__c.copado__Ready_for_Promotion</value>
-                            <visibilityRule>
-                                <booleanFilter>1 AND (2 OR 3)</booleanFilter>
-                                <criteria>
-                                    <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Investigation</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.copado__Platform__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>Salesforce</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.copado__Platform__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                </criteria>
-                            </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>CustomButton.copado__User_Story__c.copado__Commit_Data</value>
                             <visibilityRule>
                                 <booleanFilter>1 AND (2 OR 3)</booleanFilter>
                                 <criteria>
@@ -4279,7 +4279,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Relationships</value>
+                    <value>{!$Label.copado__Relationships}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>customTab13</identifier>
@@ -4387,7 +4387,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Relationships</value>
+                    <value>{!$Label.copado__Relationships}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>customTab14</identifier>
@@ -4401,7 +4401,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Approval History</value>
+                    <value>{!$Label.copado__Approval_History}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>customTab15</identifier>

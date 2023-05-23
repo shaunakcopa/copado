@@ -60,6 +60,14 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>platformFieldApiName</name>
+                    <value>Pipeline__r.Platform__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>warningMessage</name>
+                    <value>{!$Label.copado__AppDetectorDefaultLabel}</value>
+                </componentInstanceProperties>
                 <componentName>copado:appDetector</componentName>
                 <identifier>c_appDetector</identifier>
             </componentInstance>
@@ -91,12 +99,20 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.OwnerId</fieldItem>
                 <identifier>RecordOwnerIdField1</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Pipeline__c</fieldItem>
                 <identifier>RecordPipeline_cField1</identifier>
             </fieldInstance>
@@ -107,18 +123,30 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.RecordTypeId</fieldItem>
                 <identifier>RecordRecordTypeIdField1</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Package_Type__c</fieldItem>
                 <identifier>RecordPackage_Type_cField1</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Artifact_Version__c</fieldItem>
                 <identifier>RecordArtifact_Version_cField1</identifier>
             </fieldInstance>
@@ -135,12 +163,20 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__DefaultBranch__c</fieldItem>
                 <identifier>RecordDefaultBranch_cField1</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__DefaultPath__c</fieldItem>
                 <identifier>RecordDefaultPath_cField1</identifier>
             </fieldInstance>
@@ -175,6 +211,10 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.CreatedById</fieldItem>
                 <identifier>RecordCreatedByIdField1</identifier>
             </fieldInstance>
@@ -185,6 +225,10 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.LastModifiedById</fieldItem>
                 <identifier>RecordLastModifiedByIdField1</identifier>
             </fieldInstance>

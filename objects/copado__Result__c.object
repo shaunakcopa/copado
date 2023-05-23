@@ -394,6 +394,20 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>copado__Job_Execution__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Record link shortcutting to Job Step&apos;s Job Execution</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp;  copado__JobStep__r.copado__JobExecution__c ,  copado__JobStep__r.copado__JobExecution__r.Name , &quot;_blank&quot;)</formula>
+        <inlineHelpText>Record link shortcutting to Job Step&apos;s Job Execution</inlineHelpText>
+        <label>Job Execution</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__Job_Id__c</fullName>
         <deprecated>false</deprecated>
         <description>Unique identifier used to map the result with an external job.</description>

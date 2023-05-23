@@ -1237,14 +1237,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__AutomationTemplateService</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__AutomationTemplateUpgrade</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>copado__BackupBatch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1554,6 +1546,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__CommitActionTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CommitChangeIntermediaryCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CommitChangeIntermediaryCtrlTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -2501,10 +2501,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__DeploymentStatusService</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>copado__DeploymentStepsUtils</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -2614,6 +2610,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__DynamicExpressionEvaluateServiceImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DynamicExpressionHelperCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DynamicExpressionHelperCtrlTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -3173,14 +3177,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__HistoryTrendingCollector</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__HistoryTrendingCollectorTest</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>copado__HttpCallout</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -3294,6 +3290,22 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__JobExecutionConstants</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__JobExecutionFieldsPicklist</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__JobExecutionFieldsPicklistTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__JobExecutionMonitorCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__JobExecutionMonitorCtrlTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -4441,6 +4453,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__ResultViewerCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ResultViewerCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ResultsSelector</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -4993,11 +5013,35 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__Sprint</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__SprintChartNumberFieldsPicklist</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>copado__SprintChartNumberFieldsPicklistTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__SprintSnapshotBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__SprintSnapshotBatchTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__SprintSnapshotConstants</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__SprintSnapshotRecordsCollector</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__SprintSnapshotRecordsCollectorTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -5197,14 +5241,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__TestAutomationTemplateService</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestAutomationTemplateUpgrade</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>copado__TestBackupBatch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -5350,10 +5386,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__TestDeploymentFlowTrigger2</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__TestDeploymentStatusService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -5921,10 +5953,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__Test_WorkDisplayService</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>copado__Test_WorkPushService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -6410,10 +6438,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__WizardUtilsControllerTest</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__WorkDisplayService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -12887,12 +12911,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Burndown_Item__c.copado__Actual_Velocity__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Burndown_Item__c.copado__Date__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Burndown_Item__c.copado__Expected_Story_Point__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Burndown_Item__c.copado__Planned_Velocity__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Burndown_Item__c.copado__Snapshot_Date__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -14562,6 +14601,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Function__c.copado__Result_Viewer_Component__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Function__c.copado__Script__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -14903,6 +14947,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__JobStep__c.copado__ResultDataJson__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__JobStep__c.copado__Result_Viewer_Component__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -15957,6 +16006,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Result__c.copado__Job_Execution__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Result__c.copado__Job_Id__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -16412,6 +16466,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Sprint__c.copado__Actual_Velocity__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Sprint__c.copado__Days_in_sprint__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -16438,6 +16497,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Sprint__c.copado__PlannedVelocity__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Sprint__c.copado__Planned_Velocity__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -17318,6 +17382,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Test__c.copado__LatestJobExecution__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Test__c.copado__Latest_Result_Status__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -18283,11 +18352,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copadoconnect__ObjectMapping__c.copadoconnect__Synced__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>copadometrics__Copado_Analytics_Settings__mdt.copadometrics__Site_Dashboard_URL__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <layoutAssignments>
@@ -19929,14 +19993,6 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>copadoconnect__Integration_Log__c</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copadometrics__DevOps_Analytics</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>copadometrics__DevOps_Analytics_Setup</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
