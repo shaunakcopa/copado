@@ -271,6 +271,18 @@ The class must implement the MCCallBack interface.</inlineHelpText>
         <visibleLines>20</visibleLines>
     </fields>
     <fields>
+        <fullName>copado__Result_Viewer_Component__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the name of the lightning component that you want to render on the related result record. The name must be in the namespace:componentName format.</inlineHelpText>
+        <label>Result Viewer Component</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__Script__c</fullName>
         <deprecated>false</deprecated>
         <description>Provide the script with the commands you would like the function to execute.</description>

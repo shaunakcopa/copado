@@ -10,7 +10,7 @@
                             <value>Edit</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>CustomButton.copado__User_Story__c.copado__MC_Commit_Changes</value>
+                            <value>copado__User_Story__c.copado__Commit_Changes</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.copado__Platform__c}</leftValue>
