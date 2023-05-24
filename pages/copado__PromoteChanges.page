@@ -20,6 +20,10 @@
         <apex:includeScript value="{!URLFOR($Resource.copado__DataTables10,'DataTables10/datatables.min.js')}" />
         <link rel="stylesheet" typea="text/css" href="{!URLFOR($Resource.DataTables10,'DataTables10/datatables.min.css')}" />
 
+        <apex:outputPanel id="hiddenVars">
+            <input id="hiddenRollbackFlag" type="hidden" value="{!enableRollbackEnv}" />
+        </apex:outputPanel>
+        
         <style type="text/css">
             .circle-info-half {
                 z-index: -1;
@@ -56,7 +60,7 @@
                 sourceOrgId: '{!JSENCODE(copado__Promotion__c.copado__Source_Org_Credential__c)}',
                 destinationOrgId: '{!JSENCODE(copado__Promotion__c.copado__Destination_Org_Credential__c)}',
 
-                createDeployment: function (deploymentName, isTestOnly, testLevel) {
+                createDeployment: function (deploymentName, isTestOnly, testLevel, attachdeploymentfile) {
                     if (copadoApp.sourceOrgId == '') {
                         alert(copadoLabels.SOURCE_ORG_CREDENTIAL_REQUIRED_FOR_DEPLOYMENT);
                         return false;
@@ -65,17 +69,15 @@
                         alert(copadoLabels.DESTINATION_ORG_CREDENTIAL_REQUIRED_FOR_DEPLOYMENT);
                         return false;
                     }
-                    if (isTestOnly == true) setLockScreenMessage('{!$Label.copado__creating_validation_deployment_message}');
-                    lockScreen();
+                    if (isTestOnly == true) setLockScreenMessage('{!$Label.copado__Creating_Validation_Deployment_Message}');
 
-                    var att = globalJobsManagerStart(copadoApp.promotionId, 'Promotion', "{!JSENCODE(jobsManagerMatchingKeys)}");
-                    copadoApp.callBackEnd(deploymentName, isTestOnly, testLevel, att);
+                    copadoApp.callBackEnd(deploymentName, isTestOnly, testLevel, '', attachdeploymentfile);
                 },
                 sforceFailure: function (error) {
                     console.error('An error has occured with the Salesforce Ajax Toolkit: ', error);
                     alert(error);
                 },
-                callBackEnd: function (deploymentName, isTestOnly, testLevel, att) {
+                callBackEnd: function (deploymentName, isTestOnly, testLevel, att, attachdeploymentfile) {
                     var isTestOnly = isTestOnly || false;
                     if (deploymentName == null) {
                         unlockScreen();
@@ -84,24 +86,9 @@
                     else {
                         console.log('Calling Copado for: ', copadoApp.promotionId);
                         deploymentName = deploymentName.substring(0, 80);
-                        var url = '{!JSENCODE(urlBase)}promote/' + copadoApp.promotionId + '{!JSENCODE(urlParameters)}&deploy=false&deploymentName=' + encodeURIComponent(deploymentName) + '&checkOnly=' + isTestOnly + '&testLevel=' + testLevel;
-                        //console.info('url==> ',url);
-                        dw.u.getRemote(url, function (res) {
-                            console.log('Promote callback: ', res);
-                            copadoApp.callComplete();
-                        }, true, false, function (res) {//added by ucu to be able to get rid of the attachment of failed job which still shows in progress and locks the page.
-                            try {
-                                statusManager.handleStatusComplete(res);
-                                dw.u.deleteAttach(att.ParentId, att.Name);
-                            }
-                            catch (ex) {
-                                console.error('error is the following==> ', ex);
-                            }
-                        });
+                        var url = '{!JSENCODE(urlBase)}promote/' + copadoApp.promotionId + '{!JSENCODE(urlParameters)}&deploy=false&deploymentName=' + encodeURIComponent(deploymentName) + '&checkOnly=' + isTestOnly + '&testLevel=' + testLevel + '&attachDeploymentFile=' + attachdeploymentfile;
+                        callBackendToCreateDeployment(url);
                     }
-                },
-                callComplete: function () {
-                    reloadPromotionPage();
                 }
             }
 
@@ -130,7 +117,7 @@
                         }
                     })
                     if (depName) {
-                        var pullLink = $copado('<a href="#" onclick="getPullRequest(\'' + depName + '\');return false;"> | {!$Label.copado__create_pull_request}</a>');
+                        var pullLink = $copado('<a href="#" onclick="getPullRequest(\'' + depName + '\');return false;"> | {!$Label.copado__Create_Pull_Request}</a>');
                         pullLink.appendTo($copado(this).parent());
                     }
                 });
@@ -150,13 +137,13 @@
                             win.focus();
                         } else {
                             //Browser has blocked it
-                            alert('{!JSENCODE($Label.copado__popup_blocker_message)}');
+                            alert('{!JSENCODE($Label.copado__POPUP_BLOCKER_MESSAGE)}');
                         }
                     } catch (e) {
                         console.log('getPullRequest::error', e);
                     }
                 } else {
-                    alert('{!JSENCODE($Label.copado__pull_request_validation)}');
+                    alert('{!JSENCODE($Label.copado__PULL_REQUEST_VALIDATION)}');
                 }
             }
             //Modal Close
@@ -172,15 +159,25 @@
             }
 
             var showReviewConflictButton = function () {
-                var reviewConflictButton = $copado('<input id="customReviewConflictButton" type="button" class="btn" value="{!JSENCODE($Label.copado__merge_conflict_review)}" onclick="openResolveConflictsPage();"/>');
-                if({!IF(copado__Promotion__c.copado__Merge_Conflict__c, 1, 0)} || '{!JSENCODE(copado__Promotion__c.copado__Status__c)}' == '{!JSENCODE($Label.copado__merge_conflict)}'){
+                var reviewConflictButton = $copado('<input id="customReviewConflictButton" type="button" class="btn" value="{!JSENCODE($Label.copado__MERGE_CONFLICT_REVIEW)}" onclick="openResolveConflictsPage();"/>');
+                if ({!IF(copado__Promotion__c.copado__Merge_Conflict__c, 1, 0)} || '{!JSENCODE(copado__Promotion__c.copado__Status__c)}' == '{!JSENCODE($Label.copado__MERGE_CONFLICT)}' || {!isSmartConflict}) {
                     reviewConflictButton.appendTo($copado('[Id^="topButtonRow"]'));
+                }
+            }
+
+            var showRollbackButton = function () {
+                var rollbackButton = $copado('<input id="customRollbackButton" type="button" class="btn" value="{!JSENCODE($Label.copado__Rollback)}" onclick="openRollbackWizardPage();"/>');
+                if ({!IF(copado__Promotion__c.copado__Is_Rolled_Back__c, false, true)} && 
+                    $copado('[id$=hiddenRollbackFlag]').val() === 'true' &&
+                    '{!JSENCODE(copado__Promotion__c.copado__Status__c)}' == '{!JSENCODE(COMPLETED)}') {
+                    rollbackButton.appendTo($copado('[Id^="topButtonRow"]'));
                 }
             }
 
             document.onreadystatechange = function () {
                 if (document.readyState === 'complete') {
                     createPullRequestLinks();
+                    showRollbackButton();
                     showReviewConflictButton();
                 }
             }
@@ -197,7 +194,7 @@
                 if ('{!AND(openCreateDeployment, enableCreateDeploymentButton)}' === 'true' && attPc == null) {
                     openModal();
                 } else if ('{!AND(openCreateDeployment, !enableCreateDeploymentButton)}' === 'true') {
-                    alert('{!$Label.copado__conflict_resolution_deployment_not_enabled}');
+                    alert('{!$Label.copado__CONFLICT_RESOLUTION_DEPLOYMENT_NOT_ENABLED}');
                 }
 
                 //Buttons To middle No PBtitle
@@ -328,6 +325,7 @@
             </style>
         </apex:outputPanel>
         <script type="text/javascript">
+            var proId;
             function overridePageMessages() {
                 textureEffect = 'slds-theme--alert-texture';
 
@@ -352,8 +350,8 @@
                     animationStep: 5,
                     foregroundBorderWidth: 5,
                     backgroundBorderWidth: 15,
-                    percent: {!IF(str.countAllSourceRegression> 0, str.countFinishedSourceRegression * 100 / str.countAllSourceRegression, 0)            
-}
+                    percent: {!IF(str.countAllSourceRegression > 0, str.countFinishedSourceRegression * 100 / str.countAllSourceRegression, 0)
+            }
                 });
 
             copadoTcSRT.find(".circle-info-half").attr('data-text', '{!IF(str.countAllSourceRegression>0, (TEXT(str.countFinishedSourceRegression)+"/"+TEXT(str.countAllSourceRegression)), "0/0")}');
@@ -364,7 +362,7 @@
                 animationStep: 5,
                 foregroundBorderWidth: 5,
                 backgroundBorderWidth: 15,
-                percent: {!IF(str.countAllDestinationRegression> 0, str.countFinishedDestinationRegression * 100 / str.countAllDestinationRegression, 0)}
+                percent: {!IF(str.countAllDestinationRegression > 0, str.countFinishedDestinationRegression * 100 / str.countAllDestinationRegression, 0)}
                 });
 
             copadoTcDRT.find(".circle-info-half").attr('data-text', '{!IF(str.countAllDestinationRegression>0, (TEXT(str.countFinishedDestinationRegression)+"/"+TEXT(str.countAllDestinationRegression)), "0/0")}');
@@ -375,7 +373,7 @@
                 animationStep: 5,
                 foregroundBorderWidth: 5,
                 backgroundBorderWidth: 15,
-                percent: {!IF(str.countAllSourceUserStory> 0, str.countFinishedSourceUserStory * 100 / str.countAllSourceUserStory, 0)}
+                percent: {!IF(str.countAllSourceUserStory > 0, str.countFinishedSourceUserStory * 100 / str.countAllSourceUserStory, 0)}
                 });
             copadoTcSUST.find(".circle-info-half").attr('data-text', '{!IF(str.countAllSourceUserStory>0, (TEXT(str.countFinishedSourceUserStory)+"/"+TEXT(str.countAllSourceUserStory)), "0/0")}');
             copadoTcSUST.find(".circle-info-half").css('z-index', '-1');
@@ -385,7 +383,7 @@
                 animationStep: 5,
                 foregroundBorderWidth: 5,
                 backgroundBorderWidth: 15,
-                percent: {!IF(str.countAllDestinationUserStory> 0, str.countFinishedDestinationUserStory * 100 / str.countAllDestinationUserStory, 0)}
+                percent: {!IF(str.countAllDestinationUserStory > 0, str.countFinishedDestinationUserStory * 100 / str.countAllDestinationUserStory, 0)}
                 });
             copadoTcDUST.find(".circle-info-half").attr('data-text', '{!IF(str.countAllDestinationUserStory>0, (TEXT(str.countFinishedDestinationUserStory)+"/"+TEXT(str.countAllDestinationUserStory)), "0/0")}');
             copadoTcDUST.find(".circle-info-half").css('z-index', '-1');
@@ -419,13 +417,29 @@
                         "scrollCollapse": true
                     }
                 );
+                proId = '{!JSENCODE(Promotion__c.Id)}';
+                replaceLink();
             });
+
+            function replaceLink(){
+                $copado('[id$="RelatedNoteList_body"] a:contains(Show more)').on('click',function(){setTimeout(replaceLink, 3000)});
+                $copado('[id$="RelatedNoteList_body"] a:contains(Go to list)').attr('href',`/lightning/r/Promotion__c/${proId}/related/CombinedAttachments/view`);
+            }
+
+            function verifyPollStatus(isPollInProgress, conflictMessage) {
+                if (!isPollInProgress) {
+                    if (conflictMessage) {
+                        alert(conflictMessage);
+                    }
+                    reloadPromotionPage();
+                }
+            }
         </script>
     </head>
 
     <body>
         <apex:form >
-            <c:ScreenLocker id="cmpScreenLocker" msg="{!$Label.copado__creating_deployment}" />
+            <c:ScreenLocker id="cmpScreenLocker" msg="{!$Label.copado__CREATING_DEPLOYMENT}" />
         </apex:form>
 
         <div class="copado-lightning-VF">
@@ -498,7 +512,8 @@
                                                                 />
                                                             </svg>
                                                             <span class="slds-assistive-text">{!IF(promotion.Status__c == 'Completed','Stage Complete','Current
-                                                                Stage:')}</span>
+                                                                Stage:')}
+                                                            </span>
                                                         </span>
                                                         <span class="slds-tabs--path__title" style="{!IF(Promotion__c.Back_Promotion__c,'transform: rotate(180deg);','')}">
                                                             &nbsp;{!Promotion__c.Source_Environment__r.Name}
@@ -566,9 +581,11 @@
                                     <apex:form id="theForm">
                                         <apex:actionFunction name="reRenderForm" reRender="theForm" />
                                         <apex:actionFunction name="reloadPromotionPage" action="{!reloadPromotion}" reRender="dummy" />
+                                        <apex:actionFunction name="openRollbackWizardPage" action="{!openRollbackWizardPage}" reRender="dummy" />
                                         <apex:actionFunction name="openResolveConflictsPage" action="{!openResolveConflictsPage}" reRender="dummy" />
-
-                                        <c:JobsManager matchingKeys="{!jobsManagerMatchingKeys}"></c:JobsManager>
+                                        <apex:outputPanel id="jobManager">
+                                            <c:JobsManager matchingKeys="{!jobsManagerMatchingKeys}"></c:JobsManager>
+                                        </apex:outputPanel>
 
                                         <apex:outputPanel id="pnlDetail" layout="block" styleClass="copado-lightning-container">
                                             <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" layout="none">
@@ -668,6 +685,17 @@
                                                                 </div>
                                                             </div>
                                                             <div class="slds-form-element">
+                                                                <div class="slds-form-element__control">
+                                                                    <span class="slds-checkbox">
+                                                                        <input type="checkbox" name="default" id="attachdeploymentfile" value="on" />
+                                                                        <label class="slds-checkbox__label" for="attachdeploymentfile">
+                                                                            <span class="slds-checkbox_faux"></span>
+                                                                            <span class="slds-form-element__label">Attach Deployment File</span>
+                                                                        </label>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="slds-form-element">
                                                                 <label class="slds-form-element__label" for="input-id-01">Test Level</label>
                                                                 <div class="slds-form-element__control">
                                                                     <select id="testLevel" data-selected="" class="slds-select">
@@ -721,9 +749,14 @@
                                                 var deploymentName = $copado('#deploymentName').val();
                                                 var isTestOnly = $copado('#validationOnly').is(':checked');
                                                 var testLevel = $copado('[id$="testLevel"]').val();
+                                                var attachdeploymentfile = $copado('#attachdeploymentfile').is(':checked');
                                                 console.log(deploymentName, isTestOnly, testLevel);
                                                 closeModal();
-                                                copadoApp.createDeployment(deploymentName, isTestOnly, testLevel);
+                                                copadoApp.createDeployment(deploymentName, isTestOnly, testLevel, attachdeploymentfile);
+                                            }
+
+                                            function closeProgressModalFunction() {
+                                                closeProgressModal();
                                             }
                                         </script>
 
@@ -731,16 +764,16 @@
                                             <apex:outputPanel styleClass="copado-lightning-container">
                                                 <div id="wrapper" class="slds-scope">
                                                     <div id="right" style="width:100%;position:relative;">
-                                                        <apex:pageBlock id="pbRight" title="{!$Label.copado__user_stories_to_be_promoted}">
+                                                        <apex:pageBlock id="pbRight" title="{!$Label.copado__USER_STORIES_TO_BE_PROMOTED}">
                                                             <apex:pageBlockButtons id="pbButtons1" location="top">
                                                                 <button id="btnRemoveSelected" class="slds-button slds-button--neutral" value="{!$Label.REMOVE_SELECTED_USER_STORIES}" onclick="checkCount('pbTablePromotedStoriesOutput',copadoLabels.remove_selections); return false;">{!$Label.REMOVE_SELECTED_USER_STORIES}
                                                                 </button>
-                                                                <apex:commandButton reRender="USform" id="btnCreateDeployment" value="{!$Label.copado__create_deployment}" onclick="setLockScreenMessage(copadoLabels.loading);lockScreen();openDeploymentCreationModal();return false;"
+                                                                <apex:commandButton reRender="USform" id="btnCreateDeployment" value="{!$Label.copado__CREATE_DEPLOYMENT}" onclick="setLockScreenMessage(copadoLabels.loading);lockScreen();openDeploymentCreationModal();return false;"
                                                                     styleClass="slds-button slds-button--brand" disabled="{!!enableCreateDeploymentButton}"
                                                                 />
 
                                                                 <apex:commandlink id="warningLink" style="float: right;padding-top: 4px;" rendered="{!AND(dependenciesList != null,dependenciesList.size>0)}"
-                                                                    title="{!$Label.copado__usdependency_icontitle}" onclick="openUSDep(); return false;"
+                                                                    title="{!$Label.copado__USDependency_IconTitle}" onclick="openUSDep(); return false;"
                                                                     styleClass="icon-blinker">
                                                                     <svg class="slds-icon slds-icon-text-warning slds-icon_small" aria-hidden="true">
                                                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#warning')}"></use>
@@ -805,10 +838,30 @@
                                                 </script>
                                             </apex:outputPanel>
                                         </div>
+                                        <apex:outputPanel id="copadoNotificationStatus">
+                                            <apex:actionFunction name="callBackendToCreateDeployment" action="{!callBackendToCreateDeployment}" reRender="pageMessages,copadoNotificationStatus">
+                                                <apex:param id="url" name="url" value="" />
+                                            </apex:actionFunction>
+                                            <apex:actionFunction name="closeProgressModal" action="{!closeProgressModal}" reRender="copadoNotificationStatus" />
+                                            <apex:actionPoller oncomplete="verifyPollStatus({!isPollInProgress},'{!conflictMessage}'); return false;" enabled="{!isPollInProgress}"
+                                                action="{!checkCopadoNotificationStatus}" interval="5" reRender="copadoNotificationStatus,jobManager"
+                                            />
+                                            <apex:outputPanel rendered="{!AND(isPollInProgress,NOT(isSpinnerHiddenByUser))}">
+                                                <div id="screenLocker" class="slds-screenlocker lightninglocker" style="display:block;">
+                                                    <div id="screenLockerLightningFrame">
+                                                        <img style="width: 100px;" src="{!URLFOR($Resource.SLDS,'/assets/images/spinners/slds_spinner_brand.gif')}" />
+                                                        <p id="screenLockerMessage" class="lightninglockerMessage">{!notificationStep}</p>
+                                                        <br />
+                                                        <a href="#" onclick="closeProgressModalFunction(); return false;">{!$Label.HIDE_MESSAGE}</a>
+                                                    </div>
+                                                </div>
+                                            </apex:outputPanel>
+                                        </apex:outputPanel>
                                     </apex:form>
 
                                 </apex:outputPanel>
                             </div>
+
                             <div id="tab-default-2" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-2__item">
                                 <div class="slds-scope copado-lightning-container">
                                     <apex:outputPanel styleClass="copado-lightning-container">
@@ -817,7 +870,7 @@
                                                 <div id="left" style="width:100%; margin-left:0px;">
                                                     <apex:actionFunction action="{!addStoriesToPromotion}" status="tblStatus" name="addStories" rerender="pbRight,pbLeft,pageMessages"
                                                         onComplete="enableAddSelectedButton();initTus();" />
-                                                    <apex:pageBlock id="pbLeft" title="{!$Label.copado__user_stories_not_included_in_promotion}">
+                                                    <apex:pageBlock id="pbLeft" title="{!$Label.copado__USER_STORIES_NOT_INCLUDED_IN_PROMOTION}">
                                                         <apex:pageBlockButtons id="pbButtons2" location="top">
                                                             <input type="button" id="btnGetUserStories" value="{!$Label.ADD_SELECTED_USER_STORIES}" onclick="checkCount('pbTableUserStories',copadoLabels.selecting);"
                                                                 Class="slds-button slds-button--neutral" />
@@ -907,12 +960,12 @@
                                     </apex:outputPanel>
 
                                     <apex:outputPanel id="usMetadataPanel" layout="block" styleClass="copado-lightning-container">
-                                        <c:CopadoHelp sectionText="{!$Label.copado__outdated_component_help_text}" />
+                                        <c:CopadoHelp sectionText="{!$Label.copado__Outdated_Component_Help_Text}" />
                                         <apex:outputPanel layout="none" rendered="{!enableUserStoryMetadatas}">
-                                            <apex:pageBlock id="userStoryMetadata" title="{!$Label.copado__promotion_user_story_metadata}">
+                                            <apex:pageBlock id="userStoryMetadata" title="{!$Label.copado__PROMOTION_USER_STORY_METADATA}">
 
                                                 <apex:pageBlockButtons location="top">
-                                                    <apex:commandButton onclick="lockScreen();" value="{!$Label.copado__create_user_story}" action="{!createNewUs}" onComplete="unlockScreen();"
+                                                    <apex:commandButton onclick="lockScreen();" value="{!$Label.copado__Create_User_Story}" action="{!createNewUs}" onComplete="unlockScreen();"
                                                         reRender="pmessage,pageMessages" />
                                                 </apex:pageBlockButtons>
 
@@ -987,10 +1040,10 @@
                                                         animationStep: 5,
                                                         foregroundBorderWidth: 5,
                                                         backgroundBorderWidth: 15,
-                                                        percent: {!IF(sourceEnvMaxSCAScore> 0, worstSCAscore / sourceEnvMaxSCAScore, 0)                                                
-}
+                                                        percent: {!IF(sourceEnvMaxSCAScore> 0 && worstSCAscore != null, worstSCAscore / sourceEnvMaxSCAScore, 0)
+                                                }
                                                 });
-                                                $copado("#test-circleSCA .circle-info-half").attr('data-text', '{!IF(sourceEnvMaxSCAScore>0, (TEXT(worstSCAscore)+"/"+TEXT(sourceEnvMaxSCAScore)), "0/0")}');
+                                                $copado("#test-circleSCA .circle-info-half").attr('data-text', '{!IF(sourceEnvMaxSCAScore>0 && worstSCAscore != null, (TEXT(worstSCAscore)+"/"+TEXT(sourceEnvMaxSCAScore)), "0/0")}');
                                                 $copado("#test-circleSCA .circle-info-half").css('z-index', '-1');
                                             });
                                             </script>
@@ -998,8 +1051,8 @@
                                                 <center>
                                                     <div class="slds-text-title_caps">Static Code Analysis Score</div>
                                                     <div id="test-circleSCA" data-startdegree="0" data-type="full" data-dimension="150" data-info="platforms" data-width="20"
-                                                        data-fontsize="18" data-animationstep="0" data-text="{!IF(sourceEnvMaxSCAScore>0, (TEXT(worstSCAscore)+"
-                                                    / "+TEXT(sourceEnvMaxSCAScore)), "0/0 ")}" data-percent="{!IF(AND(sourceEnvMaxSCAScore>0,worstSCAscore!=null), worstSCAscore*100/sourceEnvMaxSCAScore, 0)}"
+                                                        data-fontsize="18" data-animationstep="0" data-text="{!IF(sourceEnvMaxSCAScore>0 && worstSCAscore != null, (TEXT(worstSCAscore)+'/'+TEXT(sourceEnvMaxSCAScore)), '0/0')}"
+                                                        data-percent="{!IF(AND(sourceEnvMaxSCAScore>0,worstSCAscore!=null), worstSCAscore*100/sourceEnvMaxSCAScore, 0)}"
                                                         data-fgcolor="{!IF(AND(sourceEnvMaxSCAScore>0,worstSCAscore!=null,worstSCAscore/sourceEnvMaxSCAScore<0.33), '#60C170 ',
                                                             IF(AND(sourceEnvMaxSCAScore>0,worstSCAscore!=null,worstSCAscore/sourceEnvMaxSCAScore<0.66), '#ffffb3 ', '#d68184 '))}"
                                                         data-bgcolor="#eee" data-fill="#fff" style="margin:auto;">
@@ -1017,7 +1070,7 @@
                                     <apex:outputPanel layout="none" rendered="{!enableSTS}">
                                         <apex:outputPanel id="summaryPanel" styleClass="slds-scope copado-lightning-container" layout="block">
                                             <apex:pageBlock id="strs" rendered="{!isCSTEnabled}">
-                                                <apex:pageBlockSection id="sTestResults" columns="1" collapsible="false" title="{!$Label.copado__selenium_test_results_summary}">
+                                                <apex:pageBlockSection id="sTestResults" columns="1" collapsible="false" title="{!$Label.copado__SELENIUM_TEST_RESULTS_SUMMARY}">
                                                     <script type="text/javascript">
                                                         (function () {
                                                             // Code to preserve the open/close state of this section: cookie co.PR.CSTR to uniquely identify this page
@@ -1111,16 +1164,16 @@
                                                 <apex:actionPoller action="{!refreshSeleniumTestGroups}" enabled="{!IsSeleniumRunning}" reRender="whole-selenium-panel" interval="5"
                                                     oncomplete="prepareSTSGraph();" />
 
-                                                <apex:pageBlock id="stg" title="{!$Label.copado__promotion_selenium_tests}">
+                                                <apex:pageBlock id="stg" title="{!$Label.copado__PROMOTION_SELENIUM_TESTS}">
                                                     <apex:pageBlockButtons location="top">
-                                                        <apex:commandButton value="{!$Label.copado__promotion_run_source_tests_regression}" action="{!runTestsSourceRegression}" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"
+                                                        <apex:commandButton value="{!$Label.copado__PROMOTION_RUN_SOURCE_TESTS_REGRESSION}" action="{!runTestsSourceRegression}" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"
                                                         />
-                                                        <apex:commandButton value="{!$Label.copado__promotion_run_source_tests_user_story}" action="{!runTestsSourceUserStory}" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"
+                                                        <apex:commandButton value="{!$Label.copado__PROMOTION_RUN_SOURCE_TESTS_USER_STORY}" action="{!runTestsSourceUserStory}" styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"
                                                         />
-                                                        <apex:commandButton value="{!$Label.copado__promotion_run_destination_tests_regression}" action="{!runTestsDestinationRegression}"
+                                                        <apex:commandButton value="{!$Label.copado__PROMOTION_RUN_DESTINATION_TESTS_REGRESSION}" action="{!runTestsDestinationRegression}"
                                                             styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"
                                                         />
-                                                        <apex:commandButton value="{!$Label.copado__promotion_run_destination_tests_user_story}" action="{!runTestsDestinationUserStory}"
+                                                        <apex:commandButton value="{!$Label.copado__PROMOTION_RUN_DESTINATION_TESTS_USER_STORY}" action="{!runTestsDestinationUserStory}"
                                                             styleClass="{!IF($User.UIThemeDisplayed=='Theme3','','slds-button slds-button--neutral')}"
                                                         />
                                                     </apex:pageBlockButtons>
@@ -1130,7 +1183,7 @@
                                                             <tr>
                                                                 <th>{!$ObjectType.copado__Selenium_Test_Group__c.fields.Name.Label}</th>
                                                                 <th>{!$ObjectType.copado__Selenium_Test_Group__c.fields.copado__Type__c.Label}</th>
-                                                                <th>{!$Label.copado__location}</th>
+                                                                <th>{!$Label.copado__Location}</th>
                                                                 <th>{!$ObjectType.copado__Selenium_Test_Group__c.fields.copado__Environment__c.Label}</th>
                                                                 <th>{!$ObjectType.copado__Selenium_Test_Group__c.fields.copado__Status_Date__c.Label}</th>
                                                                 <th>{!$ObjectType.copado__Selenium_Test_Group__c.fields.copado__Status__c.Label}</th>
@@ -1247,12 +1300,6 @@
                     statusManager.sessionId = __sfdcSessionId;
                     statusManager.parentId = '{!JSENCODE(Promotion__c.Id)}';
                     statusManager.waitTimeout = 10000;
-                    statusManager.initFunction = function () { };
-                    statusManager.successFunction = function () { copadoApp.callComplete(); };
-
-                    setTimeout(function () {
-                        statusManager.initialise();
-                    }, 2000);
                     var body = document.getElementsByTagName('body')[0];
                     body.addEventListener("beforeunload", function () {
                         copadoStreamingService.unload();
@@ -1282,11 +1329,9 @@
                     var excludeds = [];
                     var excludedstr = "{!JSENCODE(excludeds)}";
                     var seleniumtest = "{!isCSTEnabled}";
-                    console.log('exc==> ', excludeds);
                     if (excludedstr.length > 0) {
                         excludeds = excludedstr.split(';');
                         for (var i = 0; i < excludeds.length; i++) {
-                            console.log('excludeds[i]==> ', excludeds[i]);
                             $copado('[id$="' + excludeds[i] + '"]').detach();
                         }
                     }

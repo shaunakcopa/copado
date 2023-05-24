@@ -25,20 +25,20 @@
     <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}"/>
     <apex:form >
         <apex:sectionHeader title="{!copado__User_Story__c.Name}" subtitle="Test Class selector" />
-        <c:ScreenLocker msg="{!$Label.copado__loading}" useJobsManager="true" possibleRunningJobs=",UserStoryTestClassesRetriever,{!Id},true;"/>
+        <c:ScreenLocker msg="{!$Label.copado__LOADING}" useJobsManager="true" possibleRunningJobs=",UserStoryTestClassesRetriever,{!Id},true;"/>
         <apex:pageBlock >
             <apex:pageblockButtons location="top">
-                <apex:commandButton id="btnAutoSelect" value="{!$Label.copado__auto_identify_test_references}"  onclick="return usTestClasses.autoIdentify('{!Id}');" rerender="pb" />
+                <apex:commandButton id="btnAutoSelect" value="{!$Label.copado__Auto_Identify_Test_References}"  onclick="return usTestClasses.autoIdentify('{!Id}');" rerender="pb" />
                 <apex:commandButton id="btnSave" value="{!$Label.site.save}"  onclick="return usTestClasses.save();" rerender="pb" />
                 <apex:commandButton id="btnCancel" value="{!$Label.site.cancel}"  onclick="return usTestClasses.cancel();" rerender="pb" />
             </apex:pageblockButtons>
             <apex:outputPanel layout="none" >
-                <apex:commandLink style="display:none;" value="{!$Label.copado__cache_refreshed_now}"  onclick="return usTestClasses.refreshCache();" rerender="opDummy" id="removeCache"/>
+                <apex:commandLink style="display:none;" value="{!$Label.copado__CACHE_REFRESHED_NOW}"  onclick="return usTestClasses.refreshCache();" rerender="opDummy" id="removeCache"/>
                 <div id="metadataGrid2">
                     <div class='mg2_tabs'>
                         <ul style="margin-left: 20px;">
-                            <li>All Metadata</li>
-                            <li>Selected Metadata</li>
+                            <li>{!$Label.All_Metadata}</li>
+                            <li>{!$Label.SelectedMetadata}</li>
                         </ul>
                         <div>
                             <div class="mg2_scaleFilterFrame" style="padding: 5px; display: none;">
@@ -53,7 +53,7 @@
                         <div><!-- empty div, needed as content for the two tabs --></div>
                     </div>
                     <div class="mg2_jqxgrid" >
-                        <center><img src="/img/loading.gif" /><i><span id="retry-label">{!$Label.copado__loading}</span></i></center>
+                        <center><img src="/img/loading.gif" /><i><span id="retry-label">{!$Label.copado__LOADING}</span></i></center>
                     </div>
                 </div>
             </apex:outputPanel>

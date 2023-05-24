@@ -47,6 +47,26 @@
         <label><!-- Version --></label>
         <name>copado__Version__c</name>
     </fields>
+    <fields>
+        <label><!-- Connect log --></label>
+        <name>copadoconnect__Connect_log__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>copadoconnect__External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Synced Date --></label>
+        <name>copadoconnect__Last_Synced_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pipeline definition --></label>
+        <name>copadoconnect__Pipeline_definition__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- please dont include spaces in version field --></errorMessage>
+        <name>copado__Validate_spaces_in_version</name>
+    </validationRules>
     <webLinks>
         <label><!-- Mass_add_to_Release --></label>
         <name>copado__Mass_add_to_Release</name>
