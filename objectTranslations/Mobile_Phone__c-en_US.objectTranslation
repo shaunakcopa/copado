@@ -9,23 +9,23 @@
         <value>Mobile Phones</value>
     </caseValues>
     <fields>
-        <label></label>
+        <label><!-- Company --></label>
         <name>Company__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Price --></label>
         <name>Price__c</name>
     </fields>
     <fields>
-        <label></label>
+        <label><!-- Test Field #1 --></label>
         <name>Test_Field_1__c</name>
     </fields>
     <recordTypes>
-        <label></label>
+        <label><!-- Record Type A --></label>
         <name>Record_Type_A</name>
     </recordTypes>
     <recordTypes>
-        <label></label>
+        <label><!-- Record Type B --></label>
         <name>Record_Type_B</name>
     </recordTypes>
     <startsWith>Consonant</startsWith>
