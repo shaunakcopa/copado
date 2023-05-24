@@ -270,7 +270,6 @@
     </fields>
     <fields>
         <fullName>CleanStatus</fullName>
-        <complianceGroup>HIPAA</complianceGroup>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
@@ -345,7 +344,6 @@
     </fields>
     <fields>
         <fullName>NumberofLocations__c</fullName>
-        <description>Amazing description</description>
         <externalId>false</externalId>
         <label>Number of Locations</label>
         <precision>3</precision>

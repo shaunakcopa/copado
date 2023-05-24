@@ -6933,6 +6933,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copadoconnect__ApiException</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copadoconnect__BatchFetchJiraEpics</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -7021,11 +7025,27 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copadoconnect__BatchFetchServiceNowChangeRequests</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__BatchFetchServiceNowChangeRequestsTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copadoconnect__BatchFetchServiceNowStories</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>copadoconnect__BatchFetchServiceNowStoriesTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__BatchSFToSNowChangeRequestTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__BatchSalesforceToServiceNowChangeRequest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -7066,6 +7086,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copadoconnect__ConfigUiDTO</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ConfigurationAdaptor</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -7122,6 +7146,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copadoconnect__CopadoApiClientTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__CopadoApiClientUtils</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -7769,6 +7797,30 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copadoconnect__ServiceNowChangeRequestAdaptor</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowChangeRequestAdaptorTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowChangeRequestInputBean</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowChangeRequestModel</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowCreateChangeRequestService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowCreateChangeRequestServiceTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copadoconnect__ServiceNowCreateStoryAdaptor</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -7793,6 +7845,26 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copadoconnect__ServiceNowDeleteChangeRequestAdaptor</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowDeleteChangeRequestAdaptorTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowDeleteChangeRequestInputBean</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowDeleteChangeRequestService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowDeleteChangeRequestServiceTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copadoconnect__ServiceNowDeleteStoryAdaptor</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -7813,7 +7885,71 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copadoconnect__ServiceNowGetChangeRequestAdaptor</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowGetChangeRequestAdaptorTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowGetChangeRequestModel</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowGetChangeRequestService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowGetChangeRequestServiceTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowGetChangeRequestnputBean</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowGetChangeRequestsAdaptor</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowGetChangeRequestsAdaptorTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowGetChangeRequestsInputBean</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowGetChangeRequestsModel</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowGetChangeRequestsService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowGetChangeRequestsServiceTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copadoconnect__ServiceNowGetProjectModel</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowGetRecordsCountInputBean</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowGetRecordsCountModel</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowGetRecordsCountService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowGetRecordsCountServiceTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -7822,6 +7958,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copadoconnect__ServiceNowGetStoriesAdaptorTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowGetStoriesInputBean</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -7865,6 +8005,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copadoconnect__ServiceNowIncidentFieldsModel</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copadoconnect__ServiceNowIntegration</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -7890,6 +8034,30 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copadoconnect__ServiceNowSubscriberDTO</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowUpdateCHGResponseModel</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowUpdateChangeRequestAdaptor</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowUpdateChangeRequestAdaptorTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowUpdateChangeRequestInputBean</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowUpdateChangeRequestService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ServiceNowUpdateChangeRequestServiceTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -18412,6 +18580,11 @@
         <field>copadoconnect__ObjectMapping__c.copadoconnect__Synced__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copadometrics__Copado_Analytics_Settings__mdt.copadometrics__Site_Dashboard_URL__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
@@ -20060,6 +20233,14 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>copadoconnect__Integration_Log__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>copadometrics__DevOps_Analytics</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>copadometrics__DevOps_Analytics_Setup</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>

@@ -37,6 +37,10 @@
                 <behavior>Edit</behavior>
                 <field>copado__Deployment_Flow__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copadoconnect__Last_Synced_Date__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
