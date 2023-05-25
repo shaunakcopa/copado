@@ -65,6 +65,10 @@
         <name>copado__Work_Manager_Relations</name>
     </fieldSets>
     <fields>
+        <label><!-- Copado Cnct Version --></label>
+        <name>Copado_Cnct_Version__c</name>
+    </fields>
+    <fields>
         <label><!-- Jira Key --></label>
         <name>Jira_Key__c</name>
     </fields>
