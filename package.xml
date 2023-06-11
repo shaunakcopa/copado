@@ -42,7 +42,6 @@
         <members>EmployeeFieldAccess</members>
         <members>EmployeeUser</members>
         <members>EncryptionKey</members>
-        <members>EngagementMessaging</members>
         <members>EnhancedNotes</members>
         <members>Entitlement</members>
         <members>Essentials</members>
