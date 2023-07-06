@@ -262,7 +262,6 @@ dw.u.upsertFile = function(parentId, filename, data) {
     cv.Title=filename;
     cv.PathOnClient= filename+'.json';
     cv.VersionData= Base64.encode(data);
-
     var existingFile = dw.u.getFile(parentId, filename);
     if (existingFile && existingFile[0]) {
         //cv.ContentDocumentId = getContentDocuments(parentId)[0].ContentDocumentId;
@@ -393,7 +392,7 @@ function getContentDocuments(parentId) {
 }
 
 function getContentVersion(documentIds, fileName) {
-    var query = "SELECT VersionData,ContentDocumentId FROM ContentVersion WHERE PathOnClient = '" + htmlEntities(fileName).replace(/'/g, "\\'") + "' AND ContentDocumentId IN ('" + documentIds + "') AND IsLatest = true ORDER BY LastModifiedDate DESC LIMIT 1";
+    var query = "SELECT VersionData,ContentDocumentId FROM ContentVersion WHERE PathOnClient IN ('" + htmlEntities(fileName).replace(/'/g, "\\'") + "', '" + htmlEntities(fileName+'.json').replace(/'/g, "\\'") + "') AND ContentDocumentId IN ('" + documentIds + "') AND IsLatest = true ORDER BY LastModifiedDate DESC LIMIT 1";
     var versions = sforce.connection.query(query);
     return versions.getArray("records");
 }

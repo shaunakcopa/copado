@@ -138,6 +138,16 @@
                 </visibilityRule>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__SkipCondition__c</fieldItem>
+                <identifier>RecordSkipCondition_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-24c10505-938e-43ca-8e79-3ff42a1455cb</name>
         <type>Facet</type>
     </flexiPageRegions>

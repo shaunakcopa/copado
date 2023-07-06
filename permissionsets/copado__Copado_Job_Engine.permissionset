@@ -4,6 +4,10 @@
         <apexClass>copado__DynamicExpressionHelperCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>copado__OrderDeploymentStepsController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <customMetadataTypeAccesses>
         <enabled>true</enabled>
         <name>copado__MC_Custom_Job_Step__mdt</name>
@@ -144,6 +148,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__JobStep__c.copado__IsSkipped__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__JobStep__c.copado__JobExecution__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -195,6 +204,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__JobStep__c.copado__Result__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__JobStep__c.copado__SkipCondition__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

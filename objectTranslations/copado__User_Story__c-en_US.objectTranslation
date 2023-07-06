@@ -9,6 +9,10 @@
         <name>copado__Bundle_Sync_Fields</name>
     </fieldSets>
     <fieldSets>
+        <label><!-- Bundled Stories --></label>
+        <name>copado__Bundled_Stories</name>
+    </fieldSets>
+    <fieldSets>
         <label><!-- CBM Fields --></label>
         <name>copado__CBM_Fields</name>
     </fieldSets>
