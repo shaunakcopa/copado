@@ -21021,6 +21021,10 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-Waitlist</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-WarrantyTerm</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
