@@ -58,6 +58,7 @@
         <members>Forecasting</members>
         <members>Formula</members>
         <members>GoogleApps</members>
+        <members>HighVelocitySales</members>
         <members>Ideas</members>
         <members>IdentityProvider</members>
         <members>IncidentMgmt</members>
