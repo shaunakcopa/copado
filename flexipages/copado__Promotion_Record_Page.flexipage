@@ -65,18 +65,6 @@
                         </valueListItems>
                         <valueListItems>
                             <value>copado__Promotion__c.copado__Open_Pull_Request</value>
-                            <visibilityRule>
-                                <booleanFilter>1 AND 2</booleanFilter>
-                                <criteria>
-                                    <leftValue>{!Record.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.Name}</leftValue>
-                                    <operator>NE</operator>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.copado__Status__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Completed</rightValue>
-                                </criteria>
-                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>Clone</value>

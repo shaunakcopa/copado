@@ -2064,7 +2064,7 @@
                 <apex:outputPanel layout="block" id="operationModal" styleClass="slds-modal__container" style="width: 100% !important;">
                     <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1" style="min-height: 85%; height: 100%; overflow-x:scroll;">
                         <apex:outputPanel id="copadoErrorPanelForDialog" layout="none">
-                            <apex:outputPanel layout="none" styleClass="error-panel" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}">
+                            <apex:outputPanel layout="none" styleClass="error-panel">
                                 <div id="divToast" class="slds-notify_container slds-is-relative">
                                     <apex:repeat value="{!pageMessagesMap}" var="severity">
                                         <div class="slds-notify slds-notify_toast slds-theme_{!severity}" role="status">
@@ -2100,20 +2100,9 @@
                                 </button>
                             </div>
                             <apex:outputPanel id="GeneralActionButtons" styleClass="slds-col slds-size_1-of-2" style="text-align:right;">
-                                <apex:commandButton value="{!$Label.copado__Pipeline_Validate_Selections}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="validateSelections" action="{!createPromotionforValidation}" reRender="modalHeader,copadoErrorPanelForDialog,createdPromotionListPanel" onClick="lockScreen();" oncomplete="openPromotionListModal();renderPromotionPoller();" disabled="{!NOT(showUserStories)}" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}"/>
-                                <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote, $Label.copado__Pipeline_Back_Promote)}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createPromotion" action="{!createPromotion}" reRender="copadoErrorPanel,notify,modalHeader,copadoErrorPanelForDialog,createdPromotionListButtons,createdPromotionListPanel" onClick="lockScreen();" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}"/>
-                                <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeploy" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}"/>
-                                <apex:outputPanel id="mcPromotionPanel"> 
-                                    <script>  
-                                    function openPromotionInNewTab() {
-                                        window.open('{!JSENCODE(mcNewPromotionUrl)}','_blank');
-                                        resetPromotionList();
-                                        unlockScreen();
-                                    }
-                                    </script>
-                                </apex:outputPanel>
-                                <apex:actionFunction name="createMCPromotionAndRedirect" action="{!createPromotion}" oncomplete="openPromotionInNewTab()" rerender="mcPromotionPanel, mcPromotionMessages" />
-                                <apex:commandButton value="{!$Label.copado__Create_Promotion}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createMcPromotion" reRender="none" onClick="lockScreen();createMCPromotionAndRedirect();" disabled="{!NOT(showUserStories)}" rendered="{!AND(currentPipeline.copado__Platform__c != 'Salesforce',currentPipeline.copado__Platform__c != null)}"/> 
+                                <apex:commandButton value="{!$Label.copado__Pipeline_Validate_Selections}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="validateSelections" action="{!createPromotionforValidation}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel" onClick="lockScreen();" oncomplete="openPromotionListModal();renderPromotionPoller();" disabled="{!NOT(showUserStories)}"/>
+                                <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote, $Label.copado__Pipeline_Back_Promote)}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createPromotion" action="{!createPromotion}" reRender="copadoErrorPanel,notify,modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListButtons,createdPromotionListPanel" onClick="lockScreen();" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}"/>
+                                <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeploy" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller"/>
                             </apex:outputPanel>
                         </div>
                         <div class="slds-grid slds-wrap slds-clearfix">
@@ -2162,25 +2151,6 @@
                                 <span class="slds-text-heading_medium">
                                         {!newOverlay.fromEnvName}
                                     </span>
-                            </apex:outputPanel>
-                        </apex:outputPanel>
-                        <apex:outputPanel styleClass="slds-modal__content slds-p-around_medium" id="mcPromotionMessages">
-                            <apex:outputPanel layout="none" styleClass="error-panel" rendered="{!AND(currentPipeline.copado__Platform__c != 'Salesforce',currentPipeline.copado__Platform__c != null)}">
-                                <div id="divToast" class="slds-notify_container slds-is-relative">
-                                    <apex:repeat value="{!pageMessagesMap}" var="severity">
-                                        <div class="slds-notify slds-notify_toast slds-theme_{!severity}" role="status">
-                                            <span class="slds-assistive-text"></span>
-                                            <span class="slds-icon_container slds-icon-utility-success slds-m-right_small slds-no-flex slds-align-top">
-                                                <span class="slds-icon_container slds-icon__svg--default {!severity}ToastIcon"></span>
-                                            </span>
-                                            <div class="slds-notify__content">
-                                                <apex:repeat value="{!pageMessagesMap[severity]}" var="messages">
-                                                    <h2 class="slds-text-heading_small ">{!messages}</h2>
-                                                </apex:repeat>
-                                            </div>
-                                        </div>
-                                    </apex:repeat>
-                                </div>
                             </apex:outputPanel>
                         </apex:outputPanel>
                         <apex:outputPanel id="pins" layout="block" styleClass="slds-grid" style="width: 100%; margin-top: 15px;">
@@ -2631,15 +2601,21 @@
                                             <apex:outputLabel value="{!pf.Label}" />
                                         </th>
                                     </apex:repeat>
-                                    <th class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col">
-                                        <b>{!$Label.copado__Pipeline_Test_Level}</b>
-                                    </th>
-                                    <th class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col">
-                                        <b>{!$Label.copado__DEPLOYMENT_STATUS}</b>
-                                    </th>
-                                    <th class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col">
-                                        <b>{!$Label.copado__Pipeline_Dependency_Status}</b>
-                                    </th>
+                                    <apex:variable var="foo" value="" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}">
+                                        <th class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col">
+                                            <b>{!$Label.copado__Pipeline_Test_Level}</b>
+                                        </th>
+                                    </apex:variable>
+                                    <apex:variable var="foo" value="" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}">
+                                        <th class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col">
+                                            <b>{!$Label.copado__DEPLOYMENT_STATUS}</b>
+                                        </th>
+                                    </apex:variable>
+                                    <apex:variable var="foo" value="" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}">
+                                        <th class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col">
+                                            <b>{!$Label.copado__Pipeline_Dependency_Status}</b>
+                                        </th>
+                                    </apex:variable>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -2661,98 +2637,104 @@
                                                 </apex:outputPanel>
                                             </td>
                                         </apex:repeat>
-                                        <td class="slds-is-resizable">
-                                            <apex:outputText value="{!prom.promotionTestLevel}" />
-                                        </td>
-                                        <td style="text-align: center;" class="slds-is-resizable">
-                                            <apex:outputPanel layout="none" rendered="{!prom.promotion.copado__Status__c == 'Scheduled'}">
-                                                <div id="statusImg" class="slds-icon_container">
-                                                    <svg class="slds-icon slds-icon_small slds-icon-text-default" aria-hidden="true">
-                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#clock')}">
-                                                        </use>
-                                                    </svg>
-                                                </div>
-                                                <script type="text/javascript">
-                                                    $copado(function(){
-                                                        var item = $copado('[Id$=statusImg]');
-                                                        item.html("");
-                                                        var imageURL = "{!URLFOR($Resource.copado__SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#clock')}";
-                                                        var SVG = $copado('<svg/>', {
-                                                            class: 'slds-icon slds-icon_small slds-icon-text-default',
-                                                        });
-                                                        var SVGUse = $copado('<use/>');
-                                                        SVGUse.attr('xlink:href', imageURL);
-                                                        item.prepend(SVG.append(SVGUse));
-                                                        item.html(item.html());
-                                                    });
-
-                                                </script>
-                                            </apex:outputPanel>
-                                            <apex:outputPanel layout="none" rendered="{!prom.promotion.copado__Status__c == 'In Progress'}">
-                                                <img id="statusImg" style="width: 20px;" src="{!URLFOR($Resource.SLDS,'assets/images/spinners/slds_spinner_brand.gif')}" />
-                                            </apex:outputPanel>
-                                            <apex:outputPanel layout="none" rendered="{!prom.promotion.copado__Status__c == 'Completed' || prom.promotion.copado__Status__c == 'Validated'}">
-                                                <div id="statusImgApproval" class="slds-icon_container">
-                                                    <svg class="slds-icon slds-icon_small slds-icon-text-default" aria-hidden="true">
-                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/action-sprite/svg/symbols.svg#approval')}">
-                                                        </use>
-                                                    </svg>
-                                                </div>
-                                                <script type="text/javascript">
-                                                    $copado(function(){
-                                                        var item = $copado('[Id$=statusImgApproval]');
-                                                        item.html("");
-                                                        var imageURL = "{!URLFOR($Resource.copado__SLDS,'/assets/icons/action-sprite/svg/symbols.svg#approval')}";
-                                                        var SVG = $copado('<svg/>', {
-                                                            class: 'slds-icon slds-icon_small slds-icon-text-default',
-                                                        });
-                                                        var SVGUse = $copado('<use/>');
-                                                        SVGUse.attr('xlink:href', imageURL);
-                                                        item.prepend(SVG.append(SVGUse));
-                                                        item.html(item.html());
-                                                    });
-                                                </script>
-                                            </apex:outputPanel>
-                                            <apex:outputPanel layout="none" rendered="{!prom.promotion.copado__Status__c == 'Completed with errors' || prom.promotion.copado__Status__c == 'Validated with errors'}">
-                                                <div id="statusImgClose" class="slds-icon_container">
-                                                    <svg class="slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true">
-                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/action-sprite/svg/symbols.svg#close')}">
-                                                        </use>
-                                                    </svg>
-                                                </div>
-                                                <script type="text/javascript">
-                                                    $copado(function(){
-                                                        var item = $copado('[Id$=statusImgClose]');
-                                                        item.html("");
-                                                        var imageURL = "{!URLFOR($Resource.copado__SLDS,'/assets/icons/action-sprite/svg/symbols.svg#close')}";
-                                                        var SVG = $copado('<svg/>', {
-                                                            class: 'slds-icon slds-icon_small slds-icon-text-default',
-                                                        });
-                                                        var SVGUse = $copado('<use/>');
-                                                        SVGUse.attr('xlink:href', imageURL);
-                                                        item.prepend(SVG.append(SVGUse));
-                                                        item.html(item.html());
-                                                    });
-                                                </script>
-                                            </apex:outputPanel>
-                                        </td>
-                                        <td class="slds-is-resizable">
-                                            <apex:outputPanel rendered="{!prom.hasDependency}">
-                                                <script>
-                                                    $copado('[Id$="depPros"]').addClass('WarningColor');
-                                                </script>
-                                                <center>
-                                                    <a id="warningLink" style="padding-top: 4px;" html-proId="{!prom.promotion.Id}" title="{!$Label.USDependency_IconTitle}" onclick="openUSDep(this);" styleClass="icon-blinker">
-                                                        <svg class="slds-icon slds-icon-text-warning slds-icon_small" aria-hidden="true">
-                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#warning')}"></use>
+                                        <apex:variable var="foo" value="" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}">
+                                            <td class="slds-is-resizable">
+                                                <apex:outputText value="{!prom.promotionTestLevel}" />
+                                            </td>
+                                        </apex:variable>
+                                        <apex:variable var="foo" value="" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}">
+                                            <td style="text-align: center;" class="slds-is-resizable">
+                                                <apex:outputPanel layout="none" rendered="{!prom.promotion.copado__Status__c == 'Scheduled'}">
+                                                    <div id="statusImg" class="slds-icon_container">
+                                                        <svg class="slds-icon slds-icon_small slds-icon-text-default" aria-hidden="true">
+                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#clock')}">
+                                                            </use>
                                                         </svg>
-                                                    </a>
-                                                </center>
-                                            </apex:outputPanel>
-                                            <apex:outputPanel rendered="{!!prom.hasDependency}">
-                                                <center>{!$Label.copado__N_A}</center>
-                                            </apex:outputPanel>
-                                        </td>
+                                                    </div>
+                                                    <script type="text/javascript">
+                                                        $copado(function(){
+                                                            var item = $copado('[Id$=statusImg]');
+                                                            item.html("");
+                                                            var imageURL = "{!URLFOR($Resource.copado__SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#clock')}";
+                                                            var SVG = $copado('<svg/>', {
+                                                                class: 'slds-icon slds-icon_small slds-icon-text-default',
+                                                            });
+                                                            var SVGUse = $copado('<use/>');
+                                                            SVGUse.attr('xlink:href', imageURL);
+                                                            item.prepend(SVG.append(SVGUse));
+                                                            item.html(item.html());
+                                                        });
+    
+                                                    </script>
+                                                </apex:outputPanel>
+                                                <apex:outputPanel layout="none" rendered="{!prom.promotion.copado__Status__c == 'In Progress'}">
+                                                    <img id="statusImg" style="width: 20px;" src="{!URLFOR($Resource.SLDS,'assets/images/spinners/slds_spinner_brand.gif')}" />
+                                                </apex:outputPanel>
+                                                <apex:outputPanel layout="none" rendered="{!prom.promotion.copado__Status__c == 'Completed' || prom.promotion.copado__Status__c == 'Validated'}">
+                                                    <div id="statusImgApproval" class="slds-icon_container">
+                                                        <svg class="slds-icon slds-icon_small slds-icon-text-default" aria-hidden="true">
+                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/action-sprite/svg/symbols.svg#approval')}">
+                                                            </use>
+                                                        </svg>
+                                                    </div>
+                                                    <script type="text/javascript">
+                                                        $copado(function(){
+                                                            var item = $copado('[Id$=statusImgApproval]');
+                                                            item.html("");
+                                                            var imageURL = "{!URLFOR($Resource.copado__SLDS,'/assets/icons/action-sprite/svg/symbols.svg#approval')}";
+                                                            var SVG = $copado('<svg/>', {
+                                                                class: 'slds-icon slds-icon_small slds-icon-text-default',
+                                                            });
+                                                            var SVGUse = $copado('<use/>');
+                                                            SVGUse.attr('xlink:href', imageURL);
+                                                            item.prepend(SVG.append(SVGUse));
+                                                            item.html(item.html());
+                                                        });
+                                                    </script>
+                                                </apex:outputPanel>
+                                                <apex:outputPanel layout="none" rendered="{!prom.promotion.copado__Status__c == 'Completed with errors' || prom.promotion.copado__Status__c == 'Validated with errors'}">
+                                                    <div id="statusImgClose" class="slds-icon_container">
+                                                        <svg class="slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true">
+                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/action-sprite/svg/symbols.svg#close')}">
+                                                            </use>
+                                                        </svg>
+                                                    </div>
+                                                    <script type="text/javascript">
+                                                        $copado(function(){
+                                                            var item = $copado('[Id$=statusImgClose]');
+                                                            item.html("");
+                                                            var imageURL = "{!URLFOR($Resource.copado__SLDS,'/assets/icons/action-sprite/svg/symbols.svg#close')}";
+                                                            var SVG = $copado('<svg/>', {
+                                                                class: 'slds-icon slds-icon_small slds-icon-text-default',
+                                                            });
+                                                            var SVGUse = $copado('<use/>');
+                                                            SVGUse.attr('xlink:href', imageURL);
+                                                            item.prepend(SVG.append(SVGUse));
+                                                            item.html(item.html());
+                                                        });
+                                                    </script>
+                                                </apex:outputPanel>
+                                            </td>
+                                        </apex:variable>
+                                        <apex:variable var="foo" value="" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}">
+                                            <td class="slds-is-resizable">
+                                                <apex:outputPanel rendered="{!prom.hasDependency}">
+                                                    <script>
+                                                        $copado('[Id$="depPros"]').addClass('WarningColor');
+                                                    </script>
+                                                    <center>
+                                                        <a id="warningLink" style="padding-top: 4px;" html-proId="{!prom.promotion.Id}" title="{!$Label.USDependency_IconTitle}" onclick="openUSDep(this);" styleClass="icon-blinker">
+                                                            <svg class="slds-icon slds-icon-text-warning slds-icon_small" aria-hidden="true">
+                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#warning')}"></use>
+                                                            </svg>
+                                                        </a>
+                                                    </center>
+                                                </apex:outputPanel>
+                                                <apex:outputPanel rendered="{!!prom.hasDependency}">
+                                                    <center>{!$Label.copado__N_A}</center>
+                                                </apex:outputPanel>
+                                            </td>
+                                        </apex:variable>
                                     </tr>
                                 </apex:repeat>
                                 </tbody>

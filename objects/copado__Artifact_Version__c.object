@@ -144,12 +144,9 @@
     <compactLayoutAssignment>copado__PackageVersionCompactLayout</compactLayoutAssignment>
     <compactLayouts>
         <fullName>copado__PackageVersionCompactLayout</fullName>
-        <fields>copado__Version_number__c</fields>
-        <fields>copado__Release_Status__c</fields>
-        <fields>copado__Is_released__c</fields>
+        <fields>Name</fields>
         <fields>copado__Status__c</fields>
-        <fields>copado__Release__c</fields>
-        <fields>CreatedById</fields>
+        <fields>copado__Version_number__c</fields>
         <label>Package Version Compact Layout</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
@@ -353,9 +350,9 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <label>User Story</label>
+        <label>Bundle User Story</label>
         <referenceTo>copado__User_Story__c</referenceTo>
-        <relationshipLabel>Bundle Versions</relationshipLabel>
+        <relationshipLabel>Bundle Package</relationshipLabel>
         <relationshipName>Bundle_Versions</relationshipName>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -437,7 +434,7 @@
     </fields>
     <label>Package Version</label>
     <nameField>
-        <label>Package Version Name</label>
+        <label>Artifact Versions Name</label>
         <type>Text</type>
     </nameField>
     <pluralLabel>Package Versions</pluralLabel>

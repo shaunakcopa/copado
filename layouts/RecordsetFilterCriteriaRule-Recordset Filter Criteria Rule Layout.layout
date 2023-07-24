@@ -50,6 +50,14 @@
                 <behavior>Edit</behavior>
                 <field>Index</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>UsageRateField</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>UsageRateUnit</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
@@ -92,6 +100,8 @@
     </layoutSections>
     <miniLayout>
         <fields>Index</fields>
+        <fields>UsageRateField</fields>
+        <fields>UsageRateUnit</fields>
     </miniLayout>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>

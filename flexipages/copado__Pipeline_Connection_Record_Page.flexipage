@@ -161,13 +161,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Connection_Behavior_Override__c</fieldItem>
                 <identifier>RecordConnection_Behavior_Override__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.copado__Deployment_Flow__r.copado__Platform__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Salesforce</rightValue>
-                    </criteria>
-                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-d11097fa-44cf-40e7-9f58-a2002a21727f</name>

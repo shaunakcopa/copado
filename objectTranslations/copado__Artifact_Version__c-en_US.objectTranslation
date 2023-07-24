@@ -78,9 +78,9 @@
         <name>copado__Tag__c</name>
     </fields>
     <fields>
-        <label><!-- User Story --></label>
+        <label><!-- Bundle User Story --></label>
         <name>copado__User_Story__c</name>
-        <relationshipLabel><!-- Bundle Versions --></relationshipLabel>
+        <relationshipLabel><!-- Bundle Package --></relationshipLabel>
     </fields>
     <fields>
         <help><!-- The description of the package version --></help>
