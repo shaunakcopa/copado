@@ -1600,8 +1600,8 @@ var MetadataGrid3 = (() => {
                 if (gitPromotionContent != null) {
                     unZipDecode(gitPromotionContent, { base64: true }).then( function (gitPromo){
                         gitPromotionZip = Object.keys(gitPromo[0].files).length ? gitPromo : '';
-                        if (gitPromotionZip != '' && gitPromotionZip.file(folder + '/' + name + '.' + ext) != null) {
-                            getContent(gitPromotionZip.file(folder + '/' + name + '.' + ext)).then( function (content) {
+                        if (gitPromotionZip != '' && gitPromotionZip[0].file(folder + '/' + name + '.' + ext) != null) {
+                            getContent(gitPromotionZip[0].file(folder + '/' + name + '.' + ext)).then( function (content) {
                                 app.source[index] = content ? content : '';
                             }, function (e) {
                                 console.log(e);

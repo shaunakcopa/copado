@@ -145,8 +145,9 @@
     <compactLayouts>
         <fullName>copado__PackageCompactLayout</fullName>
         <fields>Name</fields>
-        <fields>copado__Pipeline__c</fields>
         <fields>copado__Package_Type__c</fields>
+        <fields>RecordTypeId</fields>
+        <fields>copado__Pipeline__c</fields>
         <fields>copado__Artifact_Version__c</fields>
         <fields>copado__DefaultBranch__c</fields>
         <fields>copado__DefaultPath__c</fields>
@@ -172,7 +173,6 @@
         <inlineHelpText>This is Repository where the Artifact can be stored, in the master branch</inlineHelpText>
         <label>Package Repository</label>
         <referenceTo>copado__Git_Repository__c</referenceTo>
-        <relationshipLabel>Packages</relationshipLabel>
         <relationshipName>Artifacts</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -284,7 +284,6 @@
 The org credential where the unmanaged package is created from.</inlineHelpText>
         <label>Source Credential</label>
         <referenceTo>copado__Org__c</referenceTo>
-        <relationshipLabel>Artifacts</relationshipLabel>
         <relationshipName>Artifacts</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -355,7 +354,6 @@ The org credential where the unmanaged package is created from.</inlineHelpText>
         <externalId>false</externalId>
         <label>Pipeline</label>
         <referenceTo>copado__Deployment_Flow__c</referenceTo>
-        <relationshipLabel>Packages</relationshipLabel>
         <relationshipName>Packages</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1294,7 +1292,7 @@ The org credential where the unmanaged package is created from.</inlineHelpText>
     <validationRules>
         <fullName>copado__Name_should_not_contain_empty_space</fullName>
         <active>true</active>
-        <errorConditionFormula>CONTAINS(Name,&apos; &apos;)</errorConditionFormula>
+        <errorConditionFormula>CONTAINS(Name,&apos; &apos;) &amp;&amp; RecordType.DeveloperName != &apos;User_Story_Bundle&apos;</errorConditionFormula>
         <errorDisplayField>Name</errorDisplayField>
         <errorMessage>Package name cannot contain white spaces</errorMessage>
     </validationRules>
