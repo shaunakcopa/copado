@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>EngagementChannelType-Engagement Channel Type Layout</members>
+        <members>Account-Account Layout</members>
         <name>Layout</name>
     </types>
     <types>
-        <members>ShiftEngagementChannel.My_ShiftEngagementChannels</members>
+        <members>Waitlist.All_Waitlists</members>
         <name>ListView</name>
     </types>
     <version>58.0</version>
