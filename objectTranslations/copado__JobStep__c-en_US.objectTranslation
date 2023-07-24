@@ -37,6 +37,10 @@
         <name>copado__Git_Repository__c</name>
     </fields>
     <fields>
+        <label><!-- Is Skipped? --></label>
+        <name>copado__IsSkipped__c</name>
+    </fields>
+    <fields>
         <label><!-- Job Execution --></label>
         <name>copado__JobExecution__c</name>
         <relationshipLabel><!-- Job Steps --></relationshipLabel>
@@ -97,6 +101,11 @@
         <label><!-- Last Result --></label>
         <name>copado__Result__c</name>
         <relationshipLabel><!-- Job Steps --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Expression that if evaluates to true, the step execution will be skipped and Copado will continue with the next step or complete the job execution. If left empty or the expression evaluates to false, the job step will execute as usual. --></help>
+        <label><!-- Skip Step Condition --></label>
+        <name>copado__SkipCondition__c</name>
     </fields>
     <fields>
         <label><!-- Source Id --></label>

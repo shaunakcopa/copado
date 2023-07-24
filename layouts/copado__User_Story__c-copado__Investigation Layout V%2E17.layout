@@ -98,6 +98,10 @@
                 <behavior>Edit</behavior>
                 <field>copado__Technical_Specifications__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Copado_Cnct_Version__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>

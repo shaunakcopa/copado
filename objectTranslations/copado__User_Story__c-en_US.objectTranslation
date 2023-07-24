@@ -9,6 +9,10 @@
         <name>copado__Bundle_Sync_Fields</name>
     </fieldSets>
     <fieldSets>
+        <label><!-- Bundled Stories --></label>
+        <name>copado__Bundled_Stories</name>
+    </fieldSets>
+    <fieldSets>
         <label><!-- CBM Fields --></label>
         <name>copado__CBM_Fields</name>
     </fieldSets>
@@ -64,6 +68,10 @@
         <label><!-- Work Manager Relations --></label>
         <name>copado__Work_Manager_Relations</name>
     </fieldSets>
+    <fields>
+        <label><!-- Copado Cnct Version --></label>
+        <name>Copado_Cnct_Version__c</name>
+    </fields>
     <fields>
         <label><!-- Jira Key --></label>
         <name>Jira_Key__c</name>

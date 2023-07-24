@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Mobile_Phone__c.Viswa_Test_Field__c</members>
-        <name>CustomField</name>
+        <members>ContactPointAddress.All_ContactPointAddresses</members>
+        <members>Waitlist.All_Waitlists</members>
+        <name>ListView</name>
     </types>
-    <version>57.0</version>
+    <version>58.0</version>
 </Package>

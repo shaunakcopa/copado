@@ -48,7 +48,7 @@
  アンマネージドパッケージの作成元の組織のクレデンシャルになります。&quot;</help>
         <label><!-- Source Credential --></label>
         <name>copado__Org_Credential__c</name>
-        <relationshipLabel><!-- Artifacts --></relationshipLabel>
+        <relationshipLabel><!-- Packages (Source Credential) --></relationshipLabel>
     </fields>
     <fields>
         <help>関連パッケージの識別子になります。パッケージのバージョン作成時にパッケージIDとして使用され、パッケージのエイリアスとしてsfdx-project.jsonファイルにも使用されます。</help>

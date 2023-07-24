@@ -264,6 +264,15 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>copado__IsSkipped__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Is Skipped?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>copado__JobExecution__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
         <deprecated>false</deprecated>
@@ -432,6 +441,17 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>copado__SkipCondition__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Expression that if evaluates to true, the step execution will be skipped and Copado will continue with the next step or complete the job execution. If left empty or the expression evaluates to false, the job step will execute as usual.</inlineHelpText>
+        <label>Skip Step Condition</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>copado__Source_Id__c</fullName>
         <deprecated>false</deprecated>
         <description>Id of the source environment.</description>
@@ -449,7 +469,8 @@
         <description>The status of the Job Step.</description>
         <externalId>false</externalId>
         <formula>IF(NOT(ISBLANK(copado__JobTemplate__c)), &apos;NA&apos;, 
-    if(ISBLANK(copado__Result__c), &apos;Pending&apos;, TEXT(copado__Result__r.copado__Status__c)))</formula>
+  IF(copado__IsSkipped__c , &apos;Skipped&apos;,
+    IF(ISBLANK(copado__Result__c), &apos;Pending&apos;, TEXT(copado__Result__r.copado__Status__c))))</formula>
         <label>Status</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
