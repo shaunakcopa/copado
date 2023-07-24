@@ -11,8 +11,8 @@
             </apex:outputPanel>
             
             <apex:outputPanel id="pnlSuccess" rendered="{!showList}">
-                <apex:sectionHeader title="{!$Label.copado__rollback_selenium_tc_version}" subtitle="{!copado__Selenium_Test_Case__c.Name}  ({!$Label.copado__tc_replace} {!copado__Selenium_Test_Case__c.copado__Version__c} {!$Label.copado__tc_with} {!copado__Selenium_Test_Case__c.Previous_Version__r.copado__Version__c})"
-                                description="{!$Label.copado__rollback_test_case_description}"/>
+                <apex:sectionHeader title="{!$Label.copado__ROLLBACK_SELENIUM_TC_VERSION}" subtitle="{!copado__Selenium_Test_Case__c.Name}  ({!$Label.copado__TC_REPLACE} {!copado__Selenium_Test_Case__c.copado__Version__c} {!$Label.copado__TC_WITH} {!copado__Selenium_Test_Case__c.Previous_Version__r.copado__Version__c})"
+                                description="{!$Label.copado__ROLLBACK_TEST_CASE_DESCRIPTION}"/>
             	<apex:pageBlock mode="edit" id="pb">
                     <apex:pageblockButtons id="pbbs" location="top">
                         <apex:commandButton value="Done" action="{!cancel}" rendered="{!processIsDone}"/>
