@@ -138,9 +138,9 @@
         <label>All Waitlists</label>
     </listViews>
     <listViews>
-        <fullName>My_Waitlists</fullName>
-        <filterScope>Mine</filterScope>
-        <label>My Waitlists</label>
+        <fullName>All_Waitlists</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All Waitlists</label>
     </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>ServiceTerritory</customTabListAdditionalFields>
