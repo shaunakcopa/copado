@@ -71,4 +71,8 @@
             <translation><!-- JIRA --></translation>
         </picklistValues>
     </fields>
+    <fields>
+        <label><!-- Server Info --></label>
+        <name>copadoconnect__Server_Info__c</name>
+    </fields>
 </CustomObjectTranslation>
