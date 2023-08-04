@@ -244,17 +244,17 @@
                                     <tr>
                                         <th class="slds-is-resizable" style="background-color: #fafaf9">
                                             <h2 id="VarHeaderText" class="slds-text-heading_medium slds-hyphenate" style="padding-left:20px">
-                                                <apex:outputText value="{!$Label.copado__varenv}" />
+                                                <apex:outputText value="{!$Label.copado__VarEnv}" />
                                             </h2>
                                         </th>
                                         <th class="slds-is-resizable" style="background-color: #fafaf9">
                                             <h2 id="VarHeaderText" class="slds-text-heading_medium slds-hyphenate" style="padding-left:20px">
-                                                <apex:outputText value="{!$Label.copado__varname}" />
+                                                <apex:outputText value="{!$Label.copado__VarName}" />
                                             </h2>
                                         </th>
                                         <th class="slds-is-resizable" style="background-color: #fafaf9">
                                             <h2 id="VarHeaderText" class="slds-text-heading_medium slds-hyphenate" style="padding-left:20px">
-                                                <apex:outputText value="{!$Label.copado__varval}" />
+                                                <apex:outputText value="{!$Label.copado__VarVal}" />
                                             </h2>
                                         </th>
                                     </tr>
@@ -286,7 +286,7 @@
                                     <tr>
                                         <td colspan="3" style="padding-top:20px;">
                                             <center>
-                                                  {!$Label.copado__noenvvar}
+                                                  {!$Label.copado__NoEnvVar}
                                              </center>
                                         </td>
                                     </tr>
@@ -390,15 +390,15 @@
                                         <apex:actionFunction action="{!createRebasePromotions}" name="createRebasePromotions" reRender="rebaseMessage,rebaseMainRender,rebaseEnvironments,rebasePromotionsPanel,createdPromotionButtons, notify" oncomplete="unlockScreen();" />
                                         <apex:actionFunction action="{!createRebasePromotionsAndDeploy}" name="createRebasePromotionsAndDeploy" reRender="rebaseMessage,rebaseMainRender,rebaseEnvironments,rebasePromotionsPanel,createdPromotionButtons, notify" oncomplete="unlockScreen();" />
                                         <apex:outputPanel id="rebasePromotionButtons" layout="block" style="float: right; margin-top: 18px;">
-                                            <apex:outputText value="{!$Label.copado__mass_bp_disable_autoselect_warning}" style="text-align: left;color:orange;" rendered="{!showHiddenCheckboxes}" />
+                                            <apex:outputText value="{!$Label.copado__MASS_BP_DISABLE_AUTOSELECT_WARNING}" style="text-align: left;color:orange;" rendered="{!showHiddenCheckboxes}" />
 
                                             <apex:outputPanel rendered="{!AND(rebaseUserStoriesWrapper.size > 0, OR(AND(NOT(ISNULL(rebaseProject)), rebaseProject != '--None--'),AND(NOT(ISNULL(rebaseRelease)), rebaseRelease != '--None--')))}" layout="none" id="rebaseButtons">
-                                                <apex:commandLink action="{!goToPromotions}" rendered="{!rebasePromotionKeySize > 0}" target="_blank" value="{!$Label.copado__go_to_promotions}" onclick="lockScreen();" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" oncomplete="unlockScreen();" reRender="rebaseMainRender" />
-                                                <apex:commandLink target="_blank" value="{!$Label.copado__pipeline_back_promote}" onclick="lockScreen();" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createRebasePromotions" oncomplete="createRebasePromotions();" reRender="noRender" />
-                                                <apex:commandLink target="_blank" value="{!$Label.copado__pipeline_back_promote_and_deploy}" onclick="lockScreen();" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createRebasePromotionsAndDeploy" oncomplete="createRebasePromotionsAndDeploy();" reRender="noRender" />
+                                                <apex:commandLink action="{!goToPromotions}" rendered="{!rebasePromotionKeySize > 0}" target="_blank" value="{!$Label.copado__Go_To_Promotions}" onclick="lockScreen();" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" oncomplete="unlockScreen();" reRender="rebaseMainRender" />
+                                                <apex:commandLink target="_blank" value="{!$Label.copado__Pipeline_Back_Promote}" onclick="lockScreen();" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createRebasePromotions" oncomplete="createRebasePromotions();" reRender="noRender" />
+                                                <apex:commandLink target="_blank" value="{!$Label.copado__Pipeline_Back_Promote_and_Deploy}" onclick="lockScreen();" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createRebasePromotionsAndDeploy" oncomplete="createRebasePromotionsAndDeploy();" reRender="noRender" />
                                             </apex:outputPanel>
                                             <apex:outputPanel layout="block" rendered="{!rebaseUserStoriesWrapper.size == 0}">
-                                                <apex:commandLink action="{!goToPromotions}" rendered="{!rebasePromotionKeySize > 0}" target="_blank" value="{!$Label.copado__go_to_promotions}" onclick="lockScreen();" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" oncomplete="unlockScreen();" reRender="rebaseMainRender" />
+                                                <apex:commandLink action="{!goToPromotions}" rendered="{!rebasePromotionKeySize > 0}" target="_blank" value="{!$Label.copado__Go_To_Promotions}" onclick="lockScreen();" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" oncomplete="unlockScreen();" reRender="rebaseMainRender" />
                                             </apex:outputPanel>
                                         </apex:outputPanel>
                                     </div>
@@ -406,7 +406,7 @@
                                 <div class="slds-grid" style="padding-bottom: 10px;">
                                     <div class="slds-col" style="width: 0%;">
                                         <label class="slds-form-element__label" for="rebaseSourceList">
-                                            <span>{!$Label.copado__source_environment}</span>
+                                            <span>{!$Label.copado__SOURCE_ENVIRONMENT}</span>
                                         </label>
                                         <apex:selectList id="rebaseSourceList" html-data-id="rebaseSourceList" onChange="lockScreen();rebaseAcf();" value="{!rebaseSource}" multiselect="false" size="1" styleClass="slds-select">
                                             <apex:selectOptions value="{!rebaseSourceEnvironments}" />
@@ -440,7 +440,7 @@
                                         <apex:outputPanel layout="block" rendered="{!AND(rebaseUserStoriesWrapper.size > 0, OR(AND(NOT(ISNULL(rebaseProject)), rebaseProject != '--None--'),AND(NOT(ISNULL(rebaseRelease)), rebaseRelease != '--None--')))}">
                                             <div class="slds-grid" style="padding-bottom: 15px; text-align: right;">
                                                 <div class="slds-col">
-                                                    <apex:commandLink html-data-isSelected="true" html-data-type="OVR" value="{!$Label.copado__enable_auto_selection}" onclick="lockScreen();renderOvrToggle(true);" immediate="true" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="toggleOverwriteSelection" action="{!toggleRebaseListView}" reRender="rebasePromotionButtons" oncomplete="unlockScreen();"/>
+                                                    <apex:commandLink html-data-isSelected="true" html-data-type="OVR" value="{!$Label.copado__Enable_Auto_Selection}" onclick="lockScreen();renderOvrToggle(true);" immediate="true" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="toggleOverwriteSelection" action="{!toggleRebaseListView}" reRender="rebasePromotionButtons" oncomplete="unlockScreen();"/>
                                                 </div>
                                             </div>
                                         </apex:outputPanel>
@@ -537,7 +537,7 @@
                                             <apex:outputPanel rendered="{!rebaseUserStoriesWrapper.size == 0}">
                                                 <center>
                                                     <p>
-                                                        <apex:outputText value="{!$Label.copado__no_us_to_select}" />
+                                                        <apex:outputText value="{!$Label.copado__NO_US_TO_SELECT}" />
                                                     </p>
                                                 </center>
                                             </apex:outputPanel>
@@ -560,10 +560,10 @@
                         <div style="float:left; margin-bottom: 10px;" id="head">
                             <button class="slds-button" onclick="lockScreen();resetPromotions(); return false;"> <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#back')}"></use>
-                                </svg>{!$Label.copado__close}</button>
+                                </svg>{!$Label.copado__CLOSE}</button>
                             <apex:outputPanel id="rebasePromotionsHeader" layout="block" >
                                 <h2 id="logsHeaderText" class="slds-text-heading_medium slds-hyphenate">
-                                    <apex:outputText value="{!$Label.copado__created_back_promotions}" />
+                                    <apex:outputText value="{!$Label.copado__CREATED_BACK_PROMOTIONS}" />
                                 </h2>
                             </apex:outputPanel>
                         </div>
@@ -572,8 +572,8 @@
                         <apex:actionFunction name="reRenderDeploy" reRender="createdPromotionButtons, notify" />
                         <apex:outputPanel id="createdPromotionButtons" layout="block" style="float: right">
                             <apex:outputPanel rendered="{!promotionOnly}">
-                                <button class="slds-button slds-button_neutral" onclick="lockScreen();resetPromotions(); return false;">{!$Label.copado__prepare_another_promotion}</button>
-                                <button class="slds-button slds-button_brand" onclick="lockScreen();deployPromotions(); return false;">{!$Label.copado__deploy_promotions}</button>
+                                <button class="slds-button slds-button_neutral" onclick="lockScreen();resetPromotions(); return false;">{!$Label.copado__Prepare_Another_Promotion}</button>
+                                <button class="slds-button slds-button_brand" onclick="lockScreen();deployPromotions(); return false;">{!$Label.copado__Deploy_Promotions}</button>
                             </apex:outputPanel>
                         </apex:outputPanel>
                         <apex:outputPanel layout="block" id="rebasePromotionsPanel">
@@ -588,7 +588,7 @@
                                     </apex:repeat>
                                     <apex:outputPanel layout="none" rendered="{!AND(!promotionOnly,OR(enabledRebasePromotionPoller,rebaseDeploymentsCompleted))}">
                                         <th class="headcol slds-is-resizable" style="text-align: left;font-weight: bold;background-color: #fafaf9; padding-top:20px; padding-left:7px; border-bottom: 1px solid rgb(221, 219, 218)">
-                                            <b>{!$Label.copado__deployment_status}</b>
+                                            <b>{!$Label.copado__DEPLOYMENT_STATUS}</b>
                                         </th>
                                     </apex:outputPanel>
                                 </tr>

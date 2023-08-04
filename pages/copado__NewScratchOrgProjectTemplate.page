@@ -17,7 +17,7 @@
     </head>
     <body>
     <apex:form style="height:700px">
-        <c:ScreenLocker msg="{!$Label.copado__loading}"/>
+        <c:ScreenLocker msg="{!$Label.copado__LOADING}"/>
         <c:ScratchOrgMetadata parentPageController="{!this}" componentName="ScratchOrgMetadata" showActionButtons="false" mode="{!componentMode}" showAllTemplateButtons="true"/>
     </apex:form>
     </body>

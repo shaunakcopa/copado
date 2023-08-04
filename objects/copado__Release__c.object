@@ -128,7 +128,9 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
+        <content>copado__ViewRelease</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
@@ -248,6 +250,16 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>copado__Completion_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Update this date when the release is complete.</inlineHelpText>
+        <label>Completion Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
         <fullName>copado__Description__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -256,6 +268,20 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>copado__Parent_Release__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Informative field to define a parent release</inlineHelpText>
+        <label>Parent Release</label>
+        <referenceTo>copado__Release__c</referenceTo>
+        <relationshipLabel>Releases</relationshipLabel>
+        <relationshipName>Releases</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>copado__Planned_Date__c</fullName>
@@ -278,6 +304,16 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Status_Notes__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe the outcome of the release. If it was released, how it went? If canceled, why?</inlineHelpText>
+        <label>Status Notes</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>copado__Status__c</fullName>
@@ -314,6 +350,47 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>copado__Testing_Completed__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Update this date when all the Testing activities are completed.</inlineHelpText>
+        <label>Testing Completed</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>copado__Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Update these values via the &quot;Set Version&quot; option</inlineHelpText>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Major</fullName>
+                    <default>false</default>
+                    <label>Major</label>
+                </value>
+                <value>
+                    <fullName>Minor</fullName>
+                    <default>false</default>
+                    <label>Minor</label>
+                </value>
+                <value>
+                    <fullName>Patch</fullName>
+                    <default>false</default>
+                    <label>Patch</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>copado__Version__c</fullName>
         <deprecated>false</deprecated>
         <description>When a Promotion linked to this Release is merged into the Main Branch of the deployment flow, Copado will tag the Main Branch with this version number. This value is typically a major (e.g. v7), minor (v7.3) or patch (v7.3.2) release.</description>
@@ -321,6 +398,48 @@
         <inlineHelpText>When a Promotion linked to this Release is merged into the Main Branch of the deployment flow, Copado will tag the Main Branch with this version number. This value is typically a major (e.g. v7), minor (v7.3) or patch (v7.3.2) release.</inlineHelpText>
         <label>Version</label>
         <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copadoconnect__Connect_log__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Connect log</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>copadoconnect__External_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>copadoconnect__Last_Synced_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Last Synced Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>copadoconnect__Pipeline_definition__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Pipeline definition</label>
+        <length>100</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -345,6 +464,14 @@
     <pluralLabel>Releases</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>copado__Validate_spaces_in_version</fullName>
+        <active>true</active>
+        <description>Make sure no spaces are there in version field</description>
+        <errorConditionFormula>CONTAINS(copado__Version__c,&quot; &quot;)</errorConditionFormula>
+        <errorDisplayField>copado__Version__c</errorDisplayField>
+        <errorMessage>please dont include spaces in version field</errorMessage>
+    </validationRules>
     <visibility>Public</visibility>
     <webLinks>
         <fullName>copado__Mass_add_to_Release</fullName>
