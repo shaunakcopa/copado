@@ -7405,6 +7405,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copadoconnect__CopadoIntegrationActivationCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__CopadoIntegrationActivationCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copadoconnect__CopadoIntegrationSelector</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -7418,6 +7426,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copadoconnect__CustomLookupQueryConfiguration</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__DummyClassForTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -7593,6 +7605,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copadoconnect__JiraGetCreatableProjectFieldsModel</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copadoconnect__JiraGetEpicAdaptor</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -7678,6 +7694,18 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copadoconnect__JiraGetReleasesServiceTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__JiraGetServerInfoModel</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__JiraGetServerInfoService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__JiraGetServerInfoServiceTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -18604,6 +18632,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copadoconnect__Copado_Integration__c.copadoconnect__Project__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copadoconnect__Copado_Integration__c.copadoconnect__Server_Info__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
