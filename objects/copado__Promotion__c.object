@@ -128,13 +128,12 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <content>copado__PromoteChanges</content>
+        <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Visualforce</type>
+        <type>Standard</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>

@@ -337,6 +337,16 @@
             </valueSetDefinition>
         </valueSet>
     </fields>
+    <fields>
+        <fullName>copadoconnect__Server_Info__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Server Info</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
     <label>Copado Integration</label>
     <listViews>
         <fullName>copadoconnect__All</fullName>

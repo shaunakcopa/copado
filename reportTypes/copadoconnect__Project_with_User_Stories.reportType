@@ -508,11 +508,6 @@
             <field>copadoconnect__Last_Synced_Date__c</field>
             <table>copado__Project__c.copado__User_Stories__r</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Copado_Cnct_Version__c</field>
-            <table>copado__Project__c.copado__User_Stories__r</table>
-        </columns>
         <masterLabel>User Stories</masterLabel>
     </sections>
 </ReportType>
