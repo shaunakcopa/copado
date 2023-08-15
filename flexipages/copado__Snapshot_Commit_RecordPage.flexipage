@@ -243,6 +243,10 @@
                     <value>Facet-b7e9f417-7466-4875-99f2-6b4bbfc09246</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__INFO}</value>
                 </componentInstanceProperties>
@@ -255,6 +259,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-bd0f7ce7-ee56-4a25-b72f-9dad243710b1</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -293,6 +301,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-6d371070-a00b-423e-8dea-66c08a234647</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -442,8 +454,8 @@
                     <name>noJobTitle</name>
                     <value>{!$Label.copado__Job_Execution_Not_Started}</value>
                 </componentInstanceProperties>
-                <componentName>copado:jobExecutionMonitor</componentName>
-                <identifier>c_jobExecutionMonitor2</identifier>
+                <componentName>copado:enhancedJobMonitor</componentName>
+                <identifier>c_enhancedJobMonitor</identifier>
                 <visibilityRule>
                     <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>
