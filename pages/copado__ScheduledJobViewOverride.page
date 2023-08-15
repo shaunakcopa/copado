@@ -54,25 +54,25 @@
 
             <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">
                 <apex:form id="theForm" styleClass="copado-lightning-container" style="padding-top:12px;">
-                    <apex:pageBlock rendered="{!AND(showOptions,!showError)}" title="{!$Label.copado__details}">
+                    <apex:pageBlock rendered="{!AND(showOptions,!showError)}" title="{!$Label.copado__DETAILS}">
                         <apex:pageBlockButtons >
-                            <apex:commandButton action="{!edit}" value="{!$Label.copado__edit}" id="cm_edit"/>
-                            <apex:commandButton action="{!stop}" value="{!$Label.copado__stop}" id="cm_stop"/>
-                            <apex:commandButton action="{!schedule_job}" value="{!$Label.copado__schedule}" id="cm_schdule"/>
-                            <apex:commandButton action="{!delete_job}" value="{!$Label.copado__delete}" id="cm_delete"/>
+                            <apex:commandButton action="{!edit}" value="{!$Label.copado__EDIT}" id="cm_edit"/>
+                            <apex:commandButton action="{!stop}" value="{!$Label.copado__STOP}" id="cm_stop"/>
+                            <apex:commandButton action="{!schedule_job}" value="{!$Label.copado__SCHEDULE}" id="cm_schdule"/>
+                            <apex:commandButton action="{!delete_job}" value="{!$Label.copado__DELETE}" id="cm_delete"/>
                         </apex:pageBlockButtons>
-                        <apex:pageBlockSection title="{!$Label.copado__basic_information}"  id="pbs_basic">
+                        <apex:pageBlockSection title="{!$Label.copado__BASIC_INFORMATION}"  id="pbs_basic">
                             <apex:outputField value="{!copado__Scheduled_Job__c.Name}" id="of_name"/>
                             <apex:outputField value="{!copado__Scheduled_Job__c.copado__Webhook_URL__c}" id="of_url"/>
                             <apex:outputField value="{!copado__Scheduled_Job__c.copado__Run_as_User__c}" id="of_runas"/>
                             <apex:outputField value="{!copado__Scheduled_Job__c.copado__Delete_Runs_after_days__c}" id="of_del"/>
                         </apex:pageBlockSection>
-                        <apex:pageBlockSection title="{!$Label.copado__last_execution}" id="pbs_last">
+                        <apex:pageBlockSection title="{!$Label.copado__LAST_EXECUTION}" id="pbs_last">
                             <apex:outputField value="{!copado__Scheduled_Job__c.copado__Status__c}" id="of_stat"/>
                             <apex:outputField value="{!copado__Scheduled_Job__c.copado__Message__c}" id="of_msg"/>
                             <apex:outputField value="{!ct.PreviousFireTime}" id="of_prffire"/>
                         </apex:pageBlockSection>
-                        <apex:pageBlockSection title="{!$Label.copado__schedule_information}" id="pbs_sched">
+                        <apex:pageBlockSection title="{!$Label.copado__SCHEDULE_INFORMATION}" id="pbs_sched">
                             <apex:outputField value="{!copado__Scheduled_Job__c.copado__Apex_Job_ID__c}" id="of_jobid"/>
                             <apex:outputField value="{!copado__Scheduled_Job__c.copado__Cron_Expression__c}" id="of_cron"/>
                             <apex:outputField value="{!ct.NextFireTime}" id="of_nextt"/>

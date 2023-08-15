@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>copado__Result_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>copado__Result__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>copado__Release_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>copado__Release__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>copado__Test_Run_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>copado__Test_Run__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>copado__Test_Script_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>copado__Test_Script__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>copado__System_Property_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>copado__System_Property__c</pageOrSobjectType>
+    </actionOverrides>
     <brand>
         <headerColor>#00C3EF</headerColor>
         <logo>copado__Copado_Logo_Symbol_Only_Blue</logo>
@@ -11,6 +56,7 @@
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <label>Copado Console</label>
     <navType>Console</navType>
     <setupExperience>all</setupExperience>
@@ -34,9 +80,17 @@
     <tabs>copado__Selenium_Test_Group__c</tabs>
     <tabs>copado__Git_Repository__c</tabs>
     <tabs>copado__Git_Backup__c</tabs>
+    <tabs>copado__Application__c</tabs>
+    <tabs>copado__Application_Feature__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>copado__Copado_Console_UtilityBar</utilityBar>
     <workspaceConfig>
+        <mappings>
+            <tab>copado__Application_Feature__c</tab>
+        </mappings>
+        <mappings>
+            <tab>copado__Application__c</tab>
+        </mappings>
         <mappings>
             <tab>copado__Compliance_Rule_Group__c</tab>
         </mappings>

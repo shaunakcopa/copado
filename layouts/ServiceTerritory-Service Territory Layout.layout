@@ -34,6 +34,10 @@
                 <behavior>Edit</behavior>
                 <field>OwnerId</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SchedulingConstraintId</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
@@ -66,6 +70,9 @@
         <layoutColumns/>
         <style>CustomLinks</style>
     </layoutSections>
+    <miniLayout>
+        <fields>SchedulingConstraintId</fields>
+    </miniLayout>
     <relatedLists>
         <fields>Name</fields>
         <fields>ServiceResource</fields>
@@ -73,6 +80,12 @@
         <fields>EffectiveStartDate</fields>
         <fields>EffectiveEndDate</fields>
         <relatedList>ServiceTerritoryMembers</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>Name</fields>
+        <fields>ServiceTerritory</fields>
+        <fields>Location</fields>
+        <relatedList>ServiceTerritoryLocations</relatedList>
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>
@@ -91,6 +104,14 @@
         <fields>Name</fields>
         <fields>WorkType</fields>
         <relatedList>ServiceTerritoryWorkType</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>Name</fields>
+        <fields>StartTime</fields>
+        <fields>EndTime</fields>
+        <fields>Status</fields>
+        <fields>Label</fields>
+        <relatedList>ServiceTerritoryShifts</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
