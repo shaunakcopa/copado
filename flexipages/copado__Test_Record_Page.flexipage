@@ -514,14 +514,8 @@
                     <name>fieldApiName</name>
                     <value>LatestJobExecution__c</value>
                 </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>noJobMessage</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>noJobTitle</name>
-                </componentInstanceProperties>
-                <componentName>copado:resultMonitor</componentName>
-                <identifier>c_resultMonitor</identifier>
+                <componentName>copado:enhancedResultViewer</componentName>
+                <identifier>c_enhancedResultViewer</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.copado__Test_Tool__c}</leftValue>
@@ -536,6 +530,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-dabb2822-08e8-4e24-a9a6-44f4f4bd8a69</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>

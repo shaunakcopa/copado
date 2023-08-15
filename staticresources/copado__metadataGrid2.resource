@@ -787,7 +787,7 @@ MetadataGrid2.prototype.render = function(cbAfterRender) {
                 that.render();
         };
         // Initialize the select all/unselect all buttons
-        var $unselectAll = $copado('<button id="unselectAll">Unselect All</button>').on('click', function(e) {
+        var $unselectAll = $copado('<button id="unselectAll">'+copadoLabels.unselect_all+'</button>').on('click', function(e) {
                 e.preventDefault();
                 selectAll(false);
             // setting tab to "All Metadata" when there is no selection.
@@ -796,7 +796,7 @@ MetadataGrid2.prototype.render = function(cbAfterRender) {
             }
             });
 
-        var $selectAll = $copado('<button id="selectAll">Select All</button>').on('click', function(e) {
+        var $selectAll = $copado('<button id="selectAll">'+copadoLabels.select_all+'</button>').on('click', function(e) {
             e.preventDefault();
             selectAll(true);
         });
