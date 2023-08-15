@@ -127,6 +127,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Automation_Rule__c.copado__Filter_Criteria__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Automation_Rule__c.copado__Last_Execution_Date_Time__c</field>
         <readable>true</readable>
     </fieldPermissions>
