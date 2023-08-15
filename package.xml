@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Account.Testing_Snapshot_Diff</members>
-        <name>WorkflowAlert</name>
-    </types>
-    <types>
         <members>Account.Testing Snapshot Diff</members>
         <name>WorkflowRule</name>
+    </types>
+    <types>
+        <members>Account.Test</members>
+        <name>WorkflowTask</name>
     </types>
     <version>58.0</version>
 </Package>

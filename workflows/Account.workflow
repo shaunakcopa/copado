@@ -14,8 +14,8 @@
     <rules>
         <fullName>Testing Snapshot Diff</fullName>
         <actions>
-            <name>Testing_Snapshot_Diff</name>
-            <type>Alert</type>
+            <name>Test</name>
+            <type>Task</type>
         </actions>
         <active>true</active>
         <criteriaItems>
@@ -25,4 +25,16 @@
         </criteriaItems>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
+    <tasks>
+        <fullName>Test</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>Testing</description>
+        <dueDateOffset>2</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Account.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Test</subject>
+    </tasks>
 </Workflow>
