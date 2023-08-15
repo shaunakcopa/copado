@@ -765,6 +765,7 @@ var coGridHelper = {
             len = data.length;
 
         coGridHelper._selectedNames = [];
+        coGridHelper._retrieveOnlyNames = [];
 
         while (len--) {
             var o = {
@@ -780,6 +781,12 @@ var coGridHelper = {
                 f: data[len].f
             };
 
+            if (typeof data[len].ns != 'undefined') {
+                o.ns = data[len].ns;
+            } else {
+                o.t = data[len].t;
+            }
+
             if (typeof data[len].r !== 'undefined') {
                 o.r = data[len].r;
             } else {
@@ -787,18 +794,16 @@ var coGridHelper = {
                 //should never be undefined in the attachment that we create for backend to use
                 o.r = false;
             }
-
-            if (typeof data[len].ns != 'undefined') {
-                o.ns = data[len].ns;
-            } else {
-                o.t = data[len].t;
+           if(o.r == true) {
+               data[len].s && coGridHelper._retrieveOnlyNames.push(o);
             }
-
-            data[len].s && coGridHelper._selectedNames.push(o);
+                data[len].s && coGridHelper._selectedNames.push(o);
         }
         return coGridHelper._selectedNames;
     },
 
+    // retrieve only names
+    _retrieveOnlyNames: [],
     //selected "Names"
     _selectedNames: [],
 
@@ -844,6 +849,7 @@ var coGridHelper = {
         //validations
         //check global selected items
         me.getSelectedObj();
+        
         if (!allowEmpty && !me._selectedNames.length) {
             //check if copadoApp showmessage is active
             if (copadoApp.showMessage) {
@@ -855,10 +861,28 @@ var coGridHelper = {
         }
         var valid = !additionalValidation ? true : additionalValidation(me._selectedNames);
         valid && me.remoteSaveMeta(id, sel || me._selectedNames, type, callback, isRollback, attachmentSize);
-
         return false;
     },
 
+     /**
+     * Save in attachment the selected items of the grid
+     * @param  {[type]} id                   parentId
+     * @param  {[type]} type                 Attachment Name
+     * @param  {[type]} additionalValidation function for additional validations
+     * @param  {[type]} allowEmpty           skip length validation
+     * @param  {[type]} callcack
+     * @return {[type]}                      false
+     */
+      saveRetrieveOnly: function( id, type, additionalValidation, callback, ret, isRollback, attachmentSize) {
+        console.debug('... Saving RetrieveOnly Attachment');
+        var me = coGridHelper;
+        //validations
+        //check global selected items
+        //me.getSelectedObj();
+        var valid = !additionalValidation ? true : additionalValidation(me._retrieveOnlyNames);
+        valid && me.remoteSaveMeta(id, ret || me._retrieveOnlyNames, type, callback, isRollback, attachmentSize);
+        return false;
+    },
     /**
      * save an attachment
      * @param  {[type]} id       parentId
