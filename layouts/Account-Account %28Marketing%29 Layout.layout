@@ -35,6 +35,10 @@
                 <behavior>Edit</behavior>
                 <field>istest__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>X00074297__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
