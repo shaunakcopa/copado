@@ -107,6 +107,10 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Address</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>AssetLevel</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -121,9 +125,37 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Availability</fullName>
+    </fields>
+    <fields>
+        <fullName>AverageUptimePerDay</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ConsequenceOfFailure</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>ContactId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CurrentAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CurrentLifecycleEndDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CurrentMrr</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CurrentQuantity</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Description</fullName>
@@ -140,6 +172,9 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>HasLifecycleManagement</fullName>
+    </fields>
+    <fields>
         <fullName>InstallDate</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -149,6 +184,14 @@
     </fields>
     <fields>
         <fullName>IsInternal</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>LifecycleEndDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>LifecycleStartDate</fullName>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
@@ -203,6 +246,9 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Reliability</fullName>
+    </fields>
+    <fields>
         <fullName>RootAssetId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
@@ -226,6 +272,26 @@
         <fullName>StockKeepingUnit</fullName>
     </fields>
     <fields>
+        <fullName>SumDowntime</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SumUnplannedDowntime</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TotalLifecycleAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>UptimeRecordEnd</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>UptimeRecordStart</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>UsageEndDate</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -233,6 +299,16 @@
         <fullName>Uuid</fullName>
         <inlineHelpText>Unique string identifying the asset.</inlineHelpText>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>X00073991_Test1__c</fullName>
+        <externalId>false</externalId>
+        <label>00073991 Test1</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <listViews>
         <fullName>AllAssets</fullName>

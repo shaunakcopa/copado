@@ -10,6 +10,12 @@
         <name>copado__Compliance_Status__c</name>
     </fields>
     <fields>
+        <help><!-- A mechanism for customers to create their own Connected Apps, and reference them for each Org Credential that would be authenticated against the custom connected app versus the central, Copado Connected App. It will be legacy behavior if not selected. --></help>
+        <label><!-- Custom Connected App Info --></label>
+        <name>copado__Custom_Connected_App_Info__c</name>
+        <relationshipLabel><!-- Credentials --></relationshipLabel>
+    </fields>
+    <fields>
         <help><!-- Eg: https://company.my.salesforce.com --></help>
         <label><!-- Custom Domain --></label>
         <name>copado__Custom_Domain__c</name>
@@ -23,12 +29,12 @@
         <help><!-- Will be used for Review app creation out of promotions. Otherwise every scratch org may be created by their own scratch org definition either with a template or without. --></help>
         <label><!-- Default Scratch Org Definition --></label>
         <name>copado__Default_Scratch_Org_Definition__c</name>
-        <relationshipLabel><!-- Org Credentials --></relationshipLabel>
+        <relationshipLabel><!-- Credentials --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- Developer Hub Org --></label>
+        <label><!-- Developer Hub Credential --></label>
         <name>copado__Developer_Hub_Org__c</name>
-        <relationshipLabel><!-- Org Credentials --></relationshipLabel>
+        <relationshipLabel><!-- Credentials --></relationshipLabel>
     </fields>
     <fields>
         <help><!-- Checking this checkbox will not validate the org credentials when the record is saved or viewed. --></help>
@@ -39,7 +45,7 @@
         <help><!-- Environment records are created automatically when Org Credentials are authenticated. The Environment may have multiple Org Credentials which correspond to different users of the same Environment. --></help>
         <label><!-- Environment --></label>
         <name>copado__Environment__c</name>
-        <relationshipLabel><!-- Org Credentials --></relationshipLabel>
+        <relationshipLabel><!-- Credentials --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Error --></label>
@@ -125,6 +131,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Platform --></label>
+        <name>copado__Platform__c</name>
+    </fields>
+    <fields>
         <label><!-- Profile Name --></label>
         <name>copado__Profile_Name__c</name>
     </fields>
@@ -201,7 +211,7 @@
         <name>copado__Validated_Status__c</name>
     </fields>
     <fields>
-        <label><!-- Is Developer Hub Org --></label>
+        <label><!-- Is Developer Hub Credential --></label>
         <name>copado__is_Developer_Hub_Org__c</name>
     </fields>
     <webLinks>

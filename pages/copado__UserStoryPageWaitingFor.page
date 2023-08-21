@@ -33,16 +33,14 @@
         <apex:form >
             <script type="text/javascript">
                 var wasJobStarted = (window.location.hash && window.location.hash.startsWith('#&jobStarted'));
-                var isValidation;
                 var isPullRequest;
                 var isCommitChanges;
                 var isTestRun;
-
+                var newUrl = new window.URL(window.location.href);
+                var isValidation = newUrl.href.indexOf('co_validation') >= 0;
                 if (!wasJobStarted) {
                     // added co_ in front of the type names, because customer test classes can contain those words and it will break the test run process
                     // If you change the values here, you have to make changes at following classes and buttons: (JobWaitingExtension, GitCommit_HeaderController, GitCommitChangesController, UserStoryApexTestResultExtension, Snapshotwaitingforpage and User story "pull request and perform validation" buttons)
-                    var newUrl = new window.URL(window.location.href);
-                    isValidation = newUrl.href.indexOf('co_validation') >= 0;
                     isPullRequest = newUrl.href.indexOf('co_pullRequest') >= 0;
                     isCommitChanges = newUrl.href.indexOf('co_commitChanges') >= 0;
                     isTestRun = newUrl.href.indexOf('co_apexTestRun') >= 0;
@@ -76,10 +74,10 @@
                 $copado(document).ready(function () {
                     setSVGStruct();
                     applyRenderSVG(svgButtonsId, svgButtonsClass);
-                    if (wasJobStarted) {
+                    //if (wasJobStarted) {
                         existingJobCheck();
                         //return; // we do not want to start a new job every time the user reloads the page
-                    }
+                    //}
                     if (isValidation) {
                         prepareValidationJob();
                     } else if (isPullRequest) {
@@ -217,6 +215,7 @@
 
                         <script>
                             function updateURLForRefresh() {
+                                var counter = localStorage.getItem("jobStartedFirstTimeInLex") != null ? localStorage.getItem("jobStartedFirstTimeInLex") + 1 : 1;
                                 var newUrls = new window.URL(window.location.href);
                                 var copadoJobId = '{!JSENCODE(copadoNotificationId)}';
                                 newUrls.hash = '&jobStarted=' + copadoJobId;
@@ -226,7 +225,7 @@
                     </apex:outputPanel>
                 </div>
                 <apex:outputPanel styleClass="copado-section-footer" id="continueButton">
-                    <apex:commandLink styleClass="slds-button slds-button_brand" action="{!getReturnUrl}" value="{!$Label.copado__go_back} to the {!$ObjectType.copado__User_Story__c.Label}"
+                    <apex:commandLink styleClass="slds-button slds-button_brand" action="{!getReturnUrl}" value="{!$Label.copado__Go_Back} to the {!$ObjectType.copado__User_Story__c.Label}"
                         style="margin-top:25px" />
                 </apex:outputPanel>
 

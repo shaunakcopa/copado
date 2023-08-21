@@ -12,8 +12,8 @@
                 <apex:commandButton id="btnReturn" value="Return to previous page" action="{!cancel}" />
             </apex:outputPanel>
             <apex:outputPanel id="pnlSuccess" rendered="{!showList}">
-                <apex:sectionHeader title="{!$Label.copado__promote_selenium_tc_version}" subtitle="{!copado__Selenium_Test_Case__c.Name} ({!$Label.copado__tc_replace} {!copado__Selenium_Test_Case__c.Previous_Version__r.copado__Version__c} {!$Label.copado__tc_with} {!copado__Selenium_Test_Case__c.copado__Version__c})"
-                                    description="{!$Label.copado__promote_test_case_description}"/>
+                <apex:sectionHeader title="{!$Label.copado__PROMOTE_SELENIUM_TC_VERSION}" subtitle="{!copado__Selenium_Test_Case__c.Name} ({!$Label.copado__TC_REPLACE} {!copado__Selenium_Test_Case__c.Previous_Version__r.copado__Version__c} {!$Label.copado__TC_WITH} {!copado__Selenium_Test_Case__c.copado__Version__c})"
+                                    description="{!$Label.copado__PROMOTE_TEST_CASE_DESCRIPTION}"/>
                 <apex:pageBlock id="pb" mode="edit">
                     <apex:pageblockButtons id="pbbs" location="top">
                         <apex:commandButton value="Done" action="{!cancel}" rendered="{!processIsDone}"/>
