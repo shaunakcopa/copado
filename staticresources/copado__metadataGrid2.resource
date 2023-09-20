@@ -969,6 +969,10 @@ MetadataGrid2.prototype.loadMetaData = function(callbackFinished, forceRefresh) 
                 );
             else allMetaData = [];
             var existingFlag = false;
+            // convert meatdata names from UTF-8 to ISO-8859-1 encoding
+            for(var i=0; i<allMetaData.length; i++){
+                allMetaData[i].n = decodeURIComponent(escape((allMetaData[i].n).replace(/%2F/gi, "/").replace(/%24/gi, "$")));
+            }
             for(var j=0; j<that.selectedMetadata.length; j++){
                 for(var i=0; i<allMetaData.length; i++){
                     if(allMetaData[i].n == that.selectedMetadata[j].n && allMetaData[i].t == that.selectedMetadata[j].t) existingFlag = true;

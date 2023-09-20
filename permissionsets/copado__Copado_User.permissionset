@@ -2249,6 +2249,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__ResultViewerPublishMessageCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ResultsSelector</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -2885,6 +2889,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__UserStorySubmitCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__UserStoryTriggerHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -3168,6 +3176,10 @@
         <apexClass>copado__webhookLookupController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <customMetadataTypeAccesses>
+        <enabled>true</enabled>
+        <name>copado__Copado_Cloud_Regional_Instances__mdt</name>
+    </customMetadataTypeAccesses>
     <customMetadataTypeAccesses>
         <enabled>true</enabled>
         <name>copado__Copado_Setting__mdt</name>
