@@ -170,6 +170,10 @@
         <name>copado__Scratch_Orgs_Disabled_for_Back_Promoting</name>
     </validationRules>
     <webLinks>
+        <label><!-- Check_Status_History --></label>
+        <name>Check_Status_History</name>
+    </webLinks>
+    <webLinks>
         <label><!-- Rollback --></label>
         <name>copado__Rollback</name>
     </webLinks>
