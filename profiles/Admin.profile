@@ -2313,6 +2313,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__DataTemplateConstant</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__DataTemplateDeactivateCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -2498,10 +2502,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__DeleteOldContentVersionsActionTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__DeleteSensitiveProperties</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -2758,14 +2758,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__Encoder</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__EncryptSensitiveProperties</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__EncryptSensitiveProperties_Test</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -4385,6 +4377,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__PromotionValidator</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__PromotionsSelector</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -5182,10 +5178,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__SendNotificationsImplTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SensitivePropertySelector</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -14704,6 +14696,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Deployment_Task__c.copado__Apply_to__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Deployment_Task__c.copado__Data_Template__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
