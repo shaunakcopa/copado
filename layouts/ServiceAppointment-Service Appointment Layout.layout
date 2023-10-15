@@ -231,6 +231,12 @@
         <relatedList>AssignedResources</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>WorkCapacityUsage</fields>
+        <fields>EstimatedUsageInMinutes</fields>
+        <fields>UsageDate</fields>
+        <relatedList>ServiceAppointmentCapacityUsages</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>Name</fields>
         <fields>CreatedBy</fields>
         <fields>CreatedDate</fields>

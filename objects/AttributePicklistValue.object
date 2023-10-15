@@ -150,11 +150,6 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
-        <fullName>ParentPicklistValueId</fullName>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>PicklistId</fullName>
         <trackHistory>false</trackHistory>
         <type>MasterDetail</type>
@@ -175,9 +170,13 @@
         <customTabListAdditionalFields>Picklist</customTabListAdditionalFields>
         <customTabListAdditionalFields>Code</customTabListAdditionalFields>
         <customTabListAdditionalFields>Status</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Sequence</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Value</customTabListAdditionalFields>
         <searchResultsAdditionalFields>Picklist</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Code</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Status</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Sequence</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Value</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>
