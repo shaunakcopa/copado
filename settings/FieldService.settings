@@ -4,6 +4,8 @@
     <canSendAppCenterCrashReports>true</canSendAppCenterCrashReports>
     <canStoreMobileAnalytics>true</canStoreMobileAnalytics>
     <doesAllowEditSaForCrew>false</doesAllowEditSaForCrew>
+    <doesAvlCalcInclOvertime>false</doesAvlCalcInclOvertime>
+    <doesAvlCalcInclPrimOnly>false</doesAvlCalcInclPrimOnly>
     <doesShareSaParentWoWithAr>false</doesShareSaParentWoWithAr>
     <doesShareSaWithAr>false</doesShareSaWithAr>
     <enableBatchWindow>false</enableBatchWindow>
