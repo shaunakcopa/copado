@@ -14,7 +14,7 @@
         <relationshipLabel><!-- System Properties --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Select this checkbox if you want to share the System Property among multiple pipelines and environments. --></help>
+        <help>複数のパイプラインや環境間でシステムプロパティを共有したい場合は、このチェックボックスを選択します。</help>
         <label><!-- Is Global? --></label>
         <name>copado__Is_Global__c</name>
     </fields>

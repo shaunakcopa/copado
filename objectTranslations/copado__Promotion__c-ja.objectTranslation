@@ -25,7 +25,7 @@
         <name>copado__Back_Promotion__c</name>
     </fields>
     <fields>
-        <help><!-- This field is checked by Copado once the promotion is merged and deployed successfully for multi-cloud platform. --></help>
+        <help>このフィールドは、プロモーションがマージされ、マルチクラウドプラットフォームに正常にデプロイされると、コパードによってチェックされます。</help>
         <label><!-- Completed --></label>
         <name>copado__Completed__c</name>
     </fields>
@@ -82,7 +82,7 @@
         <name>copado__Order_by__c</name>
     </fields>
     <fields>
-        <help><!-- This field auto-populates and displays the pipeline platform. --></help>
+        <help>このフィールドには、パイプラインのプラットフォームが自動入力され表示されます。</help>
         <label><!-- Platform --></label>
         <name>copado__Platform__c</name>
     </fields>
