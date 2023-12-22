@@ -230,7 +230,7 @@
     </fields>
     <fields>
         <fullName>Type</fullName>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
