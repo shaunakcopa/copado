@@ -141,19 +141,83 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>copado__Result</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>copado__Result</fullName>
+        <fields>Name</fields>
+        <fields>copado__Status__c</fields>
+        <fields>copado__Parent__c</fields>
+        <label>Result</label>
+    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
+    <description>A unified place to look for job results when working with automations such as functions or Salesforce flows.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
-    <enableHistory>false</enableHistory>
+    <enableHistory>true</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>copado__ApexCallback__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field automatically updated by Copado that is used to link some processes together.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is updated automatically by Copado.</inlineHelpText>
+        <label>Apex Callback</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__CreditSyncStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>An internal field to keep track of, if the function credit usage is synced</description>
+        <externalId>false</externalId>
+        <label>Credit Sync Status</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Custom_Function_Used_Credits__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Copado credits used in the execution of the function.</description>
+        <externalId>false</externalId>
+        <label>Copado Credits Used</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Custom_Function_Used_Minutes__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Time taken in minutes to execute the function.</description>
+        <externalId>false</externalId>
+        <label>Function Used Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
     <fields>
         <fullName>copado__Deployment_Job__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
@@ -166,15 +230,34 @@
         <relationshipLabel>Result</relationshipLabel>
         <relationshipName>Result</relationshipName>
         <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Deployment__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup field to the deployment that triggered the result.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to track multi-step deployment overall results.</inlineHelpText>
+        <label>Deployment</label>
+        <referenceTo>copado__Deployment__c</referenceTo>
+        <relationshipLabel>Results</relationshipLabel>
+        <relationshipName>Results</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
     <fields>
         <fullName>copado__Description__c</fullName>
         <deprecated>false</deprecated>
+        <description>Description of the result record.</description>
         <externalId>false</externalId>
         <label>Description</label>
         <length>32768</length>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Html</type>
         <visibleLines>25</visibleLines>
@@ -182,7 +265,7 @@
     <fields>
         <fullName>copado__Duration__c</fullName>
         <deprecated>false</deprecated>
-        <description>Total time duration of the job. Use this value to track job performance.</description>
+        <description>Total duration in seconds of the job execution. This value can be used to track job performance.</description>
         <externalId>false</externalId>
         <formula>IF(
   AND(
@@ -198,6 +281,7 @@
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
@@ -205,21 +289,24 @@
     <fields>
         <fullName>copado__End_Time__c</fullName>
         <deprecated>false</deprecated>
-        <description>Date time when the job ended.</description>
+        <description>Date and time when the job ended</description>
         <externalId>false</externalId>
         <inlineHelpText>Date time when the job ended.</inlineHelpText>
         <label>End Time</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
     </fields>
     <fields>
         <fullName>copado__Error_Code__c</fullName>
         <deprecated>false</deprecated>
+        <description>Code that helps you quickly identify the issue.</description>
         <externalId>false</externalId>
         <label>Error Code</label>
         <length>255</length>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -227,22 +314,107 @@
     <fields>
         <fullName>copado__Error_Message__c</fullName>
         <deprecated>false</deprecated>
+        <description>Description of the error if the job has failed.</description>
         <externalId>false</externalId>
         <label>Error Message</label>
         <length>32768</length>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>copado__Function_Worker_Size__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Computational resources available for function(Function credit limit is linked to size),  &apos;S&apos; =&gt; 1, &apos;M&apos; =&gt; 2, &apos;L&apos; =&gt; 4, &apos;XL&apos; =&gt; 8</description>
+        <externalId>false</externalId>
+        <label>Function Worker Size</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>S</fullName>
+                    <default>false</default>
+                    <label>S</label>
+                </value>
+                <value>
+                    <fullName>M</fullName>
+                    <default>false</default>
+                    <label>M</label>
+                </value>
+                <value>
+                    <fullName>L</fullName>
+                    <default>false</default>
+                    <label>L</label>
+                </value>
+                <value>
+                    <fullName>XL</fullName>
+                    <default>false</default>
+                    <label>XL</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>copado__Function__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup field to the function that triggered the result.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Copado Function that triggered this result.</inlineHelpText>
+        <label>Function</label>
+        <referenceTo>copado__Function__c</referenceTo>
+        <relationshipLabel>Results</relationshipLabel>
+        <relationshipName>Results</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__JobStep__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>When this result is the outcome of a Job Step, that is executed as part of a Job Template, this field points to the Job Step. (note that Job Step and Function can be populated at the same time).</description>
+        <externalId>false</externalId>
+        <label>Job Step</label>
+        <referenceTo>copado__JobStep__c</referenceTo>
+        <relationshipLabel>Results</relationshipLabel>
+        <relationshipName>Results</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Job_Execution__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Record link shortcutting to Job Step&apos;s Job Execution</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp;  copado__JobStep__r.copado__JobExecution__c ,  copado__JobStep__r.copado__JobExecution__r.Name , &quot;_blank&quot;)</formula>
+        <inlineHelpText>Record link shortcutting to Job Step&apos;s Job Execution</inlineHelpText>
+        <label>Job Execution</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__Job_Id__c</fullName>
         <deprecated>false</deprecated>
-        <description>Unique identifier for the jobs.</description>
+        <description>Unique identifier used to map the result with an external job.</description>
         <externalId>true</externalId>
         <inlineHelpText>Unique identifier for the jobs.</inlineHelpText>
-        <label>Job Id</label>
+        <label>External Job ID</label>
         <length>255</length>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -250,9 +422,11 @@
     <fields>
         <fullName>copado__Job_Type__c</fullName>
         <deprecated>false</deprecated>
+        <description>API name of the job that triggered the result. This information can be used for reporting purposes.</description>
         <externalId>false</externalId>
-        <label>Job Type</label>
+        <label>Job API Name</label>
         <required>true</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -269,22 +443,106 @@
     <fields>
         <fullName>copado__Link__c</fullName>
         <deprecated>false</deprecated>
-        <description>Link to open more information about the results.</description>
+        <description>Field used to link an external result to the Result record.</description>
         <externalId>false</externalId>
         <inlineHelpText>Link to open more information about the results.</inlineHelpText>
-        <label>Link</label>
+        <label>External Result Link</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Url</type>
     </fields>
     <fields>
+        <fullName>copado__ParentId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>15-digit Id of the record that triggered the process that generated the result.</description>
+        <externalId>false</externalId>
+        <label>Context ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Parent__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( !ISBLANK(copado__JobStep__c), copado__JobStep__r.copado__JobExecution__r.copado__Context__c,
+    HYPERLINK(&quot;/&quot;&amp; IF( !ISBLANK(copado__Test__c), copado__Test__r.Id,
+       IF(!ISBLANK(copado__User_Story__c), copado__User_Story__r.Id,
+            IF(!ISBLANK(copado__Deployment__c), copado__Deployment__r.Id,
+                IF(!ISBLANK(copado__Promotion__c), copado__Promotion__r.Id,
+                    IF(!ISBLANK( copado__Function__c ), copado__Function__r.Id,
+                        IF(!ISBLANK( copado__ParentId__c ), copado__ParentId__c, &apos;&apos;)))))
+  ) ,
+
+    IF( !ISBLANK(copado__Test__c), copado__Test__r.Name,
+        IF(!ISBLANK(copado__User_Story__c), copado__User_Story__r.Name,
+            IF(!ISBLANK(copado__Deployment__c), copado__Deployment__r.Name,
+                IF(!ISBLANK(copado__Promotion__c), copado__Promotion__r.Name,
+                    IF(!ISBLANK( copado__Function__c ), copado__Function__r.Name ,
+                        IF(!ISBLANK( copado__ParentId__c ), &apos;Record : &apos; + copado__ParentId__c,&apos;&apos;)))))
+  )))</formula>
+        <label>Parent</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Progress_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This status is used to track the current job activity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This status is used to track the current job activity.</inlineHelpText>
+        <label>Progress Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Promotion__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup field to the promotion that triggered the result.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to track job results triggered from promotion events.</inlineHelpText>
+        <label>Promotion</label>
+        <referenceTo>copado__Promotion__c</referenceTo>
+        <relationshipLabel>Results</relationshipLabel>
+        <relationshipName>Results</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Result_Data__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Includes all the returned data by the process. This can be used by other processes.</description>
+        <externalId>false</externalId>
+        <label>Result Data</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
         <fullName>copado__Start_Time__c</fullName>
         <deprecated>false</deprecated>
-        <description>Date time when the job started.</description>
+        <description>Date and time when the job started.</description>
         <externalId>false</externalId>
         <inlineHelpText>Date time when the job started.</inlineHelpText>
         <label>Start Time</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
     </fields>
@@ -292,11 +550,12 @@
         <fullName>copado__Status__c</fullName>
         <defaultValue>&quot;Not Started&quot;</defaultValue>
         <deprecated>false</deprecated>
-        <description>Current status of the result. Confirms if the result is pending or completed.</description>
+        <description>Status of the job execution.</description>
         <externalId>false</externalId>
         <inlineHelpText>Current status of the result. Confirms if the result is pending or completed.</inlineHelpText>
         <label>Status</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -331,10 +590,39 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>copado__Test__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Test parent object which triggered the execution.</description>
+        <externalId>false</externalId>
+        <label>Test</label>
+        <referenceTo>copado__Test__c</referenceTo>
+        <relationshipLabel>Results</relationshipLabel>
+        <relationshipName>Results</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Timeout__c</fullName>
+        <deprecated>false</deprecated>
+        <description>If you want Copado to update the status to Failed if there is no response from the function’s job after a certain period of time (e.g., 60 minutes), you can define it here.</description>
+        <externalId>false</externalId>
+        <label>Timeout (minutes)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__User_Story__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <description>User story that originated the result.</description>
+        <description>Lookup field to the user story that triggered the result.</description>
         <externalId>false</externalId>
         <inlineHelpText>User story that originated the result.</inlineHelpText>
         <label>User Story</label>
@@ -342,6 +630,7 @@
         <relationshipLabel>Result</relationshipLabel>
         <relationshipName>Result</relationshipName>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
@@ -364,6 +653,7 @@
     <nameField>
         <displayFormat>R{00000}</displayFormat>
         <label>Result Name</label>
+        <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Results</pluralLabel>

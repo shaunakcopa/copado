@@ -209,5 +209,14 @@
     <fields>
         <fullName>Title</fullName>
     </fields>
+    <fields>
+        <fullName>X00073991_Test4__c</fullName>
+        <externalId>false</externalId>
+        <label>00073991 Test4</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <sharingModel>ControlledByCampaign</sharingModel>
 </CustomObject>
