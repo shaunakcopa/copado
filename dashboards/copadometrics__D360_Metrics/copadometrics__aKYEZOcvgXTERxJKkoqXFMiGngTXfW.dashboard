@@ -86,6 +86,7 @@
     <dashboardType>SpecifiedUser</dashboardType>
     <description>This dashboard will give you a unique set of DevOps KPI&apos;s to monitor for your DevOps process.</description>
     <isGridLayout>true</isGridLayout>
+    <owner>shaunakcopado@copado.com.prod</owner>
     <runningUser>shaunakcopado@copado.com.prod</runningUser>
     <textColor>#000000</textColor>
     <title>Copado Analytics</title>

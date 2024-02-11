@@ -237,6 +237,7 @@
     <dashboardType>MyTeamUser</dashboardType>
     <description>Dashboard to view the different tests with their progress, status and much more.</description>
     <isGridLayout>true</isGridLayout>
+    <owner>shaunakcopado@copado.com.prod</owner>
     <runningUser>shaunakcopado@copado.com.prod</runningUser>
     <textColor>#000000</textColor>
     <title>Test Management Dashboard</title>

@@ -86,7 +86,6 @@
     <searchLayouts>
         <customTabListAdditionalFields>ServiceTerritory</customTabListAdditionalFields>
         <customTabListAdditionalFields>SvcApptField</customTabListAdditionalFields>
-        <customTabListAdditionalFields>SvcApptFieldValue</customTabListAdditionalFields>
         <customTabListAdditionalFields>SvcApptFieldValDplyNm</customTabListAdditionalFields>
         <customTabListAdditionalFields>TimePeriod</customTabListAdditionalFields>
         <customTabListAdditionalFields>StartDate</customTabListAdditionalFields>
@@ -95,9 +94,10 @@
         <customTabListAdditionalFields>LimitationPercentage</customTabListAdditionalFields>
         <customTabListAdditionalFields>LimitationValue</customTabListAdditionalFields>
         <customTabListAdditionalFields>TimeConsumedInHours</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CapacityLimitRelaxation</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ConsumptionToLimitRatio</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>ServiceTerritory</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>SvcApptField</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>SvcApptFieldValue</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>SvcApptFieldValDplyNm</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>TimePeriod</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>StartDate</lookupDialogsAdditionalFields>
@@ -106,9 +106,10 @@
         <lookupDialogsAdditionalFields>LimitationPercentage</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>LimitationValue</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>TimeConsumedInHours</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CapacityLimitRelaxation</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ConsumptionToLimitRatio</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ServiceTerritory</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>SvcApptField</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>SvcApptFieldValue</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>SvcApptFieldValDplyNm</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>TimePeriod</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>StartDate</lookupPhoneDialogsAdditionalFields>
@@ -117,9 +118,10 @@
         <lookupPhoneDialogsAdditionalFields>LimitationPercentage</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>LimitationValue</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>TimeConsumedInHours</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CapacityLimitRelaxation</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ConsumptionToLimitRatio</lookupPhoneDialogsAdditionalFields>
         <searchResultsAdditionalFields>ServiceTerritory</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>SvcApptField</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>SvcApptFieldValue</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>SvcApptFieldValDplyNm</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>TimePeriod</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>StartDate</searchResultsAdditionalFields>
@@ -128,6 +130,8 @@
         <searchResultsAdditionalFields>LimitationPercentage</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LimitationValue</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>TimeConsumedInHours</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CapacityLimitRelaxation</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ConsumptionToLimitRatio</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>Private</sharingModel>
 </CustomObject>

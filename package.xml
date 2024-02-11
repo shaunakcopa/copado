@@ -113,7 +113,6 @@
         <members>ServiceSetupAssistant</members>
         <members>Sharing</members>
         <members>Site</members>
-        <members>SocialProfile</members>
         <members>SourceTracking</members>
         <members>Survey</members>
         <members>SystemNotification</members>

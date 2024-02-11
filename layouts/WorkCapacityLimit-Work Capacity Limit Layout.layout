@@ -12,6 +12,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>CapacityLimitRelaxation</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>IsActive</field>
             </layoutItems>
             <layoutItems>
@@ -133,6 +137,7 @@
     </layoutSections>
     <miniLayout>
         <fields>SvcApptFieldValDplyNm</fields>
+        <fields>CapacityLimitRelaxation</fields>
     </miniLayout>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
