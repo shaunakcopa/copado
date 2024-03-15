@@ -155,6 +155,16 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
+        <fullName>Test123__c</fullName>
+        <externalId>false</externalId>
+        <label>Test123</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__Apply_to__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>

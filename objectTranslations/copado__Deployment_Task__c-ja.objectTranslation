@@ -5,6 +5,10 @@
         <value><!-- Deployment Task --></value>
     </caseValues>
     <fields>
+        <label><!-- Test123 --></label>
+        <name>Test123__c</name>
+    </fields>
+    <fields>
         <label><!-- Apply to --></label>
         <name>copado__Apply_to__c</name>
         <picklistValues>

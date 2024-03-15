@@ -14731,6 +14731,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Deployment_Task__c.Test123__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Deployment_Task__c.copado__Apply_to__c</field>
         <readable>true</readable>
     </fieldPermissions>
