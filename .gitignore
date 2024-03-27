@@ -57,6 +57,7 @@ dashboards/*
 flowdefinitions/*
 staticresources/*
 authprovider/*
+custommetadata/*
 samlssoconfigs/*
 listViews/*
 
