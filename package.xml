@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>standard-Survey</members>
-        <name>CustomTab</name>
+        <members>ShaunakAP</members>
+        <name>AuthProvider</name>
     </types>
-    <version>59.0</version>
+    <types>
+        <members>copado__Copado_Setting.copado__Actual_Velocity_Statuses</members>
+        <name>CustomMetadata</name>
+    </types>
+    <version>60.0</version>
 </Package>

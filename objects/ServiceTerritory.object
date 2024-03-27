@@ -134,6 +134,11 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>AvgTravelTime</fullName>
+        <inlineHelpText>Enter the average travel time for this service territory. The value is added to the Work Capacity Usage for each scheduled service appointment in the service territory.</inlineHelpText>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackHistory>false</trackHistory>
     </fields>

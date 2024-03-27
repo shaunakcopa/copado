@@ -59,6 +59,7 @@
             <sortBy>RowLabelAscending</sortBy>
         </components>
     </middleSection>
+    <owner>shaunakcopado@copado.com.prod</owner>
     <rightSection>
         <columnSize>Medium</columnSize>
         <components>

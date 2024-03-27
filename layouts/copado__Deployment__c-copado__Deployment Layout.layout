@@ -111,7 +111,6 @@
         <style>CustomLinks</style>
     </layoutSections>
     <relatedLists>
-        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>copado__Order__c</fields>
         <fields>copado__Type__c</fields>
@@ -197,7 +196,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0Y000000l6VI</masterLabel>
+        <masterLabel>00h5g000000Mqkf</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

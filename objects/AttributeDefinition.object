@@ -198,7 +198,9 @@
     </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>DataType</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IsActive</customTabListAdditionalFields>
         <searchResultsAdditionalFields>DataType</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IsActive</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>Private</sharingModel>
 </CustomObject>

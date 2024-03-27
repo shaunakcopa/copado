@@ -32,6 +32,10 @@
                 <behavior>Readonly</behavior>
                 <field>TotalItemsQuantity</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>FulfillmentOrderId</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>

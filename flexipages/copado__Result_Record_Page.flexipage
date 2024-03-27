@@ -151,6 +151,24 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentName>copado:consolidatedResultDetail</componentName>
+                <identifier>c_consolidatedResultDetail</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.copado__Test__r.Name}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.copado__JobStep__r.copado__CustomType__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Test</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentName>copado:resultViewerPublishMessage</componentName>
                 <identifier>c_resultViewerPublishMessage</identifier>
                 <visibilityRule>
@@ -180,6 +198,18 @@
                 </componentInstanceProperties>
                 <componentName>copado:dynamicUISectionContainer</componentName>
                 <identifier>c_dynamicUISectionContainer</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.copado__Test__r.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.copado__JobStep__r.copado__CustomType__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Test</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <name>Facet-4e172a7f-05d4-4f34-aefb-c429ace28604</name>

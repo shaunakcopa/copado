@@ -32,7 +32,7 @@
                 'Next': '{!JSENCODE($Label.Next)}',
                 'Previous': '{!JSENCODE($Label.Previous)}'
             };
-        </script>
+        </script>    
         <link rel="stylesheet" typea="text/css" href="{!URLFOR($Resource.DataTables10,'DataTables10/datatables.min.css')}" />
         <apex:outputPanel id="hiddenVars">
             <input id="hiddenRollbackFlag" type="hidden" value="{!enableRollbackEnv}" />
@@ -83,7 +83,7 @@
                         alert(copadoLabels.DESTINATION_ORG_CREDENTIAL_REQUIRED_FOR_DEPLOYMENT);
                         return false;
                     }
-                    if (isTestOnly == true) setLockScreenMessage('{!JSENCODE($Label.copado__Creating_Validation_Deployment_Message)}');
+                    if (isTestOnly == true) setLockScreenMessage('{!$Label.copado__Creating_Validation_Deployment_Message}');
 
                     copadoApp.callBackEnd(deploymentName, isTestOnly, testLevel, '', attachdeploymentfile, deployNow);
                 },
@@ -131,7 +131,7 @@
                         }
                     })
                     if (depName) {
-                        var pullLink = $copado('<a href="#" onclick="getPullRequest(\'' + depName + '\');return false;"> | {!JSENCODE($Label.copado__Create_Pull_Request)}</a>');
+                        var pullLink = $copado('<a href="#" onclick="getPullRequest(\'' + depName + '\');return false;"> | {!$Label.copado__Create_Pull_Request}</a>');
                         pullLink.appendTo($copado(this).parent());
                     }
                 });
@@ -175,8 +175,8 @@
             var showReviewConflictButton = function () {
                 var reviewConflictButton = $copado('<input id="customReviewConflictButton" type="button" class="btn" value="{!JSENCODE($Label.copado__MERGE_CONFLICT_REVIEW)}" onclick="openResolveConflictsPage();"/>');
                 if ({!IF(copado__Promotion__c.copado__Merge_Conflict__c, 1, 0)} || '{!JSENCODE(copado__Promotion__c.copado__Status__c)}' == '{!JSENCODE($Label.copado__MERGE_CONFLICT)}' || {!isSmartConflict}) {
-                    reviewConflictButton.appendTo($copado('[Id^="topButtonRow"]'));
-                }
+                reviewConflictButton.appendTo($copado('[Id^="topButtonRow"]'));
+            }
             }
 
             var showRollbackButton = function () {
@@ -209,7 +209,7 @@
                 if ('{!AND(openCreateDeployment, enableCreateDeploymentButton)}' === 'true' && attPc == null) {
                     openModal();
                 } else if ('{!AND(openCreateDeployment, !enableCreateDeploymentButton)}' === 'true') {
-                    alert('{!JSENCODE($Label.copado__CONFLICT_RESOLUTION_DEPLOYMENT_NOT_ENABLED)}');
+                    alert('{!$Label.copado__CONFLICT_RESOLUTION_DEPLOYMENT_NOT_ENABLED}');
                 }
 
                 //Buttons To middle No PBtitle
@@ -765,14 +765,14 @@
                                         <script type="text/javascript">
                                             function submitModal(deployNow) {
                                                 if(!deployNow || (deployNow && confirm("{!JSENCODE($Label.PromoteAndDeployWarning)}"))){
-                                                    var deploymentName = $copado('#deploymentName').val();
-                                                    var isTestOnly = $copado('#validationOnly').is(':checked');
-                                                    var testLevel = $copado('[id$="testLevel"]').val();
-                                                    var attachdeploymentfile = $copado('#attachdeploymentfile').is(':checked');
-                                                    console.log(deploymentName, isTestOnly, testLevel);
-                                                    closeModal();
+                                                var deploymentName = $copado('#deploymentName').val();
+                                                var isTestOnly = $copado('#validationOnly').is(':checked');
+                                                var testLevel = $copado('[id$="testLevel"]').val();
+                                                var attachdeploymentfile = $copado('#attachdeploymentfile').is(':checked');
+                                                console.log(deploymentName, isTestOnly, testLevel);
+                                                closeModal();
                                                     copadoApp.createDeployment(deploymentName, isTestOnly, testLevel, attachdeploymentfile, deployNow);
-                                                }
+                                            }
 
                                             }
                                             function closeProgressModalFunction() {

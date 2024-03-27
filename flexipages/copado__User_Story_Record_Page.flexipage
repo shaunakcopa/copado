@@ -12,7 +12,7 @@
                         <valueListItems>
                             <value>CustomButton.copado__User_Story__c.copado__Open_Org</value>
                             <visibilityRule>
-                                <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+                                <booleanFilter>1 AND (2 OR 3 OR 4)</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
                                     <operator>NE</operator>
@@ -26,6 +26,11 @@
                                 <criteria>
                                     <leftValue>{!Record.copado__Platform__c}</leftValue>
                                     <operator>EQUAL</operator>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Platform__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>SFDX</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
@@ -338,16 +343,6 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>communicationId</name>
-                    <value>{!$Label.copado__UserStoryAlertCommunicationId}</value>
-                </componentInstanceProperties>
-                <componentName>copado:copadoAlertCommunicator</componentName>
-                <identifier>c_copadoAlertCommunicator1</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
                 <componentName>copado:userStoryCommitProgressAlerts</componentName>
                 <identifier>userStoryCommitProgressAlerts</identifier>
                 <visibilityRule>
@@ -362,6 +357,12 @@
                         <operator>NE</operator>
                     </criteria>
                 </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:qualityGatesChecker</componentName>
+                <identifier>c_qualityGatesChecker</identifier>
             </componentInstance>
         </itemInstances>
         <name>header</name>
@@ -710,10 +711,66 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.CreatedById</fieldItem>
+                <identifier>RecordCreatedByIdField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-563afb18-71c4-4422-8964-8fdaf09fe88c</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.LastModifiedById</fieldItem>
+                <identifier>RecordLastModifiedByIdField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-72952b4b-70c2-4d46-a290-b8165494f95d</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-563afb18-71c4-4422-8964-8fdaf09fe88c</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column45</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-72952b4b-70c2-4d46-a290-b8165494f95d</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column46</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-fe66d176-f81f-4915-8edd-e38a4aff8913</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-dffc1ade-1937-4f8e-baff-77d8fce66482</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -730,6 +787,10 @@
                     <value>Facet-9ooq3hrbo1q</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__PROJECT_MANAGEMENT}</value>
                 </componentInstanceProperties>
@@ -742,6 +803,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-56931b45-45ee-46ae-a2ba-d9111f2e3a4d</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -758,11 +823,33 @@
                     <value>Facet-24dd2b7a-0bf1-422b-b8c4-e3658f4158d0</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__ESTIMATION}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection4</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-fe66d176-f81f-4915-8edd-e38a4aff8913</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>{!$Label.copado__SYSTEM_INFORMATION}</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection25</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1145,10 +1232,66 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.CreatedById</fieldItem>
+                <identifier>RecordCreatedByIdField2</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-6bb6d523-f495-426d-a07c-a6a7618d71fb</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.LastModifiedById</fieldItem>
+                <identifier>RecordLastModifiedByIdField2</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-f2c31269-0441-4913-9e81-2e4a1e8ca108</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-6bb6d523-f495-426d-a07c-a6a7618d71fb</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column47</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-f2c31269-0441-4913-9e81-2e4a1e8ca108</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column48</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-34c4e77f-46ff-4450-a849-d29a188a6ea5</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-4ac79d08-7c00-42a6-9e1b-6ddecf012659</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -1165,11 +1308,33 @@
                     <value>Facet-572f2cf2-40c7-4f7b-ba8c-64c0982acab6</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__PROJECT_MANAGEMENT}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection6</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-34c4e77f-46ff-4450-a849-d29a188a6ea5</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>{!$Label.copado__SYSTEM_INFORMATION}</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection26</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1309,6 +1474,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-59559f4c-2dc9-45bf-b84e-a1f536a12526</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -1698,6 +1867,10 @@
                     <value>Facet-255b5eff-2480-4c9d-ad92-6b2ec8ce60a8</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__APEX_CODE_COVERAGE}</value>
                 </componentInstanceProperties>
@@ -1710,6 +1883,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-d44ab4d7-04e9-4860-96ce-b863cfcf5c64</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -2056,6 +2233,10 @@
                     <value>Facet-37f5df2c-01bb-49de-b2ef-2ccdb7f7e546</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__INFO}</value>
                 </componentInstanceProperties>
@@ -2068,6 +2249,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-a39z1u1lfkq</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -2084,6 +2269,10 @@
                     <value>Facet-8750c375-db3c-44bf-bfee-23696d3205ff</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__END_OF_LIFE}</value>
                 </componentInstanceProperties>
@@ -2094,6 +2283,21 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>actionNames</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>adminFilters</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Back_Promotion__c|EQUALS|false</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>parentFieldApiName</name>
                     <value>copado__User_Story__c.Id</value>
                 </componentInstanceProperties>
@@ -2102,8 +2306,163 @@
                     <value>copado__Promoted_User_Stories__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
+                    <name>relatedListDisplayType</name>
                     <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Status__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Status__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Release__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Source_Environment__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Destination_Environment__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Is_Rolled_Back__c</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>User Story Promotions</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>copado__Promotion__c.NAME</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Descending</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>actionNames</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>adminFilters</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Back_Promotion__c|EQUALS|true</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>copado__User_Story__c.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>copado__Promoted_User_Stories__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Status__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Status__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Release__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Source_Environment__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Destination_Environment__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Is_Rolled_Back__c</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>User Story Back Promotions</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>__DEFAULT__</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Default</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList4</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-ibrebpa54nc</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>fieldset</name>
+                    <value>Bundled_Stories</value>
+                </componentInstanceProperties>
+                <componentName>copado:bundledStoriesRelatedList</componentName>
+                <identifier>c_bundledStoriesRelatedList</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>copado__User_Story__c.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>copado__Bundle_Versions__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>rowsToDisplay</name>
@@ -2114,13 +2473,9 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
-                <identifier>force_relatedListSingleContainer13</identifier>
+                <identifier>force_relatedListSingleContainer16</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-ibrebpa54nc</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -2171,42 +2526,6 @@
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
                 <identifier>force_relatedListSingleContainer14</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>fieldset</name>
-                    <value>Bundled_Stories</value>
-                </componentInstanceProperties>
-                <componentName>copado:bundledStoriesRelatedList</componentName>
-                <identifier>c_bundledStoriesRelatedList</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>copado__User_Story__c.Id</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>copado__Bundle_Versions__r</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-                <identifier>force_relatedListSingleContainer16</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-54c8155d-6106-40e8-9605-3f789872b43f</name>
@@ -2748,10 +3067,66 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.CreatedById</fieldItem>
+                <identifier>RecordCreatedByIdField3</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-3b1966af-2db3-4c68-8ddf-ccd9713b7bfe</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.LastModifiedById</fieldItem>
+                <identifier>RecordLastModifiedByIdField3</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-1b8a8034-7799-4784-802e-7cc4fa0f529d</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-3b1966af-2db3-4c68-8ddf-ccd9713b7bfe</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column49</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-1b8a8034-7799-4784-802e-7cc4fa0f529d</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column50</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-94c9c3a8-0b9f-45f9-9164-5c974e17ce03</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-3b191538-948a-4d3c-af9c-746a0c9b3d71</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -2768,6 +3143,10 @@
                     <value>Facet-e0bcf2c8-ddb1-45a8-9a9b-a04e0e0e372f</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__PROJECT_MANAGEMENT}</value>
                 </componentInstanceProperties>
@@ -2780,6 +3159,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-18383772-fe56-4346-ac7c-3bae9931c17a</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -2801,6 +3184,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-10348931-29f5-4b0b-81d8-dee430815c9e</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -2830,6 +3217,10 @@
                     <value>Facet-200cd346-996f-47b8-9df3-eec88bd3987d</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__ESTIMATION}</value>
                 </componentInstanceProperties>
@@ -2848,6 +3239,24 @@
                         <rightValue>Bug</rightValue>
                     </criteria>
                 </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-94c9c3a8-0b9f-45f9-9164-5c974e17ce03</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>{!$Label.copado__SYSTEM_INFORMATION}</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection27</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -3030,6 +3439,10 @@
                     <value>Facet-09c50978-ce2a-4c26-b0f4-a384457d6cff</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__INFO}</value>
                 </componentInstanceProperties>
@@ -3042,6 +3455,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-f3cfd85d-6e40-4ebb-bcd8-4add57b4c404</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -3453,6 +3870,10 @@
                     <value>Facet-1def0875-33a7-46ca-ab80-37b0cd63ea20</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__APEX_CODE_COVERAGE}</value>
                 </componentInstanceProperties>
@@ -3465,6 +3886,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-79ec4fd4-1741-4777-bd60-ec9e017df08e</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -3824,6 +4249,10 @@
                     <value>Facet-ade006cc-f3ac-484a-ac11-08c97fb04fc4</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__INFO}</value>
                 </componentInstanceProperties>
@@ -3836,6 +4265,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-a99b0eca-c589-49f8-9a70-00740c75df7e</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -3852,6 +4285,10 @@
                     <value>Facet-953cbe11-b17b-47ac-8144-796ff463c566</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__END_OF_LIFE}</value>
                 </componentInstanceProperties>
@@ -3862,6 +4299,21 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>actionNames</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>adminFilters</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Back_Promotion__c|EQUALS|false</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>parentFieldApiName</name>
                     <value>copado__User_Story__c.Id</value>
                 </componentInstanceProperties>
@@ -3870,25 +4322,157 @@
                     <value>copado__Promoted_User_Stories__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
+                    <name>relatedListDisplayType</name>
                     <value>ADVGRID</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Status__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Status__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Release__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Source_Environment__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Destination_Environment__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Is_Rolled_Back__c</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>User Story Promotions</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>
                     <value>true</value>
                 </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-                <identifier>force_relatedListSingleContainer26</identifier>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>copado__Promotion__c.NAME</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Descending</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>actionNames</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>adminFilters</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Back_Promotion__c|EQUALS|true</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>copado__User_Story__c.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>copado__Promoted_User_Stories__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Status__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Status__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Release__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Source_Environment__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Destination_Environment__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Promotion__c.copado__Is_Rolled_Back__c</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>User Story Back Promotions</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>NAME</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Descending</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-2dfc787a-2c97-4a31-ab17-f02addd495d5</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>fieldset</name>
+                    <value>Bundled_Stories</value>
+                </componentInstanceProperties>
+                <componentName>copado:bundledStoriesRelatedList</componentName>
+                <identifier>c_bundledStoriesRelatedList2</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Exclude_From_CBM__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -3965,23 +4549,6 @@
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
                 <identifier>force_relatedListSingleContainer29</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>fieldset</name>
-                    <value>Bundled_Stories</value>
-                </componentInstanceProperties>
-                <componentName>copado:bundledStoriesRelatedList</componentName>
-                <identifier>c_bundledStoriesRelatedList2</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.copado__Exclude_From_CBM__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>true</rightValue>
-                    </criteria>
-                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <name>Facet-352e640f-3498-4c9e-a643-746550671d0a</name>
