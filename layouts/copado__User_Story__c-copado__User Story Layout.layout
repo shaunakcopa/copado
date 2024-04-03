@@ -163,6 +163,10 @@
                 <behavior>Edit</behavior>
                 <field>copado__Is_Bundle__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>RecordTypeId</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
