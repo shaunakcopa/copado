@@ -163,6 +163,12 @@
                 <identifier>c_qualityGatesChecker</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:promotionProgressAlerts</componentName>
+                <identifier>c_promotionProgressAlerts</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>header</name>
         <type>Region</type>
     </flexiPageRegions>
