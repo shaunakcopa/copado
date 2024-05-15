@@ -8,15 +8,52 @@
                     <valueList>
                         <valueListItems>
                             <value>copado__Data_Set__c.copado__Generate_Data_Set</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__MCDD_Enabled__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>false</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Data_Set__c.copado__Generate_Data_Set_MC</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__MCDD_Enabled__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>true</rightValue>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>copado__Data_Set__c.copado__Deploy_Data_Set</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__MCDD_Enabled__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>false</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Data_Set__c.copado__Deploy_Data_Set_MC</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__MCDD_Enabled__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>true</rightValue>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>copado__Data_Set__c.copado__Remove_File_Versions</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Edit</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Clone</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Delete</value>
@@ -88,13 +125,7 @@
                     <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Data_Template__c</fieldItem>
-                <identifier>RecordData_Template__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.CreatedBy.Username}</leftValue>
-                        <operator>EQUAL</operator>
-                    </criteria>
-                </visibilityRule>
+                <identifier>RecordData_Template_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -494,6 +525,10 @@
                     <value>copado__ParentId__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>jobTemplateApiName</name>
+                    <value>SFDX_Generate_Data_Set_1</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>noJobMessage</name>
                     <value>{!$Label.copado__GenerateDataSetJobExecutionNotStartedMessage}</value>
                 </componentInstanceProperties>
@@ -516,7 +551,11 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>jobExecutionField</name>
-                    <value>copado__Deployment__c</value>
+                    <value>copado__ParentId__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>jobTemplateApiName</name>
+                    <value>SFDX_Deploy_Data_Set_1</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>noJobMessage</name>
@@ -535,31 +574,6 @@
                         <rightValue>true</rightValue>
                     </criteria>
                 </visibilityRule>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>tip1</name>
-                    <value>{!$Label.copado__CopadoDataSetTip1}</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>tip2</name>
-                    <value>{!$Label.copado__CopadoDataSetTip2}</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>tip3</name>
-                    <value>{!$Label.copado__CopadoDataSetTip3}</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>tip4</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>{!$Label.copado__CopadoDataSetTipTitle}</value>
-                </componentInstanceProperties>
-                <componentName>copado:copadocoreTips</componentName>
-                <identifier>c_copadocoreTips</identifier>
             </componentInstance>
         </itemInstances>
         <name>sidebar</name>
