@@ -275,7 +275,7 @@
                     <value>Test Tool</value>
                 </componentInstanceProperties>
                 <componentName>copado:dynamicUISectionContainer</componentName>
-                <identifier>c_dynamicUISectionContainer1</identifier>
+                <identifier>c_dynamicUISectionContainer</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-yaqumdrdwv</name>
@@ -392,22 +392,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Reference__c</fieldItem>
                 <identifier>RecordReference__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.copado__Reference__c}</leftValue>
-                        <operator>NE</operator>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.copado__Status__c</fieldItem>
-                <identifier>RecordStatus__cField</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.copado__Reference__c}</leftValue>

@@ -176,7 +176,7 @@
         </picklistValues>
         <picklistValues>
             <masterLabel>Translations</masterLabel>
-            <translation><!-- Translations --></translation>
+            <translation>翻訳</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>URL Callout</masterLabel>

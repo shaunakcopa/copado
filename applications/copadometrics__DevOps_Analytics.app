@@ -11,6 +11,7 @@
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
     <label>DevOps 360</label>
     <navType>Standard</navType>
     <tabs>copadometrics__DevOps_Analytics_Setup</tabs>

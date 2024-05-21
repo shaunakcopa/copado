@@ -5,6 +5,7 @@
     <doesFormulaEnforceDataAccess>true</doesFormulaEnforceDataAccess>
     <doesFormulaGenerateHtmlOutput>true</doesFormulaGenerateHtmlOutput>
     <enableEmailSimpleRespectProfiles>false</enableEmailSimpleRespectProfiles>
+    <enableEmailsimpleSecureProfiles>false</enableEmailsimpleSecureProfiles>
     <enableFlowBREncodedFixEnabled>true</enableFlowBREncodedFixEnabled>
     <enableFlowCustomPropertyEditor>false</enableFlowCustomPropertyEditor>
     <enableFlowDeployAsActiveEnabled>false</enableFlowDeployAsActiveEnabled>
@@ -13,16 +14,14 @@
     <enableFlowInterviewSharingEnabled>true</enableFlowInterviewSharingEnabled>
     <enableFlowNullPreviousValueFix>false</enableFlowNullPreviousValueFix>
     <enableFlowPauseEnabled>false</enableFlowPauseEnabled>
+    <enableFlowReactiveChoiceOptions>false</enableFlowReactiveChoiceOptions>
     <enableFlowReactiveScreens>false</enableFlowReactiveScreens>
     <enableFlowUseApexExceptionEmail>false</enableFlowUseApexExceptionEmail>
     <enableFlowViaRestUsesUserCtxt>true</enableFlowViaRestUsesUserCtxt>
     <enableLightningRuntimeEnabled>true</enableLightningRuntimeEnabled>
-    <isAccessToInvokedApexRequired>true</isAccessToInvokedApexRequired>
     <isApexPluginAccessModifierRespected>true</isApexPluginAccessModifierRespected>
     <isEnhancedFlowListViewVisible>true</isEnhancedFlowListViewVisible>
-    <isFlowApexContextRetired>false</isFlowApexContextRetired>
-    <isFlowBlockAccessToSessionIDEnabled>false</isFlowBlockAccessToSessionIDEnabled>
+    <isFlowBlockAccessToSessionIDEnabled>true</isFlowBlockAccessToSessionIDEnabled>
     <isManageFlowRequiredForAutomationCharts>false</isManageFlowRequiredForAutomationCharts>
     <isSupportRollbackOnErrorForApexInvocableActionsEnabled>false</isSupportRollbackOnErrorForApexInvocableActionsEnabled>
-    <isTimeResumedInSameRunContext>true</isTimeResumedInSameRunContext>
 </FlowSettings>

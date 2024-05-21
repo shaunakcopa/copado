@@ -157,8 +157,12 @@
     <searchLayouts>
         <customTabListAdditionalFields>Code</customTabListAdditionalFields>
         <customTabListAdditionalFields>Status</customTabListAdditionalFields>
+        <customTabListAdditionalFields>DataType</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Description</customTabListAdditionalFields>
         <searchResultsAdditionalFields>Code</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Status</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>DataType</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Description</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>Private</sharingModel>
 </CustomObject>
