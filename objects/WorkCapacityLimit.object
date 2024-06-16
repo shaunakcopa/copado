@@ -131,13 +131,13 @@
     <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>CapacityLimitRelaxation</fullName>
-        <inlineHelpText>Define the relaxation behavior for this limit.
-            If the work capacity limit relaxation policy is set per limit in Field Service Settings:
-            Empty value - no relaxation.
-            0 - relaxation starts at midnight on the day of service.
-            Positive integer - relaxation starts this number of hours after midnight.
-            Negative integer - relaxation starts this number of hours before midnight.
-            If the work capacity limit relaxation policy isn’t set per limit, this value is ignored.</inlineHelpText>
+        <inlineHelpText>Define when this limit is overridden.
+            If the limit override policy is set per limit in Field Service Settings:
+            Empty value - no override.
+            0 - override starts at midnight on the day of service.
+            Positive integer - override starts this number of hours after midnight.
+            Negative integer - override starts this number of hours before midnight.
+            If the limit override policy isn’t set per limit, this value is ignored.</inlineHelpText>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
@@ -171,7 +171,7 @@
     </fields>
     <fields>
         <fullName>IsSvcTerrOnlyLimit</fullName>
-        <inlineHelpText>Apply this work capacity limit to the entire service territory. To complete this definition, for Service Appointment Field, select Service Territory Limit, and for Field Value, enter Service Territory Limit.</inlineHelpText>
+        <inlineHelpText>Apply this work capacity limit to the entire service territory.</inlineHelpText>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
@@ -238,6 +238,7 @@
     </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>ServiceTerritory</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IsSvcTerrOnlyLimit</customTabListAdditionalFields>
         <customTabListAdditionalFields>SvcApptField</customTabListAdditionalFields>
         <customTabListAdditionalFields>SvcApptFieldValDplyNm</customTabListAdditionalFields>
         <customTabListAdditionalFields>TimePeriod</customTabListAdditionalFields>
@@ -248,6 +249,7 @@
         <customTabListAdditionalFields>CapacityLimitRelaxation</customTabListAdditionalFields>
         <customTabListAdditionalFields>IsActive</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>ServiceTerritory</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>IsSvcTerrOnlyLimit</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>SvcApptField</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>SvcApptFieldValDplyNm</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>TimePeriod</lookupDialogsAdditionalFields>
@@ -258,6 +260,7 @@
         <lookupDialogsAdditionalFields>CapacityLimitRelaxation</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>IsActive</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ServiceTerritory</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>IsSvcTerrOnlyLimit</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>SvcApptField</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>SvcApptFieldValDplyNm</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>TimePeriod</lookupPhoneDialogsAdditionalFields>
@@ -268,6 +271,7 @@
         <lookupPhoneDialogsAdditionalFields>CapacityLimitRelaxation</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>IsActive</lookupPhoneDialogsAdditionalFields>
         <searchResultsAdditionalFields>ServiceTerritory</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IsSvcTerrOnlyLimit</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>SvcApptField</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>SvcApptFieldValDplyNm</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>TimePeriod</searchResultsAdditionalFields>
