@@ -182,7 +182,6 @@
         <fullName>copado__ConfigJson__c</fullName>
         <deprecated>false</deprecated>
         <description>Config Json stores Job step related configuration information, for example in case of manual step it contains manual task assignee and instructions.</description>
-        <externalId>false</externalId>
         <label>ConfigJson</label>
         <length>131072</length>
         <trackTrending>false</trackTrending>
@@ -217,7 +216,6 @@
         <fullName>copado__ExecutionSequence__c</fullName>
         <deprecated>false</deprecated>
         <description>Used to define the order of execution in the context of User Story Deployment</description>
-        <externalId>false</externalId>
         <label>Execution Sequence</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -267,7 +265,6 @@
         <fullName>copado__IsSkipped__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Is Skipped?</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -277,7 +274,6 @@
         <deleteConstraint>Restrict</deleteConstraint>
         <deprecated>false</deprecated>
         <description>A job execution is a representation of a job template execution at a given point in time.</description>
-        <externalId>false</externalId>
         <label>Job Execution</label>
         <referenceTo>copado__JobExecution__c</referenceTo>
         <relationshipLabel>Job Steps</relationshipLabel>
@@ -291,7 +287,6 @@
         <deleteConstraint>Restrict</deleteConstraint>
         <deprecated>false</deprecated>
         <description>Name of the job template which initiates the execution of the job step.</description>
-        <externalId>false</externalId>
         <label>Job Template</label>
         <referenceTo>copado__JobTemplate__c</referenceTo>
         <relationshipLabel>Job Steps</relationshipLabel>
@@ -355,7 +350,6 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <description>The scope, filter, and acceptance criteria defined for the quality gate rule referenced in the job step.</description>
-        <externalId>false</externalId>
         <inlineHelpText>The scope, filter, and acceptance criteria defined for the quality gate rule referenced in the job step.</inlineHelpText>
         <label>Quality Gate Rule Condition</label>
         <referenceTo>copado__Quality_Gate_Rule_Condition__c</referenceTo>
@@ -370,7 +364,6 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <description>The quality check performed by the job step.</description>
-        <externalId>false</externalId>
         <inlineHelpText>The quality check performed by the job step.</inlineHelpText>
         <label>Quality Gate Rule</label>
         <referenceTo>copado__Quality_Gate_Rule__c</referenceTo>
@@ -384,7 +377,6 @@
         <fullName>copado__Resource_Observations__c</fullName>
         <deprecated>false</deprecated>
         <description>Register what resources are available after the step completes successfully. You can apply quality gates to these resources locally within the Function context.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Register what resources are available after the step completes successfully. You can apply quality gates to these resources locally within the Function context.</inlineHelpText>
         <label>Resource Observations</label>
         <required>false</required>
@@ -407,7 +399,6 @@
         <fullName>copado__ResultDataJson__c</fullName>
         <deprecated>false</deprecated>
         <description>This field contain any additional step result information once the step has finished, for example for a flow step after the step completes the flow step can put some date which is result of step execution in this field and then use it in next step using {$Job.PrevStep.JSONResult.XXX} dynamic expression</description>
-        <externalId>false</externalId>
         <label>Result Data Json</label>
         <length>131072</length>
         <trackTrending>false</trackTrending>
@@ -431,7 +422,6 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <description>The latest result associated with the job step.</description>
-        <externalId>false</externalId>
         <label>Last Result</label>
         <referenceTo>copado__Result__c</referenceTo>
         <relationshipLabel>Job Steps</relationshipLabel>
@@ -443,7 +433,6 @@
     <fields>
         <fullName>copado__SkipCondition__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <inlineHelpText>Expression that if evaluates to true, the step execution will be skipped and Copado will continue with the next step or complete the job execution. If left empty or the expression evaluates to false, the job step will execute as usual.</inlineHelpText>
         <label>Skip Step Condition</label>
         <length>32768</length>
@@ -494,7 +483,6 @@
         <fullName>copado__Type__c</fullName>
         <deprecated>false</deprecated>
         <description>Type of the Job Step.</description>
-        <externalId>false</externalId>
         <label>Behaviour</label>
         <required>true</required>
         <trackTrending>false</trackTrending>
@@ -531,7 +519,6 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <description>Lookup field to the user story to which this deployment task belongs</description>
-        <externalId>false</externalId>
         <label>User Story</label>
         <referenceTo>copado__User_Story__c</referenceTo>
         <relationshipLabel>Deployment Steps</relationshipLabel>

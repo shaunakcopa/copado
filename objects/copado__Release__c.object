@@ -263,7 +263,6 @@
     <fields>
         <fullName>copado__Completion_Date__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <inlineHelpText>Update this date when the release is complete.</inlineHelpText>
         <label>Completion Date</label>
         <required>false</required>
@@ -273,7 +272,6 @@
     <fields>
         <fullName>copado__Description__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Description</label>
         <length>10000</length>
         <trackTrending>false</trackTrending>
@@ -284,7 +282,6 @@
         <fullName>copado__Parent_Release__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <inlineHelpText>Informative field to define a parent release</inlineHelpText>
         <label>Parent Release</label>
         <referenceTo>copado__Release__c</referenceTo>
@@ -297,7 +294,6 @@
     <fields>
         <fullName>copado__Planned_Date__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Planned Date</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -307,7 +303,6 @@
         <fullName>copado__Project__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Project</label>
         <referenceTo>copado__Project__c</referenceTo>
         <relationshipLabel>Releases</relationshipLabel>
@@ -319,7 +314,6 @@
     <fields>
         <fullName>copado__Status_Notes__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <inlineHelpText>Describe the outcome of the release. If it was released, how it went? If canceled, why?</inlineHelpText>
         <label>Status Notes</label>
         <required>false</required>
@@ -329,7 +323,6 @@
     <fields>
         <fullName>copado__Status__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Status</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -363,7 +356,6 @@
     <fields>
         <fullName>copado__Testing_Completed__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <inlineHelpText>Update this date when all the Testing activities are completed.</inlineHelpText>
         <label>Testing Completed</label>
         <required>false</required>
@@ -373,7 +365,6 @@
     <fields>
         <fullName>copado__Type__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <inlineHelpText>Update these values via the &quot;Set Version&quot; option</inlineHelpText>
         <label>Type</label>
         <required>false</required>
@@ -417,7 +408,6 @@
     <fields>
         <fullName>copadoconnect__Connect_log__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Connect log</label>
         <length>32768</length>
         <trackTrending>false</trackTrending>
@@ -439,7 +429,6 @@
     <fields>
         <fullName>copadoconnect__Last_Synced_Date__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Last Synced Date</label>
         <required>false</required>
         <trackTrending>false</trackTrending>

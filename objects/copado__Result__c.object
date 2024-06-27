@@ -223,7 +223,6 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <description>Deployment job that originated the result.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Deployment job that originated the result.</inlineHelpText>
         <label>Deployment Job</label>
         <referenceTo>copado__Deployment_Job__c</referenceTo>
@@ -239,7 +238,6 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <description>Lookup field to the deployment that triggered the result.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Used to track multi-step deployment overall results.</inlineHelpText>
         <label>Deployment</label>
         <referenceTo>copado__Deployment__c</referenceTo>
@@ -254,7 +252,6 @@
         <fullName>copado__Description__c</fullName>
         <deprecated>false</deprecated>
         <description>Description of the result record.</description>
-        <externalId>false</externalId>
         <label>Description</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -290,7 +287,6 @@
         <fullName>copado__End_Time__c</fullName>
         <deprecated>false</deprecated>
         <description>Date and time when the job ended</description>
-        <externalId>false</externalId>
         <inlineHelpText>Date time when the job ended.</inlineHelpText>
         <label>End Time</label>
         <required>false</required>
@@ -315,7 +311,6 @@
         <fullName>copado__Error_Message__c</fullName>
         <deprecated>false</deprecated>
         <description>Description of the error if the job has failed.</description>
-        <externalId>false</externalId>
         <label>Error Message</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -327,7 +322,6 @@
         <fullName>copado__Function_Worker_Size__c</fullName>
         <deprecated>false</deprecated>
         <description>Computational resources available for function(Function credit limit is linked to size),  &apos;S&apos; =&gt; 1, &apos;M&apos; =&gt; 2, &apos;L&apos; =&gt; 4, &apos;XL&apos; =&gt; 8</description>
-        <externalId>false</externalId>
         <label>Function Worker Size</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -365,7 +359,6 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <description>Lookup field to the function that triggered the result.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Copado Function that triggered this result.</inlineHelpText>
         <label>Function</label>
         <referenceTo>copado__Function__c</referenceTo>
@@ -381,7 +374,6 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <description>When this result is the outcome of a Job Step, that is executed as part of a Job Template, this field points to the Job Step. (note that Job Step and Function can be populated at the same time).</description>
-        <externalId>false</externalId>
         <label>Job Step</label>
         <referenceTo>copado__JobStep__c</referenceTo>
         <relationshipLabel>Results</relationshipLabel>
@@ -423,7 +415,6 @@
         <fullName>copado__Job_Type__c</fullName>
         <deprecated>false</deprecated>
         <description>API name of the job that triggered the result. This information can be used for reporting purposes.</description>
-        <externalId>false</externalId>
         <label>Job API Name</label>
         <required>true</required>
         <trackHistory>false</trackHistory>
@@ -444,7 +435,6 @@
         <fullName>copado__Link__c</fullName>
         <deprecated>false</deprecated>
         <description>Field used to link an external result to the Result record.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Link to open more information about the results.</inlineHelpText>
         <label>External Result Link</label>
         <required>false</required>
@@ -511,7 +501,6 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <description>Lookup field to the promotion that triggered the result.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Used to track job results triggered from promotion events.</inlineHelpText>
         <label>Promotion</label>
         <referenceTo>copado__Promotion__c</referenceTo>
@@ -526,7 +515,6 @@
         <fullName>copado__Result_Data__c</fullName>
         <deprecated>false</deprecated>
         <description>Includes all the returned data by the process. This can be used by other processes.</description>
-        <externalId>false</externalId>
         <label>Result Data</label>
         <length>131072</length>
         <trackHistory>false</trackHistory>
@@ -538,7 +526,6 @@
         <fullName>copado__Start_Time__c</fullName>
         <deprecated>false</deprecated>
         <description>Date and time when the job started.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Date time when the job started.</inlineHelpText>
         <label>Start Time</label>
         <required>false</required>
@@ -551,7 +538,6 @@
         <defaultValue>&quot;Not Started&quot;</defaultValue>
         <deprecated>false</deprecated>
         <description>Status of the job execution.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Current status of the result. Confirms if the result is pending or completed.</inlineHelpText>
         <label>Status</label>
         <required>false</required>
@@ -594,7 +580,6 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <description>The Test parent object which triggered the execution.</description>
-        <externalId>false</externalId>
         <label>Test</label>
         <referenceTo>copado__Test__c</referenceTo>
         <relationshipLabel>Results</relationshipLabel>
@@ -623,7 +608,6 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <description>Lookup field to the user story that triggered the result.</description>
-        <externalId>false</externalId>
         <inlineHelpText>User story that originated the result.</inlineHelpText>
         <label>User Story</label>
         <referenceTo>copado__User_Story__c</referenceTo>
