@@ -87,7 +87,7 @@
         <relationshipLabel><!-- Results --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Record link shortcutting to Job Step&apos;s Job Execution --></help>
+        <help>ジョブステップのジョブ実行へのショートカットの記録リンク</help>
         <label><!-- Job Execution --></label>
         <name>copado__Job_Execution__c</name>
     </fields>

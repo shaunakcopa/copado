@@ -86,9 +86,7 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
-        <content>copado__DataTemplateSetup</content>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Visualforce</type>
+        <type>Default</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
@@ -168,7 +166,6 @@
         <fullName>copado__Active__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Active</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -176,7 +173,6 @@
     <fields>
         <fullName>copado__Attachment_Options__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Attachment Actions</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -230,7 +226,6 @@
     <fields>
         <fullName>copado__Continue_on_Error__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Continue on Error</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -256,7 +251,6 @@
     <fields>
         <fullName>copado__Description__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Description</label>
         <length>256</length>
         <trackTrending>false</trackTrending>
@@ -290,7 +284,6 @@
         <fullName>copado__Match_Owners__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Match Owners</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -299,7 +292,6 @@
         <fullName>copado__Match_Record_Type__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Match Record Type</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -320,7 +312,6 @@
         <fullName>copado__Template_Source_Org__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Template Schema Credential</label>
         <referenceTo>copado__Org__c</referenceTo>
         <relationshipLabel>Data Templates</relationshipLabel>
@@ -379,7 +370,7 @@
         <linkType>page</linkType>
         <masterLabel>Import Templates</masterLabel>
         <openType>sidebar</openType>
-        <page>copado__DataTemplateImport</page>
+        <page>copado__DataTemplateImportLWCContainer</page>
         <protected>false</protected>
         <requireRowSelection>true</requireRowSelection>
     </webLinks>

@@ -32,7 +32,7 @@
                 'Next': '{!JSENCODE($Label.Next)}',
                 'Previous': '{!JSENCODE($Label.Previous)}'
             };
-        </script>
+        </script>    
         <link rel="stylesheet" typea="text/css" href="{!URLFOR($Resource.DataTables10,'DataTables10/datatables.min.css')}" />
         <apex:outputPanel id="hiddenVars">
             <input id="hiddenRollbackFlag" type="hidden" value="{!enableRollbackEnv}" />
@@ -123,7 +123,7 @@
             var pullType = gitRepo ? "{!JSENCODE(flowDetails.flow.Git_Repository__r.copado__Git_Provider__c)}" : null;
 
             var createPullRequestLinks = function () {
-                $copado('a[href*="{!JSENCODE(deploymentPrefix)}"]:contains("Edit")').each(function () {
+                $copado('a[href*="{!JSENCODE(deploymentPrefix)}"]:contains("{!JSENCODE($Label.copado__EDIT)}")').each(function () {
                     var depName;
                     $copado(this).closest('tr').children().find('a').not(".actionLink").each(function () {
                         if ($copado(this).attr('href').indexOf("{!JSENCODE(deploymentPrefix)}") > -1) {
@@ -175,8 +175,8 @@
             var showReviewConflictButton = function () {
                 var reviewConflictButton = $copado('<input id="customReviewConflictButton" type="button" class="btn" value="{!JSENCODE($Label.copado__MERGE_CONFLICT_REVIEW)}" onclick="openResolveConflictsPage();"/>');
                 if ({!IF(copado__Promotion__c.copado__Merge_Conflict__c, 1, 0)} || '{!JSENCODE(copado__Promotion__c.copado__Status__c)}' == '{!JSENCODE($Label.copado__MERGE_CONFLICT)}' || {!isSmartConflict}) {
-                    reviewConflictButton.appendTo($copado('[Id^="topButtonRow"]'));
-                }
+                reviewConflictButton.appendTo($copado('[Id^="topButtonRow"]'));
+            }
             }
 
             var showRollbackButton = function () {
@@ -765,14 +765,14 @@
                                         <script type="text/javascript">
                                             function submitModal(deployNow) {
                                                 if(!deployNow || (deployNow && confirm("{!JSENCODE($Label.PromoteAndDeployWarning)}"))){
-                                                    var deploymentName = $copado('#deploymentName').val();
-                                                    var isTestOnly = $copado('#validationOnly').is(':checked');
-                                                    var testLevel = $copado('[id$="testLevel"]').val();
-                                                    var attachdeploymentfile = $copado('#attachdeploymentfile').is(':checked');
-                                                    console.log(deploymentName, isTestOnly, testLevel);
-                                                    closeModal();
+                                                var deploymentName = $copado('#deploymentName').val();
+                                                var isTestOnly = $copado('#validationOnly').is(':checked');
+                                                var testLevel = $copado('[id$="testLevel"]').val();
+                                                var attachdeploymentfile = $copado('#attachdeploymentfile').is(':checked');
+                                                console.log(deploymentName, isTestOnly, testLevel);
+                                                closeModal();
                                                     copadoApp.createDeployment(deploymentName, isTestOnly, testLevel, attachdeploymentfile, deployNow);
-                                                }
+                                            }
 
                                             }
                                             function closeProgressModalFunction() {

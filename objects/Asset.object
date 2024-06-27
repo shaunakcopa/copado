@@ -205,6 +205,14 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>MeanTimeBetweenFailures</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>MeanTimeToRepair</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>Name</fullName>
         <trackHistory>false</trackHistory>
     </fields>

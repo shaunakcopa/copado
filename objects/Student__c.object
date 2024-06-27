@@ -179,7 +179,6 @@
     <fields>
         <fullName>Created_user__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Created user</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Students</relationshipName>
@@ -191,7 +190,6 @@
     <fields>
         <fullName>Creted_user_1__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>Creted user 1</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Students1</relationshipName>
