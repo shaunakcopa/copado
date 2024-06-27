@@ -176,7 +176,6 @@
     <fields>
         <fullName>User__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
         <label>User</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Epics</relationshipName>
@@ -188,7 +187,6 @@
         <fullName>copado__Application__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Application</label>
         <referenceTo>copado__Application__c</referenceTo>
         <relationshipLabel>Epics</relationshipLabel>
@@ -211,7 +209,6 @@
     <fields>
         <fullName>copado__Description__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Description</label>
         <length>32768</length>
         <trackTrending>false</trackTrending>
@@ -221,7 +218,6 @@
     <fields>
         <fullName>copado__Epic_Details__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Epic Details</label>
         <length>131072</length>
         <trackTrending>false</trackTrending>
@@ -243,7 +239,6 @@
         <fullName>copado__Release__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Release</label>
         <referenceTo>copado__Release__c</referenceTo>
         <relationshipLabel>Epics</relationshipLabel>
@@ -255,7 +250,6 @@
     <fields>
         <fullName>copado__Status__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Status</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -294,7 +288,6 @@
     <fields>
         <fullName>copado__Technical_Assumptions__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Technical Assumptions</label>
         <length>32768</length>
         <trackTrending>false</trackTrending>
@@ -304,7 +297,6 @@
     <fields>
         <fullName>copadoconnect__Connect_log__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Connect log</label>
         <length>32768</length>
         <trackTrending>false</trackTrending>
@@ -326,7 +318,6 @@
     <fields>
         <fullName>copadoconnect__Last_Synced_Date__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Last Synced Date</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -335,7 +326,6 @@
     <fields>
         <fullName>copadometrics__Completion__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Completion %</label>
         <precision>3</precision>
         <required>false</required>

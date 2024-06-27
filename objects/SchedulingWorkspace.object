@@ -148,6 +148,16 @@
     <fields>
         <fullName>Type</fullName>
     </fields>
+    <listViews>
+        <fullName>All_SchedulingWorkspaces</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All Scheduling Workspaces</label>
+    </listViews>
+    <listViews>
+        <fullName>My_SchedulingWorkspaces</fullName>
+        <filterScope>Mine</filterScope>
+        <label>My Scheduling Workspaces</label>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>Description</customTabListAdditionalFields>
         <customTabListAdditionalFields>StartDate</customTabListAdditionalFields>

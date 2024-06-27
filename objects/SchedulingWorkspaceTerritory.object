@@ -140,6 +140,16 @@
         <fullName>ServiceTerritoryId</fullName>
         <type>Lookup</type>
     </fields>
+    <listViews>
+        <fullName>All_SchedulingWorkspaceTerritories</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All Scheduling Workspace Territories</label>
+    </listViews>
+    <listViews>
+        <fullName>My_SchedulingWorkspaceTerritories</fullName>
+        <filterScope>Mine</filterScope>
+        <label>My Scheduling Workspace Territories</label>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>SchedulingWorkspace</customTabListAdditionalFields>
         <customTabListAdditionalFields>ServiceTerritory</customTabListAdditionalFields>

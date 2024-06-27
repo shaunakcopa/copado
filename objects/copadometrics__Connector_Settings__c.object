@@ -17,7 +17,6 @@
         <fullName>copadometrics__Is_Schema_Configured__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Is Schema Configured?</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -36,7 +35,6 @@
     <fields>
         <fullName>copadometrics__Last_Schema_Update_Date__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <inlineHelpText>Last schema update operation timestamp that performed by you.</inlineHelpText>
         <label>Last Schema Update Date</label>
         <required>false</required>
