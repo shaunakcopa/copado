@@ -11,7 +11,9 @@
     <enableBatchWindow>false</enableBatchWindow>
     <enableDocumentBuilder>false</enableDocumentBuilder>
     <enableFloatingWorkOrder>false</enableFloatingWorkOrder>
+    <enableLsdkMode>false</enableLsdkMode>
     <enablePopulateWorkOrderAddress>false</enablePopulateWorkOrderAddress>
+    <enableStandbyMode>false</enableStandbyMode>
     <enableWorkOrders>false</enableWorkOrders>
     <enableWorkPlansAutoGeneration>false</enableWorkPlansAutoGeneration>
     <enableWorkStepManualStatusUpdate>false</enableWorkStepManualStatusUpdate>
@@ -21,6 +23,7 @@
     <isLocationHistoryEnabled>false</isLocationHistoryEnabled>
     <o2EngineEnabled>false</o2EngineEnabled>
     <optimizationServiceAccess>false</optimizationServiceAccess>
+    <overrideDefaultLwcStyling>false</overrideDefaultLwcStyling>
     <serviceAppointmentsDueDateOffsetOrgValue>7</serviceAppointmentsDueDateOffsetOrgValue>
     <workOrderLineItemSearchFields>Subject</workOrderLineItemSearchFields>
     <workOrderSearchFields>Subject</workOrderSearchFields>

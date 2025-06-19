@@ -159,6 +159,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>copado__Copado_Notification__c</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -168,6 +169,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>copado__Git_Backup__c</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -177,6 +179,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>copado__Git_Commit__c</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -186,6 +189,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>copado__Git_Org_Commit__c</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -195,6 +199,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>copado__Git_Repository__c</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -204,6 +209,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>copado__Org__c</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -213,6 +219,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>copado__User_Story_Commit__c</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -222,6 +229,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>copado__User_Story__c</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <pageAccesses>

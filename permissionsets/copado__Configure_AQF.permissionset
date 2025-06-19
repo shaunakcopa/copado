@@ -45,6 +45,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__QualityGateWizardCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__TestDefinitionCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -52,6 +56,14 @@
         <apexClass>copado__UISectionHelper</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <customMetadataTypeAccesses>
+        <enabled>true</enabled>
+        <name>copado__Quality_Gate_Action__mdt</name>
+    </customMetadataTypeAccesses>
+    <customMetadataTypeAccesses>
+        <enabled>true</enabled>
+        <name>copado__Quality_Gate_Test_From__mdt</name>
+    </customMetadataTypeAccesses>
     <customMetadataTypeAccesses>
         <enabled>true</enabled>
         <name>copado__TestTool__mdt</name>
@@ -138,6 +150,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Quality_Gate_Rule__c.copado__ActionsList__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Quality_Gate_Rule__c.copado__Is_Updated_Data_Model__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -254,6 +271,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>copado__Deployment_Flow__c</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -263,6 +281,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>copado__Environment__c</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -272,6 +291,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>copado__ExtensionConfiguration__c</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -281,6 +301,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>copado__Quality_Gate_Rule_Condition__c</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -290,6 +311,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>copado__Quality_Gate_Rule__c</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -299,6 +321,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>copado__Test__c</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <tabSettings>

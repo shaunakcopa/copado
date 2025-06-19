@@ -91,6 +91,11 @@
         <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>standard__Approvals</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>standard__Chatter</application>
         <default>false</default>
         <visible>false</visible>
@@ -104,6 +109,11 @@
         <application>standard__Content</application>
         <default>false</default>
         <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>standard__DataGovernanceConsole</application>
+        <default>false</default>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__DataManager</application>
@@ -151,6 +161,11 @@
         <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>standard__MSJApp</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>standard__Marketing</application>
         <default>false</default>
         <visible>false</visible>
@@ -169,6 +184,11 @@
         <application>standard__Sales</application>
         <default>false</default>
         <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>standard__SalesCloudMobile</application>
+        <default>false</default>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__SalesforceCMS</application>
@@ -1331,6 +1351,22 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__BackPromotionAwareness</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__BackPromotionAwarenessCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__BackPromotionAwarenessCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__BackPromotionAwarenessTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__BackupBatch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1384,6 +1420,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__BundledStoriesRelatedListCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__BundledStory</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1503,6 +1543,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CalculationServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__CallbackHelper</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1580,6 +1624,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__CheckEnvironmentBelongsToPipeline</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CheckFeatureEnabled</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CheckFeatureEnabledTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1691,6 +1743,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CommitDataIntermediaryCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CommitDataIntermediaryCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__CommitService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1791,6 +1851,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__ConnectionBehaviorController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ConnectionBehaviorControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ConnectionBehaviorTriggerHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1879,6 +1947,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CopadoCredential</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CopadoCredentialTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__CopadoCredentialValidatorCtrl</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1924,6 +2000,26 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__CopadoFunctions</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CopadoInstalledPackagesManager</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CopadoInstalledPackagesManagerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CopadoLatestPackageRequest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CopadoLatestPackagesManager</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CopadoLatestPackagesManagerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -2004,6 +2100,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__CountryPicklistValues</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CreateAPIKey</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CreateAPIKeyTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -2139,11 +2243,23 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__Credentials</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__CredentialsButtonsHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>copado__CredentialsHandlersTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CredentialsServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CredentialsTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -2787,7 +2903,19 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__DisableFeatureServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DisableFeatureServiceImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__DomainBuilder</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DummySchedulableClass</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -2895,6 +3023,22 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__EnableFeatureServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__EnableFeatureServiceImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__EnableJWTSettingImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__EnableJWTSettingImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__Encoder</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -2940,6 +3084,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__EnvironmentVarPipelineRelatedListCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__EnvironmentVariableExpression</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -3092,6 +3240,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__FeatureHelper</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__FeatureServiceHelper</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__FeatureTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -3304,6 +3460,22 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__GetConflictResolutionAttachmentsTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__GetConflictingMetadatasFromBundle</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__GetConflictingMetadatasFromBundleTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__GetPrefetchedStepIfEnabledServiceImTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__GetPrefetchedStepIfEnabledServiceImpl</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -3651,6 +3823,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__JobExecutionActionExtractor</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__JobExecutionActionExtractorTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__JobExecutionCallback</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -3735,7 +3915,19 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__JobsTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__JsRemotingController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__JwtController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__JwtControllerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -3967,6 +4159,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__MetadataServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__MetadataServiceImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__MetadataServiceTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -3984,6 +4184,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__MetadataselectorExtension</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__MockFeatures</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -4175,6 +4379,30 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__OverviewApiKeyController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__OverviewApiKeyControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__OverviewAssignedCopadoLicensesController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__OverviewAssignedCopadoLicensesCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__OverviewLicenseAssignmentController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__OverviewLicenseAssignmentControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__PackageArtifactOrgDefinitionController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -4295,6 +4523,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__PermissionChecker</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PermissionCheckerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__PermissionSchedulable</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -4340,6 +4576,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__PersonaManagementCredentialServiceTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaManagementFeatureServiceCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaManagementFeatureServiceCtrlTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -4443,6 +4687,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__PipelineConnection</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__PipelineConnectionCreateService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -4468,6 +4716,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__PipelineInitialiserCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PipelineLaunchWizardCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PipelineLaunchWizardCtrlTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -4504,6 +4760,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__PredicateBooleanExpression</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PrefechVolume</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PrefechVolumeTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -4695,7 +4959,15 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__Promotions</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__PromotionsSelector</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PromotionsTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -4775,6 +5047,22 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__QualityGateRuleDuplicateChecker</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QualityGateRuleDuplicateCheckerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QualityGateRuleValidator</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QualityGateRuleValidatorTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__QualityGateRules</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -4788,6 +5076,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__QualityGateTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QualityGateWizardCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QualityGateWizardCtrlTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -4828,6 +5124,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__Queue</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QueueStateImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QueueStateImplTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -4991,6 +5295,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__RepositoryOAuth</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__RepositoryOAuthTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ResolveConflictsController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -5000,22 +5312,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__RestrictPlatformChangeTest</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__RestrictQgrDuplicate</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__RestrictQgrDuplicateTest</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__RestrictQgrcDuplicate</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__RestrictQgrcDuplicateTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -5372,6 +5668,22 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__ScheduleCronExpressionController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ScheduleTestServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ScheduleTestsAction</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ScheduleTestsInExtension</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ScheduleTestsInExtensionTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -6919,6 +7231,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__UserStoryCommitServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__UserStoryCommitServiceImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__UserStoryCommitTriggerHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -7160,10 +7480,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__WebhookAPI</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__WebhookCallout</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -9288,6 +9604,131 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmission.Comments</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmission.DoesSendApprovalEmail</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmission.FlowOrchestrationInstanceId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmission.RelatedRecordId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmission.RelatedRecordObjectName</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmission.Status</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmission.SubmittedById</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmissionDetail.ActionChannelName</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmissionDetail.ActionContext</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmissionDetail.ActionName</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmissionDetail.ActionPerformedById</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmissionDetail.ActionPerformerRole</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmissionDetail.ApprovalSubmissionId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmissionDetail.ApprovalWorkItemId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmissionDetail.Comments</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.ApprovalConditionName</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.ApprovalSubmissionId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.AssignedToId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.Comments</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.FlowOrchestrationWorkItemId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.RelatedRecordId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.RelatedRecordObjectName</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.ReviewedById</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.ReviewedDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.Status</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>ApptBundleAggrDurDnscale.MaxReduction</field>
         <readable>false</readable>
@@ -9361,6 +9802,16 @@
         <editable>true</editable>
         <field>ApptBundleConfig.DoesAddTravelTime</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ApptBundleConfig.DoesDeleteEmptyBundles</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ApptBundleConfig.EmptyBundleStatus</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -9761,6 +10212,11 @@
         <editable>true</editable>
         <field>AssignedResource.ServiceCrewId</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>AssignedResource.TravelTimeBuffer</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -10174,6 +10630,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>CommSubscription.CommunicationSubscriptionCode</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>CommSubscription.DataUsePurposeId</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -10256,6 +10717,11 @@
         <editable>true</editable>
         <field>Contact.Birthdate</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.BuyerAttributes</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -10733,6 +11199,41 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>CreditMemo.CorpCrcyCnvTotAmtWithTax</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>CreditMemo.CorporateCurrencyCvsnDate</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>CreditMemo.CorporateCurrencyCvsnRate</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>CreditMemoLine.CorpCurrencyCnvChargeAmt</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>CreditMemoLine.CorpCurrencyCnvTotalTaxAmt</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>CreditMemoLine.CorporateCurrencyCvsnDate</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>CreditMemoLine.CorporateCurrencyCvsnRate</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Customer.CustomerStatusType</field>
         <readable>true</readable>
@@ -10776,6 +11277,51 @@
         <editable>true</editable>
         <field>DataUsePurpose.LegalBasisId</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>DynamicDataCapture.ActionType</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>DynamicDataCapture.Description</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>DynamicDataCapture.ExecutionOrder</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>DynamicDataCapture.IsRequired</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>DynamicDataCapture.ParentRecordType</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>DynamicDataCapture.PausedFlowInterviewId</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>DynamicDataCapture.ProcessType</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>DynamicDataCapture.Status</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>DynamicDataCapture.StatusCategory</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -10968,6 +11514,41 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Invoice.CorpCrcyCnvTotAmtWithTax</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Invoice.CorporateCurrencyCvsnDate</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Invoice.CorporateCurrencyCvsnRate</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>InvoiceLine.CorpCurrencyCnvChargeAmt</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>InvoiceLine.CorpCurrencyCnvTotalTaxAmt</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>InvoiceLine.CorporateCurrencyCvsnDate</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>InvoiceLine.CorporateCurrencyCvsnRate</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>JobProfile.Description</field>
         <readable>true</readable>
@@ -11133,6 +11714,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Location.AccountId</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Location.CloseDate</field>
         <readable>true</readable>
@@ -11148,6 +11734,21 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Location.DefaultPickupTime</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Location.DefaultProcessingTime</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Location.DefaultProcessingTimeUnit</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Location.Description</field>
         <readable>true</readable>
@@ -11156,6 +11757,11 @@
         <editable>true</editable>
         <field>Location.DrivingDirections</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Location.FulfillingBusinessHoursId</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -11313,6 +11919,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>MessagingEndUser.AuthenticatedEndUserId</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>MessagingEndUser.ContactId</field>
         <readable>true</readable>
@@ -11326,6 +11937,11 @@
         <editable>true</editable>
         <field>MessagingEndUser.IsOptedOut</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>MessagingEndUser.Language</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -11613,6 +12229,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>OrderItem.ReferencePrice</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>OrderItem.ServiceDate</field>
         <readable>true</readable>
@@ -11726,6 +12347,11 @@
         <editable>true</editable>
         <field>ProductConsumedState.ConsumedState</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ProductRequest.ProcessType</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -11924,6 +12550,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Promotion.IsApproachingDiscountApplicable</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Promotion.IsAutomatic</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -12041,6 +12672,11 @@
         <editable>true</editable>
         <field>ReturnOrder.OrderId</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ReturnOrder.ProcessType</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -12323,6 +12959,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>ServiceAppointment.TimeZone</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ServiceAppointment.TravelTimeBuffer</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>ServiceAppointment.WorkTypeId</field>
         <readable>true</readable>
@@ -12438,6 +13084,21 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>ServiceTerritory.PricebookId</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ServiceTerritory.SelfCheckInUrl</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ServiceTerritory.ServiceAppointmentLimitType</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>ServiceTerritory.TopLevelTerritoryId</field>
         <readable>true</readable>
@@ -12535,6 +13196,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ShiftWorkTopic.AttendeeLimit</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ShiftWorkTopic.ServiceAppointmentLimit</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -12806,6 +13472,21 @@
         <editable>true</editable>
         <field>User.copado__Work_Manager_Panels__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Waitlist.Link</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Waitlist.ShouldAllowSelfCheckIn</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Waitlist.Type</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -13313,6 +13994,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkStep.ProcessType</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>WorkStep.StartTime</field>
         <readable>true</readable>
@@ -13421,6 +14107,11 @@
         <editable>true</editable>
         <field>copado__Application_Feature__c.copado__Estimated_Value__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Application_Feature__c.copado__Parent_Feature__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -14498,49 +15189,49 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Copado_Setting__mdt.copado__Enabled__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Copado_Setting__mdt.copado__Text_Field__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Copado_Smart_Help__mdt.copado__Active__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Copado_Smart_Help__mdt.copado__Base_Page__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Copado_Smart_Help__mdt.copado__Help_Text_Url__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Copado_Smart_Help__mdt.copado__Help_Text__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Copado_Smart_Help__mdt.copado__Triggering_Action__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Copado_Smart_Help__mdt.copado__Triggering_Metadata_Items__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Copado_Smart_Help__mdt.copado__Triggering_Value__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -14548,29 +15239,29 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Data_Change_Event__e.copado__Base_Object__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Data_Change_Event__e.copado__Old_Value__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Data_Change_Event__e.copado__Record_ID__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Data_Change_Event__e.copado__Subscriber_Code__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Data_Change_Event__e.copado__Triggering_Action__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -14603,14 +15294,19 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Data_Set__c.copado__Platform__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>copado__Data_Set__c.copado__Source_Org__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Data_Template_Setup__mdt.copado__API_Names__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -15558,19 +16254,19 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Event__e.copado__Payload__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Event__e.copado__Publisher_Code__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Event__e.copado__Topic_Uri__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -15719,12 +16415,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Feature_Toggle_Group__mdt.copado__Order__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Feature_Toggle_Group__mdt.copado__Type__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Feature_Toggle__mdt.copado__Custom_Permission_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Feature_Toggle__mdt.copado__Full_Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Feature_Toggle__mdt.copado__Order__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -15855,6 +16566,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Git_Backup__c.copado__Pipeline__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Git_Backup__c.copado__Scheduled_Commit_Message__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -16328,34 +17044,34 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__MC_Result__e.copado__Error_Code__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__MC_Result__e.copado__Error_Message__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__MC_Result__e.copado__IsFinished__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__MC_Result__e.copado__IsSuccess__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__MC_Result__e.copado__Progress_Status__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__MC_Result__e.copado__Result_Data__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -16373,9 +17089,9 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__MultiCloudAutomation__mdt.copado__DeployAPIName__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -16403,9 +17119,9 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__MultiCloudAutomation__mdt.copado__PlatformName__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -16413,9 +17129,9 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__MultiCloudAutomation__mdt.copado__PromoteAPIName__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -16989,6 +17705,56 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Action__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Details__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Environment_Info_Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Execution_Sequence_Icon__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Info_Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Is_Default__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Select_Environment_Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Sequence__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Test_Tool__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Tool_Sequence_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Quality_Gate_Rule_Condition__c.copado__AcceptanceCriteria__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -17039,6 +17805,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Quality_Gate_Rule__c.copado__Is_Updated_Data_Model__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Quality_Gate_Rule__c.copado__Status__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -17050,6 +17821,36 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Quality_Gate_Rule__c.copado__dataJson__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Test_From__mdt.copado__Available_Options__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Test_From__mdt.copado__Default_Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Test_From__mdt.copado__Edit_Mode__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Test_From__mdt.copado__Info_Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Test_From__mdt.copado__Is_Visible__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Test_From__mdt.copado__Test_Tool__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -17401,6 +18202,11 @@
         <editable>true</editable>
         <field>copado__Scheduled_Job__c.copado__Status__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Scheduled_Job__c.copado__Test__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -18223,14 +19029,14 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Streaming_Setting__mdt.copado__Enabled__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__Streaming_Setting__mdt.copado__Timeout__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -18389,6 +19195,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__TestTool__mdt.copado__Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__TestTool__mdt.copado__JobTemplate__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -18408,29 +19219,29 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__TestType__mdt.copado__Category__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__TestType__mdt.copado__ExecuteVia__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__TestType__mdt.copado__JobTemplate__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__TestType__mdt.copado__Namespace__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>copado__TestType__mdt.copado__Tool__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -18886,6 +19697,11 @@
         <editable>true</editable>
         <field>copado__User_Story_Data_Commit__c.copado__Execution_Job__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__User_Story_Data_Commit__c.copado__Generate_Data_Set_Job_Execution_Id__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -19817,6 +20633,9 @@
         <layout>DuplicateRecordSet-Duplicate Record Set Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>DynamicDataCapture-Dynamic Data Capture Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>EmailMessage-Email Message Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -19842,6 +20661,15 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>FinanceTransaction-Finance Transaction Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>FldSvcObjChg-Field Service Object Change Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>FldSvcObjChgDtl-Field Service Object Change Detail Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>FlowRecord-Flow Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>FulfillmentOrder-Fulfillment Order Layout</layout>
@@ -20233,6 +21061,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>Survey</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -20242,6 +21071,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>SurveyInvitation</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -20251,6 +21081,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>SurveyResponse</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <pageAccesses>
@@ -20906,6 +21737,10 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>copado__packageUpgradeAlert</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>copado__validateOrg</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
@@ -20995,6 +21830,16 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>copado__Deployment__c.copado__Metadata_Deployment</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>copado__Scheduled_Job__c.copado__Test_Execution</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>copado__Scheduled_Job__c.copado__Webhook</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
@@ -21410,6 +22255,18 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-ApprovalSubmission</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-ApprovalSubmissionDetail</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-ApprovalWorkItem</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-ApptBundleConfig</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
@@ -21558,11 +22415,11 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-DandBCompany</tab>
-        <visibility>Hidden</visibility>
+        <tab>standard-Dashboard</tab>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-Dashboard</tab>
+        <tab>standard-DataMaskCustomValueLibrary</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -21571,6 +22428,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-DataUsePurpose</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-DeliveryEstimationSetup</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -21608,6 +22469,10 @@
     <tabVisibilities>
         <tab>standard-FinanceTransaction</tab>
         <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-FlowOrchestration</tab>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Forecasting3</tab>
@@ -21667,6 +22532,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-LocationGroup</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-LocationShippingCarrierMethod</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -21846,6 +22715,14 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-ShippingCarrier</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-ShippingCarrierMethod</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-Sites</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
@@ -21887,6 +22764,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-WarrantyTerm</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-WebStore</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>

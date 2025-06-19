@@ -170,5 +170,14 @@
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
+    <fields>
+        <fullName>Transaction</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TravelTimeBuffer</fullName>
+        <inlineHelpText>Number of minutes added to the estimated travel time to cover additional time, such as for parking.</inlineHelpText>
+        <trackHistory>false</trackHistory>
+    </fields>
     <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>

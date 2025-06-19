@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <choices>
         <name>S_41e15dfd_91e0_4396_bb8a_c816c569f36a</name>
         <choiceText>Good</choiceText>

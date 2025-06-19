@@ -6,6 +6,7 @@
         <members>Actions</members>
         <members>Activities</members>
         <members>Address</members>
+        <members>AgentforceForDevelopers</members>
         <members>Ai4m</members>
         <members>Analytics</members>
         <members>Apex</members>
@@ -25,6 +26,7 @@
         <members>ConnectedApp</members>
         <members>Content</members>
         <members>Contract</members>
+        <members>ConversationServiceIntegration</members>
         <members>ConversationalIntelligence</members>
         <members>Currency</members>
         <members>CustomAddressField</members>
@@ -63,6 +65,7 @@
         <members>IncidentMgmt</members>
         <members>Industries</members>
         <members>IndustriesEinsteinFeature</members>
+        <members>InsuranceBrokerage</members>
         <members>InvocableAction</members>
         <members>Knowledge</members>
         <members>KnowledgeGeneration</members>
@@ -82,6 +85,7 @@
         <members>ObjectLinking</members>
         <members>OmniChannel</members>
         <members>OmniChannelPricing</members>
+        <members>OmniStudio</members>
         <members>Opportunity</members>
         <members>Order</members>
         <members>OrderManagement</members>
@@ -90,6 +94,7 @@
         <members>PardotEinstein</members>
         <members>PartyDataModel</members>
         <members>PathAssistant</members>
+        <members>Payments</members>
         <members>PaymentsManagementEnabled</members>
         <members>Picklist</members>
         <members>PlatformEncryption</members>
@@ -98,6 +103,7 @@
         <members>PredictionBuilder</members>
         <members>Privacy</members>
         <members>Product</members>
+        <members>ProductDiscovery</members>
         <members>QuickText</members>
         <members>Quote</members>
         <members>RealTimeEvent</members>
@@ -127,5 +133,5 @@
         <members>WorkDotCom</members>
         <name>Settings</name>
     </types>
-    <version>61.0</version>
+    <version>63.0</version>
 </Package>

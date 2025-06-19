@@ -4030,6 +4030,12 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentName>copado:userStoryBackPromoteNotfication</componentName>
+                <identifier>copado_userStoryBackPromoteNotfication</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>Facet-5a32884e-37a8-48de-b9e4-b34488c2b5a4</value>

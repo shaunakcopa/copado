@@ -94,6 +94,7 @@ global class ConfigureGitSnapshotRequest implements copado.CopadoServiceRequest 
     global String name;
     global String pipelineId;
     global String repositoryId;
+    global String scheduledCommitMessage;
     global String scope;
     global ConfigureGitSnapshotRequest() {
 
@@ -257,7 +258,7 @@ global class PromotionService implements copado.CopadoService {
         return null;
     }
 }
-global class RunTestRequest implements copado.CopadoServiceRequest {
+global virtual class RunTestRequest implements copado.CopadoServiceRequest {
     global String acceptanceCriteria;
     global String actionCallback;
     global List<Id> contextIds;
@@ -284,8 +285,25 @@ global class RunTestService implements copado.CopadoService {
     global copado.Actions.RunTestResult execute(copado.Actions.RunTestRequest request) {
         return null;
     }
+    global copado.Actions.ScheduleTestResult schedule(copado.Actions.ScheduleTestRequest request) {
+        return null;
+    }
     global copado.Actions.StatusResult status(Id jobExecutionId) {
         return null;
+    }
+}
+global class ScheduleTestRequest extends copado.Actions.RunTestRequest {
+    global Id credentialId;
+    global String cronExpression;
+    global Id scheduledJobId;
+    global ScheduleTestRequest() {
+
+    }
+}
+global class ScheduleTestResult implements copado.CopadoServiceResult {
+    global copado__Scheduled_Job__c scheduledJob;
+    global ScheduleTestResult() {
+
     }
 }
 global class StatusResult implements copado.CopadoServiceResult {

@@ -76,6 +76,7 @@
         <terminateUserSessionsWhenAdminResetsPassword>false</terminateUserSessionsWhenAdminResetsPassword>
         <useEAPIRateLimitForConnectAPI>false</useEAPIRateLimitForConnectAPI>
         <useLocalStorageForLogoutUrl>false</useLocalStorageForLogoutUrl>
+        <welcomeEmailTemplateId>000000000000000</welcomeEmailTemplateId>
     </sessionSettings>
     <singleSignOnSettings>
         <enableCaseInsensitiveFederationID>false</enableCaseInsensitiveFederationID>

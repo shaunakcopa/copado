@@ -233,6 +233,13 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Order_by__c</fieldItem>
                 <identifier>RecordOrder_by_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Back_Promotion__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-f826e26f-69e5-4bcc-bc34-c3edb086ca5e</name>
@@ -257,6 +264,22 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Release__c</fieldItem>
                 <identifier>RecordRelease__cField</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR (2 AND 3)</booleanFilter>
+                    <criteria>
+                        <leftValue>{!$User.copado__Persona_Id__c}</leftValue>
+                        <operator>EQUAL</operator>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.copado__Persona_Id__c}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$Permission.CustomPermission.copado__ManageReleasesFeature}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <itemInstances>

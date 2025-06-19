@@ -131,7 +131,7 @@
     <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>ActionData</fullName>
-        <inlineHelpText>For Quick Action, enter the API name of the quick action, for example, &quot;quickAction&quot;: &quot;Global.LogACall&quot;. For View Record, enter the ID of the record, for example, &quot;viewRecord&quot;: &quot;1WLxx000000003FGAQ&quot;.</inlineHelpText>
+        <inlineHelpText>For Platform Alert, leave this field empty. For Quick Action, enter the API name of the quick action, for example, &quot;quickAction&quot;: &quot;Global.LogACall&quot;. For View Record, enter the ID of the record, for example, &quot;viewRecord&quot;: &quot;1WLxx000000003FGAQ&quot;.</inlineHelpText>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
@@ -175,11 +175,25 @@
     <searchLayouts>
         <customTabListAdditionalFields>TriggerType</customTabListAdditionalFields>
         <customTabListAdditionalFields>Radius</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ReferenceRecord</customTabListAdditionalFields>
         <customTabListAdditionalFields>InitialTimeInvoked</customTabListAdditionalFields>
         <customTabListAdditionalFields>LastTimeInvoked</customTabListAdditionalFields>
         <customTabListAdditionalFields>ActionType</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>TriggerType</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Radius</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ReferenceRecord</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>InitialTimeInvoked</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LastTimeInvoked</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ActionType</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>TriggerType</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Radius</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ReferenceRecord</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>InitialTimeInvoked</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>LastTimeInvoked</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ActionType</lookupPhoneDialogsAdditionalFields>
         <searchResultsAdditionalFields>TriggerType</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Radius</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ReferenceRecord</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>InitialTimeInvoked</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LastTimeInvoked</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ActionType</searchResultsAdditionalFields>

@@ -84,6 +84,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>copado__Copado_Notification__c</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -93,6 +94,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>copado__Project__c</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <tabSettings>

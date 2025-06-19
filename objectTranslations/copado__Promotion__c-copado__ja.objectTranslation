@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>プロモーション</value>
+    </caseValues>
+    <fieldSets>
+        <label>コパードヘッダーフィールド</label>
+        <name>copado__Copado_Header_Fields</name>
+    </fieldSets>
+    <fieldSets>
+        <label>カスタムフィールド</label>
+        <name>copado__CustomFields</name>
+    </fieldSets>
+    <fieldSets>
+        <label>ブランチダイアログ管理</label>
+        <name>copado__ManageBranchesDialog</name>
+    </fieldSets>
+    <fieldSets>
+        <label>パイプラインマネージャー</label>
+        <name>copado__Pipeline_Manager</name>
+    </fieldSets>
+    <fields>
+        <label>バックプロモーションフラグ</label>
+        <name>copado__Back_Promotion__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is checked by Copado once the promotion is merged and deployed successfully for multi-cloud platform. --></help>
+        <label>完了フラグ</label>
+        <name>copado__Completed__c</name>
+    </fields>
+    <fields>
+        <label>接続動作</label>
+        <name>copado__Connection_Behavior__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select if you wish to move added permission sets to a Full Permission Sets deployment step.  This will remove them from the Metadata deployment step. --></help>
+        <label>フル権限セットステップの作成</label>
+        <name>copado__Create_Full_Permission_Sets_Step__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select if you wish to move added profiles to a Full Profiles deployment step.  This will remove them from the Metadata deployment step. --></help>
+        <label>フルプロファイルステップの作成</label>
+        <name>copado__Create_Full_Profiles_Step__c</name>
+    </fields>
+    <fields>
+        <label>宛先環境(To)</label>
+        <name>copado__Destination_Environment__c</name>
+        <relationshipLabel>プロモーション（宛先環境）</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The credential to the Destination Environment that should be used when creating a deployment. This may be auto-populated, if left blank, based on the project&apos;s deployment flow if you are the owner of an Org Credential to the Destination Environment. --></help>
+        <label>宛先クレデンシャル</label>
+        <name>copado__Destination_Org_Credential__c</name>
+        <relationshipLabel>プロモーション（宛先クレデンシャル）</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Conflicts found in the selected metadata types are not auto-resolved by Copado when merging feature branches into the promotion branch. The conflicts can be manually resolved using Copado. --></help>
+        <label>自動解決対象から除外</label>
+        <name>copado__Exclude_From_Auto_Resolve__c</name>
+    </fields>
+    <fields>
+        <label>ロールバックフラグ</label>
+        <name>copado__Is_Rolled_Back__c</name>
+    </fields>
+    <fields>
+        <label>最終デプロイメント実行ID</label>
+        <name>copado__Last_Deployment_Execution_Id__c</name>
+    </fields>
+    <fields>
+        <label>最終プロモーション実行ID</label>
+        <name>copado__Last_Promotion_Execution_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates that this promotion includes a manual conflict resolution. --></help>
+        <label>マージコンフリクト</label>
+        <name>copado__Merge_Conflict__c</name>
+    </fields>
+    <fields>
+        <help><!-- Fill this field only if you want to change the selected user stories order on deployment. (usage exp: name asc, copado__backlog_rank__c desc) --></help>
+        <label>ユーザーストーリーの並び順</label>
+        <name>copado__Order_by__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field auto-populates and displays the pipeline platform. --></help>
+        <label>プラットホーム</label>
+        <name>copado__Platform__c</name>
+    </fields>
+    <fields>
+        <help><!-- The selected Project should be linked to an active Deployment Flow --></help>
+        <label>プロジェクト</label>
+        <name>copado__Project__c</name>
+        <relationshipLabel>プロモーション</relationshipLabel>
+    </fields>
+    <fields>
+        <label>リリース</label>
+        <name>copado__Release__c</name>
+        <relationshipLabel>プロモーション</relationshipLabel>
+    </fields>
+    <fields>
+        <label>完了時に通知</label>
+        <name>copado__Send_Deployment_Complete_email__c</name>
+    </fields>
+    <fields>
+        <label>ソース環境(From)</label>
+        <name>copado__Source_Environment__c</name>
+        <relationshipLabel>プロモーション</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The credential to the Source Environment that should be used when creating a deployment. This may be auto-populated, if left blank, based on the project&apos;s deployment flow if you are the owner of an Org Credential to the Source Environment. --></help>
+        <label>ソースクレデンシャル</label>
+        <name>copado__Source_Org_Credential__c</name>
+        <relationshipLabel>プロモーション（ソースクレデンシャル）</relationshipLabel>
+    </fields>
+    <fields>
+        <label>ステータス</label>
+        <name>copado__Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed with errors</masterLabel>
+            <translation><!-- Completed with errors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conflicts Resolved</masterLabel>
+            <translation><!-- Conflicts Resolved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Merge Conflict</masterLabel>
+            <translation><!-- Merge Conflict --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scheduled</masterLabel>
+            <translation><!-- Scheduled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Validated</masterLabel>
+            <translation><!-- Validated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Validation failed</masterLabel>
+            <translation><!-- Validation failed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Link to the User Story promotion branch in Git. The link is generated based on the Base Branch URL of the Git Repository record. --></help>
+        <label>Gitで参照</label>
+        <name>copado__View_in_Git__c</name>
+    </fields>
+    <fields>
+        <label><!-- Caused Business Disruption? --></label>
+        <name>copadometrics__Caused_Business_Disruption__c</name>
+    </fields>
+    <fields>
+        <label><!-- Destination is a Production Org? --></label>
+        <name>copadometrics__Destination_is_a_Production_Org__c</name>
+    </fields>
+    <nameFieldLabel>プロモーション名</nameFieldLabel>
+    <validationRules>
+        <errorMessage>スクラッチ組織へのバックプロモーションは許可されていません</errorMessage>
+        <name>copado__Scratch_Orgs_Disabled_for_Back_Promoting</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Check_Status_History --></label>
+        <name>Check_Status_History</name>
+    </webLinks>
+    <webLinks>
+        <label>ロールバック</label>
+        <name>copado__Rollback</name>
+    </webLinks>
+</CustomObjectTranslation>

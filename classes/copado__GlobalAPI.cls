@@ -12,6 +12,9 @@ global class GlobalAPI {
     global static void authenticateGitRepository(Id gitRepositoryId, String username, String password) {
 
     }
+    global copado.GlobalAPI.UserLicense copadoLicensesByUser(Id userId) {
+        return null;
+    }
     global String createUserAPIKey() {
         return null;
     }
@@ -46,6 +49,9 @@ global class GlobalAPI {
         return null;
     }
     global String upsertCopadoLicense(Id userId, copado.GlobalAPI.UserLicense licenseDetails) {
+        return null;
+    }
+    global static Boolean validateOrg(Id orgId) {
         return null;
     }
 global class CopadoAPIException extends Exception {
@@ -199,6 +205,10 @@ global class ProxyOrgResponse {
     }
 }
 global class UserLicense {
+    global Boolean isADDEnabled {
+        get;
+        set;
+    }
     global Boolean isCADenabled {
         get;
         set;
@@ -227,6 +237,9 @@ global class UserLicense {
 
     }
     global UserLicense(Id userId, Boolean isCADenabled, Boolean isCCHenabled, Boolean isCCMenabled, Boolean isCopadoEnabled, Boolean isCSTenabled) {
+
+    }
+    global UserLicense(Id userId, Boolean isCADenabled, Boolean isCCHenabled, Boolean isCCMenabled, Boolean isCopadoEnabled, Boolean isCSTenabled, Boolean isADDEnabled) {
 
     }
 }
