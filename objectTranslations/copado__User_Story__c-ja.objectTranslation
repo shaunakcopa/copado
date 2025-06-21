@@ -17,7 +17,7 @@
         <name>copado__Bundled_Stories</name>
     </fieldSets>
     <fieldSets>
-        <label><!-- CBM Fields --></label>
+        <label><!-- Pipeline Manager User Story Fields --></label>
         <name>copado__CBM_Fields</name>
     </fieldSets>
     <fieldSets>

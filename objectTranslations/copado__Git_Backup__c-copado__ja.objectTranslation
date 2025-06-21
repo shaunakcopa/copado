@@ -25,6 +25,10 @@
         <name>copado__Snapshot_Waiting_Page</name>
     </fieldSets>
     <fields>
+        <label>Apex ジョブ ID</label>
+        <name>copado__Apex_Job_ID__c</name>
+    </fields>
+    <fields>
         <help><!-- Git branch related to the Org. Be aware that branch names are case sensitive. --></help>
         <label>ブランチ</label>
         <name>copado__Branch__c</name>

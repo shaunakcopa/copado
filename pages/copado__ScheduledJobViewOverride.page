@@ -1,7 +1,7 @@
 <apex:page standardController="copado__Scheduled_Job__c" extensions="copado.ScheduledJobExtension" showHeader="{!$User.UIThemeDisplayed=='Theme3'}"
   standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}"
   applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
-  <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
+  <apex:slds rendered="{!OR($User.UIThemeDisplayed == 'Theme4d', $User.UIThemeDisplayed == 'Theme4u')}" />
 
   <head>
     <TITLE>Scheduled Job {!copado__Scheduled_Job__c.Name} | Copado</TITLE>
@@ -12,16 +12,19 @@
         'title': 'Scheduled Job View'
       });
     </script>
-    <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
+    <apex:stylesheet value="{!IF(OR($User.UIThemeDisplayed == 'Theme4d', $User.UIThemeDisplayed == 'Theme4u'), URLFOR($Resource.CopadoLightningCSS),
+    '')}
+" />
   </head>
 
   <body>
     <div class="copado-lightning-VF">
-      <apex:sectionHeader title="{!$ObjectType.copado__Scheduled_Job__c.Label}" subtitle="{!copado__Scheduled_Job__c.Name}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"
+      <apex:sectionHeader title="{!$ObjectType.copado__Scheduled_Job__c.Label}" subtitle="{!copado__Scheduled_Job__c.Name}" rendered="{!AND($User.UIThemeDisplayed != 'Theme4d', $User.UIThemeDisplayed != 'Theme4u')}"
       />
-      <apex:pageMessages id="pmessage" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}" />
+      <apex:pageMessages id="pmessage" rendered="{!AND($User.UIThemeDisplayed != 'Theme4d', $User.UIThemeDisplayed != 'Theme4u')}"
+      />
 
-      <apex:outputPanel layout="block" styleClass="slds-scope copado-lightning-container" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
+      <apex:outputPanel layout="block" styleClass="slds-scope copado-lightning-container" rendered="{!OR($User.UIThemeDisplayed == 'Theme4d', $User.UIThemeDisplayed == 'Theme4u')}">
         <div class="slds-page-header">
           <apex:outputPanel layout="block" id="pageMessages">
             <apex:pagemessages id="msg" />

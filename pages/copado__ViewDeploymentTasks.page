@@ -529,7 +529,7 @@
 															var records = result.getArray("records");
 
 															if (records.length == 1) {
-																const dataJSON = '{!Deployment_Task__c.dataJSON__c}';
+																const dataJSON = '{!JSENCODE(Deployment_Task__c.dataJSON__c)}';
 																const functionParameter = JSON.parse(dataJSON).functionParameters;
 																const name = records[0].Name;
 																$copado('[id=jsFunction_View]').val(name);

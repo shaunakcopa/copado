@@ -20,6 +20,16 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
+                            <value>copado__Deployment_Flow__c.copado__Pipeline_Manager</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Platform__c}</leftValue>
+                                    <operator>NE</operator>
+                                    <rightValue>Salesforce</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
                             <value>copado__Deployment_Flow__c.copado__Pipeline_Builder</value>
                             <visibilityRule>
                                 <criteria>
@@ -31,16 +41,6 @@
                         </valueListItems>
                         <valueListItems>
                             <value>copado__Deployment_Flow__c.copado__Initialise</value>
-                            <visibilityRule>
-                                <criteria>
-                                    <leftValue>{!Record.copado__Platform__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Salesforce</rightValue>
-                                </criteria>
-                            </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>copado__Deployment_Flow__c.copado__Setup_Continuous_Delivery</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.copado__Platform__c}</leftValue>
@@ -127,7 +127,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>numVisibleActions</name>
-                    <value>3</value>
+                    <value>4</value>
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
                 <identifier>force_highlightsPanel</identifier>
@@ -209,6 +209,13 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Manage_Branches__c</fieldItem>
                 <identifier>RecordManage_Branches_cField1</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Platform__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Salesforce</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-8c7a041c-9148-410c-85f5-3c27d0dea8dd</name>
@@ -626,6 +633,11 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>New</value>
+                        </valueListItems>
+                    </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>maxRecordsToDisplay</name>

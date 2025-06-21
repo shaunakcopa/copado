@@ -231,8 +231,10 @@ global class PromotionRequest implements copado.CopadoServiceRequest {
     global Boolean executePromotion;
     global Boolean isBackPromotion;
     global String otherInformation;
+    global Boolean overrideDestinationChanges;
     global Id projectId;
     global Id promotionId;
+    global String promotionMethod;
     global Id sourceEnvironmentId;
     global Id transactionId;
     global List<Id> userStoryIds;
@@ -266,6 +268,7 @@ global virtual class RunTestRequest implements copado.CopadoServiceRequest {
     global String extensionConfigurationId;
     global String otherInformation;
     global String resultId;
+    global copado.Actions.ScheduleTestRequest scheduleParameters;
     global String tool;
     global String transactionId;
     global RunTestRequest() {

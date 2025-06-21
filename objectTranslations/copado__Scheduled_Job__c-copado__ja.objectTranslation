@@ -9,6 +9,11 @@
         <name>copado__Apex_Job_ID__c</name>
     </fields>
     <fields>
+        <label>クレデンシャル</label>
+        <name>copado__Credential__c</name>
+        <relationshipLabel>スケジュールされたジョブ</relationshipLabel>
+    </fields>
+    <fields>
         <label>Cron表現</label>
         <name>copado__Cron_Expression__c</name>
     </fields>
@@ -50,11 +55,11 @@
     </fields>
     <nameFieldLabel>予定されているジョブ名</nameFieldLabel>
     <recordTypes>
-        <label><!-- Test Execution --></label>
+        <label>テスト実行</label>
         <name>copado__Test_Execution</name>
     </recordTypes>
     <recordTypes>
-        <label><!-- Webhook --></label>
+        <label>ウェブフック</label>
         <name>copado__Webhook</name>
     </recordTypes>
 </CustomObjectTranslation>

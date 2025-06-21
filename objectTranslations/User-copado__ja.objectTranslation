@@ -10,19 +10,19 @@
     </fields>
     <fields>
         <help><!-- The visibility of the message asking users to rate &amp; feedback Copado on the AppExchange is controlled here. --></help>
-        <label>コパードフィードバックを非表示</label>
+        <label>コパードのフィードバックを非表示</label>
         <name>copado__Hide_Copado_feedback__c</name>
     </fields>
     <fields>
-        <label><!-- Persona Id --></label>
+        <label>ペルソナID</label>
         <name>copado__Persona_Id__c</name>
     </fields>
     <fields>
-        <label>コパードのTipsを表示</label>
+        <label>コパードのヒントを表示</label>
         <name>copado__Show_Copado_Tips__c</name>
     </fields>
     <fields>
-        <label>ワークマネージャパネル</label>
+        <label>ワークマネージャーパネル</label>
         <name>copado__Work_Manager_Panels__c</name>
     </fields>
 </CustomObjectTranslation>

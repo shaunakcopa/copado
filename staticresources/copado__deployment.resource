@@ -175,6 +175,7 @@ var copadoApp = {
     linkForJob: function (styleClass, job, showResult, force) {
         if (typeof job[copadoApp.ns + 'Destination_Org__r'] === 'undefined' || typeof job[copadoApp.ns + 'Step__r'] === 'undefined') return;
         var destinationOrg = htmlEntities(job[copadoApp.ns + 'Destination_Org__r'][copadoApp.ns + 'To_Org__r'].Name); // undefined check control and special character escape done via htmlEntities
+
         var stepName = htmlEntities(job[copadoApp.ns + 'Step__r'].Name);
         return (
             '<i class="jobIcon ' +
@@ -284,6 +285,12 @@ var copadoApp = {
                 copadoApp.ns +
                 'Destination_Org__r.' +
                 copadoApp.ns +
+                'To_Org__r.' +
+                copadoApp.ns +
+                'SFDC_Org_ID__c, ' +
+                copadoApp.ns +
+                'Destination_Org__r.' +
+                copadoApp.ns +
                 'To_Org__r.Name, ' +
                 copadoApp.ns +
                 'Deployed__c, ' +
@@ -309,7 +316,7 @@ var copadoApp = {
                 "deployment__c = '" +
                 copadoApp.data.dep.Id +
                 "' limit 1000";
-
+                
             var result = sforce.connection.query(query, {
                 onSuccess: function (res) {
                     if (res.records) {
@@ -344,7 +351,7 @@ var copadoApp = {
                     }
                 },
                 onFailure: function (res) {
-                    console.log('failure', res);
+                    console.error(res);
                 }
             });
         }
@@ -481,6 +488,7 @@ var copadoApp = {
             var _namespace = copadoApp.ns != '' ? copadoApp.ns + '__' : '';
             var templateId = $copado('.jqx-grid').jqxGrid('getCell', row, 'templateId').value;
             var templateName = $copado('.jqx-grid').jqxGrid('getCell', row, 'templateName').value;
+            
             var element = $copado(defaultHtml);
             var resultPageUrl =
                 '/apex/' +

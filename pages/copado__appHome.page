@@ -80,7 +80,7 @@
                         <div class="slds-col slds-no-flex slds-grid slds-align-top ">
                             <div class="slds-button-group" role="group">
                                 <apex:outputPanel id="registerApplicationClassic" layout="block">
-                                    <apex:outputPanel layout="block" rendered="{!NOT(isApplicationRegistered)}">
+                                    <apex:outputPanel layout="block" rendered="{!OR(NOT(isApplicationRegistered), isReRegistrationEnabled)}">
                                         <apex:commandButton styleClass="slds-button_brand" onclick="return showModal();" value="Register Application" />
                                         <c:GenericBaseModal title="Register Copado Application" actionButtonText="Register" onActionRerender="messagesContainer, registerApplication, registerApiKeyButtonContainer, serverURLContainer"
                                             actionToInvokeParamName="{!registerCopado}">
@@ -138,7 +138,7 @@
                             <div class="slds-col slds-no-flex slds-grid slds-align-top ">
                                 <div class="slds-button-group" role="group">
                                     <apex:outputPanel id="registerApplication" layout="block">
-                                        <apex:outputPanel layout="block" rendered="{!NOT(isApplicationRegistered)}">
+                                        <apex:outputPanel layout="block" rendered="{!OR(NOT(isApplicationRegistered), isReRegistrationEnabled)}">
                                             <apex:commandButton styleClass="slds-button_brand" onclick="return showModal();" value="Register Application" />
                                             <c:GenericBaseModal title="Register Copado Application" actionButtonText="Register" onActionRerender="messagesContainer,  serverURLContainer"
                                                 actionToInvokeParamName="{!registerCopado}">

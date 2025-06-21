@@ -162,7 +162,7 @@
     </fields>
     <fields>
         <help><!-- Link to open the Pipeline Manager to promote and back promote User Stories. --></help>
-        <label><!-- Manage Releases --></label>
+        <label><!-- Pipeline Manager --></label>
         <name>copado__Manage_Branches__c</name>
     </fields>
     <fields>

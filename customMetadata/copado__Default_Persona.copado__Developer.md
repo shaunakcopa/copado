@@ -8,6 +8,6 @@
     </values>
     <values>
         <field>copado__Icon_Name__c</field>
-        <value xsi:type="xsd:string">utility:resource_capacity</value>
+        <value xsi:type="xsd:string">copado:Developer</value>
     </values>
 </CustomMetadata>

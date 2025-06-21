@@ -158,7 +158,7 @@
     </fields>
     <fields>
         <help><!-- Link to open the Pipeline Manager to promote and back promote User Stories. --></help>
-        <label>リリースの管理</label>
+        <label>パイプラインマネージャー</label>
         <name>copado__Manage_Branches__c</name>
     </fields>
     <fields>

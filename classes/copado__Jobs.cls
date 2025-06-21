@@ -97,6 +97,7 @@ global class Execution implements copado.CopadoService {
 }
 global class ExecutionCreateFromTemplateRequest implements copado.CopadoServiceRequest {
     global String callback;
+    global String credentialId;
     global String dataJson;
     global String destinationId;
     global String parentId;

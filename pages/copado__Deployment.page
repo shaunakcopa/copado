@@ -532,7 +532,6 @@
                         <apex:actionFunction action="{!confirm}" name="confirmDeployment" oncomplete="deployCall();" status="buttonStatus" />
                         <apex:actionFunction action="{!deployCall}" name="deployCall" oncomplete="proceedToDeployment();unlockScreen();" reRender="messagesPanel, proceedToDeploymentBlock"
                         />
-                        <c:JobsManager matchingKeys="{!jobsManagerMatchingKey}" rendered="{! !ISBLANK(jobsManagerMatchingKey)}" />
                     </apex:form>
                     <div class="row">
                         <apex:pageblock title="Steps" id="pbSteps">

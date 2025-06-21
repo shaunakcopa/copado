@@ -203,6 +203,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Scheduled_Job__c.copado__Credential__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Scheduled_Job__c.copado__Test__c</field>
         <readable>true</readable>
     </fieldPermissions>

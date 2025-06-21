@@ -166,6 +166,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>copado__Credential__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Credential</label>
+        <referenceTo>copado__Org__c</referenceTo>
+        <relationshipLabel>Scheduled Jobs</relationshipLabel>
+        <relationshipName>Scheduled_Jobs</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>copado__Cron_Expression__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>

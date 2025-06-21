@@ -25,6 +25,10 @@
         <name>copado__Snapshot_Waiting_Page</name>
     </fieldSets>
     <fields>
+        <label><!-- Apex Job ID --></label>
+        <name>copado__Apex_Job_ID__c</name>
+    </fields>
+    <fields>
         <help>組織に関連するGitブランチ。ブランチ名は大文字小文字を区別しますのでご注意ください。</help>
         <label><!-- Branch --></label>
         <name>copado__Branch__c</name>

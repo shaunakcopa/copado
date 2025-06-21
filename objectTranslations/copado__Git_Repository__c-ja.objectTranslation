@@ -57,11 +57,11 @@
         <name>copado__Is_repository_connected_via_copa_tunnel__c</name>
         <picklistValues>
             <masterLabel>No</masterLabel>
-            <translation><!-- No --></translation>
+            <translation>いいえ</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Yes</masterLabel>
-            <translation><!-- Yes --></translation>
+            <translation>はい</translation>
         </picklistValues>
     </fields>
     <fields>

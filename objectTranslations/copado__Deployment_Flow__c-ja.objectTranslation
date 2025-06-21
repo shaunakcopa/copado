@@ -158,7 +158,7 @@
     </fields>
     <fields>
         <help>ユーザーストーリーのプロモーションとバックプロモーションを実行するパイプラインマネジャーへののリンク</help>
-        <label><!-- Manage Releases --></label>
+        <label><!-- Pipeline Manager --></label>
         <name>copado__Manage_Branches__c</name>
     </fields>
     <fields>

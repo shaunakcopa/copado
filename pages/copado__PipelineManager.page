@@ -420,12 +420,14 @@
                             return $copado(this).index(); // Get the index of each matching column
                         }).get(),
                         orderable: true,
+
                         render: function (data, type, row, meta) {
                             const datatype = $copado(meta.settings.aoColumns[meta.col].nTh).attr('datatype');
                             if (type === 'sort') {
                                 const rawData = $copado(data).text().trim();
+                                
                                  // Get the raw text from the HTML
-                                 if(datatype === 'datetime' || 'date') {
+                                 if(datatype === 'datetime' || datatype === 'date') {
                                     const parsedDate = new Date(rawData);
                                      return !isNaN(parsedDate) ? parsedDate.getTime() : 0;
                                  }
@@ -449,6 +451,7 @@
                     }
                 }
             });
+            
             tabDatatable.css("border-top","0");
 
             tabDatatable.on('draw.dt', function() {
@@ -530,9 +533,12 @@
         }
 
         function selectUnselectAll(tableName, elemid) {
-            var table = $copado('#'+tableName);
-            $copado('td input:checkbox', table).prop('checked', $copado('#'+elemid).prop('checked'));
-        }
+                var table = $copado('#' + tableName).DataTable();
+                var allRowNodes = table.rows().nodes();
+                $copado('td input:checkbox', allRowNodes)
+                    .prop('checked', $copado('#' + elemid).prop('checked'));
+            }
+
         function changeSelectAll(tableName, elemid) {
             var table = $copado('#'+tableName);
             var lst = $copado('td input:checkbox', table);
@@ -684,6 +690,7 @@
                                 outOfSyncUserStories = JSON.parse(result);
                                  if(outOfSyncUserStories?.length) {
                                     document.querySelector('.outofsyncmanager').classList.remove('slds-hide');
+                                    document.querySelector('#out-of-sync_user-stories').innerHTML = '';
                                     document.querySelector('#out-of-sync_user-stories').innerHTML = document.querySelector('#out-of-sync_user-stories').innerHTML + ': ' + outOfSyncUserStories.length + ' ' + '{!JSENCODE($Label.User_Stories)}'; 
                                     showWarningForOutOfSyncUserStories();
                                 }
@@ -2281,13 +2288,13 @@
                             <apex:outputPanel id="GeneralActionButtons" styleClass="slds-col slds-size_1-of-2" style="text-align:right;">
                                 <apex:outputPanel layout="none" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}">
                                     <apex:commandButton value="{!$Label.copado__Pipeline_Validate_Selections}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="validateSelections" action="{!createPromotionforValidation}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel" onClick="lockScreen();expandDataTable('userStoriesTable');" oncomplete="openPromotionListModal();renderPromotionPoller();" disabled="{!NOT(showUserStories)}"/>
-                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote, $Label.copado__Pipeline_Back_Promote)}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createPromotion" action="{!createPromotion}" reRender="copadoErrorPanel,notify,modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListButtons,createdPromotionListPanel" onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}"/>
-                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeploy" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller"/>
+                                    <apex:commandButton value="{!IF(JSENCODE(newOverlay.pathType) == 'merge', $Label.copado__Pipeline_Promote, $Label.copado__Pipeline_Back_Promote)}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createPromotion" action="{!createPromotion}" reRender="copadoErrorPanel,notify,modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListButtons,createdPromotionListPanel" onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}"/>
+                                    <apex:commandButton value="{!IF(JSENCODE(newOverlay.pathType) == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeploy" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller"/>
                                 </apex:outputPanel>
                                 <apex:outputPanel layout="none" rendered="{!AND(currentPipeline.copado__Platform__c != 'Salesforce',currentPipeline.copado__Platform__c != null)}">
                                     <apex:commandButton value="{!$Label.copado__Pipeline_Validate_Selections}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="validateSelectionsMC" action="{!createPromotionforValidation}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel" onClick="lockScreen();expandDataTable('userStoriesTable');" oncomplete="executePromotionActions({!promotionWrappersJSON}, true);openPromotionListModal();renderPromotionPoller();" disabled="{!NOT(showUserStories)}"/>
-                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Create_Promotion, $Label.copado__Create_Back_Promotion)}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createPromotionMC" action="{!createPromotion}" reRender="copadoErrorPanel,notify,modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListButtons,createdPromotionListPanel" onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}"/>
-                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeployMC" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="executePromotionActions({!promotionWrappersJSON}, false);openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller"/>
+                                    <apex:commandButton value="{!IF(JSENCODE(newOverlay.pathType) == 'merge', $Label.copado__Create_Promotion, $Label.copado__Create_Back_Promotion)}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createPromotionMC" action="{!createPromotion}" reRender="copadoErrorPanel,notify,modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListButtons,createdPromotionListPanel" onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}"/>
+                                    <apex:commandButton value="{!IF(JSENCODE(newOverlay.pathType) == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeployMC" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="executePromotionActions({!promotionWrappersJSON}, false);openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller"/>
                                 </apex:outputPanel>
                             </apex:outputPanel>
                         </div>

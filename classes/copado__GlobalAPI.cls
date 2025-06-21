@@ -89,7 +89,15 @@ global class CopadoLicenses {
         get;
         set;
     }
+    global Integer hasDevopsLicenseEnabled {
+        get;
+        set;
+    }
     global Integer hasFunctionLicenseEnabled {
+        get;
+        set;
+    }
+    global Integer hasMetaCacheLicenseEnabled {
         get;
         set;
     }

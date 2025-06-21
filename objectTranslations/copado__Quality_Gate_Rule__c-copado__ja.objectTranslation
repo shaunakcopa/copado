@@ -5,7 +5,7 @@
         <value>品質ゲートルール</value>
     </caseValues>
     <fields>
-        <label>コパードアクションリスト</label>
+        <label>コパード アクション</label>
         <name>copado__ActionsList__c</name>
     </fields>
     <fields>
@@ -31,7 +31,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Is Updated Data Model --></label>
+        <label>更新済みデータモデル</label>
         <name>copado__Is_Updated_Data_Model__c</name>
     </fields>
     <fields>

@@ -32,9 +32,9 @@
         <name>copado__Estimated_Value__c</name>
     </fields>
     <fields>
-        <label><!-- Parent Feature --></label>
+        <label>親機能</label>
         <name>copado__Parent_Feature__c</name>
-        <relationshipLabel><!-- Child Features --></relationshipLabel>
+        <relationshipLabel>子機能</relationshipLabel>
     </fields>
     <fields>
         <label>優先度</label>

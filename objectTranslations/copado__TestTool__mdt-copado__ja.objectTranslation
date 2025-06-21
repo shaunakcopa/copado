@@ -10,7 +10,7 @@
         <name>copado__Automate_Test_Readiness__c</name>
     </fields>
     <fields>
-        <label><!-- Description --></label>
+        <label>詳細</label>
         <name>copado__Description__c</name>
     </fields>
     <fields>

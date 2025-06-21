@@ -13,6 +13,11 @@
         <name>copado__Apex_Job_ID__c</name>
     </fields>
     <fields>
+        <label><!-- Credential --></label>
+        <name>copado__Credential__c</name>
+        <relationshipLabel><!-- Scheduled Jobs --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Cron Expression --></label>
         <name>copado__Cron_Expression__c</name>
     </fields>
