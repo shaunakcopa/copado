@@ -65,6 +65,7 @@
         <members>IncidentMgmt</members>
         <members>Industries</members>
         <members>IndustriesEinsteinFeature</members>
+        <members>IndustriesUnifiedInventory</members>
         <members>InsuranceBrokerage</members>
         <members>InvocableAction</members>
         <members>Knowledge</members>
@@ -109,6 +110,7 @@
         <members>RealTimeEvent</members>
         <members>RecommendationBuilder</members>
         <members>RecordPage</members>
+        <members>ReleaseMgmt</members>
         <members>RetailExecution</members>
         <members>Sandbox</members>
         <members>SceGlobalModelOptOut</members>
@@ -133,5 +135,5 @@
         <members>WorkDotCom</members>
         <name>Settings</name>
     </types>
-    <version>63.0</version>
+    <version>64.0</version>
 </Package>

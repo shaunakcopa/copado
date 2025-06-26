@@ -107,6 +107,14 @@
             <fieldType>ComponentChoice</fieldType>
             <isRequired>false</isRequired>
             <scale>0</scale>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <processMetadataValues>
@@ -120,6 +128,14 @@
             <fieldText>Any comments or feedback for us?</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <pausedText>To pick up where you left off, refresh this page, or open the survey again.</pausedText>
         <showFooter>true</showFooter>
