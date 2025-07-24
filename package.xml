@@ -117,6 +117,7 @@
         <members>Schema</members>
         <members>Search</members>
         <members>Security</members>
+        <members>ServiceAIRecommendations</members>
         <members>ServiceCloudVoice</members>
         <members>ServiceSetupAssistant</members>
         <members>Sharing</members>
