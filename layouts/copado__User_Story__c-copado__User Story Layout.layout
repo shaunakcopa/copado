@@ -425,6 +425,11 @@
             <sortOrder>0</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
+            <actionName>copado__Add_Metadata</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>5</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>copado__Ready_for_Promotion</actionName>
             <actionType>CustomButton</actionType>
             <sortOrder>2</sortOrder>
@@ -438,11 +443,6 @@
             <actionName>Submit</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>4</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>copado__Add_Metadata</actionName>
-            <actionType>CustomButton</actionType>
-            <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>copado__Apex_Test</actionName>
