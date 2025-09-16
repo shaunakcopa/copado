@@ -75,7 +75,7 @@
 											Password
 										</label>
 										<div class="slds-form-element__control">
-											<apex:inputSecret value="{!password}" required="true" styleclass="slds-input" redisplay="true" />
+											<apex:inputSecret value="{!password}" required="true" styleclass="slds-input" />
 										</div>
 									</apex:outputPanel>
 									<apex:outputPanel layout="block" styleClass="slds-form-element">
@@ -83,7 +83,7 @@
 											API Token
 										</label>
 										<div class="slds-form-element__control">
-											<apex:inputSecret value="{!apiKey}" styleclass="slds-input" redisplay="true" />
+											<apex:inputSecret value="{!apiKey}" styleclass="slds-input" />
 										</div>
 									</apex:outputPanel>
 								</div>

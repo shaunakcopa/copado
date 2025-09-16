@@ -29,6 +29,7 @@
 
     <script>
         var tableIdPaginationObject = {};
+        var outOfSyncUserStories = [];
         var copadoApp = {
             ns: '{!JSENCODE(namespace)}',
             data: {
@@ -413,6 +414,28 @@
                     [10, 25, 50, -1],
                     [10, 25, 50, 'All']
                 ],
+                columnDefs: [
+                    {
+                        targets: $copado('th[datatype]').map(function () {
+                            return $copado(this).index(); // Get the index of each matching column
+                        }).get(),
+                        orderable: true,
+
+                        render: function (data, type, row, meta) {
+                            const datatype = $copado(meta.settings.aoColumns[meta.col].nTh).attr('datatype');
+                            if (type === 'sort') {
+                                const rawData = $copado(data).text().trim();
+                                
+                                 // Get the raw text from the HTML
+                                 if(datatype === 'datetime' || datatype === 'date') {
+                                    const parsedDate = new Date(rawData);
+                                     return !isNaN(parsedDate) ? parsedDate.getTime() : 0;
+                                 }
+                            }
+                            return data; // Display original data for other types
+                        }
+                    }   
+                ],
                 language: {
                     lengthMenu: '{!JSENCODE($Label.Display_MENU_records_per_page)}',
                     zeroRecords: '{!JSENCODE($Label.Nothing_found_sorry)}',
@@ -428,8 +451,12 @@
                     }
                 }
             });
+            
             tabDatatable.css("border-top","0");
 
+            tabDatatable.on('draw.dt', function() {
+                showWarningForOutOfSyncUserStories();
+            });
             var filterObj = $copado('#userStoriesTable_filter');
             reParentFilter(filterObj);
         }
@@ -506,9 +533,12 @@
         }
 
         function selectUnselectAll(tableName, elemid) {
-            var table = $copado('#'+tableName);
-            $copado('td input:checkbox', table).prop('checked', $copado('#'+elemid).prop('checked'));
-        }
+                var table = $copado('#' + tableName).DataTable();
+                var allRowNodes = table.rows().nodes();
+                $copado('td input:checkbox', allRowNodes)
+                    .prop('checked', $copado('#' + elemid).prop('checked'));
+            }
+
         function changeSelectAll(tableName, elemid) {
             var table = $copado('#'+tableName);
             var lst = $copado('td input:checkbox', table);
@@ -570,13 +600,12 @@
                     promotionIds.push(key);
                 }
             }
-            let promises = [];
-            for (let i = 0; i < promotionIds.length; i++) {
-                promises.push(
-                    new Promise(function (resolve, reject) {
+            const executeSequentially = promotionIds.reduce((previousPromise, promotionId) => {
+                return previousPromise.then(() => {
+                    return new Promise((resolve, reject) => {
                         Visualforce.remoting.Manager.invokeAction(
                             '{!$RemoteAction.PromotionRemoter.executePromotionAction}',
-                            promotionIds[i],
+                            promotionId,
                             isValidation,
                             function (result, event) {
                                 if (event.status) {
@@ -588,10 +617,15 @@
                             },
                             { buffer: false, escape: true }
                         );
-                    })
-                );
-            }
-            Promise.all(promises);
+                    });
+                });
+            }, Promise.resolve());
+
+            executeSequentially.then(() => {
+                console.log('All promotions executed sequentially.');
+            }).catch((error) => {
+                console.error('An error occurred during the execution of promotions:', error);
+            });
         }
 
         expandDataTable = function(tableId) {
@@ -624,6 +658,58 @@
                 .trigger('change');
             tableIdPaginationObject[tableId] = tableData;
         };
+
+        function callBackPromoteNotify() {
+            const requiredCheck = document.getElementById('userStoriesTable');
+            if(requiredCheck) {
+                backPromoteNotify();
+            } else {
+                setTimeout(callBackPromoteNotify, 1000);
+            }
+        }
+
+        function showWarningForOutOfSyncUserStories() {
+            if(outOfSyncUserStories?.length) {
+                for(let i=0; i< outOfSyncUserStories.length; i++) {
+                    $copado('#userStoryTable_'+outOfSyncUserStories[i])?.removeClass('slds-hide');
+                }
+            }
+        }
+
+        function backPromoteNotify() {
+            try {
+                const newOverlayJson = $copado('[id$="newOverlayJsonMap"]').val();
+                const parsedJson = JSON.parse(newOverlayJson);
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.PipelineManagerExtension.outOfSyncEnvironmentWithUserStories}',
+                    newOverlayJson,
+                    '{!currentPipeline.Id}',
+                    function(result, event) {
+                        if (event.status) {
+                            try {
+                                outOfSyncUserStories = JSON.parse(result);
+                                 if(outOfSyncUserStories?.length) {
+                                    document.querySelector('.outofsyncmanager').classList.remove('slds-hide');
+                                    document.querySelector('#out-of-sync_user-stories').innerHTML = '';
+                                    document.querySelector('#out-of-sync_user-stories').innerHTML = document.querySelector('#out-of-sync_user-stories').innerHTML + ': ' + outOfSyncUserStories.length + ' ' + '{!JSENCODE($Label.User_Stories)}'; 
+                                    showWarningForOutOfSyncUserStories();
+                                }
+                            } catch (error) {
+                                console.error('Parsing error on Back Promotion Awareness:', error);
+                            }
+                        } else if (event.type === 'exception') {
+                            console.error('Back Promotion Awareness Exception:', event.message);
+                        } else {
+                            console.error('Back Promotion Awareness Error:', event.message);
+                        }
+                    },
+                    {escape: false}
+                );
+            }
+            catch(err) {
+               console.error('Error occurred while identifying User Stories from back promotion criteria', err);
+            }
+        }    
     </script>
 
     <!-- pipeline promotion and diagram -->
@@ -644,7 +730,33 @@
             width:34%;
             min-width: 250px;
         }
-        /* end pipeline diagram */
+
+        /* Back Promotion Notification*/
+        .outofsyncmanager {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .outofsyncmanager .out-of-sync_tooltip {
+            position: absolute;
+            top: -125px;
+            left: 30%;
+            z-index: 99999;
+            width: 20rem;
+        }
+
+        .outofsyncmanager .slds-badge {
+            font-size: 1rem !important;
+            font-weight: 200 !important;
+        }
+
+        .out-of-sync_tooltip {
+            display:none !important; 
+        }
+
+        .outofsyncmanager:hover .out-of-sync_tooltip {
+            display: block !important; 
+        }
     </style>
     <!-- end pipeline promotion and diagram -->
 
@@ -2121,7 +2233,7 @@
         <apex:actionFunction name="promotionInfo" action="{!promotionInfo}" reRender="copadoErrorPanelForDialog" />
         <apex:actionFunction name="switchToSelenium" action="{!showSeleniumResultsTab}" onComplete="renderTable4Selenium();unlockScreen();" reRender="fieldSets,GeneralActionButtons" />
         <apex:actionFunction name="switchToCompliance" action="{!showComplianceResultsTab}" onComplete="renderTable4Compliance();unlockScreen();" reRender="fieldSets,GeneralActionButtons" />
-        <apex:actionFunction name="switchToUserStory" action="{!showUserStoriesTab}" onComplete="renderTable();unlockScreen();" reRender="fieldSets,GeneralActionButtons" />
+        <apex:actionFunction name="switchToUserStory" action="{!showUserStoriesTab}" onComplete="renderTable();unlockScreen();callBackPromoteNotify();" reRender="fieldSets,GeneralActionButtons" />
         <apex:actionFunction name="prepareEnvApprovals" reRender="approvalRenderPanel" onComplete="rerenderApprovalDatatable()">
             <apex:param name="approvalEnvId" value="" />
         </apex:actionFunction>
@@ -2176,13 +2288,13 @@
                             <apex:outputPanel id="GeneralActionButtons" styleClass="slds-col slds-size_1-of-2" style="text-align:right;">
                                 <apex:outputPanel layout="none" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}">
                                     <apex:commandButton value="{!$Label.copado__Pipeline_Validate_Selections}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="validateSelections" action="{!createPromotionforValidation}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel" onClick="lockScreen();expandDataTable('userStoriesTable');" oncomplete="openPromotionListModal();renderPromotionPoller();" disabled="{!NOT(showUserStories)}"/>
-                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote, $Label.copado__Pipeline_Back_Promote)}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createPromotion" action="{!createPromotion}" reRender="copadoErrorPanel,notify,modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListButtons,createdPromotionListPanel" onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}"/>
-                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeploy" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller"/>
+                                    <apex:commandButton value="{!IF(JSENCODE(newOverlay.pathType) == 'merge', $Label.copado__Pipeline_Promote, $Label.copado__Pipeline_Back_Promote)}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createPromotion" action="{!createPromotion}" reRender="copadoErrorPanel,notify,modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListButtons,createdPromotionListPanel" onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}"/>
+                                    <apex:commandButton value="{!IF(JSENCODE(newOverlay.pathType) == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeploy" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller"/>
                                 </apex:outputPanel>
                                 <apex:outputPanel layout="none" rendered="{!AND(currentPipeline.copado__Platform__c != 'Salesforce',currentPipeline.copado__Platform__c != null)}">
                                     <apex:commandButton value="{!$Label.copado__Pipeline_Validate_Selections}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="validateSelectionsMC" action="{!createPromotionforValidation}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel" onClick="lockScreen();expandDataTable('userStoriesTable');" oncomplete="executePromotionActions({!promotionWrappersJSON}, true);openPromotionListModal();renderPromotionPoller();" disabled="{!NOT(showUserStories)}"/>
-                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Create_Promotion, $Label.copado__Create_Back_Promotion)}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createPromotionMC" action="{!createPromotion}" reRender="copadoErrorPanel,notify,modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListButtons,createdPromotionListPanel" onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}"/>
-                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeployMC" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="executePromotionActions({!promotionWrappersJSON}, false);openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller"/>
+                                    <apex:commandButton value="{!IF(JSENCODE(newOverlay.pathType) == 'merge', $Label.copado__Create_Promotion, $Label.copado__Create_Back_Promotion)}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createPromotionMC" action="{!createPromotion}" reRender="copadoErrorPanel,notify,modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListButtons,createdPromotionListPanel" onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}"/>
+                                    <apex:commandButton value="{!IF(JSENCODE(newOverlay.pathType) == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeployMC" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="executePromotionActions({!promotionWrappersJSON}, false);openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller"/>
                                 </apex:outputPanel>
                             </apex:outputPanel>
                         </div>
@@ -2242,15 +2354,36 @@
                                 </span>
                             </apex:outputPanel>
                             <apex:outputPanel layout="none" rendered="{!newOverlay.pathType != 'merge'}">
+                            <div>
                                 <span class="slds-text-heading_medium">
                                     {!newOverlay.toEnvName}
+                                </span>
+                                <span class="outofsyncmanager slds-hide">
+                                    <span class="slds-badge slds-theme_error">
+                                        <span class="slds-badge__icon slds-badge__icon_left slds-badge__icon_inverse">
+                                            <span class="slds-icon_container slds-icon-utility-warning slds-current-color" title="Description of icon when needed">
+                                                <svg class="slds-icon slds-icon_xx-small" aria-hidden="true">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#warning')}"></use>
+                                                </svg>
+                                            </span>
+                                        </span>
+                                        <span id="out-of-sync_user-stories"><strong>{!$Label.EnvironmentOutOfSyncTitleOnBackPromotionPage}</strong></span>
+                                    </span>
+                                    <div class="slds-popover slds-popover_tooltip slds-nubbin_bottom-left out-of-sync_tooltip" role="tooltip" id="help">
+                                        <div class="slds-popover__body">
+                                            <strong>{!$Label.ActionRequired}</strong>: {!$Label.EnvironmentOutOfSyncMessageOnBackPromotionPage}
+                                        </div>
+                                    </div>
+                                </span>
+                                <span>
                                     <svg class="slds-button__icon slds-button__icon_right" aria-hidden="true">
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#back')}"></use>
                                     </svg>
                                 </span>
                                 <span class="slds-text-heading_medium">
                                         {!newOverlay.fromEnvName}
-                                    </span>
+                                </span>
+                            </div>
                             </apex:outputPanel>
                         </apex:outputPanel>
                         <apex:outputPanel id="pins" layout="block" styleClass="slds-grid" style="width: 100%; margin-top: 15px;">
@@ -2290,7 +2423,7 @@
                                                 </div>
                                             </th>
                                             <apex:repeat value="{!$ObjectType.copado__User_Story__c.FieldSets.copado__CBM_Fields}" var="fld">
-                                                <th class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col">
+                                               <th class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col" datatype="{!fld.Type}">
                                                     <a href="javascript:void(0);" class="slds-th__action slds-text-link_reset" tabindex="0">
                                                         <span class="slds-assistive-text">{!$Label.Sort}</span>
                                                         <span class="slds-truncate" title="{!$Label.Name}">{!fld.Label}</span>
@@ -2312,6 +2445,11 @@
                                         <apex:repeat value="{!newOverlay.userStories}" var="us" id="userStoryRepeat">
                                             <tr class="slds-hint-parent">
                                                 <td role="gridcell" class="slds-text-align_right" style="width: 3.25rem;">
+                                                    <span id="userStoryTable_{!us.userStory['Id']}" class="slds-hide">
+                                                        <svg class="slds-button__icon slds-button__icon_left slds-icon-text-warning" aria-hidden="true">
+                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#warning')}"></use>
+                                                        </svg>
+                                                    </span>
                                                     <apex:inputCheckbox id="checkbox-2" value="{!us.isSelected}" onClick="changeSelectAll('userStoriesTable', 'selectAll');" />
                                                 </td>
                                                 <apex:repeat value="{!$ObjectType.copado__User_Story__c.FieldSets.copado__CBM_Fields}" var="fld">
@@ -2334,6 +2472,7 @@
                                         </tbody>
                                     </table>
                                 </fieldset>
+                                <apex:inputHidden value="{!newOverlayJSON}" id="newOverlayJsonMap" />
                             </apex:outputPanel>
                             <!-- END OF USER STORIES FIELDSET -->
                             <!-- COMPLIANCE RESULT FIELDSET -->

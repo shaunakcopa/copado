@@ -166,9 +166,22 @@
         <type>Hierarchy</type>
     </fields>
     <fields>
+        <fullName>PricebookId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>SchedulingConstraintId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SelfCheckInUrl</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ServiceAppointmentLimitType</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>TopLevelTerritoryId</fullName>
@@ -179,6 +192,11 @@
         <fullName>TravelModeId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TravelTimeBuffer</fullName>
+        <inlineHelpText>Add additional time to driving time, such as time to find parking or to walk to the site. This value overrides the Travel Time Buffer value defined in Field Service Settings | Scheduling | Routing.</inlineHelpText>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>TypicalInTerritoryTravelTime</fullName>

@@ -5,7 +5,15 @@
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>copado__CreateAPIKey</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__PersonaManagementCredentialServiceCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaManagementFeatureServiceCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -73,6 +81,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>copado__Persona_Definition__c</object>
+        <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <tabSettings>

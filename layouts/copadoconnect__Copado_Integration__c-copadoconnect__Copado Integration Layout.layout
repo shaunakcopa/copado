@@ -5,6 +5,7 @@
     <excludeButtons>Clone</excludeButtons>
     <excludeButtons>Edit</excludeButtons>
     <excludeButtons>IsotopeSubscription</excludeButtons>
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>PrintableView</excludeButtons>
     <excludeButtons>RecordShareHierarchy</excludeButtons>
     <excludeButtons>Share</excludeButtons>
@@ -42,6 +43,10 @@
         <editHeading>false</editHeading>
         <label>System Information</label>
         <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copadoconnect__Project__c</field>
+            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>copadoconnect__Description__c</field>

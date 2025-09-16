@@ -51,6 +51,7 @@
                 <showPicturesOnCharts>false</showPicturesOnCharts>
                 <showValues>false</showValues>
                 <sortBy>RowLabelAscending</sortBy>
+                <sortLegendValues>false</sortLegendValues>
                 <useReportChart>true</useReportChart>
             </dashboardComponent>
             <rowIndex>0</rowIndex>
@@ -75,6 +76,7 @@
                 <showPicturesOnCharts>false</showPicturesOnCharts>
                 <showValues>false</showValues>
                 <sortBy>RowLabelAscending</sortBy>
+                <sortLegendValues>false</sortLegendValues>
                 <useReportChart>true</useReportChart>
             </dashboardComponent>
             <rowIndex>8</rowIndex>

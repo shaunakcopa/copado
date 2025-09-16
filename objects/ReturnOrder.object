@@ -179,6 +179,10 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>ProcessType</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>ProductRequestId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>

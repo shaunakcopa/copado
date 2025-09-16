@@ -179,6 +179,8 @@
     <relatedLists>
         <fields>Name</fields>
         <fields>Amount</fields>
+        <fields>TotalTaxAmount</fields>
+        <fields>TotalAmtWithTax</fields>
         <fields>Description</fields>
         <relatedList>ReturnOrderItemAdjustments</relatedList>
     </relatedLists>
