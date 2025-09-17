@@ -1243,6 +1243,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__AutomationEventPayload</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__AutomationEventsSelector</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1320,6 +1324,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__AutomationRuleScheduleTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__AutomationRuleStatus</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -14530,6 +14538,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Automation_Event__c.copado__Pipeline_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Automation_Event__c.copado__Processing_Status__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
