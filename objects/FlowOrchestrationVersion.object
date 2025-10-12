@@ -15,6 +15,20 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
+        <actionName>DeleteOrchestrationVersion</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteOrchestrationVersion</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteOrchestrationVersion</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -25,6 +39,20 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>OpenOrchestrationVersion</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>OpenOrchestrationVersion</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>OpenOrchestrationVersion</actionName>
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
@@ -53,6 +81,20 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ToggleOrchestrationVersionStatus</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ToggleOrchestrationVersionStatus</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ToggleOrchestrationVersionStatus</actionName>
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
@@ -72,36 +114,16 @@
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
-    <externalSharingModel>Private</externalSharingModel>
-    <fields>
-        <fullName>AuxiliaryTriggeringRecord</fullName>
-    </fields>
-    <fields>
-        <fullName>Duration</fullName>
-    </fields>
-    <fields>
-        <fullName>OrchestrationDeveloperName</fullName>
-    </fields>
-    <fields>
-        <fullName>OrchestrationLabel</fullName>
-    </fields>
-    <fields>
-        <fullName>OwnerId</fullName>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Status</fullName>
-    </fields>
-    <fields>
-        <fullName>TriggeringRecord</fullName>
-    </fields>
-    <fields>
-        <fullName>TriggeringRecordType</fullName>
-    </fields>
-    <listViews>
-        <fullName>All_Orchestration_Instances</fullName>
-        <filterScope>Everything</filterScope>
-        <label>All Orchestration Runs</label>
-    </listViews>
-    <sharingModel>Private</sharingModel>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <searchLayouts>
+        <customTabListAdditionalFields>VersionNumber</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status</customTabListAdditionalFields>
+        <customTabListAdditionalFields>FlowOrchestration</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrchestrationType</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>VersionNumber</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>FlowOrchestration</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrchestrationType</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>
