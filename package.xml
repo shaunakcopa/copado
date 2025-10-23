@@ -37,6 +37,7 @@
         <members>DevHub</members>
         <members>Discovery</members>
         <members>DocumentChecklist</members>
+        <members>DxGlobalTerms</members>
         <members>DynamicForms</members>
         <members>EAC</members>
         <members>EinsteinDocumentCapture</members>
@@ -104,6 +105,7 @@
         <members>Portals</members>
         <members>PredictionBuilder</members>
         <members>Privacy</members>
+        <members>PrmCore</members>
         <members>Product</members>
         <members>ProductDiscovery</members>
         <members>QuickText</members>
@@ -118,8 +120,10 @@
         <members>Schema</members>
         <members>Search</members>
         <members>Security</members>
+        <members>SecurityHub</members>
         <members>ServiceAIRecommendations</members>
         <members>ServiceCloudVoice</members>
+        <members>ServiceItsmIntelligenceUdd</members>
         <members>ServiceSetupAssistant</members>
         <members>Sharing</members>
         <members>Site</members>
@@ -137,5 +141,5 @@
         <members>WorkDotCom</members>
         <name>Settings</name>
     </types>
-    <version>64.0</version>
+    <version>65.0</version>
 </Package>
