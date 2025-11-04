@@ -17,6 +17,10 @@
         <name>copado__Environment_Info_Message__c</name>
     </fields>
     <fields>
+        <label><!-- Execution Error Message --></label>
+        <name>copado__Execution_Error_Message__c</name>
+    </fields>
+    <fields>
         <label><!-- Execution Sequence Icon --></label>
         <name>copado__Execution_Sequence_Icon__c</name>
     </fields>

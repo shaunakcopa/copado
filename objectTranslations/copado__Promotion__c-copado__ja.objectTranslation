@@ -123,6 +123,10 @@ Leave this field empty for standard promotions using Project and/or Release fiel
         </picklistValues>
     </fields>
     <fields>
+        <label>プルリクエストの承認</label>
+        <name>copado__Pull_Requests_Approved__c</name>
+    </fields>
+    <fields>
         <label>リリース</label>
         <name>copado__Release__c</name>
         <relationshipLabel>プロモーション</relationshipLabel>

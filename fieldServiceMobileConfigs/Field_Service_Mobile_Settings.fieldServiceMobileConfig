@@ -18,6 +18,7 @@
     <feedbackPrimaryColor>#C23934</feedbackPrimaryColor>
     <feedbackSecondaryColor>#13C4A3</feedbackSecondaryColor>
     <feedbackSelectedColor>#FFFFFF</feedbackSelectedColor>
+    <feedbackTertiaryColor>#DD7A01</feedbackTertiaryColor>
     <futureDaysInDatePicker>45</futureDaysInDatePicker>
     <geoLocationAccuracy>Medium</geoLocationAccuracy>
     <geoLocationMinUpdateFreqMins>10</geoLocationMinUpdateFreqMins>

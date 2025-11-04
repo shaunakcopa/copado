@@ -127,6 +127,10 @@ Leave this field empty for standard promotions using Project and/or Release fiel
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Pull Requests Approved --></label>
+        <name>copado__Pull_Requests_Approved__c</name>
+    </fields>
+    <fields>
         <label><!-- Release --></label>
         <name>copado__Release__c</name>
         <relationshipLabel><!-- Promotions --></relationshipLabel>

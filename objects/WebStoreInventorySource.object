@@ -130,6 +130,10 @@
     <enableFeeds>false</enableFeeds>
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
+        <fullName>DoesAllowGuestInventoryLevel</fullName>
+        <inlineHelpText>Allows guest user access to inventory level.</inlineHelpText>
+    </fields>
+    <fields>
         <fullName>InventoryCacheTtl</fullName>
         <inlineHelpText>The Inventory Cache Time To Live must be between 300 and 14,400. The default for a new store is 1,440.</inlineHelpText>
     </fields>

@@ -86,7 +86,7 @@
         <name>copado__Worker_Size__c</name>
         <picklistValues>
             <masterLabel>L</masterLabel>
-            <translation><!-- L --></translation>
+            <translation>L</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>M</masterLabel>
@@ -94,11 +94,11 @@
         </picklistValues>
         <picklistValues>
             <masterLabel>S</masterLabel>
-            <translation><!-- S --></translation>
+            <translation>S</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>XL</masterLabel>
-            <translation><!-- XL --></translation>
+            <translation>XL</translation>
         </picklistValues>
     </fields>
     <nameFieldLabel>関数名</nameFieldLabel>

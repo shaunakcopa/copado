@@ -156,7 +156,7 @@
         <name>copado__Namespace__c</name>
     </fields>
     <fields>
-        <label>クレデンシャルID</label>
+        <label>組織ID</label>
         <name>copado__Org_ID__c</name>
     </fields>
     <fields>

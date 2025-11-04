@@ -65,6 +65,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label>OAuth</label>
+        <name>copado__OAuth__c</name>
+    </fields>
+    <fields>
         <help><!-- Base URL of your Repository, e.g.: https://github.com/[COMPANY]/[REPOSITORY]/ https://bitbucket.org/[COMPANY]/[REPOSITORY]/ https://gitlab.org/[COMPANY]/[REPOSITORY]/ --></help>
         <label>プルリクエストのベースURL</label>
         <name>copado__Pull_Request_Base_URL__c</name>

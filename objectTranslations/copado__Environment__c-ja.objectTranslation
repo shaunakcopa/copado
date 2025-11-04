@@ -173,7 +173,7 @@
     </fields>
     <fields>
         <help>ターゲット組織のデフォルトクレデンシャルは常にチェックされています。オプションで、ユーザーがターゲット組織の組織クレデンシャルを持っていない場合のみ、デフォルトのクレデンシャルを選択することができます。</help>
-        <label><!-- Promotion Default Credential --></label>
+        <label><!-- Default Credential --></label>
         <name>copado__Promotion_Default_Credential__c</name>
         <picklistValues>
             <masterLabel>All Promotions</masterLabel>

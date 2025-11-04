@@ -115,12 +115,16 @@
         <name>copado__Promotion_Method__c</name>
         <picklistValues>
             <masterLabel>Classic Promotion</masterLabel>
-            <translation><!-- Classic Promotion --></translation>
+            <translation>クラシックプロモーション</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Environment Sync</masterLabel>
-            <translation><!-- Environment Sync --></translation>
+            <translation>環境同期</translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pull Requests Approved --></label>
+        <name>copado__Pull_Requests_Approved__c</name>
     </fields>
     <fields>
         <label><!-- Release --></label>

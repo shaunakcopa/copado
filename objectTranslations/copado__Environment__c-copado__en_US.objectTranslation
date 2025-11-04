@@ -177,7 +177,7 @@
     </fields>
     <fields>
         <help><!-- The Default Credential for the target Org is always selected by default. Optionally, the Default Credential can be selected only if the user has no Org Credential for the target Org. --></help>
-        <label><!-- Promotion Default Credential --></label>
+        <label><!-- Default Credential --></label>
         <name>copado__Promotion_Default_Credential__c</name>
         <picklistValues>
             <masterLabel>All Promotions</masterLabel>
