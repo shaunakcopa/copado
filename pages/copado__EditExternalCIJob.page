@@ -2,13 +2,41 @@
 	<apex:outputPanel layout="block">
 		<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en" style="height: 100%;">
 		<head>
-			<c:GAnalytics />
 			<apex:slds />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<c:IncludeStaticsResourceComponent addJQuery="true"/>
 			<apex:stylesheet value="{!URLFOR($Resource.copado__SLDS, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
 
 			<style type="text/css">
+			.lookupInput input {
+				background-color: rgb(255, 255, 255);
+				border: 1px solid rgb(221, 219, 218);
+				border-radius: .25rem;
+				width: 100%;
+				transition: border .1s linear, background-color .1s linear;
+				display: inline-block;
+				padding: 0 1rem 0 .75rem;
+				line-height: 1.875rem;
+				min-height: calc(1.875rem + (1px * 2));
+			}
+
+			.lookupInput a {
+				position: absolute;
+				height: 22px !important;
+				width: 33px !important;
+				margin-left: -33px;
+				margin-top: 3px;
+				background-image: url(/img/setup/search-icon.png) !important;
+				background-repeat: no-repeat !important;
+				background-position: center !important;
+				display: inline-flex !important;
+			}
+
+			.lookupInput a img,
+			.lookupInput a svg {
+				display: none !important;
+			}
+
 	      	.col-right{
 	      		margin-left : 15px;
 	      	}
@@ -259,7 +287,7 @@
 				var todayDate= param ? param : new Date('{!lastCacheDate}');
 				ciJob.cacheDate = ciJob.cacheDate ? $copado("[Id$='removeCache']").text() : ciJob.cacheDate;
 				console.log('TodayD ==>'+todayDate);
-				var textTemplate = "{!$Label.copado__CACHE_REFRESHED_NOW}";
+				var textTemplate = "{!$Label.CACHE_REFRESHED_NOW}";
 				textTemplate = textTemplate.replace('__METATYPE__','');
 				if(todayDate != "Invalid Date"){
 					var format ="AM";

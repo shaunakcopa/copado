@@ -116,6 +116,18 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>CorpCrcyCnvTotAmtWithTax</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CorporateCurrencyCvsnDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CorporateCurrencyCvsnRate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -189,6 +201,18 @@
     </fields>
     <fields>
         <fullName>TotalTaxAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>WriteOffStatus</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>WriteOffTotalChargeAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>WriteOffTotalTaxAmount</fullName>
         <trackHistory>false</trackHistory>
     </fields>
     <listViews>

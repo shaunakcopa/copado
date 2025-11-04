@@ -102,7 +102,6 @@ var copadoApp = {
         copadoApp.enabledBtn('[id$=btnDeployOutstanding]', copadoLabels.DEPLOY_OUTSTANDING);
         copadoApp.enabledBtn('[id$=btnLegacyDeploy]', copadoLabels.DEPLOY_LATER);
         copadoApp.unlock();
-        ga('send', 'event', 'Deployment', 'deploy', 'cancel');
     },
 
     /**
@@ -154,7 +153,6 @@ var copadoApp = {
         me.selectedStepId = stepId;
         me.selectedJob = jobId;
         //get attach and render
-        ga('send', 'event', 'Deployment', 'result', 'view');
         if (resultId != 'null' && resultId) {
             me.openResultRecord(resultId);
         } else {
@@ -175,6 +173,7 @@ var copadoApp = {
     linkForJob: function (styleClass, job, showResult, force) {
         if (typeof job[copadoApp.ns + 'Destination_Org__r'] === 'undefined' || typeof job[copadoApp.ns + 'Step__r'] === 'undefined') return;
         var destinationOrg = htmlEntities(job[copadoApp.ns + 'Destination_Org__r'][copadoApp.ns + 'To_Org__r'].Name); // undefined check control and special character escape done via htmlEntities
+
         var stepName = htmlEntities(job[copadoApp.ns + 'Step__r'].Name);
         return (
             '<i class="jobIcon ' +
@@ -284,6 +283,12 @@ var copadoApp = {
                 copadoApp.ns +
                 'Destination_Org__r.' +
                 copadoApp.ns +
+                'To_Org__r.' +
+                copadoApp.ns +
+                'SFDC_Org_ID__c, ' +
+                copadoApp.ns +
+                'Destination_Org__r.' +
+                copadoApp.ns +
                 'To_Org__r.Name, ' +
                 copadoApp.ns +
                 'Deployed__c, ' +
@@ -309,7 +314,7 @@ var copadoApp = {
                 "deployment__c = '" +
                 copadoApp.data.dep.Id +
                 "' limit 1000";
-
+                
             var result = sforce.connection.query(query, {
                 onSuccess: function (res) {
                     if (res.records) {
@@ -344,7 +349,7 @@ var copadoApp = {
                     }
                 },
                 onFailure: function (res) {
-                    console.log('failure', res);
+                    console.error(res);
                 }
             });
         }
@@ -424,7 +429,6 @@ var copadoApp = {
             ]
         });
 
-        ga('send', 'event', 'Deployment', 'result', 'render', res.length);
     },
 
     createDataTemplateResultTable: function (res, $container, sourceDomain, targetDomain) {
@@ -481,6 +485,7 @@ var copadoApp = {
             var _namespace = copadoApp.ns != '' ? copadoApp.ns + '__' : '';
             var templateId = $copado('.jqx-grid').jqxGrid('getCell', row, 'templateId').value;
             var templateName = $copado('.jqx-grid').jqxGrid('getCell', row, 'templateName').value;
+            
             var element = $copado(defaultHtml);
             var resultPageUrl =
                 '/apex/' +
@@ -653,7 +658,6 @@ var copadoApp = {
             ]
         });
 
-        ga('send', 'event', 'Deployment', 'result', 'render', res.length);
     },
 
     renderJobsResult: function (res, destination, stepName, jobId) {
@@ -959,7 +963,6 @@ var copadoApp = {
                 $copado('#js-action-AddStep').click();
             }
             me.unlock();
-            ga('send', 'event', 'Deployment', 'steps', 'delete');
             //if was a new step reset flag
         }
     },
@@ -1114,8 +1117,6 @@ var copadoApp = {
             copadoApp.selectStepCallback();
         });
 
-        ga('send', 'event', 'Deployment', 'step', 'detail');
-        ga('send', 'event', 'Deployment', 'step', 'detail-' + selectedStep.type);
     },
 
     //try to show step detail when user is viewing results
@@ -1219,7 +1220,6 @@ var copadoApp = {
             copadoApp.dirty = false;
         } else {
             //copadoApp.lock();
-            ga('send', 'event', 'Deployment', 'deploy');
             //change to popup)
             var url =
                 '/apex/' +
@@ -1307,7 +1307,6 @@ var copadoApp = {
             me.renderStep(me.data.steps[i]);
             me.renderedSteps.push(me.data.steps[i].Id);
         }
-        ga('send', 'event', 'Deployment', 'steps', 'render', len);
     },
 
     renderedSteps: [],
@@ -1424,7 +1423,6 @@ var copadoApp = {
             me.resetSelectedStep();
         }
 
-        ga('send', 'event', 'Deployment', 'steps', 'add');
     },
 
     bindActions: function () {
@@ -1601,8 +1599,6 @@ var copadoApp = {
             saveDeployment();
             copadoApp.dirty = false;
 
-            ga('send', 'event', 'Deployment', 'save');
-
             copadoApp.unlock();
         }, 66);
     },
@@ -1648,7 +1644,6 @@ var copadoApp = {
 
     reorderSteps: function (event, ui) {
         copadoApp.reorderStepsController();
-        ga('send', 'event', 'Deployment', 'reorder');
     },
 
     sortable: function () {
@@ -1667,11 +1662,9 @@ var copadoApp = {
 
         if (me.data.dep.Id) {
             me.statusChecker(true);
-            ga('send', 'event', 'Deployment', 'edit');
         } else {
             copadoApp.isNewStepActive = true;
             copadoApp.isNewDestinationActive = true;
-            ga('send', 'event', 'Deployment', 'new');
         }
 
         me.mirrorBlockHeight();
@@ -1756,8 +1749,6 @@ var copadoStep = {
         rock.stepType = stepType;
         rock.stepId = stepId;
         /*****************/
-
-        ga('send', 'event', 'Step', 'view', stepType);
 
         me.showBlockByType(stepType);
 
@@ -2185,7 +2176,6 @@ var copadoStep = {
         } else {
             copadoApp.saveStepFailure(s);
         }
-        ga('send', 'event', 'Step', 'save - ' + (fail ? 'error' : 'ok'), copadoStep.stepType);
     },
 
     defaultHandler: {
@@ -2564,7 +2554,6 @@ var copadoStep = {
                 copadoApp.showMessage('ERROR', error);
                 copadoApp.enabledBtn('.js-saveStep', 'Save');
                 copadoApp.unlock();
-                ga('send', 'event', 'Step', 'saving - error ', copadoStep.stepType + ' - ' + error);
                 return false;
             } else {
                 if (!rollback) {
@@ -4026,7 +4015,6 @@ var copadoMTStep = {
             copadoApp.startStatusChecker();
             copadoApp.showMessage('CONFIRM', 'Manual Task updated.');
 
-            ga('send', 'event', 'Step', 'Manual Task ', 'Updated - ' + job[copadoApp.ns + 'Status__c']);
         } catch (e) {
             console.error(e);
         }
@@ -4108,7 +4096,6 @@ var copadoMTStep = {
             };
             dw.u.upsertAttach(jobId, jobId + '.json', JSON.stringify([obj]));
 
-            ga('send', 'event', 'Step', 'Manual Task ', 'Leave a comment');
         }
         var tmp_index = copadoApp.data.jobIdsToSkipRedraw.indexOf(jobId);
         if (tmp_index > -1) copadoApp.data.jobIdsToSkipRedraw.splice(tmp_index, 1);
@@ -4779,8 +4766,6 @@ var copadoCalloutStep = {
             copadoApp.getJobs();
             copadoApp.startStatusChecker();
             copadoApp.showMessage('CONFIRM', 'URL Callout updated.');
-
-            ga('send', 'event', 'Step', 'URL Callout', 'Updated - ' + job[copadoApp.ns + 'Status__c']);
         } catch (e) {
             console.error(e);
         }
@@ -4852,7 +4837,6 @@ var copadoCalloutStep = {
                 t: ''
             };
             dw.u.upsertAttach(jobId, jobId + '.json', JSON.stringify([obj]));
-            ga('send', 'event', 'Step', 'URL Callout', 'Leave a comment');
         }
         return true;
     },
@@ -5894,7 +5878,6 @@ var copadoSalesforceFlowStep = {
             copadoApp.startStatusChecker();
             copadoApp.showMessage('CONFIRM', 'Salesforce Flow updated.');
 
-            ga('send', 'event', 'Step', 'Salesforce Flow', 'Updated - ' + job[copadoApp.ns + 'Status__c']);
         } catch (e) {
             console.error(e);
         }
@@ -5978,7 +5961,6 @@ var copadoSalesforceFlowStep = {
                 }
             ];
             dw.u.upsertAttach(jobId, jobId + '.json', JSON.stringify(obj));
-            ga('send', 'event', 'Step', 'Salesforce Flow', 'Leave a comment');
         }
         return true;
     },
