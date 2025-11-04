@@ -7,7 +7,7 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>copado__Quality_Gate_Rule__c.copado__Activate</value>
+                            <value>copado__Quality_Gate_Rule__c.copado__Activate1</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.copado__Status__c}</leftValue>
@@ -17,7 +17,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>copado__Quality_Gate_Rule__c.copado__Deactivate</value>
+                            <value>copado__Quality_Gate_Rule__c.copado__Deactivate1</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.copado__Status__c}</leftValue>
@@ -28,6 +28,23 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Edit</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Is_Updated_Data_Model__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>false</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Quality_Gate_Rule__c.copado__Edit</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Is_Updated_Data_Model__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>true</rightValue>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>Delete</value>
@@ -38,12 +55,6 @@
                                     <rightValue>Inactive</rightValue>
                                 </criteria>
                             </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Clone</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Share</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -74,6 +85,31 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>dismissible</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>message</name>
+                    <value>{!$Label.copado__Quality_Gate_Rule_Legacy_Page}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>variant</name>
+                    <value>info</value>
+                </componentInstanceProperties>
+                <componentName>copado:copadoAlert</componentName>
+                <identifier>c_copadoAlert2</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Is_Updated_Data_Model__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>communicationId</name>
                     <value>qualityGateRuleAlerts</value>
                 </componentInstanceProperties>
@@ -98,10 +134,16 @@
                 <componentName>copado:copadoAlert</componentName>
                 <identifier>c_copadoAlert</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.copado__Execution_sequence__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>After</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.copado__Is_Updated_Data_Model__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -490,6 +532,26 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
                 <identifier>flexipage_tabset</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Is_Updated_Data_Model__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:qualityGateIntermediaryView</componentName>
+                <identifier>c_qualityGateIntermediaryView</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Is_Updated_Data_Model__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <name>main</name>

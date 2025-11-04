@@ -123,6 +123,15 @@
         <fullName>AuditEmail</fullName>
     </fields>
     <fields>
+        <fullName>BankAccountHolderType</fullName>
+    </fields>
+    <fields>
+        <fullName>BankAccountType</fullName>
+    </fields>
+    <fields>
+        <fullName>BankCode</fullName>
+    </fields>
+    <fields>
         <fullName>BillingFirstName</fullName>
     </fields>
     <fields>
@@ -156,6 +165,9 @@
         <fullName>MacAddress</fullName>
     </fields>
     <fields>
+        <fullName>Mandate</fullName>
+    </fields>
+    <fields>
         <fullName>NickName</fullName>
     </fields>
     <fields>
@@ -180,6 +192,9 @@
     </fields>
     <fields>
         <fullName>ProcessingMode</fullName>
+    </fields>
+    <fields>
+        <fullName>StandardEntryClassCode</fullName>
     </fields>
     <fields>
         <fullName>Status</fullName>

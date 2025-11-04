@@ -8,6 +8,6 @@
     </values>
     <values>
         <field>copado__Icon_Name__c</field>
-        <value xsi:type="xsd:string">utility:advertising</value>
+        <value xsi:type="xsd:string">copado:QualityEngineer</value>
     </values>
 </CustomMetadata>

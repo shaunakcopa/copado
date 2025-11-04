@@ -153,6 +153,17 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>DoesDeleteEmptyBundles</fullName>
+        <inlineHelpText>If the bundle has no remaining bundle members, the bundle is deleted.</inlineHelpText>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>EmptyBundleStatus</fullName>
+        <inlineHelpText>Select a status from the Canceled category that a bundle service appointment changes to if it has no remaining bundle members, but still appears in the appointment list.</inlineHelpText>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>MemberStatusesNotToPropagate</fullName>
         <inlineHelpText>Select the bundle member service appointment statuses that aren’t overridden when the bundle service appointment&apos;s status is updated. Use an empty value to propagate all statuses.</inlineHelpText>
         <trackHistory>false</trackHistory>

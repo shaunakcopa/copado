@@ -10,11 +10,34 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>copado__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__JobTemplate__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <fieldManageability>DeveloperControlled</fieldManageability>
         <label>Job Template</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Quality_Gates_Readiness_Logic__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>API Name of the Apex class that validates if the Quality Gate Rule configuration is complete. This validation is triggered when a user saves a new Quality Gate Rule. If the validation fails, the Quality Gate Rule cannot be saved until the user completes the missing configuration. The Apex class must implement the interface with name “QualityGateReadinessInterface”.</inlineHelpText>
+        <label>Quality Gates Readiness Logic</label>
         <length>255</length>
         <required>false</required>
         <type>Text</type>

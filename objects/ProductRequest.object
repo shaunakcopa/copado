@@ -158,6 +158,10 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>ProcessType</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>ShipToAddress</fullName>
         <trackHistory>false</trackHistory>
     </fields>
