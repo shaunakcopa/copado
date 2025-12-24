@@ -1111,6 +1111,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__AppConfigResource</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__AppConfigResourceTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__AppDetectorController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1295,6 +1303,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__AutomationRuleEnvironmentResolver</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__AutomationRuleEnvironmentResolverTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__AutomationRuleEvaluationScopeCtrl</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1472,6 +1488,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__BurndownItem</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__BypassGuard</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__BypassGuardTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -4019,6 +4043,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__JobStepSkipEvaluator</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__JobStepTrigger</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -5120,6 +5148,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__PromotionDeployAction</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PromotionDeploymentMetadataService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -6379,6 +6411,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__StepConfigHelper</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__StepConfigHelperTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__StepEditionController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -7603,6 +7643,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__UserStoryTriggerMetadataService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__UserWithLicense</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -7692,6 +7736,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__ValidateScaConfigurationTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ValidateSkipConditionAndConfigJson</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ValidateSkipConditionAndConfigJsonTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -16097,6 +16149,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Deployment__c.copado__Backend_Bypass__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>copado__Deployment__c.copado__Build_Task__c</field>
         <readable>true</readable>
@@ -16257,6 +16314,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Destination_Org__c.copado__Backend_Bypass__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>copado__Destination_Org__c.copado__Completed__c</field>
         <readable>true</readable>
@@ -16304,6 +16366,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Environment__c.copado__API_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Environment__c.copado__Backend_Bypass__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -16553,6 +16620,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__ExtensionConfiguration__c.copado__Backend_Bypass__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__ExtensionConfiguration__c.copado__Details__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -16737,6 +16809,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Function__c.copado__Backend_Bypass__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>copado__Function__c.copado__Callback_Type__c</field>
         <readable>true</readable>
@@ -16900,6 +16977,11 @@
         <editable>true</editable>
         <field>copado__Git_Commit__c.copado__Git_Repository__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Git_Org_Commit__c.copado__Backend_Bypass__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -17092,6 +17174,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__JobStep__c.copado__Backend_Bypass__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>copado__JobStep__c.copado__ConfigJson__c</field>
         <readable>true</readable>
@@ -17210,6 +17297,11 @@
         <editable>true</editable>
         <field>copado__JobTemplate__c.copado__ApiName__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__JobTemplate__c.copado__Backend_Bypass__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -17890,6 +17982,11 @@
         <editable>true</editable>
         <field>copado__Promotion__c.copado__Back_Promotion__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Promotion__c.copado__Backend_Bypass__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -19683,12 +19780,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__TestTool__mdt.copado__ExcludeFromValidationPromotion__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__TestTool__mdt.copado__JobTemplate__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__TestTool__mdt.copado__Quality_Gates_Readiness_Logic__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__TestTool__mdt.copado__Requires_Manual_Interaction__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -20143,6 +20250,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__User_Story_Commit__c.copado__Backend_Bypass__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__User_Story_Commit__c.copado__CommitMessage__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -20330,6 +20442,11 @@
         <editable>true</editable>
         <field>copado__User_Story__c.copado__Backburner_Rank__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__User_Story__c.copado__Backend_Bypass__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>

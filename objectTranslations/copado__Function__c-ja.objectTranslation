@@ -16,6 +16,10 @@
         <name>copado__ApexClass__c</name>
     </fields>
     <fields>
+        <label><!-- Backend Bypass --></label>
+        <name>copado__Backend_Bypass__c</name>
+    </fields>
+    <fields>
         <help>関数の実行が完了するたびに、フローまたはApexクラスをトリガーします。このトリガーは、関数の結果のステータスが成功または失敗に変更された際に生じます。</help>
         <label><!-- Callback Type --></label>
         <name>copado__Callback_Type__c</name>

@@ -21,6 +21,9 @@ global class GlobalAPI {
     global Boolean deleteCopadoLicense(Id userId) {
         return null;
     }
+    global String getConnectedAppName() {
+        return null;
+    }
     global String getCopadoServerUrl() {
         return null;
     }

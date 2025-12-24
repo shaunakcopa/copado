@@ -828,21 +828,21 @@ var MetadataGrid3 = (() => {
             var allMetaData = [];
             if (this.conf.data.stepId) {
                 if (this.conf.gridMode != 'dwOverviewGrid') {
-                    allMetaData = JSON.parse(atob(dw.u.getFileContent(this.conf.data.stepId, this.conf.attachmentName)));
+                    allMetaData = JSON.parse(Base64.decode(dw.u.getFileContent(this.conf.data.stepId, this.conf.attachmentName)));
                 } else {
                     let gitPromotionContent = dw.u.getFileContent(this.conf.data.stepId, this.conf.attachmentName + '_Git Promotion');
                     if (gitPromotionContent != null) {
-                        allMetaData.push(...JSON.parse(atob(gitPromotionContent)));
+                        allMetaData.push(...JSON.parse(Base64.decode(gitPromotionContent)));
                     }
 
                     let deleteMetadataContent = dw.u.getFileContent(this.conf.data.stepId, this.conf.attachmentName + '_Delete Metadata');
                     if (deleteMetadataContent != null) {
-                        allMetaData.push(...JSON.parse(atob(deleteMetadataContent)));
+                        allMetaData.push(...JSON.parse(Base64.decode(deleteMetadataContent)));
                     }
                 }
             }
             if (this.conf.data.deleteStepId) {
-                const deleteMetadata = JSON.parse(atob(dw.u.getFileContent(this.conf.data.deleteStepId, this.conf.attachmentName)));
+                const deleteMetadata = JSON.parse(Base64.decode(dw.u.getFileContent(this.conf.data.deleteStepId, this.conf.attachmentName)));
                 allMetaData.push(...deleteMetadata);
             }
             var existingFlag = false;
