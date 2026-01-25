@@ -486,12 +486,12 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>copado__User_Story__r.LastViewedDate</field>
+            <field>LastViewedDate</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>LastViewedDate</field>
+            <field>copado__User_Story__r.LastViewedDate</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -561,12 +561,12 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>copado__User_Story__r.Name</field>
+            <field>Name</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>Name</field>
+            <field>copado__User_Story__r.Name</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
@@ -686,12 +686,12 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>copado__User_Story__r.SystemModstamp</field>
+            <field>SystemModstamp</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>SystemModstamp</field>
+            <field>copado__User_Story__r.SystemModstamp</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
