@@ -5115,6 +5115,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__PromoteDeployQueueable</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PromoteDeployQueueableTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__PromotedUserStoriesDatatableController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -7412,6 +7420,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__UserExpression</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__UserLicenseAPI</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__UserLicenseAPITest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -19267,6 +19283,11 @@
         <editable>false</editable>
         <field>copado__Stage__c.copado__Display_Name__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Stage__c.copado__Meta_Stage__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>

@@ -1562,15 +1562,15 @@ var MetadataGrid3 = (() => {
         var sourceUrl =
             baseUrl +
             url
-                .replace(/ORG_ID/, sourceOrgId)
-                .replace(/TYPE/, type)
-                .replace(/NAME/, window.escape(name));
+                .replace(/ORG_ID/, encodeURIComponent(sourceOrgId))
+                .replace(/TYPE/, encodeURIComponent(type))
+                .replace(/NAME/, encodeURIComponent(name));
         var targetUrl =
             baseUrl +
             url
-                .replace(/ORG_ID/, targetOrgId)
-                .replace(/TYPE/, type)
-                .replace(/NAME/, window.escape(name));
+                .replace(/ORG_ID/, encodeURIComponent(targetOrgId))
+                .replace(/TYPE/, encodeURIComponent(type))
+                .replace(/NAME/, encodeURIComponent(name));
 
         var deferreds = [];
         var deferredSource = new $copado.Deferred();

@@ -36,6 +36,9 @@ global class GlobalAPI {
     global List<copado.SourceMemberResult> getRecentChanges(String orgId, Datetime dateTimeToRetrieveChanges) {
         return null;
     }
+    global static Boolean isGovCloud() {
+        return null;
+    }
     global List<copado.GlobalAPI.UserLicense> listCopadoLicenses() {
         return null;
     }
