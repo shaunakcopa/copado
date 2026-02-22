@@ -15,6 +15,7 @@
     <enableFloatingWorkOrder>false</enableFloatingWorkOrder>
     <enableLsdkMode>false</enableLsdkMode>
     <enablePopulateWorkOrderAddress>false</enablePopulateWorkOrderAddress>
+    <enableServiceAppointmentLifecycle>false</enableServiceAppointmentLifecycle>
     <enableStandbyMode>false</enableStandbyMode>
     <enableWorkOrders>false</enableWorkOrders>
     <enableWorkPlansAutoGeneration>false</enableWorkPlansAutoGeneration>

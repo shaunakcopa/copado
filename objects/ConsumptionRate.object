@@ -131,7 +131,7 @@
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>ConsumptionScheduleId</fullName>
-        <inlineHelpText>This rate is a part of of this schedule.</inlineHelpText>
+        <inlineHelpText>This rate is a part of this schedule.</inlineHelpText>
         <trackHistory>false</trackHistory>
         <type>MasterDetail</type>
     </fields>
