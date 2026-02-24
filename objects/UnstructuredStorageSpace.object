@@ -130,47 +130,32 @@
     <enableFeeds>false</enableFeeds>
     <externalSharingModel>Read</externalSharingModel>
     <fields>
-        <fullName>ExternalReference</fullName>
-        <trackHistory>false</trackHistory>
+        <fullName>ApplicationName</fullName>
     </fields>
     <fields>
-        <fullName>ManagedShippingCarrierMethod</fullName>
-        <inlineHelpText>Salesforce managed shipping carrier method information that provides estimated transit times.</inlineHelpText>
-        <trackHistory>false</trackHistory>
+        <fullName>Attribute1</fullName>
     </fields>
     <fields>
-        <fullName>MaxTransitTime</fullName>
-        <trackHistory>false</trackHistory>
+        <fullName>DerivedFolderLocation</fullName>
     </fields>
     <fields>
-        <fullName>MinTransitTime</fullName>
-        <trackHistory>false</trackHistory>
+        <fullName>ExpirationPolicyType</fullName>
     </fields>
     <fields>
-        <fullName>Name</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>ShippingAreaType</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>ShippingCarrierId</fullName>
-        <trackHistory>false</trackHistory>
+        <fullName>FolderId</fullName>
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>ShippingScope</fullName>
-        <inlineHelpText>Type of shipping available for the shipping carrier method.</inlineHelpText>
-        <trackHistory>false</trackHistory>
+        <fullName>SpaceName</fullName>
     </fields>
     <fields>
-        <fullName>TransitTimeUnit</fullName>
-        <trackHistory>false</trackHistory>
+        <fullName>StorageLocation</fullName>
     </fields>
-    <searchLayouts>
-        <customTabListAdditionalFields>ExternalReference</customTabListAdditionalFields>
-        <searchResultsAdditionalFields>ExternalReference</searchResultsAdditionalFields>
-    </searchLayouts>
+    <fields>
+        <fullName>StorageReference</fullName>
+    </fields>
+    <fields>
+        <fullName>StorageTierType</fullName>
+    </fields>
     <sharingModel>Read</sharingModel>
 </CustomObject>
